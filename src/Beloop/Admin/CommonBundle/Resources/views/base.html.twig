@@ -1,0 +1,5 @@
+{% extends 'base.html.twig' %}
+
+{% block navbar %}
+    {% include 'AdminCommonBundle:Header:navbar.html.twig' with {nav_title: block('nav_title')} %}
+{% endblock %}
