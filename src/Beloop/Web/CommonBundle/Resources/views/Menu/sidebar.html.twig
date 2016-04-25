@@ -1,0 +1,9 @@
+<ul class="sidebar-elements">
+    <li {% if section == 'dashboard' %}class="active"{% endif %}><a href="{{ path('beloop_dashboard') }}"><i class="icon s7-monitor"></i><span>{{ 'menu.dashboard.title'|trans }}</span></a></li>
+    <li><a href="#"><i class="icon s7-ribbon"></i><span>{{ 'menu.my_courses.title'|trans }}</span></a></li>
+    {% if is_granted('ROLE_ADMIN') %}
+    <li {% if section == 'admin' %}class="active"{% endif %}><a href="{{ path('admin_course_list') }}"><i class="icon s7-config"></i><span>{{ 'menu.admin.title'|trans }}</span></a></li>
+    {% endif %}
+    <li class="my-profile"><a href="#"><i class="icon s7-user"></i><span>{{ 'menu.my_profile.title'|trans }}</span></a></li>
+    <li class="sign-out"><a href="/logout"><i class="icon s7-power"></i><span>{{ 'menu.logout.title'|trans }}</span></a></li>
+</ul>

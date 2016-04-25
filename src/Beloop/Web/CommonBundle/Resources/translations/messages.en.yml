@@ -1,0 +1,11 @@
+menu:
+    dashboard:
+        title: 'Dashboard'
+    my_courses:
+        title: 'My Courses'
+    admin:
+        title: 'Admin'
+    my_profile:
+        title: 'My Profile'
+    logout:
+        title: 'Logout'
