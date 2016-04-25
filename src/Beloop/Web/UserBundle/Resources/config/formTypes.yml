@@ -1,0 +1,11 @@
+services:
+
+    #
+    # Form Types
+    #
+    beloop.form_type.login:
+        class: Beloop\Web\UserBundle\Form\Type\LoginType
+        arguments:
+            - "@router"
+        tags:
+            - { name: form.type, alias: beloop_user_form_type_login }
