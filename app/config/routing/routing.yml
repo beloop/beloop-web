@@ -1,0 +1,30 @@
+#
+# Security routes
+#
+security_routes:
+    resource: "@WebUserBundle/Resources/config/routing.yml"
+    options:
+        i18n: true
+
+#
+# Admin routes
+#
+admin_routes:
+    resource: "routing_admin.yml"
+    prefix: /%beloop_admin_prefix%
+    options:
+        i18n: false
+
+#
+# Web routes
+#
+web_routes:
+    resource: "routing_web.yml"
+    options:
+        i18n: true
+
+beloop_login_check:
+    path:  /login_check
+
+beloop_logout:
+    path: /logout

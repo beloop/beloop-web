@@ -1,0 +1,13 @@
+imports:
+    #
+    # Bamboo security
+    #
+    - { resource: roleHierarchy.yml }
+    - { resource: firewalls.yml }
+    - { resource: accessControl.yml }
+
+    #
+    # Bamboo store & admin imported security
+    #
+    - { resource: "@BeloopUserBundle/Resources/security/encoders.yml" }
+    - { resource: "@BeloopUserBundle/Resources/security/providers.yml" }

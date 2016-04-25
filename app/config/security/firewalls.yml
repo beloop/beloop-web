@@ -1,0 +1,23 @@
+security:
+    firewalls:
+        dev_area:
+            pattern:  ^/_(?:profiler|wdt|error)/
+            security: false
+
+        public_area:
+            pattern:  ^/(?:css|img|js|lib)/
+            security: false
+
+        web_area:
+            provider: user
+            pattern: ^/
+            anonymous: true
+            form_login:
+                login_path: beloop_login
+                check_path: beloop_login_check
+                username_parameter: beloop_user_form_type_login[email]
+                password_parameter: beloop_user_form_type_login[password]
+            logout:
+                path:   beloop_logout
+                target: beloop_login
+                invalidate_session: false
