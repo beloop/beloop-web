@@ -5,7 +5,7 @@
 
 {% block body %}
     <div class="page-head">
-        <h2>Courses</h2>
+        <h2>{{ 'admin.course.title'|trans }}</h2>
     </div>
 
     <div class="main-content">
@@ -16,16 +16,18 @@
                         <div class="row am-datatable-body">
                             <div class="col-sm-12">
                                 <table class="table table-striped table-fw-widget table-hover">
-                                    <thead>
-                                    <tr>
-                                        <th width="15%">Code</th>
-                                        <th width="30%">Name</th>
-                                        <th width="20%">Start Date</th>
-                                        <th width="20%">End Date</th>
-                                        <th width="5%">#Users</th>
-                                        <th width="10%">Actions</th>
-                                    </tr>
-                                    </thead>
+                                    {% include 'AdminCommonBundle:Common:Tables/head.html.twig' with {
+                                        class: 'admin_course',
+                                        rows: [
+                                            { name: 'admin.course.field.code.title'|trans, width: 15 },
+                                            { name: 'admin.course.field.name.title'|trans, width: 25 },
+                                            { name: 'admin.course.field.startDate.title'|trans, width: 20 },
+                                            { name: 'admin.course.field.endDate.title'|trans, width: 20 },
+                                            { name: 'admin.course.field.numUsers.title'|trans, width: 5 },
+                                            { name: 'admin.common.field.enabled.title'|trans, width: 5 },
+                                            { name: 'admin.common.field.actions.title'|trans, width: 10 },
+                                        ],
+                                    } %}
                                     <tbody class="no-border-x">
                                     {% for course in courses %}
                                         <tr>
@@ -34,6 +36,7 @@
                                             <td>{{ course.startDate|date("l, jS F Y") }}</td>
                                             <td>{{ course.endDate|date("l, jS F Y") }}</td>
                                             <td>0</td>
+                                            <td>{{ course.enabled }}</td>
                                             <td>
                                                 <div class="btn-toolbar">
                                                     <div class="btn-group btn-space">
