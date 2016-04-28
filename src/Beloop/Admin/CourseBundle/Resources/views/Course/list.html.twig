@@ -35,8 +35,14 @@
                                             <td>{{ course.name }}</td>
                                             <td>{{ course.startDate|date("l, jS F Y") }}</td>
                                             <td>{{ course.endDate|date("l, jS F Y") }}</td>
-                                            <td>0</td>
-                                            <td>{{ course.enabled }}</td>
+                                            <td class="text-center">0</td>
+                                            <td class="text-center">
+                                                {% if course.enabled %}
+                                                    <span class="icon s7-check"></span>
+                                                {% else %}
+                                                    <span class="icon s7-close"></span>
+                                                {% endif %}
+                                            </td>
                                             <td>
                                                 <div class="btn-toolbar">
                                                     <div class="btn-group btn-space">
