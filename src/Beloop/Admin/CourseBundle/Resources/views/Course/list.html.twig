@@ -32,23 +32,21 @@
                                     {% for course in courses %}
                                         <tr>
                                             <td>{{ course.code }}</td>
-                                            <td>{{ course.name }}</td>
+                                            <td><a href="{{ url('admin_course_edit', { id: course.id }) }}"><strong>{{ course.name }}</strong></a></td>
                                             <td>{{ course.startDate|date("l, jS F Y") }}</td>
                                             <td>{{ course.endDate|date("l, jS F Y") }}</td>
                                             <td class="text-center">0</td>
                                             <td class="text-center">
-                                                {% if course.enabled %}
-                                                    <span class="icon s7-check"></span>
-                                                {% else %}
-                                                    <span class="icon s7-close"></span>
-                                                {% endif %}
+                                                {% include 'AdminCommonBundle:Common:Tables/enabled.html.twig' with {
+                                                    enabled: course.enabled,
+                                                } %}
                                             </td>
                                             <td>
                                                 <div class="btn-toolbar">
                                                     <div class="btn-group btn-space">
-                                                        <button type="button" class="btn btn-default btn-xs"><i class="icon s7-look"></i></button>
-                                                        <button type="button" class="btn btn-default btn-xs"><i class="icon s7-pen"></i></button>
-                                                        <button type="button" class="btn btn-default btn-xs"><i class="icon s7-copy-file"></i></button>
+                                                        <a href="#" class="btn btn-default btn-xs"><i class="icon s7-look"></i></a>
+                                                        <a href="#" class="btn btn-default btn-xs"><i class="icon s7-pen"></i></a>
+                                                        <a href="#" class="btn btn-default btn-xs"><i class="icon s7-copy-file"></i></a>
                                                     </div>
                                                 </div>
                                             </td>
@@ -59,29 +57,17 @@
                             </div>
                         </div>
                         <div class="row am-datatable-footer">
-                            <div class="col-sm-5">
-                                {% set firstElement = limit * (page - 1) + 1 %}
-                                {% set lastElement = min(firstElement + limit - 1, totalElements) %}
-                                <div class="dataTables_info" id="table3_info" role="status" aria-live="polite">Showing {{ firstElement }} to {{ lastElement }} of {{ totalElements }} entries</div>
-                            </div>
-                            <div class="col-sm-7">
-                                <div class="dataTables_paginate paging_simple_numbers" id="table3_paginate">
-                                    <ul class="pagination">
-                                        <li class="paginate_button previous disabled" id="table3_previous">
-                                            <a href="#" aria-controls="table3" data-dt-idx="0" tabindex="0">Previous</a>
-                                        </li>
-                                        <li class="paginate_button active">
-                                            <a href="#" aria-controls="table3" data-dt-idx="1" tabindex="0">1</a>
-                                        </li>
-                                        <li class="paginate_button ">
-                                            <a href="#" aria-controls="table3" data-dt-idx="2" tabindex="0">2</a>
-                                        </li>
-                                        <li class="paginate_button next" id="table3_next">
-                                            <a href="#" aria-controls="table3" data-dt-idx="8" tabindex="0">Next</a
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
+                            {% include 'AdminCommonBundle:Common:Tables/pagination.html.twig' with {
+                                url: 'admin_course_list',
+                                limit: limit,
+                                page : page,
+                                totalElements: totalElements,
+                                total_pages: totalPages,
+                                order_by_field: orderByField,
+                                order_by_direction: orderByDirection,
+                                middle_group_length: 1,
+                                side_group_space_length: 1,
+                            } %}
                         </div>
                     </div>
 

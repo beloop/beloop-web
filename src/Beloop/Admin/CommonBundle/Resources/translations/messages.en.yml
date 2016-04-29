@@ -5,6 +5,11 @@ admin:
                 title: 'Actions'
             enabled:
                 title: 'Enabled'
+        pagination:
+            text: 'Showing %first% to %last% of %total% entries'
+            previous: 'Previous'
+            next: 'Next'
+
     course:
         title: 'Courses'
         field:
