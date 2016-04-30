@@ -3,6 +3,9 @@ admin:
         field:
             actions:
                 title: 'Actions'
+                duplicate: 'Duplicate'
+                edit: 'Edit'
+                preview: 'Preview'
             enabled:
                 title: 'Enabled'
         pagination:

@@ -18,10 +18,15 @@ namespace Beloop\Admin\CourseBundle\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\Form\FormView;
 
 use Doctrine\ORM\Tools\Pagination\Paginator;
+use Mmoreram\ControllerExtraBundle\Annotation\Entity as EntityAnnotation;
+use Mmoreram\ControllerExtraBundle\Annotation\Form as FormAnnotation;
 use Mmoreram\ControllerExtraBundle\Annotation\Paginator as PaginatorAnnotation;
 use Mmoreram\ControllerExtraBundle\ValueObject\PaginatorAttributes;
+
+use Beloop\Component\Course\Entity\Interfaces\CourseInterface;
 
 /**
  * Class Controller for Course
@@ -33,7 +38,7 @@ use Mmoreram\ControllerExtraBundle\ValueObject\PaginatorAttributes;
 class CourseController extends Controller
 {
     /**
-     * Dashboard page
+     * Courses list
      *
      * @return array
      *
@@ -85,9 +90,8 @@ class CourseController extends Controller
         );
 
         return [
-            'courses' => $courses,
-            'section' => 'admin',
-            'user' => $user,
+            'courses'          => $courses,
+            'user'             => $user,
             'paginator'        => $paginator,
             'page'             => $page,
             'limit'            => $limit,
@@ -95,6 +99,63 @@ class CourseController extends Controller
             'orderByDirection' => $orderByDirection,
             'totalPages'       => $paginatorAttributes->getTotalPages(),
             'totalElements'    => $paginatorAttributes->getTotalElements(),
+        ];
+    }
+
+    /**
+     * Create or edit course
+     *
+     * @param FormView $formView
+     * @param CourseInterface $course
+     *
+     * @return array
+     *
+     * @Route(
+     *      path = "/edit/{id}",
+     *      name = "admin_course_edit",
+     *      requirements = {
+     *          "id" = "\d+",
+     *      },
+     *      methods = {"GET"}
+     * )
+     *
+     * @Route(
+     *      path = "/new",
+     *      name = "admin_course_new",
+     *      methods = {"GET"}
+     * )
+     *
+     * @Template
+     *
+     * @EntityAnnotation(
+     *      class = {
+     *          "factory" = "beloop.factory.course",
+     *          "method" = "create",
+     *          "static" = false
+     *      },
+     *      name = "course",
+     *      mapping = {
+     *          "id" = "~id~"
+     *      },
+     *      mappingFallback = true,
+     *      persist = true
+     * )
+     *
+     * @FormAnnotation(
+     *      class = "beloop_course_form_type_course",
+     *      name  = "formView",
+     *      entity = "course",
+     *      handleRequest = true,
+     *      validate = "isValid"
+     * )
+     */
+    public function editComponentAction(
+        FormView $formView,
+        CourseInterface $course
+    ) {
+        return [
+            'course'  => $course,
+            'form'    => $formView,
         ];
     }
 }
