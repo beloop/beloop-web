@@ -78,8 +78,6 @@ class CourseController extends Controller
         $orderByField,
         $orderByDirection
     ) {
-        $user = $this->getUser();
-
         $courseDirector = $this->get('beloop.director.course');
 
         $courses = $courseDirector->findBy(
@@ -91,7 +89,6 @@ class CourseController extends Controller
 
         return [
             'courses'          => $courses,
-            'user'             => $user,
             'paginator'        => $paginator,
             'page'             => $page,
             'limit'            => $limit,
@@ -149,7 +146,7 @@ class CourseController extends Controller
      *      validate = "isValid"
      * )
      */
-    public function editComponentAction(
+    public function editAction(
         FormView $formView,
         CourseInterface $course
     ) {

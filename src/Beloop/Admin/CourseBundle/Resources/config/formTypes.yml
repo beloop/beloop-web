@@ -1,0 +1,11 @@
+services:
+
+    #
+    # Form Types
+    #
+    beloop_admin.form_type.course:
+        class: Beloop\Admin\CourseBundle\Form\Type\CourseType
+        calls:
+            - [setFactory, ["@beloop.factory.course"]]
+        tags:
+            - { name: form.type, alias: beloop_course_form_type_course }

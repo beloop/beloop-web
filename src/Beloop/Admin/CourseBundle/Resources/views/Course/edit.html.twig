@@ -1,0 +1,47 @@
+{% extends 'AdminCommonBundle::base.html.twig' %}
+
+{% block title %}Edit course {{ course.name }}{% endblock %}
+
+{% form_theme form 'AdminCommonBundle::Forms/fields.html.twig' %}
+
+{% block body %}
+    <div class="page-head">
+        <h2>Edit course <i>{{ course.name }}</i></h2>
+    </div>
+
+    <div class="main-content">
+        <div class="row">
+            <div class="col-sm-12">
+                {#{% set formAction =
+                    course.id
+                    ? url('admin_course_update', { id: course.id })
+                    : url('admin_course_save')
+                %}#}
+                <div class="tab-container">
+                    <ul class="nav nav-tabs">
+                        <li class="active"><a href="#course" data-toggle="tab" aria-expanded="true">Course</a></li>
+                        <li><a href="#lessons" data-toggle="tab" aria-expanded="true">Lessons</a></li>
+                        <li><a href="#users" data-toggle="tab" aria-expanded="true">Users</a></li>
+                    </ul>
+                    <div class="tab-content">
+                        <div id="course" class="tab-pane cont active">
+                            {{ form_start(form) }}
+
+                            {{ form_end(form) }}
+                        </div>
+                        <div id="lessons" class="tab-pane cont">
+                            <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima praesentium laudantium ipsa, enim maxime placeat, dolores quos sequi nisi iste velit perspiciatis rerum eveniet voluptate laboriosam perferendis ipsum. Expedita, maiores.</p>
+                            <p> Consectetur adipisicing elit. Minima praesentium laudantium ipsa, enim maxime placeat, dolores quos sequi nisi iste velit perspiciatis rerum eveniet voluptate laboriosam perferendis ipsum. Expedita, maiores.</p>
+                        </div>
+                        <div id="users" class="tab-pane">
+                            <p>Consectetur adipisicing elit. Ipsam ut praesentium, voluptate quidem necessitatibus quam nam officia soluta aperiam, recusandae.</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos facilis laboriosam, vitae ipsum tenetur atque vel repellendus culpa reiciendis velit quas, unde soluta quidem voluptas ipsam, rerum fuga placeat rem error voluptate eligendi modi. Delectus, iure sit impedit? Facere provident expedita itaque, magni, quas assumenda numquam eum! Sequi deserunt, rerum.</p><a href="#">Read more</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}
