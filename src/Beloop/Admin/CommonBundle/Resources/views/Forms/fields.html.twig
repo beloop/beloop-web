@@ -7,6 +7,7 @@
               name="{{ form.vars.name }}"
               method="{{ form_method|lower }}"
               action="{{ action }}"
+              autocomplete="off"
         {% for attrname, attrvalue in attr %}
             {{ attrname }}="{{ attrvalue }}"
         {% endfor %}
@@ -66,6 +67,13 @@
         />
     {% endspaceless %}
 {% endblock form_widget_simple %}
+
+{% block textarea_widget %}
+    {% spaceless %}
+        {% set attr = attr|merge({ class: (attr.class|default('') ~ ' form-control')|trim }) %}
+        <textarea {{ block('widget_attributes') }}>{{ value }}</textarea>
+    {% endspaceless %}
+{% endblock textarea_widget %}
 
 {% block checkbox_widget %}
     {% spaceless %}

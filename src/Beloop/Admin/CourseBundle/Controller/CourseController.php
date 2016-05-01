@@ -17,7 +17,6 @@ namespace Beloop\Admin\CourseBundle\Controller;
 
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Form\FormView;
 
 use Doctrine\ORM\Tools\Pagination\Paginator;
@@ -26,6 +25,7 @@ use Mmoreram\ControllerExtraBundle\Annotation\Form as FormAnnotation;
 use Mmoreram\ControllerExtraBundle\Annotation\Paginator as PaginatorAnnotation;
 use Mmoreram\ControllerExtraBundle\ValueObject\PaginatorAttributes;
 
+use Beloop\Admin\CommonBundle\Controller\Abstracts\AbstractAdminController;
 use Beloop\Component\Course\Entity\Interfaces\CourseInterface;
 
 /**
@@ -35,8 +35,90 @@ use Beloop\Component\Course\Entity\Interfaces\CourseInterface;
  *      path = "/course",
  * )
  */
-class CourseController extends Controller
+class CourseController extends AbstractAdminController
 {
+    /**
+     * Create, Edit and save course
+     *
+     * @param FormView        $formView
+     * @param CourseInterface $course
+     * @param boolean         $isValid
+     *
+     * @return array
+     *
+     * @Route(
+     *      path = "/new",
+     *      name = "admin_course_new",
+     *      methods = {"GET"}
+     * )
+     *
+     * @Route(
+     *      path = "/edit/{id}",
+     *      name = "admin_course_edit",
+     *      requirements = {
+     *          "id" = "\d+",
+     *      },
+     *      methods = {"GET"}
+     * )
+     *
+     * @Route(
+     *      path = "/update/{id}",
+     *      name = "admin_course_update",
+     *      requirements = {
+     *          "id" = "\d+",
+     *      },
+     *      methods = {"POST"}
+     * )
+     *
+     * @Route(
+     *      path = "/new/update",
+     *      name = "admin_course_save",
+     *      methods = {"POST"}
+     * )
+     *
+     * @Template
+     *
+     * @EntityAnnotation(
+     *      class = {
+     *          "factory" = "beloop.factory.course",
+     *          "method" = "create",
+     *          "static" = false
+     *      },
+     *      name = "course",
+     *      mapping = {
+     *          "id" = "~id~"
+     *      },
+     *      mappingFallback = true,
+     *      persist = true
+     * )
+     *
+     * @FormAnnotation(
+     *      class = "beloop_course_form_type_course",
+     *      name  = "formView",
+     *      entity = "course",
+     *      handleRequest = true,
+     *      validate = "isValid"
+     * )
+     */
+    public function editAction(
+        FormView $formView,
+        CourseInterface $course,
+        $isValid
+    ) {
+        if ($isValid) {
+            $this->flush($course);
+
+            $this->addFlash('success', 'admin.course.saved');
+
+            return $this->redirectToRoute('admin_course_edit', ['id' => $course->getId()]);
+        }
+
+        return [
+            'course'  => $course,
+            'form'    => $formView,
+        ];
+    }
+
     /**
      * Courses list
      *
@@ -96,63 +178,6 @@ class CourseController extends Controller
             'orderByDirection' => $orderByDirection,
             'totalPages'       => $paginatorAttributes->getTotalPages(),
             'totalElements'    => $paginatorAttributes->getTotalElements(),
-        ];
-    }
-
-    /**
-     * Create or edit course
-     *
-     * @param FormView $formView
-     * @param CourseInterface $course
-     *
-     * @return array
-     *
-     * @Route(
-     *      path = "/edit/{id}",
-     *      name = "admin_course_edit",
-     *      requirements = {
-     *          "id" = "\d+",
-     *      },
-     *      methods = {"GET"}
-     * )
-     *
-     * @Route(
-     *      path = "/new",
-     *      name = "admin_course_new",
-     *      methods = {"GET"}
-     * )
-     *
-     * @Template
-     *
-     * @EntityAnnotation(
-     *      class = {
-     *          "factory" = "beloop.factory.course",
-     *          "method" = "create",
-     *          "static" = false
-     *      },
-     *      name = "course",
-     *      mapping = {
-     *          "id" = "~id~"
-     *      },
-     *      mappingFallback = true,
-     *      persist = true
-     * )
-     *
-     * @FormAnnotation(
-     *      class = "beloop_course_form_type_course",
-     *      name  = "formView",
-     *      entity = "course",
-     *      handleRequest = true,
-     *      validate = "isValid"
-     * )
-     */
-    public function editAction(
-        FormView $formView,
-        CourseInterface $course
-    ) {
-        return [
-            'course'  => $course,
-            'form'    => $formView,
         ];
     }
 }

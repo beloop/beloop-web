@@ -5,18 +5,27 @@
 {% form_theme form 'AdminCommonBundle::Forms/fields.html.twig' %}
 
 {% block body %}
+    {{ parent() }}
+
     <div class="page-head">
         <h2>Edit course <i>{{ course.name }}</i></h2>
+        <ol class="breadcrumb">
+            <li><a href="{{ url('admin_course_list') }}">Admin</a></li>
+            <li><a href="{{ url('admin_course_list') }}">Courses</a></li>
+            <li class="active">{{ course.name }}</li>
+        </ol>
     </div>
 
     <div class="main-content">
         <div class="row">
             <div class="col-sm-12">
-                {#{% set formAction =
+                {% include 'AdminCommonBundle:Common:flashMessages.html.twig' %}
+
+                {% set formAction =
                     course.id
                     ? url('admin_course_update', { id: course.id })
                     : url('admin_course_save')
-                %}#}
+                %}
                 <div class="tab-container">
                     <ul class="nav nav-tabs">
                         <li class="active"><a href="#course" data-toggle="tab" aria-expanded="true">Course</a></li>
@@ -25,8 +34,12 @@
                     </ul>
                     <div class="tab-content">
                         <div id="course" class="tab-pane cont active">
-                            {{ form_start(form) }}
-
+                            {{ form_start(form, { action: formAction }) }}
+                                {{ form_rest(form) }}
+                                <div class="spacer text-right">
+                                    <button type="submit" class="btn btn-space btn-primary">Submit</button>
+                                    <a href="{{ url('admin_course_list') }}" class="btn btn-space btn-default">Cancel</a>
+                                </div>
                             {{ form_end(form) }}
                         </div>
                         <div id="lessons" class="tab-pane cont">

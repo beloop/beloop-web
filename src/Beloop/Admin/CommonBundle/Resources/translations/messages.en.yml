@@ -5,6 +5,7 @@ admin:
                 title: 'Actions'
                 duplicate: 'Duplicate'
                 edit: 'Edit'
+                new: 'New'
                 preview: 'Preview'
             enabled:
                 title: 'Enabled'
@@ -26,3 +27,4 @@ admin:
                 title: 'End Date'
             numUsers:
                 title: '#Users'
+        saved: 'Course saved correctly'
