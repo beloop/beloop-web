@@ -29,7 +29,7 @@
                 <div class="tab-container">
                     <ul class="nav nav-tabs">
                         <li class="active"><a href="#course" data-toggle="tab" aria-expanded="true">Course</a></li>
-                        <li><a href="#lessons" data-toggle="tab" aria-expanded="true">Lessons</a></li>
+                        <li><a href="#lessons" data-toggle="tab" aria-expanded="true">Lessons & Modules</a></li>
                         <li><a href="#users" data-toggle="tab" aria-expanded="true">Users</a></li>
                     </ul>
                     <div class="tab-content">
@@ -43,8 +43,7 @@
                             {{ form_end(form) }}
                         </div>
                         <div id="lessons" class="tab-pane cont">
-                            <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima praesentium laudantium ipsa, enim maxime placeat, dolores quos sequi nisi iste velit perspiciatis rerum eveniet voluptate laboriosam perferendis ipsum. Expedita, maiores.</p>
-                            <p> Consectetur adipisicing elit. Minima praesentium laudantium ipsa, enim maxime placeat, dolores quos sequi nisi iste velit perspiciatis rerum eveniet voluptate laboriosam perferendis ipsum. Expedita, maiores.</p>
+                            {% include 'AdminCourseBundle:Lesson:list.html.twig' %}
                         </div>
                         <div id="users" class="tab-pane">
                             <p>Consectetur adipisicing elit. Ipsam ut praesentium, voluptate quidem necessitatibus quam nam officia soluta aperiam, recusandae.</p>
@@ -55,6 +54,18 @@
             </div>
         </div>
     </div>
+{% endblock %}
 
-
+{% block javascripts %}
+    {{ parent() }}
+    <script type="text/javascript" src="{{ asset('lib/sortable/sortable.min.js') }}"></script>
+    <script>
+        var el = document.getElementById('lessons');
+        var sortable = Sortable.create(el, {
+            onEnd: function (evt) {
+                console.log(evt.oldIndex);
+                console.log(evt.newIndex);
+            }
+        });
+    </script>
 {% endblock %}

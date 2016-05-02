@@ -21,10 +21,15 @@ admin:
                 title: 'Code'
             name:
                 title: 'Name'
-            startDate:
+            start_date:
                 title: 'Start Date'
-            endDate:
+            end_date:
                 title: 'End Date'
-            numUsers:
+            num_users:
                 title: '#Users'
         saved: 'Course saved correctly'
+
+    lesson:
+        field:
+            start_date:
+                title: 'Start Date'

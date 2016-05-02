@@ -8,4 +8,4 @@ services:
         calls:
             - [setFactory, ["@beloop.factory.course"]]
         tags:
-            - { name: form.type, alias: beloop_course_form_type_course }
+            - { name: form.type }

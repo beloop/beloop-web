@@ -93,7 +93,7 @@ class CourseController extends AbstractAdminController
      * )
      *
      * @FormAnnotation(
-     *      class = "beloop_course_form_type_course",
+     *      class = "Beloop\Admin\CourseBundle\Form\Type\CourseType",
      *      name  = "formView",
      *      entity = "course",
      *      handleRequest = true,
@@ -115,6 +115,7 @@ class CourseController extends AbstractAdminController
 
         return [
             'course'  => $course,
+            'lessons' => $course->getLessons(),
             'form'    => $formView,
         ];
     }
