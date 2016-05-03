@@ -1,0 +1,15 @@
+{% form_theme form 'AdminCommonBundle::Forms/fields.html.twig' %}
+
+{% set formAction =
+    lesson.id
+    ? url('admin_lesson_update', { id: lesson.id })
+    : url('admin_lesson_save')
+%}
+
+{{ form_start(form, { action: formAction }) }}
+    {{ form_rest(form) }}
+    <div class="spacer text-right">
+        <button type="submit" class="btn btn-space btn-primary">Submit</button>
+        <a href="#" data-action="edit-lesson-cancel"] class="btn btn-space btn-default">Cancel</a>
+    </div>
+{{ form_end(form) }}

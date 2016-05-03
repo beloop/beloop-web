@@ -1,23 +1,16 @@
 {% for lesson in lessons %}
-    <div class="panel panel-default panel-heading-fullwidth panel-borders">
+    <div class="panel panel-default panel-heading-fullwidth panel-borders panel-lesson">
         <div class="panel-heading">
-            <div class="tools"><span class="icon s7-pen"></span><span class="icon s7-trash"></span></div><span class="title">{{ lesson.name }}</span>
+            <div class="tools"><a href="#lesson-{{ lesson.id }}" data-action="edit-lesson"><span class="icon s7-pen"></span></a><span class="icon s7-trash"></span></div><span class="title">{{ lesson.name }}</span>
         </div>
         <div class="panel-body">
-            {{ lesson.description|raw }}
-            <p>{{ 'admin.lesson.field.start_date.title'|trans }}: <strong>{{ lesson.startDate|date("l, jS F Y") }}</strong></p>
-        </div>
-    </div>
-{% endfor %}
-
-{% for lesson in lessons %}
-    <div class="panel panel-default panel-heading-fullwidth panel-borders">
-        <div class="panel-heading">
-            <div class="tools"><span class="icon s7-pen"></span><span class="icon s7-trash"></span></div><span class="title">{{ lesson.name }}</span>
-        </div>
-        <div class="panel-body">
-            {{ lesson.description|raw }}
-            <p>{{ 'admin.lesson.field.start_date.title'|trans }}: <strong>{{ lesson.startDate|date("l, jS F Y") }}</strong></p>
+            <div class="lesson-view">
+                {{ lesson.description|raw }}
+                <p>{{ 'admin.lesson.field.start_date.title'|trans }}: <strong>{{ lesson.startDate|date("l, jS F Y") }}</strong></p>
+            </div>
+            <div class="hidden lesson-edit">
+                {{ render(controller('AdminCourseBundle:Lesson:edit', {'id': lesson.id})) }}
+            </div>
         </div>
     </div>
 {% endfor %}

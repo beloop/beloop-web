@@ -33,3 +33,4 @@ admin:
         field:
             start_date:
                 title: 'Start Date'
+        saved: 'Lesson saved correctly'
