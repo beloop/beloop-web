@@ -29,8 +29,10 @@
                 <div class="tab-container">
                     <ul class="nav nav-tabs">
                         <li class="active"><a href="#course" data-toggle="tab" aria-expanded="true">Course</a></li>
+                        {% if (course.id) %}
                         <li><a href="#lessons" data-toggle="tab" aria-expanded="true">Lessons & Modules</a></li>
                         <li><a href="#users" data-toggle="tab" aria-expanded="true">Users</a></li>
+                        {% endif %}
                     </ul>
                     <div class="tab-content">
                         <div id="course" class="tab-pane cont active">
@@ -42,6 +44,7 @@
                                 </div>
                             {{ form_end(form) }}
                         </div>
+                        {% if (course.id) %}
                         <div id="lessons" class="tab-pane cont">
                             {% include 'AdminCourseBundle:Lesson:list.html.twig' with {lessons: course.lessons} %}
                         </div>
@@ -49,6 +52,7 @@
                             <p>Consectetur adipisicing elit. Ipsam ut praesentium, voluptate quidem necessitatibus quam nam officia soluta aperiam, recusandae.</p>
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos facilis laboriosam, vitae ipsum tenetur atque vel repellendus culpa reiciendis velit quas, unde soluta quidem voluptas ipsam, rerum fuga placeat rem error voluptate eligendi modi. Delectus, iure sit impedit? Facere provident expedita itaque, magni, quas assumenda numquam eum! Sequi deserunt, rerum.</p><a href="#">Read more</a>
                         </div>
+                        {% endif %}
                     </div>
                 </div>
             </div>
