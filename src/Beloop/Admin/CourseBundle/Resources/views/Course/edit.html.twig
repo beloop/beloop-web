@@ -12,7 +12,7 @@
         <ol class="breadcrumb">
             <li><a href="{{ url('admin_course_list') }}">Admin</a></li>
             <li><a href="{{ url('admin_course_list') }}">Courses</a></li>
-            <li class="active">{{ course.name }}</li>
+            <li class="active">{{ course.name|default('admin.course.field.actions.new.title')|trans }}</li>
         </ol>
     </div>
 

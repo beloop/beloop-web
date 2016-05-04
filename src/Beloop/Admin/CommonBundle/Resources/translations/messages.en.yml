@@ -27,6 +27,9 @@ admin:
                 title: 'End Date'
             num_users:
                 title: '#Users'
+            actions:
+                new:
+                    title: 'New course'
         saved: 'Course saved correctly'
 
     lesson:
