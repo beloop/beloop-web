@@ -38,7 +38,7 @@ class SecurityController extends Controller
      * @Template
      *
      * @AnnotationForm(
-     *      class = "beloop_user_form_type_login",
+     *      class = "Beloop\Web\UserBundle\Form\Type\LoginType",
      *      name  = "loginFormView"
      * )
      */
