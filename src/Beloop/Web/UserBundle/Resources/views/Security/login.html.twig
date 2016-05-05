@@ -21,7 +21,7 @@
         <div class="main-content">
             <div class="login-container">
                 <div class="panel panel-default">
-                    <div class="panel-heading"><img src="{{ asset('img/dyb-logo.png') }}" alt="logo" width="120px" height="71px" class="logo-img"><span>{{ 'login.text.welcome' }}</span></div>
+                    <div class="panel-heading"><img src="{{ asset('img/dyb-logo.png') }}" alt="logo" width="120px" height="71px" class="logo-img"><span>{{ 'login.text.welcome'|trans }}</span></div>
                     <div class="panel-body">
                         {{ form_start(form, {
                             attr: {
@@ -39,7 +39,7 @@
                                             label: false,
                                             attr: {
                                                 class: 'form-control',
-                                                placeholder: 'login.field.email.placeholder',
+                                                placeholder: 'login.field.email.placeholder'|trans,
                                                 value: lastUsername
                                             }
                                         }) }}
@@ -51,17 +51,17 @@
                                             label: false,
                                             attr: {
                                                 class: 'form-control',
-                                                placeholder: 'login.field.password.placeholder',
+                                                placeholder: 'login.field.password.placeholder'|trans,
                                             }
                                         }) }}
                                     </div>
                                 </div>
                                 <div class="form-group login-submit">
-                                    <button data-dismiss="modal" type="submit" class="btn btn-primary btn-lg">{{ 'login.button.submit.placeholder' }}</button>
+                                    <button data-dismiss="modal" type="submit" class="btn btn-primary btn-lg">{{ 'login.button.submit.placeholder'|trans }}</button>
                                 </div>
                                 <div class="form-group footer row">
-                                    <div class="col-xs-6"><a href="#">{{ 'login.text.forgot_password' }}</a></div>
-                                    <div class="col-xs-6 text-right"><a href="#">{{ 'login.text.register' }}</a></div>
+                                    <div class="col-xs-6"><a href="#">{{ 'login.text.forgot_password'|trans }}</a></div>
+                                    <div class="col-xs-6 text-right"><a href="#">{{ 'login.text.register'|trans }}</a></div>
                                 </div>
                             </div>
                         {{ form_end(form) }}
