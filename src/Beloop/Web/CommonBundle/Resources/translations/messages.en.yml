@@ -1,3 +1,16 @@
+login:
+    text:
+        welcome: 'Delicious Yet Beautiful'
+        forgot_password: 'I forgot my password'
+        register: 'Register'
+    field:
+        email:
+            placeholder: 'email'
+        password:
+            placeholder: 'password'
+    button:
+        submit:
+            placeholder: 'Enter'
 menu:
     dashboard:
         title: 'Dashboard'
