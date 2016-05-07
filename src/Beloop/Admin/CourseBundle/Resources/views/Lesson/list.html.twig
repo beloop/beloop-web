@@ -1,5 +1,5 @@
 {% for lesson in lessons %}
-    <div class="panel panel-default panel-heading-fullwidth panel-borders panel-lesson">
+    <div class="panel panel-default panel-heading-fullwidth panel-borders panel-lesson" data-id="{{ lesson.id }}">
         <div class="panel-heading">
             <div class="tools"><a href="#lesson-{{ lesson.id }}" data-action="edit-lesson"><span class="icon s7-pen"></span></a><span class="icon s7-trash"></span></div><span class="title">{{ lesson.name }}</span>
         </div>

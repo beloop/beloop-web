@@ -62,13 +62,28 @@
 
 {% block javascripts %}
     {{ parent() }}
+    <script src="{{ asset('bundles/fosjsrouting/js/router.js') }}"></script>
+    <script src="{{ path('fos_js_routing_js', {"callback": "fos.Router.setData"}) }}"></script>
     <script type="text/javascript" src="{{ asset('lib/sortable/sortable.min.js') }}"></script>
     <script type="text/javascript">
         var el = document.getElementById('lessons');
         var sortable = Sortable.create(el, {
             onEnd: function (evt) {
-                console.log(evt.oldIndex);
-                console.log(evt.newIndex);
+                var id = evt.item.dataset.id;
+                var oldPosition = evt.oldIndex + 1;
+                var newPosition = evt.newIndex + 1;
+
+                $.post(
+                        Routing.generate(
+                                'admin_lesson_edit_position',
+                                {
+                                    id: id,
+                                    oldPosition: oldPosition,
+                                    newPosition: newPosition
+                                }
+                        ),
+                        $(this).serialize()
+                );
             }
         });
     </script>

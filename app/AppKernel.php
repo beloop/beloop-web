@@ -23,6 +23,7 @@ class AppKernel extends Kernel
             /**
              * Third-party dependencies
              */
+            new FOS\JsRoutingBundle\FOSJsRoutingBundle(),
             new Mmoreram\ControllerExtraBundle\ControllerExtraBundle(),
 
             /**

@@ -25,7 +25,6 @@ use Mmoreram\ControllerExtraBundle\Annotation\Form as FormAnnotation;
 use Beloop\Admin\CommonBundle\Controller\Abstracts\AbstractAdminController;
 use Beloop\Component\Course\Entity\Interfaces\LessonInterface;
 use Symfony\Component\HttpFoundation\JsonResponse;
-use Symfony\Component\HttpFoundation\Request;
 
 /**
  * Class Controller for Lesson
@@ -39,7 +38,6 @@ class LessonController extends AbstractAdminController
     /**
      * Create, Edit and save course
      *
-     * @param Request $request
      * @param FormView $formView
      * @param LessonInterface $lesson
      * @param boolean $isValid
@@ -101,7 +99,6 @@ class LessonController extends AbstractAdminController
      * )
      */
     public function editAction(
-        Request $request,
         FormView $formView,
         LessonInterface $lesson,
         $isValid
@@ -118,5 +115,57 @@ class LessonController extends AbstractAdminController
             'lesson'  => $lesson,
             'form'    => $formView,
         ];
+    }
+
+    /**
+     * Update lesson position
+     *
+     * @param LessonInterface $lesson
+     * @param $oldPosition
+     * @param $newPosition
+     *
+     * @Route(
+     *      path = "/edit/{id}/position/{oldPosition}/{newPosition}",
+     *      name = "admin_lesson_edit_position",
+     *      requirements = {
+     *          "id" = "\d+",
+     *      "oldPosition" = "\d+",
+     *      "newPosition" = "\d+"
+     *      },
+     *      methods = {"POST"},
+     *      options = {
+     *          "expose" = "true"
+     *      }
+     * )
+     *
+     * @EntityAnnotation(
+     *      class = {
+     *          "factory" = "beloop.factory.lesson",
+     *          "method" = "create",
+     *          "static" = false
+     *      },
+     *      name = "lesson",
+     *      mapping = {
+     *          "id" = "~id~"
+     *      },
+     *      mappingFallback = true,
+     *      persist = true
+     * )
+     *
+     * @return JsonResponse
+     */
+    public function updatePositionAction(LessonInterface $lesson, $oldPosition, $newPosition) {
+        $positionFixer = $this->get('beloop.position_fixer');
+
+        $lesson->setPosition($newPosition);
+        $this->flush($lesson);
+
+        $positionFixer->fixEntitiesPosition($lesson->getCourse()->getLessons(), $lesson, $oldPosition, $newPosition);
+
+        // TODO: return complete JSON response
+        $response = new JsonResponse();
+        $response->setData([]);
+
+        return $response;
     }
 }
