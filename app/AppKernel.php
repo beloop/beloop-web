@@ -28,6 +28,7 @@ class AppKernel extends Kernel
             /**
              * Beloop core bundles
              */
+            new Beloop\Bundle\AnalyticsBundle\BeloopAnalyticsBundle(),
             new Beloop\Bundle\CoreBundle\BeloopCoreBundle(),
             new Beloop\Bundle\CourseBundle\BeloopCourseBundle(),
             new Beloop\Bundle\LanguageBundle\BeloopLanguageBundle(),

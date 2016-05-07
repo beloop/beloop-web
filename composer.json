@@ -35,6 +35,7 @@
 
         "mmoreram/controller-extra-bundle": "^1.2.1",
 
+        "beloop/analytics-bundle": "~0.4",
         "beloop/core-bundle": "~0.4",
         "beloop/course-bundle": "~0.4",
         "beloop/language-bundle": "~0.4",
