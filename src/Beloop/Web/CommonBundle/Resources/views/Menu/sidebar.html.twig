@@ -5,5 +5,5 @@
     <li {% if section == 'admin' %}class="active"{% endif %}><a href="{{ path('admin_course_list') }}"><i class="icon s7-config"></i><span>{{ 'menu.admin.title'|trans }}</span></a></li>
     {% endif %}
     <li class="my-profile"><a href="#"><i class="icon s7-user"></i><span>{{ 'menu.my_profile.title'|trans }}</span></a></li>
-    <li class="sign-out"><a href="/logout"><i class="icon s7-power"></i><span>{{ 'menu.logout.title'|trans }}</span></a></li>
+    <li class="sign-out"><a href="{{ path('beloop_logout') }}"><i class="icon s7-power"></i><span>{{ 'menu.logout.title'|trans }}</span></a></li>
 </ul>

@@ -21,3 +21,4 @@ security:
                 path:   beloop_logout
                 target: beloop_login
                 invalidate_session: false
+                success_handler: listener.security_logout
