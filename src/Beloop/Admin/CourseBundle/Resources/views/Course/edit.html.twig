@@ -31,7 +31,7 @@
                         <li class="active"><a href="#course" data-toggle="tab" aria-expanded="true">Course</a></li>
                         {% if (course.id) %}
                         <li><a href="#lessons" data-toggle="tab" aria-expanded="true">Lessons & Modules</a></li>
-                        <li><a href="#users" data-toggle="tab" aria-expanded="true">Users</a></li>
+                        <li><a href="#users" data-toggle="tab" aria-expanded="true">Enrolled Users</a></li>
                         {% endif %}
                     </ul>
                     <div class="tab-content">
@@ -51,8 +51,7 @@
                             <a href="{{ url('admin_lesson_new', {courseId: course.id}) }}" class="btn btn-space btn-primary btn-md" data-action="action-new" data-target="#lesson-new-wrapper"><i class="icon icon-left s7-plus"></i> {{ 'admin.common.field.actions.new'|trans }}</a>
                         </div>
                         <div id="users" class="tab-pane">
-                            <p>Consectetur adipisicing elit. Ipsam ut praesentium, voluptate quidem necessitatibus quam nam officia soluta aperiam, recusandae.</p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos facilis laboriosam, vitae ipsum tenetur atque vel repellendus culpa reiciendis velit quas, unde soluta quidem voluptas ipsam, rerum fuga placeat rem error voluptate eligendi modi. Delectus, iure sit impedit? Facere provident expedita itaque, magni, quas assumenda numquam eum! Sequi deserunt, rerum.</p><a href="#">Read more</a>
+                            {% include 'AdminCourseBundle:Users:list.html.twig' with {users: course.enrolledUsers} %}
                         </div>
                         {% endif %}
                     </div>

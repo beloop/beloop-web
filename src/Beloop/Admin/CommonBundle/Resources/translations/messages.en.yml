@@ -32,6 +32,13 @@ admin:
                     title: 'New course'
         saved: 'Course saved correctly'
 
+    user:
+        field:
+            full_name:
+                title: 'Full Name'
+            email:
+                title: 'Email'
+
     lesson:
         field:
             start_date:

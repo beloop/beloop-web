@@ -16,6 +16,7 @@
         <th role="columnheader"
                 {%- if info.width is defined or info.class is defined -%}
                     class="{%- if info.width is defined %}w-{{ info.width }}{% endif %}{%- if info.class is defined %} {{ info.class }}{% endif %}"
+                    {%- if info.width is defined %}width="{{ info.width }}%"{{ info.width }}{% endif %}
                 {%- endif -%}
         >
             {{- info.name -}}
