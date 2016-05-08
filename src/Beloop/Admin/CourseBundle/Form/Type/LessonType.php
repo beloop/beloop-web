@@ -15,9 +15,12 @@
 
 namespace Beloop\Admin\CourseBundle\Form\Type;
 
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
+use Symfony\Component\Form\Extension\Core\Type\HiddenType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -59,10 +62,21 @@ class LessonType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
+            ->add('course', EntityType::class, [
+                'required' => true,
+                'class' => 'Beloop\Component\Course\Entity\Course',
+                'choice_label' => 'name',
+            ])
+            ->add('position', HiddenType::class, [
+                'required' => true,
+            ])
             ->add('name', TextType::class, [
                 'required' => true
             ])
             ->add('slug', TextType::class, [
+                'required' => true
+            ])
+            ->add('description', TextareaType::class, [
                 'required' => true
             ])
             ->add('startDate', DateType::class, [

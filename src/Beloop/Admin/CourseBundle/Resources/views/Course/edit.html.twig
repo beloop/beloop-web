@@ -47,6 +47,8 @@
                         {% if (course.id) %}
                         <div id="lessons" class="tab-pane cont">
                             {% include 'AdminCourseBundle:Lesson:list.html.twig' with {lessons: course.lessons} %}
+                            <div id="lesson-new-wrapper" class="hidden"></div>
+                            <a href="{{ url('admin_lesson_new', {courseId: course.id}) }}" class="btn btn-space btn-primary btn-md" data-action="action-new" data-target="#lesson-new-wrapper"><i class="icon icon-left s7-plus"></i> {{ 'admin.common.field.actions.new'|trans }}</a>
                         </div>
                         <div id="users" class="tab-pane">
                             <p>Consectetur adipisicing elit. Ipsam ut praesentium, voluptate quidem necessitatibus quam nam officia soluta aperiam, recusandae.</p>
@@ -66,6 +68,7 @@
     <script src="{{ path('fos_js_routing_js', {"callback": "fos.Router.setData"}) }}"></script>
     <script type="text/javascript" src="{{ asset('lib/sortable/sortable.min.js') }}"></script>
     <script type="text/javascript">
+        // Drag & Drop lessons to update positions
         var el = document.getElementById('lessons');
         var sortable = Sortable.create(el, {
             onEnd: function (evt) {
@@ -81,13 +84,13 @@
                                     oldPosition: oldPosition,
                                     newPosition: newPosition
                                 }
-                        ),
-                        $(this).serialize()
+                        )
                 );
             }
         });
     </script>
     <script type="text/javascript">
+        // Change between edit and view mode
         var toggleEditMode = function (event) {
             event.preventDefault();
 
@@ -107,6 +110,23 @@
         var cancels = document.querySelectorAll('a[data-action="edit-lesson-cancel"]');
         Array.prototype.forEach.call(cancels, function (lesson) {
             lesson.addEventListener('click', toggleEditMode);
+        });
+    </script>
+    <script type="text/javascript">
+        // Create new lesson
+        var add = document.querySelectorAll('a[data-action="action-new"]');
+        Array.prototype.forEach.call(add, function (action) {
+            action.addEventListener('click', function (event) {
+                event.preventDefault();
+
+                var url = this.href;
+                var $target = $(this.dataset.target);
+
+                $.get(url).done(function (response) {
+                    $target.html(response);
+                    $target.toggleClass('hidden');
+                });
+            });
         });
     </script>
     {#<script type="text/javascript">

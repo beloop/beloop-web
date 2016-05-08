@@ -15,6 +15,7 @@
 
 namespace Beloop\Admin\CourseBundle\Form\Type;
 
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
@@ -68,6 +69,11 @@ class CourseType extends AbstractType
             ])
             ->add('description', TextareaType::class, [
                 'required' => true
+            ])
+            ->add('Language', EntityType::class, [
+                'required' => true,
+                'class' => 'Beloop\Component\Language\Entity\Language',
+                'choice_label' => 'name',
             ])
             ->add('startDate', DateType::class, [
                 'required' => true,

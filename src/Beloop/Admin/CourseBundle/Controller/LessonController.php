@@ -15,16 +15,17 @@
 
 namespace Beloop\Admin\CourseBundle\Controller;
 
+use Symfony\Component\Form\Form;
+use Symfony\Component\Form\FormView;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
-use Symfony\Component\Form\FormView;
 
 use Mmoreram\ControllerExtraBundle\Annotation\Entity as EntityAnnotation;
 use Mmoreram\ControllerExtraBundle\Annotation\Form as FormAnnotation;
 
 use Beloop\Admin\CommonBundle\Controller\Abstracts\AbstractAdminController;
 use Beloop\Component\Course\Entity\Interfaces\LessonInterface;
-use Symfony\Component\HttpFoundation\JsonResponse;
 
 /**
  * Class Controller for Lesson
@@ -36,19 +37,68 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 class LessonController extends AbstractAdminController
 {
     /**
-     * Create, Edit and save course
+     * Create course
+     *
+     * @param Form $form
+     * @param LessonInterface $lesson
+     * @param int $courseId
+     *
+     * @return array
+     *
+     * @Route(
+     *      path = "/new/{courseId}",
+     *      name = "admin_lesson_new",
+     *      requirements = {
+     *          "courseId" = "\d+",
+     *      },
+     *      methods = {"GET"}
+     * )
+     *
+     * @Template("AdminCourseBundle:Lesson:edit.html.twig")
+     *
+     * @EntityAnnotation(
+     *      class = {
+     *          "factory" = "beloop.factory.lesson",
+     *          "method" = "create",
+     *          "static" = false
+     *      },
+     *      name = "lesson",
+     * )
+     *
+     * @FormAnnotation(
+     *      class = "Beloop\Admin\CourseBundle\Form\Type\LessonType",
+     *      name  = "form",
+     *      entity = "lesson",
+     *      handleRequest = true,
+     *      validate = "isValid"
+     * )
+     */
+    public function newAction(
+        Form $form,
+        LessonInterface $lesson,
+        $courseId
+    ) {
+        $course = $this->get('beloop.director.course')->find($courseId);
+
+        $lesson->setCourse($course);
+        $lesson->setPosition($course->getLessons()->count() + 1);
+
+        $form->setData($lesson);
+
+        return [
+            'lesson'  => $lesson,
+            'form'    => $form->createView(),
+        ];
+    }
+    
+    /**
+     * Edit and save course
      *
      * @param FormView $formView
      * @param LessonInterface $lesson
      * @param boolean $isValid
      *
      * @return array
-     *
-     * @Route(
-     *      path = "/new",
-     *      name = "admin_lesson_new",
-     *      methods = {"GET"}
-     * )
      *
      * @Route(
      *      path = "/edit/{id}",
