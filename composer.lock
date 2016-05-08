@@ -174,16 +174,16 @@
         },
         {
             "name": "beloop/core-bundle",
-            "version": "0.4.2",
+            "version": "0.4.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/beloop/CoreBundle.git",
-                "reference": "815ff04b6298259b7a56d0b0d9090234f36821e2"
+                "reference": "eb77a6a00aa0f9636fe864a5babc799515fe8bae"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/beloop/CoreBundle/zipball/815ff04b6298259b7a56d0b0d9090234f36821e2",
-                "reference": "815ff04b6298259b7a56d0b0d9090234f36821e2",
+                "url": "https://api.github.com/repos/beloop/CoreBundle/zipball/eb77a6a00aa0f9636fe864a5babc799515fe8bae",
+                "reference": "eb77a6a00aa0f9636fe864a5babc799515fe8bae",
                 "shasum": ""
             },
             "require": {
@@ -233,7 +233,7 @@
                 "core",
                 "lms"
             ],
-            "time": "2016-04-23 05:11:04"
+            "time": "2016-05-07 16:51:45"
         },
         {
             "name": "beloop/course",
