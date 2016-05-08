@@ -123,16 +123,16 @@
         },
         {
             "name": "beloop/core",
-            "version": "0.4.2",
+            "version": "0.4.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/beloop/Core.git",
-                "reference": "8ed7f6a383774a643ae5bf13c43f5032d5aedec9"
+                "reference": "288c62cfce67d049184220c6166167f9d67d33d7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/beloop/Core/zipball/8ed7f6a383774a643ae5bf13c43f5032d5aedec9",
-                "reference": "8ed7f6a383774a643ae5bf13c43f5032d5aedec9",
+                "url": "https://api.github.com/repos/beloop/Core/zipball/288c62cfce67d049184220c6166167f9d67d33d7",
+                "reference": "288c62cfce67d049184220c6166167f9d67d33d7",
                 "shasum": ""
             },
             "require": {
@@ -170,7 +170,7 @@
                 "core",
                 "lms"
             ],
-            "time": "2016-04-30 21:47:58"
+            "time": "2016-05-07 16:51:45"
         },
         {
             "name": "beloop/core-bundle",
