@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "9d1d4a85447f34df8fba590d1119e89a",
-    "content-hash": "e561c3298c534bfb658a872d5510313e",
+    "hash": "2e9cecc2c40b6db18ae907b159604dc8",
+    "content-hash": "ce16f94197ef61f3ccc8b44d9b5bd86a",
     "packages": [
         {
             "name": "beloop/analytics",

@@ -54,7 +54,7 @@ class LessonController extends AbstractAdminController
      *      methods = {"GET"}
      * )
      *
-     * @Template("AdminCourseBundle:Lesson:edit.html.twig")
+     * @Template
      *
      * @EntityAnnotation(
      *      class = {
@@ -90,7 +90,7 @@ class LessonController extends AbstractAdminController
             'form'    => $form->createView(),
         ];
     }
-    
+
     /**
      * Edit and save course
      *

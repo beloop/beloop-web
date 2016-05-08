@@ -113,6 +113,20 @@
         });
     </script>
     <script type="text/javascript">
+        var registerCancelEvent = function registerCancelEvent (target) {
+            var cancelNewLesson = target.querySelectorAll('a[data-action="new-lesson-cancel"]');
+            Array.prototype.forEach.call(cancelNewLesson, function (lesson) {
+                lesson.addEventListener('click', function (event) {
+                    event.preventDefault();
+
+                    var wrapper = this.closest('#lesson-new-wrapper');
+
+                    wrapper.removeChild(wrapper.firstChild);
+                    wrapper.classList.toggle('hidden');
+                });
+            });
+        };
+
         // Create new lesson
         var add = document.querySelectorAll('a[data-action="action-new"]');
         Array.prototype.forEach.call(add, function (action) {
@@ -125,6 +139,8 @@
                 $.get(url).done(function (response) {
                     $target.html(response);
                     $target.toggleClass('hidden');
+
+                    registerCancelEvent($target[0]);
                 });
             });
         });

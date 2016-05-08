@@ -1,0 +1,18 @@
+{% form_theme form 'AdminCommonBundle::Forms/fields.html.twig' %}
+
+<div class="panel panel-default panel-heading-fullwidth panel-borders panel-lesson">
+    <div class="panel-heading">
+        <span class="title">{{ 'New lesson' }}</span>
+    </div>
+    <div class="panel-body">
+        <div class="lesson-edit">
+            {{ form_start(form, { action: url('admin_lesson_save') }) }}
+            {{ form_rest(form) }}
+            <div class="spacer text-right">
+                <button type="submit" class="btn btn-space btn-primary">Submit</button>
+                <a href="#" data-action="new-lesson-cancel" class="btn btn-space btn-default">Cancel</a>
+            </div>
+            {{ form_end(form) }}
+        </div>
+    </div>
+</div>

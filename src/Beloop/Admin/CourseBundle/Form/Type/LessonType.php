@@ -66,6 +66,7 @@ class LessonType extends AbstractType
                 'required' => true,
                 'class' => 'Beloop\Component\Course\Entity\Course',
                 'choice_label' => 'name',
+                'attr' => [ 'class' => 'hidden' ],
             ])
             ->add('position', HiddenType::class, [
                 'required' => true,
