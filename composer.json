@@ -34,7 +34,7 @@
         "incenteev/composer-parameter-handler": "^2.0",
 
         "mmoreram/controller-extra-bundle": "^1.2.1",
-        "friendsofsymfony/jsrouting-bundle": "^1.6"
+        "friendsofsymfony/jsrouting-bundle": "^1.6",
 
         "beloop/analytics-bundle": "~0.4",
         "beloop/core-bundle": "~0.4",
