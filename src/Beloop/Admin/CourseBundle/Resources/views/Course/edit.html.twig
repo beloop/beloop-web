@@ -51,6 +51,7 @@
                             <a href="{{ url('admin_lesson_new', {courseId: course.id}) }}" class="btn btn-space btn-primary btn-md" data-action="action-new" data-target="#lesson-new-wrapper"><i class="icon icon-left s7-plus"></i> {{ 'admin.common.field.actions.new'|trans }}</a>
                         </div>
                         <div id="users" class="tab-pane">
+                            {% include 'AdminCourseBundle:Users:upload.html.twig' %}
                             {% include 'AdminCourseBundle:Users:list.html.twig' with {users: course.enrolledUsers} %}
                         </div>
                         {% endif %}
