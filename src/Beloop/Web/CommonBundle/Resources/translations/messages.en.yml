@@ -11,6 +11,15 @@ login:
     button:
         submit:
             placeholder: 'Enter'
+
+course:
+    description:
+        title: 'Description'
+    details:
+        title: 'Details'
+    enrolled_students:
+        title: 'Enrolled students'
+
 menu:
     dashboard:
         title: 'Dashboard'

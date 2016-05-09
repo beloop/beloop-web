@@ -45,6 +45,7 @@ class AppKernel extends Kernel
              * Beloop web bundles
              */
             new Beloop\Web\CommonBundle\CommonBundle(),
+            new Beloop\Web\CourseBundle\CourseBundle(),
             new Beloop\Web\DashboardBundle\DashboardBundle(),
             new Beloop\Web\UserBundle\WebUserBundle(),
         ];

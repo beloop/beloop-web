@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="page-head">
+        <h2>{{ course.name }}</h2>
+    </div>
+
+    <div class="main-content">
+        <div class="row">
+            <div class="col-xs-12 col-md-8">
+                <div class="sections">
+                    {% for lesson in course.lessons %}
+                        <div class="panel-group accordion accordion-color">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">{{ lesson.name }}</h4>
+                                </div>
+                                {#{% for module in section.modules %}#}
+                                    {#<div class="panel-body">#}
+                                        {#<a href="{{ path('view_module', {'id': module.id}) }}"><span class="s7-note"></span> {{ module.page.name }}</a>#}
+                                    {#</div>#}
+                                {#{% endfor %}#}
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <div class="hidden-xs hidden-sm col-md-4">
+                <h4 class="text-uppercase">{{ 'course.description.title'|trans }}</h4>
+                {{ course.description|raw }}
+
+                <h4 class="text-uppercase">{{ 'course.details.title'|trans }}</h4>
+                <div class="clearfix">
+                    <span class="s7-users"></span>
+                    <span>{{ 'course.enrolled_students.title'|trans }}</span>
+                    <span class="pull-right"> {{ course.enrolledUsers|length }}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
