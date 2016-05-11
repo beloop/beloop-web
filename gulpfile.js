@@ -9,7 +9,7 @@ gulp.task('clean', function () {
     return del([
         'web/css/**/*',
         'web/fonts/**/*',
-        'web/js/**/*',
+        'web/js/**/*'
     ]);
 });
 
@@ -21,17 +21,17 @@ gulp.task('copy-assets', function () {
 });
 
 gulp.task('less', function () {
-    return gulp.src('./web/less/login.less')
+    gulp.src('./web/less/login.less')
         .pipe(less())
         .pipe(cleanCSS())
         .pipe(rename('login.min.css'))
         .pipe(gulp.dest('./web/css'));
 
-    // return gulp.src('./web/less/style.less')
-    //     .pipe(less())
-    //     .pipe(cleanCSS())
-    //     .pipe(rename('style.min.css'))
-    //     .pipe(gulp.dest('./web/css'));
+    return gulp.src('./web/less/style.less')
+        .pipe(less())
+        .pipe(cleanCSS())
+        .pipe(rename('style.min.css'))
+        .pipe(gulp.dest('./web/css'));
 });
 
 gulp.task('build', ['clean'], function (callback) {

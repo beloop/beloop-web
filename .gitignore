@@ -7,6 +7,7 @@
 # Cache and logs (Symfony3)
 /var/cache/*
 /var/logs/*
+/var/sessions/*
 !var/cache/.gitkeep
 !var/logs/.gitkeep
 
@@ -28,6 +29,8 @@
 # Assets and user uploads
 /web/bundles/
 /web/uploads/
+/web/fonts/
+/web/css/
 
 # Assets managed by Bower
 /web/assets/vendor/
@@ -44,3 +47,6 @@
 
 # Editors
 .idea/
+
+# Node.js
+/node_modules/
