@@ -4,6 +4,7 @@ var cleanCSS = require('gulp-clean-css');
 var less = require('gulp-less');
 var rename = require("gulp-rename");
 var runSequence = require('run-sequence');
+var uglify = require('gulp-uglify');
 
 gulp.task('clean', function () {
     return del([
@@ -18,6 +19,15 @@ gulp.task('copy-assets', function () {
             './web/less/fonts/**/*.*'
         ])
         .pipe(gulp.dest('./web/fonts'));
+});
+
+gulp.task('javascript', function () {
+    return gulp.src([
+            './web/src/*.*'
+        ])
+        .pipe(uglify())
+        .pipe(rename('main.min.js'))
+        .pipe(gulp.dest('./web/js'));
 });
 
 gulp.task('less', function () {
@@ -36,8 +46,7 @@ gulp.task('less', function () {
 
 gulp.task('build', ['clean'], function (callback) {
     runSequence(
-        'copy-assets',
-        'less',
+        ['copy-assets', 'less', 'javascript'],
         callback
     );
 });
