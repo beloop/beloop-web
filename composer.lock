@@ -237,20 +237,21 @@
         },
         {
             "name": "beloop/course",
-            "version": "0.4.3",
+            "version": "0.4.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/beloop/Course.git",
-                "reference": "eb348f4875e905899e1b761e219ffd74fb03486b"
+                "reference": "4a7ceba2def202740ae4f2c5aacde70bedf34349"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/beloop/Course/zipball/eb348f4875e905899e1b761e219ffd74fb03486b",
-                "reference": "eb348f4875e905899e1b761e219ffd74fb03486b",
+                "url": "https://api.github.com/repos/beloop/Course/zipball/4a7ceba2def202740ae4f2c5aacde70bedf34349",
+                "reference": "4a7ceba2def202740ae4f2c5aacde70bedf34349",
                 "shasum": ""
             },
             "require": {
                 "beloop/core": "^0.4",
+                "beloop/language": "^0.4",
                 "doctrine/common": "^2.5",
                 "doctrine/orm": "^2.5",
                 "php": "^5.5|^7.0",
@@ -291,20 +292,20 @@
                 "course",
                 "lms"
             ],
-            "time": "2016-05-08 08:44:38"
+            "time": "2016-05-08 17:45:02"
         },
         {
             "name": "beloop/course-bundle",
-            "version": "0.4.3",
+            "version": "0.4.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/beloop/CourseBundle.git",
-                "reference": "1109717592e8fef5a9c65d76487ee922f027c131"
+                "reference": "ef2dbc997af7a65090dd6a1b2edf932c27d07ae9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/beloop/CourseBundle/zipball/1109717592e8fef5a9c65d76487ee922f027c131",
-                "reference": "1109717592e8fef5a9c65d76487ee922f027c131",
+                "url": "https://api.github.com/repos/beloop/CourseBundle/zipball/ef2dbc997af7a65090dd6a1b2edf932c27d07ae9",
+                "reference": "ef2dbc997af7a65090dd6a1b2edf932c27d07ae9",
                 "shasum": ""
             },
             "require": {
@@ -348,7 +349,7 @@
                 "course",
                 "lms"
             ],
-            "time": "2016-05-08 08:44:38"
+            "time": "2016-05-08 17:45:02"
         },
         {
             "name": "beloop/language",
@@ -472,16 +473,16 @@
         },
         {
             "name": "beloop/user",
-            "version": "0.4.2",
+            "version": "0.4.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/beloop/User.git",
-                "reference": "f630568e065fe9a53d15eeadd2123b21b14bb90f"
+                "reference": "9f79014e240305c04aaf2c28238a27b7dfd01383"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/beloop/User/zipball/f630568e065fe9a53d15eeadd2123b21b14bb90f",
-                "reference": "f630568e065fe9a53d15eeadd2123b21b14bb90f",
+                "url": "https://api.github.com/repos/beloop/User/zipball/9f79014e240305c04aaf2c28238a27b7dfd01383",
+                "reference": "9f79014e240305c04aaf2c28238a27b7dfd01383",
                 "shasum": ""
             },
             "require": {
@@ -528,20 +529,20 @@
                 "lms",
                 "user"
             ],
-            "time": "2016-04-24 13:26:47"
+            "time": "2016-05-08 17:45:02"
         },
         {
             "name": "beloop/user-bundle",
-            "version": "0.4.4",
+            "version": "0.4.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/beloop/UserBundle.git",
-                "reference": "57b4a6c7fb3b0687a87169c688600aa125c2cb34"
+                "reference": "1144c37da94100c9a472854f69d76ba32b0ff4d6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/beloop/UserBundle/zipball/57b4a6c7fb3b0687a87169c688600aa125c2cb34",
-                "reference": "57b4a6c7fb3b0687a87169c688600aa125c2cb34",
+                "url": "https://api.github.com/repos/beloop/UserBundle/zipball/1144c37da94100c9a472854f69d76ba32b0ff4d6",
+                "reference": "1144c37da94100c9a472854f69d76ba32b0ff4d6",
                 "shasum": ""
             },
             "require": {
@@ -590,7 +591,7 @@
                 "lms",
                 "user"
             ],
-            "time": "2016-05-08 08:44:38"
+            "time": "2016-05-08 18:02:56"
         },
         {
             "name": "doctrine/annotations",
@@ -2870,16 +2871,16 @@
         },
         {
             "name": "symfony/symfony",
-            "version": "v2.8.5",
+            "version": "v2.8.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/symfony.git",
-                "reference": "39ddd2383f4113cf67f8b28cde2c9d3fa340c3c2"
+                "reference": "8408816780215fae055599d100b5385d9a247151"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/symfony/zipball/39ddd2383f4113cf67f8b28cde2c9d3fa340c3c2",
-                "reference": "39ddd2383f4113cf67f8b28cde2c9d3fa340c3c2",
+                "url": "https://api.github.com/repos/symfony/symfony/zipball/8408816780215fae055599d100b5385d9a247151",
+                "reference": "8408816780215fae055599d100b5385d9a247151",
                 "shasum": ""
             },
             "require": {
@@ -3000,7 +3001,7 @@
             "keywords": [
                 "framework"
             ],
-            "time": "2016-04-29 15:34:08"
+            "time": "2016-05-09 21:45:54"
         },
         {
             "name": "twig/twig",
@@ -3159,7 +3160,7 @@
         },
         {
             "name": "symfony/phpunit-bridge",
-            "version": "v3.0.5",
+            "version": "v3.0.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/phpunit-bridge.git",
