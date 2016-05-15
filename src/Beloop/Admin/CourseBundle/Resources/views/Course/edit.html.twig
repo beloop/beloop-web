@@ -51,7 +51,7 @@
                             <a href="{{ url('admin_lesson_new', {courseId: course.id}) }}" class="btn btn-space btn-primary btn-md" data-action="action-new" data-target="#lesson-new-wrapper"><i class="icon icon-left s7-plus"></i> {{ 'admin.common.field.actions.new'|trans }}</a>
                         </div>
                         <div id="users" class="tab-pane">
-                            {% include 'AdminCourseBundle:Users:upload.html.twig' %}
+                            {% include 'AdminCourseBundle:Users:upload.html.twig' with {courseId: course.id} %}
                             {% include 'AdminCourseBundle:Users:list.html.twig' with {users: course.enrolledUsers} %}
                         </div>
                         {% endif %}
@@ -66,7 +66,7 @@
     {{ parent() }}
     <script src="{{ asset('bundles/fosjsrouting/js/router.js') }}"></script>
     <script src="{{ path('fos_js_routing_js', {"callback": "fos.Router.setData"}) }}"></script>
-    <script type="text/javascript" src="{{ asset('lib/sortable/sortable.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('vendor/sortable/sortable.min.js') }}"></script>
     <script type="text/javascript">
         // Drag & Drop lessons to update positions
         var el = document.getElementById('lessons');

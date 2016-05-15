@@ -17,6 +17,7 @@ namespace Beloop\Admin\CourseBundle\Controller;
 
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Form\FormView;
 
 use Doctrine\ORM\Tools\Pagination\Paginator;
@@ -178,6 +179,52 @@ class CourseController extends AbstractAdminController
         return [
             'course'  => $course,
             'form'    => $formView,
+        ];
+    }
+
+    /**
+     * Enroll users on course
+     *
+     * @param CourseInterface $course
+     *
+     * @param Request $request
+     * @return array
+     * @Route(
+     *      path = "/enroll/{id}",
+     *      name = "admin_course_enroll_users",
+     *      methods = {"POST"},
+     *      options = {
+     *          "expose" = "true"
+     *      }
+     * )
+     *
+     * @Template("AdminCourseBundle:Users:list.html.twig")
+     *
+     * @EntityAnnotation(
+     *      class = {
+     *          "factory" = "beloop.factory.course",
+     *          "method" = "create",
+     *          "static" = false
+     *      },
+     *      name = "course",
+     *      mapping = {
+     *          "id" = "~id~"
+     *      },
+     *      mappingFallback = true,
+     *      persist = true
+     * )
+     */
+    public function enrollUsers(
+        CourseInterface $course,
+        Request $request
+    ) {
+        $csv = $request->request->get('csv');
+
+        $this->get('beloop.user_enrollment')->enrolFromCSV($course, $csv);
+
+        return [
+            'course' => $course,
+            'users' => $course->getEnrolledUsers()
         ];
     }
 }
