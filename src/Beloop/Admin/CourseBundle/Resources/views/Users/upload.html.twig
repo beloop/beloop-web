@@ -1,50 +1,59 @@
 <form id="upload_users" action="#" class="dropzone dz-clickable">
     <div class="dz-message">
-        <div class="icon"><span class="s7-cloud-upload"></span></div>
         <h2>Drop students CSV here</h2>
         <span class="note">Uploading...</span>
     </div>
 </form>
 
 <script type="text/javascript">
-    var holder = document.getElementById('upload_users');
+    window.onload = function () {
+        var holder = document.getElementById('upload_users');
+        var list = document.getElementById('list_users');
 
-    var sendCSVContent = function (event) {
-        $.post(
-                Routing.generate('admin_course_enroll_users', { id: {{ courseId }} }),
-                {
-                    'csv': event.target.result
-                }
-        ).done(function() {
-            console.log('upload success');
-        });
-    };
+        var sendCSVContent = function (event) {
+            $.post(
+                    Routing.generate('admin_course_enroll_users', { id: {{ courseId }} }),
+                    {
+                        'csv': event.target.result
+                    }
+            ).done(function (response) {
+                holder.classList.remove('uploading');
+                holder.classList.remove('hover');
 
-    holder.ondragover = function () {
-        this.classList.add('hover');
+                list.outerHTML = response;
+            }).fail(function (error) {
+                holder.classList.remove('uploading');
+                holder.classList.remove('hover');
 
-        return false;
-    };
+                alert('Something went wrong uploading users. Please, check the logs');
+                console.error(error);
+            });
+        };
 
-    holder.ondragleave = function () {
-        this.classList.remove('hover');
+        holder.ondragover = function () {
+            this.classList.add('hover');
 
-        return false;
-    };
+            return false;
+        };
 
-    holder.ondrop = function (event) {
-        event.preventDefault();
+        holder.ondragleave = function () {
+            this.classList.remove('hover');
 
-        this.classList.remove('hover');
+            return false;
+        };
 
-        var file = event.dataTransfer.files[0];
-        var reader = new FileReader();
+        holder.ondrop = function (event) {
+            event.preventDefault();
 
-        reader.onload = sendCSVContent;
+            this.classList.add('uploading');
 
-        console.log(file);
-        reader.readAsText(file);
+            var file = event.dataTransfer.files[0];
+            var reader = new FileReader();
 
-        return false;
+            reader.onload = sendCSVContent;
+            reader.readAsText(file);
+
+            return false;
+        };
     };
 </script>

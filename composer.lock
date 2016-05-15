@@ -237,16 +237,16 @@
         },
         {
             "name": "beloop/course",
-            "version": "0.4.6",
+            "version": "0.4.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/beloop/Course.git",
-                "reference": "2b7a7e9668cf6554ba66ee77d2caa26a1addf8ca"
+                "reference": "4f1d36085bbd9e19816ab5f7a1104dd3a20c7d1d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/beloop/Course/zipball/2b7a7e9668cf6554ba66ee77d2caa26a1addf8ca",
-                "reference": "2b7a7e9668cf6554ba66ee77d2caa26a1addf8ca",
+                "url": "https://api.github.com/repos/beloop/Course/zipball/4f1d36085bbd9e19816ab5f7a1104dd3a20c7d1d",
+                "reference": "4f1d36085bbd9e19816ab5f7a1104dd3a20c7d1d",
                 "shasum": ""
             },
             "require": {
@@ -292,7 +292,7 @@
                 "course",
                 "lms"
             ],
-            "time": "2016-05-14 21:07:13"
+            "time": "2016-05-15 09:46:30"
         },
         {
             "name": "beloop/course-bundle",
