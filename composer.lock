@@ -4,21 +4,21 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "1d5c8b885599e4b9e58edb0bfa6654bf",
-    "content-hash": "59271aaac06a02d8d2be130eaa4899ce",
+    "hash": "b9499dc0abc5f7a45b33e3bfba6eb59b",
+    "content-hash": "2689ffc8d035df2b529d6c4da2bbbc39",
     "packages": [
         {
             "name": "beloop/analytics",
-            "version": "0.4.1",
+            "version": "0.4.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/beloop/Analytics.git",
-                "reference": "43211573e90156e7695ed6496635c2888894ee66"
+                "reference": "396f2436ac4efbe99cc011fb1be7f32238980a67"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/beloop/Analytics/zipball/43211573e90156e7695ed6496635c2888894ee66",
-                "reference": "43211573e90156e7695ed6496635c2888894ee66",
+                "url": "https://api.github.com/repos/beloop/Analytics/zipball/396f2436ac4efbe99cc011fb1be7f32238980a67",
+                "reference": "396f2436ac4efbe99cc011fb1be7f32238980a67",
                 "shasum": ""
             },
             "require": {
@@ -45,7 +45,7 @@
             "authors": [
                 {
                     "name": "Arkaitz Garro",
-                    "email": "arkaitz.garro@gamil.com"
+                    "email": "arkaitz.garro@gmail.com"
                 }
             ],
             "description": "Beloop Analytics Component",
@@ -56,20 +56,20 @@
                 "component",
                 "lms"
             ],
-            "time": "2016-05-07 11:12:39"
+            "time": "2016-05-15 17:45:47"
         },
         {
             "name": "beloop/analytics-bundle",
-            "version": "0.4.1",
+            "version": "0.4.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/beloop/AnalyticsBundle.git",
-                "reference": "998cb136314dba41f872da459d7deda8d90587a0"
+                "reference": "280ed89d86c1e857bffd248d3d6b397d133353ca"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/beloop/AnalyticsBundle/zipball/998cb136314dba41f872da459d7deda8d90587a0",
-                "reference": "998cb136314dba41f872da459d7deda8d90587a0",
+                "url": "https://api.github.com/repos/beloop/AnalyticsBundle/zipball/280ed89d86c1e857bffd248d3d6b397d133353ca",
+                "reference": "280ed89d86c1e857bffd248d3d6b397d133353ca",
                 "shasum": ""
             },
             "require": {
@@ -109,7 +109,7 @@
             "authors": [
                 {
                     "name": "Arkaitz Garro",
-                    "email": "arkaitz.garro@gamil.com"
+                    "email": "arkaitz.garro@gmail.com"
                 }
             ],
             "description": "Beloop Analytics Bundle",
@@ -119,7 +119,7 @@
                 "beloop",
                 "lms"
             ],
-            "time": "2016-05-07 11:12:39"
+            "time": "2016-05-15 17:45:47"
         },
         {
             "name": "beloop/core",
@@ -237,16 +237,16 @@
         },
         {
             "name": "beloop/course",
-            "version": "0.4.7",
+            "version": "0.4.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/beloop/Course.git",
-                "reference": "4f1d36085bbd9e19816ab5f7a1104dd3a20c7d1d"
+                "reference": "18eb01ab15ede3e0609d2c2313c823643ac7d840"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/beloop/Course/zipball/4f1d36085bbd9e19816ab5f7a1104dd3a20c7d1d",
-                "reference": "4f1d36085bbd9e19816ab5f7a1104dd3a20c7d1d",
+                "url": "https://api.github.com/repos/beloop/Course/zipball/18eb01ab15ede3e0609d2c2313c823643ac7d840",
+                "reference": "18eb01ab15ede3e0609d2c2313c823643ac7d840",
                 "shasum": ""
             },
             "require": {
@@ -281,7 +281,7 @@
             "authors": [
                 {
                     "name": "Arkaitz Garro",
-                    "email": "arkaitz.garro@gamil.com"
+                    "email": "arkaitz.garro@gmail.com"
                 }
             ],
             "description": "Beloop Course Component",
@@ -292,20 +292,20 @@
                 "course",
                 "lms"
             ],
-            "time": "2016-05-15 09:46:30"
+            "time": "2016-05-16 08:20:59"
         },
         {
             "name": "beloop/course-bundle",
-            "version": "0.4.5",
+            "version": "0.4.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/beloop/CourseBundle.git",
-                "reference": "81e5dfa5f4b4f267eb151da54cfe31b4b699179e"
+                "reference": "ebbfa6fce2734c801a9954093fec99d8250aaf03"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/beloop/CourseBundle/zipball/81e5dfa5f4b4f267eb151da54cfe31b4b699179e",
-                "reference": "81e5dfa5f4b4f267eb151da54cfe31b4b699179e",
+                "url": "https://api.github.com/repos/beloop/CourseBundle/zipball/ebbfa6fce2734c801a9954093fec99d8250aaf03",
+                "reference": "ebbfa6fce2734c801a9954093fec99d8250aaf03",
                 "shasum": ""
             },
             "require": {
@@ -339,7 +339,7 @@
             "authors": [
                 {
                     "name": "Arkaitz Garro",
-                    "email": "arkaitz.garro@gamil.com"
+                    "email": "arkaitz.garro@gmail.com"
                 }
             ],
             "description": "Beloop Product Bundle",
@@ -349,7 +349,7 @@
                 "course",
                 "lms"
             ],
-            "time": "2016-05-14 21:23:32"
+            "time": "2016-05-16 08:20:59"
         },
         {
             "name": "beloop/language",
@@ -470,6 +470,131 @@
                 "lms"
             ],
             "time": "2016-05-08 08:44:38"
+        },
+        {
+            "name": "beloop/squarespace",
+            "version": "0.4.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/beloop/Squarespace.git",
+                "reference": "0f295187d9c9eb999090ac0613d116a82d220a4f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/beloop/Squarespace/zipball/0f295187d9c9eb999090ac0613d116a82d220a4f",
+                "reference": "0f295187d9c9eb999090ac0613d116a82d220a4f",
+                "shasum": ""
+            },
+            "require": {
+                "beloop/core": "^0.4",
+                "beloop/course": "^0.4",
+                "doctrine/common": "^2.5",
+                "doctrine/orm": "^2.5",
+                "league/csv": "^8.0.0",
+                "php": "^5.5|^7.0",
+                "symfony/property-access": "^2.7|^3.0",
+                "symfony/security-core": "^2.7|^3.0",
+                "twig/twig": "^1.23"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "4.8.19"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.4-dev"
+                }
+            },
+            "autoload": {
+                "exclude-from-classmap": [
+                    "/Test/"
+                ],
+                "psr-4": {
+                    "Beloop\\Component\\Squarespace\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Arkaitz Garro",
+                    "email": "arkaitz.garro@gmail.com"
+                }
+            ],
+            "description": "Beloop Squarespace Component",
+            "homepage": "https://github.com/beloop/Squarespace",
+            "keywords": [
+                "beloop",
+                "component",
+                "lms",
+                "squarespace"
+            ],
+            "time": "2016-05-16 08:24:44"
+        },
+        {
+            "name": "beloop/squarespace-bundle",
+            "version": "0.4.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/beloop/SquarespaceBundle.git",
+                "reference": "fc79de61ea60002a1a6723ecceab55abf5ce6a5c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/beloop/SquarespaceBundle/zipball/fc79de61ea60002a1a6723ecceab55abf5ce6a5c",
+                "reference": "fc79de61ea60002a1a6723ecceab55abf5ce6a5c",
+                "shasum": ""
+            },
+            "require": {
+                "beloop/core-bundle": "^0.4",
+                "beloop/course-bundle": "^0.4",
+                "beloop/squarespace": "^0.4",
+                "doctrine/common": "^2.5",
+                "doctrine/orm": "^2.5",
+                "mmoreram/simple-doctrine-mapping": "^1.0",
+                "mmoreram/symfony-bundle-dependencies": "^1.1.1",
+                "php": "^5.5|^7.0",
+                "symfony/config": "^2.7|^3.0",
+                "symfony/dependency-injection": "^2.7|^3.0",
+                "symfony/http-kernel": "^2.7|^3.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "4.8.19"
+            },
+            "type": "symfony-bundle",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.4-dev"
+                }
+            },
+            "autoload": {
+                "exclude-from-classmap": [
+                    "/Test/"
+                ],
+                "psr-4": {
+                    "Beloop\\Bundle\\SquarespaceBundle\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Arkaitz Garro",
+                    "email": "arkaitz.garro@gmail.com"
+                }
+            ],
+            "description": "Beloop Squarespace Bundle",
+            "homepage": "https://github.com/beloop/SquarespaceBundle",
+            "keywords": [
+                "beloop",
+                "lms",
+                "squarespace"
+            ],
+            "time": "2016-05-16 08:24:44"
         },
         {
             "name": "beloop/user",
