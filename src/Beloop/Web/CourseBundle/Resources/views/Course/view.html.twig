@@ -15,11 +15,11 @@
                                 <div class="panel-heading">
                                     <h4 class="panel-title">{{ lesson.name }}</h4>
                                 </div>
-                                {#{% for module in section.modules %}#}
-                                    {#<div class="panel-body">#}
-                                        {#<a href="{{ path('view_module', {'id': module.id}) }}"><span class="s7-note"></span> {{ module.page.name }}</a>#}
-                                    {#</div>#}
-                                {#{% endfor %}#}
+                                {% for module in lesson.modules %}
+                                    <div class="panel-body">
+                                        <a href="{{ path('beloop_view_module_' ~ module.type, {'code': course.code, 'id': module.id}) }}"><span class="s7-note"></span> {{ module.name }}</a>
+                                    </div>
+                                {% endfor %}
                             </div>
                         </div>
                     {% endfor %}

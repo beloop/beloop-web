@@ -34,6 +34,7 @@ class AppKernel extends Kernel
             new Beloop\Bundle\CourseBundle\BeloopCourseBundle(),
             new Beloop\Bundle\LanguageBundle\BeloopLanguageBundle(),
             new Beloop\Bundle\UserBundle\BeloopUserBundle(),
+            new Beloop\Bundle\SquarespaceBundle\BeloopSquarespaceBundle(),
 
             /**
              * Beloop admin bundles

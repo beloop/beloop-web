@@ -14,7 +14,7 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('css/style.min.css') }}"/>
 </head>
 <body>
-<div class="am-wrapper am-fixed-sidebar am-white-header">
+<div class="am-wrapper am-fixed-sidebar am-white-header {% block body_class %}{% endblock %}">
     {% block navbar %}
     {% include 'CommonBundle:Header:navbar.html.twig' with {nav_title: block('nav_title')} %}
     {% endblock %}

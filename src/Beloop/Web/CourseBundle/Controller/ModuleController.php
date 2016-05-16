@@ -21,49 +21,22 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 use Mmoreram\ControllerExtraBundle\Annotation\Entity as EntityAnnotation;
 
-use Beloop\Component\Course\Entity\Interfaces\CourseInterface;
+use Beloop\Component\Course\Entity\Interfaces\ModuleInterface;
 
 /**
- * Class Controller for Course
+ * Class ModuleController
  */
-class CourseController extends Controller
+class ModuleController extends Controller
 {
     /**
-     * List of my courses
+     * View regular page module
      *
+     * @param ModuleInterface $page
      * @return array
      *
      * @Route(
-     *      path = "/my-courses",
-     *      name = "beloop_my_courses",
-     *      methods = {"GET"}
-     * )
-     *
-     * @Template
-     */
-    public function listAction()
-    {
-        $user = $this->getUser();
-        
-        $courses = $this->get('beloop.repository.course')->findByUser($user);
-
-        return [
-            'section' => 'my-courses',
-            'user' => $user,
-            'courses' => $courses,
-        ];
-    }
-
-    /**
-     * View course information
-     *
-     * @param CourseInterface $course
-     * 
-     * @return array
-     * 
-     * @Route(
-     *      path = "/course/{code}",
-     *      name = "beloop_view_course",
+     *      path = "/course/{code}/page/{id}",
+     *      name = "beloop_view_module_regular_page",
      *      methods = {"GET"}
      * )
      *
@@ -71,22 +44,54 @@ class CourseController extends Controller
      *
      * @EntityAnnotation(
      *      class = {
-     *          "factory" = "beloop.factory.course",
+     *          "factory" = "beloop.factory.page",
      *          "method" = "create",
      *          "static" = false
      *      },
-     *      name = "course",
+     *      name = "page",
      *      mapping = {
-     *          "code" = "~code~"
+     *          "id" = "~id~"
      *      },
      *      mappingFallback = true
      * )
      */
-    public function viewAction(CourseInterface $course)
+    public function viewPageAction(ModuleInterface $page)
+    {
+
+    }
+
+    /**
+     * View squarespace page module
+     *
+     * @param ModuleInterface $page
+     * @return array
+     *
+     * @Route(
+     *      path = "/course/{code}/sq-page/{id}",
+     *      name = "beloop_view_module_squarespace_page",
+     *      methods = {"GET"}
+     * )
+     *
+     * @Template
+     *
+     * @EntityAnnotation(
+     *      class = {
+     *          "factory" = "beloop.factory.squarespace_page",
+     *          "method" = "create",
+     *          "static" = false
+     *      },
+     *      name = "page",
+     *      mapping = {
+     *          "id" = "~id~"
+     *      },
+     *      mappingFallback = true
+     * )
+     */
+    public function viewSquarespacePageAction(ModuleInterface $page)
     {
         $user = $this->getUser();
 
-        $userEnrolled = $course->getEnrolledUsers()->contains($user);
+        $userEnrolled = $page->getCourse()->getEnrolledUsers()->contains($user);
 
         if (!$userEnrolled) {
             throw $this->createNotFoundException('The course does not exist');
@@ -95,7 +100,8 @@ class CourseController extends Controller
         return [
             'section' => 'my-courses',
             'user' => $user,
-            'course' => $course
+            'course' => $page->getCourse(),
+            'page' => $page,
         ];
     }
 }

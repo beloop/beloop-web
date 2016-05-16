@@ -8604,7 +8604,7 @@ button:focus {
     position: relative;
     left: 0;
     margin-left: 100px;
-    min-height: 100%
+    height: 100%
 }
 
 .am-animate .am-content {
