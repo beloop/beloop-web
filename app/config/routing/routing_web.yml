@@ -6,3 +6,6 @@ dashboard_routes:
 
 my_courses_routes:
     resource: "@CourseBundle/Resources/config/routing.yml"
+
+squarespace_routes:
+    resource: "@BeloopSquarespaceBundle/Resources/config/routing.yml"

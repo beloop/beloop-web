@@ -59,49 +59,4 @@ class ModuleController extends Controller
     {
 
     }
-
-    /**
-     * View squarespace page module
-     *
-     * @param ModuleInterface $page
-     * @return array
-     *
-     * @Route(
-     *      path = "/course/{code}/sq-page/{id}",
-     *      name = "beloop_view_module_squarespace_page",
-     *      methods = {"GET"}
-     * )
-     *
-     * @Template
-     *
-     * @EntityAnnotation(
-     *      class = {
-     *          "factory" = "beloop.factory.squarespace_page",
-     *          "method" = "create",
-     *          "static" = false
-     *      },
-     *      name = "page",
-     *      mapping = {
-     *          "id" = "~id~"
-     *      },
-     *      mappingFallback = true
-     * )
-     */
-    public function viewSquarespacePageAction(ModuleInterface $page)
-    {
-        $user = $this->getUser();
-
-        $userEnrolled = $page->getCourse()->getEnrolledUsers()->contains($user);
-
-        if (!$userEnrolled) {
-            throw $this->createNotFoundException('The course does not exist');
-        }
-
-        return [
-            'section' => 'my-courses',
-            'user' => $user,
-            'course' => $page->getCourse(),
-            'page' => $page,
-        ];
-    }
 }

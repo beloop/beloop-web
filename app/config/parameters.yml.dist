@@ -24,3 +24,4 @@ parameters:
     secret:            ThisTokenIsNotSoSecretChangeIt
 
     beloop_admin_prefix: 'admin'
+    squarespace_password: '1234'

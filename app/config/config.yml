@@ -88,3 +88,15 @@ swiftmailer:
     username:  "%mailer_user%"
     password:  "%mailer_password%"
     spool:     { type: memory }
+
+guzzle:
+    clients:
+        api_squarespace:
+            base_url: "https://dyb-courses.squarespace.com"
+            headers:
+                Accept: "*/*"
+                Host: "dyb-courses.squarespace.com"
+
+beloop_squarespace:
+    authorization:
+        password: "%squarespace_password%"
