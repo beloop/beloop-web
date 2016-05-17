@@ -12,6 +12,13 @@ login:
         submit:
             placeholder: 'Enter'
 
+password:
+    forgot:
+        text: 'Forgot your password? Don''t worry, we''ll send you an email to reset your password.'
+    button:
+        reset:
+            placeholder: 'Reset password'
+
 course:
     description:
         title: 'Description'

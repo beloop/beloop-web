@@ -13,18 +13,18 @@
  * @author Arkaitz Garro <arkaitz.garro@gmail.com>
  */
 
-namespace Beloop\Web\UserBundle\DependencyInjection;
+namespace Beloop\Web\CommonBundle\DependencyInjection;
 
 use Beloop\Bundle\CoreBundle\DependencyInjection\Abstracts\AbstractExtension;
 
-class WebUserExtension extends AbstractExtension
+class WebCommonExtension extends AbstractExtension
 {
     /**
      * @var string
      *
      * Extension name
      */
-    const EXTENSION_NAME = 'beloop_web_user';
+    const EXTENSION_NAME = 'beloop_web_common';
 
     /**
      * Get the Config file location
@@ -34,6 +34,41 @@ class WebUserExtension extends AbstractExtension
     public function getConfigFilesLocation()
     {
         return __DIR__ . '/../Resources/config';
+    }
+
+    /**
+     * Return a new Configuration instance.
+     *
+     * If object returned by this method is an instance of
+     * ConfigurationInterface, extension will use the Configuration to read all
+     * bundle config definitions.
+     *
+     * Also will call getParametrizationValues method to load some config values
+     * to internal parameters.
+     *
+     * @return ConfigurationInterface Configuration file
+     */
+    protected function getConfigurationInstance()
+    {
+        return new Configuration();
+    }
+
+    /**
+     * Load Parametrization definition
+     *
+     * return array(
+     *      'parameter1' => $config['parameter1'],
+     *      'parameter2' => $config['parameter2'],
+     *      ...
+     * );
+     *
+     * @param array $config Bundles config values
+     *
+     * @return array Parametrization values
+     */
+    protected function getParametrizationValues(array $config)
+    {
+        return [];
     }
 
     /**
@@ -53,7 +88,6 @@ class WebUserExtension extends AbstractExtension
     {
         return [
             'eventListeners',
-            'formTypes',
         ];
     }
 

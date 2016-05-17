@@ -123,16 +123,16 @@
         },
         {
             "name": "beloop/core",
-            "version": "0.4.3",
+            "version": "0.4.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/beloop/Core.git",
-                "reference": "288c62cfce67d049184220c6166167f9d67d33d7"
+                "reference": "bffdc49047d26448893bd6feb7025d4e5d6cf939"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/beloop/Core/zipball/288c62cfce67d049184220c6166167f9d67d33d7",
-                "reference": "288c62cfce67d049184220c6166167f9d67d33d7",
+                "url": "https://api.github.com/repos/beloop/Core/zipball/bffdc49047d26448893bd6feb7025d4e5d6cf939",
+                "reference": "bffdc49047d26448893bd6feb7025d4e5d6cf939",
                 "shasum": ""
             },
             "require": {
@@ -159,7 +159,7 @@
             "authors": [
                 {
                     "name": "Arkaitz Garro",
-                    "email": "arkaitz.garro@gamil.com"
+                    "email": "arkaitz.garro@gmail.com"
                 }
             ],
             "description": "Beloop Core Component",
@@ -170,20 +170,20 @@
                 "core",
                 "lms"
             ],
-            "time": "2016-05-07 16:51:45"
+            "time": "2016-05-17 08:27:40"
         },
         {
             "name": "beloop/core-bundle",
-            "version": "0.4.3",
+            "version": "0.4.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/beloop/CoreBundle.git",
-                "reference": "eb77a6a00aa0f9636fe864a5babc799515fe8bae"
+                "reference": "3530af81766f19b6b22c502472071be71ac81b4a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/beloop/CoreBundle/zipball/eb77a6a00aa0f9636fe864a5babc799515fe8bae",
-                "reference": "eb77a6a00aa0f9636fe864a5babc799515fe8bae",
+                "url": "https://api.github.com/repos/beloop/CoreBundle/zipball/3530af81766f19b6b22c502472071be71ac81b4a",
+                "reference": "3530af81766f19b6b22c502472071be71ac81b4a",
                 "shasum": ""
             },
             "require": {
@@ -223,7 +223,7 @@
             "authors": [
                 {
                     "name": "Arkaitz Garro",
-                    "email": "arkaitz.garro@gamil.com"
+                    "email": "arkaitz.garro@gmail.com"
                 }
             ],
             "description": "Beloop Core Bundle",
@@ -233,7 +233,7 @@
                 "core",
                 "lms"
             ],
-            "time": "2016-05-07 16:51:45"
+            "time": "2016-05-17 08:27:40"
         },
         {
             "name": "beloop/course",
@@ -600,16 +600,16 @@
         },
         {
             "name": "beloop/user",
-            "version": "0.4.7",
+            "version": "0.4.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/beloop/User.git",
-                "reference": "e9a114be46671b0734fdf78efa27cd2a1175f9be"
+                "reference": "1e1151bb2ffce81208d00a0a5df372eaa0e15a37"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/beloop/User/zipball/e9a114be46671b0734fdf78efa27cd2a1175f9be",
-                "reference": "e9a114be46671b0734fdf78efa27cd2a1175f9be",
+                "url": "https://api.github.com/repos/beloop/User/zipball/1e1151bb2ffce81208d00a0a5df372eaa0e15a37",
+                "reference": "1e1151bb2ffce81208d00a0a5df372eaa0e15a37",
                 "shasum": ""
             },
             "require": {
@@ -647,7 +647,7 @@
             "authors": [
                 {
                     "name": "Arkaitz Garro",
-                    "email": "arkaitz.garro@gamil.com"
+                    "email": "arkaitz.garro@gmail.com"
                 }
             ],
             "description": "Beloop User Component",
@@ -658,20 +658,20 @@
                 "lms",
                 "user"
             ],
-            "time": "2016-05-14 10:59:50"
+            "time": "2016-05-17 09:45:40"
         },
         {
             "name": "beloop/user-bundle",
-            "version": "0.4.7",
+            "version": "0.4.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/beloop/UserBundle.git",
-                "reference": "17e4035f97f8af8f040047d4c14330b714cc5a01"
+                "reference": "8c8ba150c25cf83400a9ed225754414d28fa5f45"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/beloop/UserBundle/zipball/17e4035f97f8af8f040047d4c14330b714cc5a01",
-                "reference": "17e4035f97f8af8f040047d4c14330b714cc5a01",
+                "url": "https://api.github.com/repos/beloop/UserBundle/zipball/8c8ba150c25cf83400a9ed225754414d28fa5f45",
+                "reference": "8c8ba150c25cf83400a9ed225754414d28fa5f45",
                 "shasum": ""
             },
             "require": {
@@ -710,7 +710,7 @@
             "authors": [
                 {
                     "name": "Arkaitz Garro",
-                    "email": "arkaitz.garro@gamil.com"
+                    "email": "arkaitz.garro@gmail.com"
                 }
             ],
             "description": "Beloop User Bundle",
@@ -720,7 +720,7 @@
                 "lms",
                 "user"
             ],
-            "time": "2016-05-14 21:23:32"
+            "time": "2016-05-17 10:00:09"
         },
         {
             "name": "doctrine/annotations",

@@ -11,6 +11,10 @@ security:
             roles: ROLE_ADMIN
 
         # web
+        password_area:
+            path: ^/password/.*
+            roles: IS_AUTHENTICATED_ANONYMOUSLY
+
         public_area:
             path: ^/.+
             roles: ROLE_USER

@@ -16,11 +16,21 @@
 namespace Beloop\Web\CommonBundle;
 
 use Beloop\Bundle\CoreBundle\Abstracts\AbstractBundle;
+use Beloop\Web\CommonBundle\DependencyInjection\WebCommonExtension;
 
 /**
  * Class CommonBundle
  */
 class CommonBundle extends AbstractBundle
 {
+    /**
+     * Returns the bundle's container extension.
+     *
+     * @return ExtensionInterface The container extension
+     */
+    public function getContainerExtension()
+    {
+        return new WebCommonExtension();
+    }
 
 }

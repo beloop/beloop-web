@@ -1,75 +1,50 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta name="description" content="Delicious Yet Beautiful Login Page">
-    <meta name="author" content="Arkaitz Garro">
-    <link rel="shortcut icon" href="{{ asset('img/favicon.ico') }}">
-    <title>Login | Delicious Yet Beautiful</title>
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/login.min.css') }}"/>
-</head>
-<body class="am-splash-screen">
-<div class="am-wrapper am-login">
-    <div class="am-content">
-        <div class="main-content">
-            <div class="login-container">
-                <div class="panel panel-default">
-                    <div class="panel-heading"><img src="{{ asset('img/dyb-logo.png') }}" alt="logo" width="120px" height="71px" class="logo-img"><span>{{ 'login.text.welcome'|trans }}</span></div>
-                    <div class="panel-body">
-                        {{ form_start(form, {
-                            attr: {
-                                class: 'form-horizontal',
-                                autocomplete: 'nope'
-                            }
-                        }) }}
-                            <input type="hidden" name="_target_path" value="/dashboard" />
-                            {% if error %}
-                                <div role="alert" class="alert alert-danger"><span class="icon s7-close-circle"></span> {{ error.messageKey|trans(error.messageData, 'security') }}</div>
-                            {% endif %}
-                            <div class="login-form">
-                                <div class="form-group">
-                                    <div class="input-group"><span class="input-group-addon"><i class="icon s7-user"></i></span>
-                                        {{ form_widget(form.email, {
-                                            label: false,
-                                            attr: {
-                                                class: 'form-control',
-                                                placeholder: 'login.field.email.placeholder'|trans,
-                                                value: lastUsername
-                                            }
-                                        }) }}
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <div class="input-group"><span class="input-group-addon"><i class="icon s7-lock"></i></span>
-                                        {{ form_widget(form.password, {
-                                            label: false,
-                                            attr: {
-                                                class: 'form-control',
-                                                placeholder: 'login.field.password.placeholder'|trans,
-                                            }
-                                        }) }}
-                                    </div>
-                                </div>
-                                <div class="form-group login-submit">
-                                    <button data-dismiss="modal" type="submit" class="btn btn-primary btn-lg">{{ 'login.button.submit.placeholder'|trans }}</button>
-                                </div>
-                                <div class="form-group footer row">
-                                    <div class="col-xs-6"><a href="#">{{ 'login.text.forgot_password'|trans }}</a></div>
-                                    <div class="col-xs-6 text-right"><a href="#">{{ 'login.text.register'|trans }}</a></div>
-                                </div>
-                            </div>
-                        {{ form_end(form) }}
-                    </div>
-                </div>
+{% extends 'CommonBundle:Page:page-wrapper.html.twig' %}
+
+{% block title %}Login{% endblock %}
+{% block class %}login-container{% endblock %}
+
+{% block content %}
+    {{ form_start(form, {
+        attr: {
+            class: 'form-horizontal',
+            autocomplete: 'nope'
+        }
+    }) }}
+    <input type="hidden" name="_target_path" value="/dashboard" />
+    {% if error %}
+        <div role="alert" class="alert alert-danger"><span class="icon s7-close-circle"></span> {{ error.messageKey|trans(error.messageData, 'security') }}</div>
+    {% endif %}
+    <div class="login-form">
+        <div class="form-group">
+            <div class="input-group"><span class="input-group-addon"><i class="icon s7-user"></i></span>
+                {{ form_widget(form.email, {
+                    label: false,
+                    attr: {
+                        class: 'form-control',
+                        placeholder: 'login.field.email.placeholder'|trans,
+                        value: lastUsername
+                    }
+                }) }}
             </div>
         </div>
+        <div class="form-group">
+            <div class="input-group"><span class="input-group-addon"><i class="icon s7-lock"></i></span>
+                {{ form_widget(form.password, {
+                    label: false,
+                    attr: {
+                        class: 'form-control',
+                        placeholder: 'login.field.password.placeholder'|trans,
+                    }
+                }) }}
+            </div>
+        </div>
+        <div class="form-group login-submit">
+            <button data-dismiss="modal" type="submit" class="btn btn-primary btn-lg">{{ 'login.button.submit.placeholder'|trans }}</button>
+        </div>
+        <div class="form-group footer row">
+            <div class="col-xs-6"><a href="{{ path('beloop_password_remember') }}">{{ 'login.text.forgot_password'|trans }}</a></div>
+            <div class="col-xs-6 text-right"><a href="#">{{ 'login.text.register'|trans }}</a></div>
+        </div>
     </div>
-</div>
-</body>
-</html>
-
+    {{ form_end(form) }}
+{% endblock %}

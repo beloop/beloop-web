@@ -1,0 +1,11 @@
+services:
+
+    #
+    # Event listeners
+    #
+    beloop.abstract_email_sender_event_listener:
+        class: Beloop\Web\Common\EventListener\Abstracts\AbstractEmailSenderEventListener
+        abstract: true
+        arguments:
+            - "@mailer"
+            - "@twig"
