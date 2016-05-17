@@ -473,16 +473,16 @@
         },
         {
             "name": "beloop/squarespace",
-            "version": "0.4.5",
+            "version": "0.4.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/beloop/Squarespace.git",
-                "reference": "889f4bf141383a6477f0930f0fd3cd59002130b1"
+                "reference": "6dba961728772262b2d5d16bc478fa801015ca61"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/beloop/Squarespace/zipball/889f4bf141383a6477f0930f0fd3cd59002130b1",
-                "reference": "889f4bf141383a6477f0930f0fd3cd59002130b1",
+                "url": "https://api.github.com/repos/beloop/Squarespace/zipball/6dba961728772262b2d5d16bc478fa801015ca61",
+                "reference": "6dba961728772262b2d5d16bc478fa801015ca61",
                 "shasum": ""
             },
             "require": {
@@ -532,20 +532,20 @@
                 "lms",
                 "squarespace"
             ],
-            "time": "2016-05-16 14:12:02"
+            "time": "2016-05-17 19:50:12"
         },
         {
             "name": "beloop/squarespace-bundle",
-            "version": "0.4.9",
+            "version": "0.4.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/beloop/SquarespaceBundle.git",
-                "reference": "4a2785a0478c9ab40b0b704ed879b1c3f6afaf3d"
+                "reference": "3220e70c354e50916790f4ba62ac98a4f0a528a7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/beloop/SquarespaceBundle/zipball/4a2785a0478c9ab40b0b704ed879b1c3f6afaf3d",
-                "reference": "4a2785a0478c9ab40b0b704ed879b1c3f6afaf3d",
+                "url": "https://api.github.com/repos/beloop/SquarespaceBundle/zipball/3220e70c354e50916790f4ba62ac98a4f0a528a7",
+                "reference": "3220e70c354e50916790f4ba62ac98a4f0a528a7",
                 "shasum": ""
             },
             "require": {
@@ -596,7 +596,7 @@
                 "lms",
                 "squarespace"
             ],
-            "time": "2016-05-17 17:13:34"
+            "time": "2016-05-17 19:50:12"
         },
         {
             "name": "beloop/user",
