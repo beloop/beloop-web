@@ -26,6 +26,23 @@ use Beloop\Web\CommonBundle\EventListener\Abstracts\AbstractEmailSenderEventList
 class SendPasswordRememberEmailEventListener extends AbstractEmailSenderEventListener
 {
     /**
+     * @var TranslatorInterface
+     *
+     * Translator service
+     */
+    protected $translator;
+
+    /**
+     * Set translator service
+     *
+     * @param TranslatorInterface $translator
+     */
+    public function setTranslator(TranslatorInterface $translator)
+    {
+        $this->translator = $translator;
+    }
+
+    /**
      * Send email
      *
      * @param PasswordRememberEvent $event Event
@@ -38,7 +55,7 @@ class SendPasswordRememberEmailEventListener extends AbstractEmailSenderEventLis
         $this->sendEmail(
             'WebUserBundle:Email:remember.html.twig',
             [
-                'subject' => 'email.user.remember_password.subject',
+                'subject' => $this->translator->trans('email.user.remember_password.subject'),
                 'user' => $user,
                 'remember_url' => $rememberUrl,
             ],
