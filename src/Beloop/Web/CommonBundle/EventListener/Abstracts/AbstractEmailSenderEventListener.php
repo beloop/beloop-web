@@ -61,9 +61,6 @@ abstract class AbstractEmailSenderEventListener
             ->twig
             ->render($template, $context);
 
-        echo $body;
-        die('');
-
         $message = $this
             ->mailer
             ->createMessage()
