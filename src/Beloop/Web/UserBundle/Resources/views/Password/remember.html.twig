@@ -25,5 +25,8 @@
         <div class="form-group">
             <button data-dismiss="modal" type="submit" class="btn btn-block btn-primary btn-lg">{{ 'password.button.reset.placeholder'|trans }}</button>
         </div>
+        <div class="form-group footer row">
+            <div class="col-xs-12"><a href="{{ path('beloop_login') }}"><span class="s7-angle-left"></span> {{ 'recovery.back_login.text'|trans }}</a></div>
+        </div>
     {{ form_end(form) }}
 {% endblock %}
