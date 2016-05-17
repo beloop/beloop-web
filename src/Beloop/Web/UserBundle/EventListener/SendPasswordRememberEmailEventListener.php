@@ -15,9 +15,14 @@
 
 namespace Beloop\Web\UserBundle\EventListener;
 
+use Symfony\Component\Translation\TranslatorInterface;
+
 use Beloop\Component\User\Event\PasswordRememberEvent;
 use Beloop\Web\CommonBundle\EventListener\Abstracts\AbstractEmailSenderEventListener;
 
+/**
+ * Class SendPasswordRememberEmailEventListener
+ */
 class SendPasswordRememberEmailEventListener extends AbstractEmailSenderEventListener
 {
     /**

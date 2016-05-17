@@ -1,1 +1,30 @@
-remember.html.twig
+{% extends 'CommonBundle:Email:layout.html.twig' %}
+
+{% block title %}{{ subject|trans }}{% endblock %}
+
+{% block content %}
+<table cellpadding="0" cellspacing="0" border="0" align="center">
+    <tr>
+        <td width="600" valign="top" align="center">
+            <p style="margin: 1em 0">
+                {{ 'email.user.remember_password.hi'|trans({'%username%': user.firstName}) }}
+            </p>
+            <h2 style="padding:0;margin:0;line-height:1px;font-size:1px;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:22px;line-height:30px;font-weight:300;">
+                {{ 'email.user.remember_password.recover_title'|trans }}
+            </h2>
+            <p style="margin: 1em 0">
+                {{ 'email.user.remember_password.recover_text'|trans({'%email%': user.email}) }}
+            </p>
+            <p style="margin: 1em 0">
+                <a href="{{ remember_url }}" target="_blank" title="{{ 'email.user.remember_password.recover_password'|trans }}" style="color:#fff;display:inline-block;margin-bottom:5px;font-weight:normal;text-align:center;text-transform:uppercase;vertical-align:middle;cursor:pointer;border: 1px solid #093766;white-space:nowrap;padding:6px 12px;font-size:16px;-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;text-decoration: none;background-color: #743c01;">{{ 'email.user.remember_password.recover_password'|trans }}</a>
+            </p>
+            <p style="margin: 1em 0">
+                {{ 'email.user.remember_password.recover_copy_paste'|trans({'%url%': remember_url}) }}
+            </p>
+            <p style="margin: 1em 0">
+                {{ 'email.user.remember_password.cheers'|trans }}
+            </p>
+        </td>
+    </tr>
+</table>
+{% endblock %}

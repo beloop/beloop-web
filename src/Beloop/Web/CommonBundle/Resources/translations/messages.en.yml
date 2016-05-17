@@ -38,3 +38,15 @@ menu:
         title: 'My Profile'
     logout:
         title: 'Logout'
+
+email:
+    user:
+        remember_password:
+            subject: 'Recover your password'
+            hi: 'Hi %username%,'
+            recover_title: 'We received a request to change the password from your account.'
+            recover_text: 'If you requested a reset for %email%, click the button below. If you didn’t make this request, please ignore this email.'
+            recover_password: 'Change password'
+            recover_copy_paste: 'Or copy and paste the following URL into your browser: %url%'
+            remember_password: 'Recover password'
+            cheers: 'The Delicious Yet Beautiful Team'

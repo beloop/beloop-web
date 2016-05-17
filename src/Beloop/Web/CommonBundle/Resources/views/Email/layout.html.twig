@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>{% block title %}{% endblock %}</title>
+    <style type="text/css">
+        #outlook a {padding:0;}
+        body{width:100% !important; -webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; margin:0; padding:0;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;}
+        #backgroundTable {margin:0; padding:0; width:100% !important; line-height: 100% !important;}
+        img {outline:none; text-decoration:none; -ms-interpolation-mode: bicubic;}
+        a img {border:none;}
+        p {margin: 1em 0; line-height: 1.5em;}
+        h1, h2, h3, h4, h5, h6 {color: black !important;}
+        h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {color: blue !important;}
+        h1 a:active, h2 a:active,  h3 a:active, h4 a:active, h5 a:active, h6 a:active {
+            color: red !important;
+        }
+        h1 a:visited, h2 a:visited,  h3 a:visited, h4 a:visited, h5 a:visited, h6 a:visited {
+            color: purple !important;
+        }
+        table { border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt; }
+        a {color: #743c01;}
+    </style>
+</head>
+<body style="padding: 20px 0;">
+<table cellpadding="0" cellspacing="0" border="0" id="backgroundTable" width="600">
+    <tr>
+        <td width="600" valign="top" style="" align="center">
+            <img src="https://gallery.mailchimp.com/111caec16b0ea9ce3ece7f7e9/images/1c36de53-77a2-4699-a415-7a8dc85a9775.png" alt="Delicious Yet Beautiful">
+        </td>
+    </tr>
+    <tr>
+        <td><span>&nbsp;</span></td>
+    </tr>
+    <tr style="min-width:100%;border-top-width:1px;border-top-style:solid;border-top-color:#cccccc;border-collapse:collapse">
+        <td><span></span></td>
+    </tr>
+    <tr>
+        <td>
+            {% block content %}{% endblock %}
+        </td>
+    </tr>
+</table>
+</body>
+</html>
