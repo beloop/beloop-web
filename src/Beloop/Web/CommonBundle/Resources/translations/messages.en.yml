@@ -12,6 +12,10 @@ login:
         submit:
             placeholder: 'Enter'
 
+recovery:
+    sent:
+        text: 'We''ve sent you an email. Click on the button included in the email to reset your password.'
+
 password:
     forgot:
         text: 'Forgot your password? Don''t worry, we''ll send you an email to reset your password.'
