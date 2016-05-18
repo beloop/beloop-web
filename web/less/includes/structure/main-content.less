@@ -22,6 +22,7 @@
 }
 
 .main-content{
+	position: relative;
 	padding-left: @content-padding;
 	padding-right: @content-padding;
 	padding-top: @content-padding;
@@ -50,4 +51,15 @@
 	overflow: scroll;
 	-webkit-overflow-scrolling: touch;
 	height: 100%;
+}
+
+#loader {
+	position: absolute;
+	z-index: 999999;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	visibility: visible;
+	background-color: @body-background;
 }
