@@ -98,8 +98,10 @@ var App = (function () {
             /*Left Sidebar*/
             leftSidebarInit();
 
-            /*Loader init*/
-            loaderInit();
+            if (Spinner) {
+                /*Loader init*/
+                loaderInit();
+            }
 
             /*Body transition effect*/
             leftSidebar.on('transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd', function () {
