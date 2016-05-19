@@ -10,9 +10,3 @@ services:
             - [setTranslator, ['@translator']]
         tags:
             - { name: kernel.event_listener, event: password.remember, method: sendPasswordRememberEmail }
-
-    beloop.event_listener.send_password_recover_email:
-        class: Beloop\Web\UserBundle\EventListener\SendPasswordRecoverEmailEventListener
-        parent: beloop.abstract_email_sender_event_listener
-        tags:
-            - { name: kernel.event_listener, event: password.recover, method: sendPasswordRecoverEmail }

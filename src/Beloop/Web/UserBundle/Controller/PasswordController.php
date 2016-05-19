@@ -99,8 +99,10 @@ class PasswordController extends Controller
      *      methods = {"GET", "POST"}
      * )
      *
+     * @Template
+     *
      * @AnnotationForm(
-     *      class         = "beloop_user_form_type_password_recover",
+     *      class         = "Beloop\Web\UserBundle\Form\Type\RecoverPasswordType",
      *      handleRequest = true,
      *      name          = "passwordRecoverForm",
      *      validate      = "isValid"
@@ -127,6 +129,7 @@ class PasswordController extends Controller
                 return $this->redirectToRoute('beloop_login');
             }
         }
+
         return [
             'form' => $passwordRecoverForm->createView(),
         ];

@@ -10,7 +10,7 @@
             autocomplete: 'nope'
         }
     }) }}
-        <p class="text-center">Forgot your password? Don't worry, we'll send you an email to reset your password.</p>
+        <p class="text-center">{{ 'recovery.forgot.text'|trans }}</p>
         <div class="form-group">
             <div class="input-group"><span class="input-group-addon"><i class="icon s7-mail"></i></span>
                 {{ form_widget(form.email, {

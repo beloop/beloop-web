@@ -1,0 +1,40 @@
+{% extends 'CommonBundle:Page:page-wrapper.html.twig' %}
+
+{% block title %}Password Recovery{% endblock %}
+{% block class %}login-container forgot-password{% endblock %}
+
+{% block content %}
+    {{ form_start(form, {
+        attr: {
+            class: 'form-horizontal',
+            autocomplete: 'nope'
+        }
+    }) }}
+        <p class="text-center">{{ 'recovery.repeat_password.text'|trans }}</p>
+        <div class="form-group">
+            <div class="input-group"><span class="input-group-addon"><i class="icon s7-lock"></i></span>
+                {{ form_widget(form.password.first, {
+                    label: false,
+                    attr: {
+                        class: 'form-control',
+                        placeholder: 'login.field.password.placeholder'|trans
+                    }
+                }) }}
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="input-group"><span class="input-group-addon"><i class="icon s7-lock"></i></span>
+                {{ form_widget(form.password.second, {
+                    label: false,
+                    attr: {
+                        class: 'form-control',
+                        placeholder: 'login.field.repeat_password.placeholder'|trans
+                    }
+                }) }}
+            </div>
+        </div>
+        <div class="form-group">
+            <button data-dismiss="modal" type="submit" class="btn btn-block btn-primary btn-lg">{{ 'password.button.reset.placeholder'|trans }}</button>
+        </div>
+    {{ form_end(form) }}
+{% endblock %}

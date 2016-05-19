@@ -8,11 +8,17 @@ login:
             placeholder: 'email'
         password:
             placeholder: 'password'
+        repeat_password:
+            placeholder: 'confirm pasword'
     button:
         submit:
             placeholder: 'Enter'
 
 recovery:
+    forgot:
+        text: 'Forgot your password? Don''t worry, we''ll send you an email to reset your password.'
+    repeat_password:
+        text: 'Type your new password twice'
     sent:
         text: 'We''ve sent you an email. Click on the button included in the email to reset your password.'
     back_login:
