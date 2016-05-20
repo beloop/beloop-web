@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <div class="main-content">
+        <div class="user-profile">
+            <div class="user-display">
+                <div class="photo"><img src="http://static1.squarespace.com/static/537dafeee4b03c36028ebd24/t/56fd4a05746fb9261146d890/1459440136930/quote.jpg?format=2500w"></div>
+                <div class="bottom">
+                    <div class="user-avatar"><span class="status"></span><img src="{{ asset('img/avatar.jpg') }}"></div>
+                    <div class="user-info">
+                        <h4>Samantha Amaretti</h4><span>I am a web developer and designer based in Montreal - Canada, I like read books, good music and nature.</span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 col-sm-12">
+                    <div class="info-block panel panel-default">
+                        <div class="panel-heading">
+                            <h4>About me</h4>
+                        </div>
+                        <div class="panel-body"><span class="description">I am a web developer and designer based in Montreal - Canada, I like read books, good music and nature.</span>
+                            <table class="no-border no-strip skills">
+                                <tbody class="no-border-x no-border-y">
+                                <tr>
+                                    <td class="item">Ocupation:<span class="icon s7-portfolio"></span></td>
+                                    <td>Developer and designer</td>
+                                </tr>
+                                <tr>
+                                    <td class="item">Birthday:<span class="icon s7-gift"></span></td>
+                                    <td>16 September 1989</td>
+                                </tr>
+                                <tr>
+                                    <td class="item">Mobile:<span class="icon s7-phone"></span></td>
+                                    <td>(999) 999-9999</td>
+                                </tr>
+                                <tr>
+                                    <td class="item">Location:<span class="icon s7-map-marker"></span></td>
+                                    <td>Montreal, Canada</td>
+                                </tr>
+                                <tr>
+                                    <td class="item">Website:<span class="icon s7-global"></span></td>
+                                    <td>www.website.com</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
