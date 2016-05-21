@@ -1,0 +1,11 @@
+services:
+
+    #
+    # Form Extensions
+    #
+    beloop.form_extension.help:
+        class: Beloop\Web\UserBundle\Form\Extension\HelpFormTypeExtension
+        arguments:
+            - "@router"
+        tags:
+            - { name: form.type_extension, extended_type: Symfony\Component\Form\Extension\Core\Type\FormType }

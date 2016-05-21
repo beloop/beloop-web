@@ -8,4 +8,4 @@ services:
         arguments:
             - "@router"
         tags:
-            - { name: form.type, alias: beloop_user_form_type_login }
+            - { name: form.type }

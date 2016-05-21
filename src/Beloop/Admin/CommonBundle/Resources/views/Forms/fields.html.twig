@@ -4,6 +4,7 @@
         {% set form_method = (method == 'GET' ? method : 'POST') %}
         {% set attr = attr|merge({ class: 'form-horizontal' }) %}
         <form role="form"
+              id="{{ form.vars.name }}"
               name="{{ form.vars.name }}"
               method="{{ form_method|lower }}"
               action="{{ action }}"
@@ -28,10 +29,17 @@
             {{ form_label(form) }}
             <div class="col-sm-10">
                 {{ form_widget(form) }}
+                {% if help_label %}
+                    {{ block('help_label') }}
+                {% endif %}
             </div>
         </div>
     {% endspaceless %}
 {% endblock form_row %}
+
+{%- block help_label -%}
+    <span class="help-block">{{ help_label|trans|raw }}</span>
+{%- endblock help_label -%}
 
 {%- block form_label -%}
     {% if label is not same as(false) -%}
@@ -53,7 +61,7 @@
                 {% set label = name|humanize %}
             {%- endif -%}
         {%- endif -%}
-        <label{% for attrname, attrvalue in label_attr %} {{ attrname }}="{{ attrvalue }}"{% endfor %}>{{ label }}</label>
+        <label{% for attrname, attrvalue in label_attr %} {{ attrname }}="{{ attrvalue }}"{% endfor %}>{{ label|trans }}</label>
     {%- endif -%}
 {%- endblock form_label -%}
 
