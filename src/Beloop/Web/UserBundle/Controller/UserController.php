@@ -15,11 +15,11 @@
 
 namespace Beloop\Web\UserBundle\Controller;
 
+use Mmoreram\ControllerExtraBundle\Annotation\Entity as EntityAnnotation;
 use Mmoreram\ControllerExtraBundle\Annotation\Form as AnnotationForm;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Symfony\Component\Form\Form;
 use Symfony\Component\Form\FormView;
 
 use Beloop\Component\User\Entity\Interfaces\UserInterface;
@@ -29,11 +29,11 @@ class UserController extends Controller
     /**
      * User profile page
      *
-     * @param Form    $form     Form
-     * @param string  $isValid  Is valid
-     *
+     * @param UserInterface $user
+     * @param FormView $formView
+     * @param string $isValid Is valid
      * @return array
-     *
+     * @internal param Form $form Form
      * @Template("WebUserBundle:User:profile.html.twig")
      *
      * @Route(
@@ -42,16 +42,26 @@ class UserController extends Controller
      *      methods = {"GET", "POST"}
      * )
      *
+     * @EntityAnnotation(
+     *      class = {
+     *          "factory" = "beloop.wrapper.user",
+     *          "method" = "get",
+     *          "static" = false
+     *      },
+     *      name = "user",
+     * )
+     *
      * @AnnotationForm(
-     *      class         = "Beloop\Web\UserBundle\Form\Type\UserType",
-     *      name          = "form",
+     *      class         = "Beloop\Web\UserBundle\Form\Type\ProfileType",
+     *      name          = "formView",
      *      entity        = "user",
      *      handleRequest = true,
      *      validate      = "isValid"
      * )
      */
     public function editAction(
-        Form $form,
+        UserInterface $user,
+        FormView $formView,
         $isValid
     ) {
         if ($isValid) {
@@ -65,14 +75,15 @@ class UserController extends Controller
             $this->addFlash('success', $message);
 
             return $this->redirect(
-                $this->generateUrl('store_user_profile')
+                $this->generateUrl('beloop_user_profile')
             );
         }
 
         return [
+            'action' => 'edit',
             'section' => 'my-profile',
-            'form' => $form,
-            'user' => $this->getUser(),
+            'user' => $user,
+            'form' => $formView,
         ];
     }
 }

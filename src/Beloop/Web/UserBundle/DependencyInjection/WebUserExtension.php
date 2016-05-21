@@ -53,6 +53,7 @@ class WebUserExtension extends AbstractExtension
     {
         return [
             'eventListeners',
+            'formExtensions',
             'formTypes',
         ];
     }

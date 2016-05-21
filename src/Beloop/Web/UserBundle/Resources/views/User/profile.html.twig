@@ -5,11 +5,11 @@
     <div class="main-content">
         <div class="user-profile">
             <div class="user-display">
-                <div class="photo"><img src="http://static1.squarespace.com/static/537dafeee4b03c36028ebd24/t/56fd4a05746fb9261146d890/1459440136930/quote.jpg?format=2500w"></div>
+                <div class="photo"><img src="{{ asset('img/background-black.jpg') }}"></div>
                 <div class="bottom">
-                    <div class="user-avatar"><span class="status"></span><img src="{{ asset('img/avatar.jpg') }}"></div>
+                    <div class="user-avatar"><img src="{{ asset('img/avatar.jpg') }}"></div>
                     <div class="user-info">
-                        <h4>Samantha Amaretti</h4><span>I am a web developer and designer based in Montreal - Canada, I like read books, good music and nature.</span>
+                        <h4>{{ user.fullName }}</h4><span>{{ user.biography|default('') }}</span>
                     </div>
                 </div>
             </div>
@@ -17,37 +17,85 @@
                 <div class="col-md-4 col-sm-12">
                     <div class="info-block panel panel-default">
                         <div class="panel-heading">
-                            <h4>About me</h4>
+                            {% if action == 'edit' %}
+                            <div class="tools">
+                                <a href="#" data-modal="edit-password" class="md-trigger"><span class="icon s7-key"></span></a>
+                                <a href="#" data-modal="edit-profile" class="md-trigger"><span class="icon s7-config"></span></a>
+                            </div>
+                            {% endif %}
+                            <span class="title">{{ 'profile.about_me.text'|trans }}</span>
                         </div>
-                        <div class="panel-body"><span class="description">I am a web developer and designer based in Montreal - Canada, I like read books, good music and nature.</span>
+                        <div class="panel-body"><span class="description">{{ user.biography|default('') }}</span>
                             <table class="no-border no-strip skills">
                                 <tbody class="no-border-x no-border-y">
                                 <tr>
-                                    <td class="item">Ocupation:<span class="icon s7-portfolio"></span></td>
-                                    <td>Developer and designer</td>
+                                    <td class="item">{{ 'profile.name.text'|trans }}:<span class="icon s7-user"></span></td>
+                                    <td>{{ user.fullName }}</td>
                                 </tr>
+                                {% if user.website|length > 0 %}
                                 <tr>
-                                    <td class="item">Birthday:<span class="icon s7-gift"></span></td>
-                                    <td>16 September 1989</td>
+                                    <td class="item">{{ 'profile.form.fields.website.label'|trans }}:<span class="icon s7-global"></span></td>
+                                    <td><a href="{{ user.website }}" target="_blank">{{ user.website }}</a></td>
                                 </tr>
-                                <tr>
-                                    <td class="item">Mobile:<span class="icon s7-phone"></span></td>
-                                    <td>(999) 999-9999</td>
-                                </tr>
-                                <tr>
-                                    <td class="item">Location:<span class="icon s7-map-marker"></span></td>
-                                    <td>Montreal, Canada</td>
-                                </tr>
-                                <tr>
-                                    <td class="item">Website:<span class="icon s7-global"></span></td>
-                                    <td>www.website.com</td>
-                                </tr>
+                                {% endif %}
+                                {% if user.instagram|length > 0 %}
+                                    <tr>
+                                        <td class="item">{{ 'profile.form.fields.instagram.label'|trans }}:<span class="icon s7-camera"></span></td>
+                                        <td><a href="https://www.instagram.com/{{ user.instagram }}/" target="_blank">{{ user.instagram }}</a></td>
+                                    </tr>
+                                {% endif %}
                                 </tbody>
                             </table>
                         </div>
                     </div>
+                    {% if action == 'edit' %}
+                    <div id="edit-profile" class="md-modal colored-header md-effect-1">
+                        <div class="md-content">
+                            <div class="modal-header">
+                                <button type="button" data-dismiss="modal" aria-hidden="true" class="close md-close"><i class="icon s7-close"></i></button>
+                                <h3 class="modal-title">{{ 'profile.edit_profile.text'|trans }}</h3>
+                            </div>
+                            <div class="modal-body form">
+                                {% include 'WebUserBundle:User:form.html.twig' with { 'user': user, 'form': form } %}
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" data-dismiss="modal" class="btn btn-default md-close">{{ 'cancel'|trans }}</button>
+                                <button type="submit" data-dismiss="modal" class="btn btn-primary" form="{{ form.vars.name }}">{{ 'save'|trans }}</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="edit-password" class="md-modal colored-header md-effect-1">
+                        <div class="md-content">
+                            <div class="modal-header">
+                                <button type="button" data-dismiss="modal" aria-hidden="true" class="close md-close"><i class="icon s7-close"></i></button>
+                                <h3 class="modal-title">{{ 'profile.edit_password.text'|trans }}</h3>
+                            </div>
+                            <div class="modal-body form">
+                                {#{% include 'WebUserBundle:User:password.html.twig' with { 'user': user, 'form': form } %}#}
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" data-dismiss="modal" class="btn btn-default md-close">{{ 'cancel'|trans }}</button>
+                                <button type="button" data-dismiss="modal" class="btn btn-primary md-close">{{ 'save'|trans }}</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="md-overlay"></div>
+                    {% endif %}
                 </div>
             </div>
         </div>
     </div>
+{% endblock %}
+
+{% block styles %}
+    <link rel="stylesheet" type="text/css" href="{{ asset('vendor/jquery.niftymodals/css/components.min.css') }}"/>
+    {{ parent() }}
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script type="text/javascript" src="{{ asset('vendor/jquery.niftymodals/js/jquery.modalEffects.min.js') }}"></script>
+    <script type="text/javascript">
+        $('.md-trigger').modalEffects();
+    </script>
 {% endblock %}

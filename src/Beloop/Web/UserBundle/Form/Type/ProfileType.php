@@ -16,13 +16,13 @@
 namespace Beloop\Web\UserBundle\Form\Type;
 
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\Extension\Core\Type\EmailType;
-use Symfony\Component\Form\Extension\Core\Type\PasswordType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\UrlType;
 use Symfony\Component\Form\FormBuilderInterface;
-use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 
-class UserType extends AbstractType
+class ProfileType extends AbstractType
 {
     /**
      * Build form function
@@ -33,12 +33,37 @@ class UserType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('email', EmailType::class, [
+            ->setMethod('POST')
+            ->add('firstname', TextType::class, [
                 'required' => true,
+                'label'    => 'profile.form.fields.firstname.label',
             ])
-            ->add('password', PasswordType::class, [
+            ->add('lastname', TextType::class, [
                 'required' => true,
+                'label'    => 'profile.form.fields.lastname.label',
+            ])
+            ->add('biography', TextareaType::class, [
+                'required'   => true,
+                'label'      => 'profile.form.fields.biography.label',
+                'help_label' => 'profile.form.fields.biography.help',
+            ])
+            ->add('website', UrlType::class, [
+                'required'   => false,
+                'label'      => 'profile.form.fields.website.label',
+                'help_label' => 'profile.form.fields.website.help',
+                'attr'       => [
+                    'placeholder' => 'http://www.aialahernando.com/',
+                ]
+            ])
+            ->add('instagram', TextType::class, [
+                'required'   => false,
+                'label'      => 'profile.form.fields.instagram.label',
+                'help_label' => 'profile.form.fields.instagram.help',
+                'attr'       => [
+                    'placeholder' => 'aialahernando'
+                ]
             ]);
+
     }
 
     /**

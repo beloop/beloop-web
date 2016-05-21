@@ -31,6 +31,31 @@ password:
         reset:
             placeholder: 'Reset password'
 
+profile:
+    about_me:
+        text: 'About me'
+    edit_profile:
+        text: 'Edit profile'
+    edit_password:
+        text: 'Change password'
+    name:
+        text: 'Full name'
+    form:
+        fields:
+            firstname:
+                label: 'First name'
+            lastname:
+                label: 'Last name'
+            biography:
+                label: 'About me'
+                help: 'Tell us something about yourself'
+            website:
+                label: 'Website'
+                help: 'Complete URL to your website'
+            instagram:
+                label: 'Instagram user'
+                help: 'Instagram user without @ (eg: aialahernando)'
+
 course:
     description:
         title: 'Description'
