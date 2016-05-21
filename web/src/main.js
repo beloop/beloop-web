@@ -92,6 +92,8 @@ var App = (function () {
         //Init function
         init: function(options) {
 
+            var Spinner = Spinner || null;
+
             //Extends basic config with options
             $.extend(config, options);
 
