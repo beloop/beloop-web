@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "e83f8f6b3ebc3a1c9af76835742b7994",
-    "content-hash": "4894ac897790f7cd3de89d88231a783e",
+    "hash": "b0d3e275f8b7278c6a31ee9f0e6b6770",
+    "content-hash": "0828061576787589499f482f6f52b58a",
     "packages": [
         {
             "name": "beloop/analytics",
@@ -123,16 +123,16 @@
         },
         {
             "name": "beloop/core",
-            "version": "0.4.4",
+            "version": "0.4.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/beloop/Core.git",
-                "reference": "bffdc49047d26448893bd6feb7025d4e5d6cf939"
+                "reference": "95804c39b9392161530df9147e475250b1619a90"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/beloop/Core/zipball/bffdc49047d26448893bd6feb7025d4e5d6cf939",
-                "reference": "bffdc49047d26448893bd6feb7025d4e5d6cf939",
+                "url": "https://api.github.com/repos/beloop/Core/zipball/95804c39b9392161530df9147e475250b1619a90",
+                "reference": "95804c39b9392161530df9147e475250b1619a90",
                 "shasum": ""
             },
             "require": {
@@ -170,7 +170,7 @@
                 "core",
                 "lms"
             ],
-            "time": "2016-05-17 08:27:40"
+            "time": "2016-05-22 17:43:20"
         },
         {
             "name": "beloop/core-bundle",
@@ -237,16 +237,16 @@
         },
         {
             "name": "beloop/course",
-            "version": "0.4.11",
+            "version": "0.4.12",
             "source": {
                 "type": "git",
                 "url": "https://github.com/beloop/Course.git",
-                "reference": "9092c49a0459e305d98260c4df2a201628583da0"
+                "reference": "a74a6933d50ddd56c4b5a26a646071b10b85c060"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/beloop/Course/zipball/9092c49a0459e305d98260c4df2a201628583da0",
-                "reference": "9092c49a0459e305d98260c4df2a201628583da0",
+                "url": "https://api.github.com/repos/beloop/Course/zipball/a74a6933d50ddd56c4b5a26a646071b10b85c060",
+                "reference": "a74a6933d50ddd56c4b5a26a646071b10b85c060",
                 "shasum": ""
             },
             "require": {
@@ -292,20 +292,20 @@
                 "course",
                 "lms"
             ],
-            "time": "2016-05-16 08:20:59"
+            "time": "2016-05-22 17:43:20"
         },
         {
             "name": "beloop/course-bundle",
-            "version": "0.4.8",
+            "version": "0.4.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/beloop/CourseBundle.git",
-                "reference": "ebbfa6fce2734c801a9954093fec99d8250aaf03"
+                "reference": "0236c472a7879e05f345f0eaddf8cb3cfeec5c1a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/beloop/CourseBundle/zipball/ebbfa6fce2734c801a9954093fec99d8250aaf03",
-                "reference": "ebbfa6fce2734c801a9954093fec99d8250aaf03",
+                "url": "https://api.github.com/repos/beloop/CourseBundle/zipball/0236c472a7879e05f345f0eaddf8cb3cfeec5c1a",
+                "reference": "0236c472a7879e05f345f0eaddf8cb3cfeec5c1a",
                 "shasum": ""
             },
             "require": {
@@ -349,7 +349,7 @@
                 "course",
                 "lms"
             ],
-            "time": "2016-05-16 08:20:59"
+            "time": "2016-05-22 17:43:20"
         },
         {
             "name": "beloop/language",
