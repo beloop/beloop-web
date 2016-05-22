@@ -9,3 +9,10 @@ services:
             - "@router"
         tags:
             - { name: form.type }
+
+    beloop.form_type.password_update:
+        class: Beloop\Web\UserBundle\Form\Type\UserPasswordType
+        arguments:
+            - "@router"
+        tags:
+            - { name: form.type }

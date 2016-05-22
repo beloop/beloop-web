@@ -55,6 +55,10 @@ profile:
             instagram:
                 label: 'Instagram user'
                 help: 'Instagram user without @ (eg: aialahernando)'
+            password:
+                label: 'New password'
+            repeat_password:
+                label: 'Confirm pasword'
 
 course:
     description:

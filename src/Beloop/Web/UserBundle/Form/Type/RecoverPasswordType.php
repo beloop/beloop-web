@@ -51,7 +51,7 @@ class RecoverPasswordType extends AbstractType
      */
     public function getBlockPrefix()
     {
-        return 'store_user_form_type_password_recover';
+        return 'beloop_user_form_type_password_recover';
     }
 
     /**
