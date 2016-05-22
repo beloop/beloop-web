@@ -1,0 +1,33 @@
+<div class="info-block panel panel-default">
+    <div class="panel-heading">
+        {% if action == 'edit' %}
+            <div class="tools">
+                <a href="#" data-modal="edit-password" class="md-trigger"><span class="icon s7-key"></span></a>
+                <a href="#" data-modal="edit-profile" class="md-trigger"><span class="icon s7-config"></span></a>
+            </div>
+        {% endif %}
+        <span class="title">{{ 'profile.about_me.text'|trans }}</span>
+    </div>
+    <div class="panel-body"><span class="description">{{ user.biography|default('') }}</span>
+        <table class="no-border no-strip skills">
+            <tbody class="no-border-x no-border-y">
+            <tr>
+                <td class="item">{{ 'profile.name.text'|trans }}:<span class="icon s7-user"></span></td>
+                <td>{{ user.fullName }}</td>
+            </tr>
+            {% if user.website|length > 0 %}
+                <tr>
+                    <td class="item">{{ 'profile.form.fields.website.label'|trans }}:<span class="icon s7-global"></span></td>
+                    <td><a href="{{ user.website }}" target="_blank">{{ user.website }}</a></td>
+                </tr>
+            {% endif %}
+            {% if user.instagram|length > 0 %}
+                <tr>
+                    <td class="item">{{ 'profile.form.fields.instagram.label'|trans }}:<span class="icon s7-camera"></span></td>
+                    <td><a href="https://www.instagram.com/{{ user.instagram }}/" target="_blank">@{{ user.instagram }}</a></td>
+                </tr>
+            {% endif %}
+            </tbody>
+        </table>
+    </div>
+</div>

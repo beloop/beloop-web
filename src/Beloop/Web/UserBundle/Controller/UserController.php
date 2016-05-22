@@ -95,7 +95,7 @@ class UserController extends Controller
      * @param string $isValid Is valid
      * @return array
      * @internal param Form $form Form
-     * @Template("WebUserBundle:User:password.html.twig")
+     * @Template("WebUserBundle:User:partials/password.html.twig")
      *
      * @Route(
      *      path = "/user/profile/edit_password",

@@ -14,74 +14,12 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-4 col-sm-12">
-                    <div class="info-block panel panel-default">
-                        <div class="panel-heading">
-                            {% if action == 'edit' %}
-                            <div class="tools">
-                                <a href="#" data-modal="edit-password" class="md-trigger"><span class="icon s7-key"></span></a>
-                                <a href="#" data-modal="edit-profile" class="md-trigger"><span class="icon s7-config"></span></a>
-                            </div>
-                            {% endif %}
-                            <span class="title">{{ 'profile.about_me.text'|trans }}</span>
-                        </div>
-                        <div class="panel-body"><span class="description">{{ user.biography|default('') }}</span>
-                            <table class="no-border no-strip skills">
-                                <tbody class="no-border-x no-border-y">
-                                <tr>
-                                    <td class="item">{{ 'profile.name.text'|trans }}:<span class="icon s7-user"></span></td>
-                                    <td>{{ user.fullName }}</td>
-                                </tr>
-                                {% if user.website|length > 0 %}
-                                <tr>
-                                    <td class="item">{{ 'profile.form.fields.website.label'|trans }}:<span class="icon s7-global"></span></td>
-                                    <td><a href="{{ user.website }}" target="_blank">{{ user.website }}</a></td>
-                                </tr>
-                                {% endif %}
-                                {% if user.instagram|length > 0 %}
-                                    <tr>
-                                        <td class="item">{{ 'profile.form.fields.instagram.label'|trans }}:<span class="icon s7-camera"></span></td>
-                                        <td><a href="https://www.instagram.com/{{ user.instagram }}/" target="_blank">@{{ user.instagram }}</a></td>
-                                    </tr>
-                                {% endif %}
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
+                <div class="col-sm-12 col-md-4">
+                    {% include 'WebUserBundle:User:partials/about.html.twig' with { 'action': action, 'user': user } %}
                     {% if action == 'edit' %}
-                    <div id="edit-profile" class="md-modal colored-header md-effect-1">
-                        <div class="md-content">
-                            <div class="modal-header">
-                                <button type="button" data-dismiss="modal" aria-hidden="true" class="close md-close"><i class="icon s7-close"></i></button>
-                                <h3 class="modal-title">{{ 'profile.edit_profile.text'|trans }}</h3>
-                            </div>
-                            <div class="modal-body form">
-                                {% include 'WebUserBundle:User:edit_form.html.twig' with { 'user': user, 'form': form } %}
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" data-dismiss="modal" class="btn btn-default md-close">{{ 'cancel'|trans }}</button>
-                                <button type="submit" data-dismiss="modal" class="btn btn-primary" form="{{ form.vars.name }}">{{ 'save'|trans }}</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div id="edit-password" class="md-modal colored-header md-effect-1">
-                        <div class="md-content">
-                            <div class="modal-header">
-                                <button type="button" data-dismiss="modal" aria-hidden="true" class="close md-close"><i class="icon s7-close"></i></button>
-                                <h3 class="modal-title">{{ 'profile.edit_password.text'|trans }}</h3>
-                            </div>
-                            <div class="modal-body form">
-                                {{ render(controller(
-                                    'WebUserBundle:USer:editPassword'
-                                )) }}
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" data-dismiss="modal" class="btn btn-default md-close">{{ 'cancel'|trans }}</button>
-                                <button type="submit" data-dismiss="modal" class="btn btn-primary" form="beloop_user_form_type_password">{{ 'save'|trans }}</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="md-overlay"></div>
+                        {% include 'WebUserBundle:User:modals/profile.html.twig' with { 'user': user, 'form': form} %}
+                        {% include 'WebUserBundle:User:modals/password.html.twig' with { 'user': user, 'form': form} %}
+                        <div class="md-overlay"></div>
                     {% endif %}
                 </div>
             </div>
