@@ -96,6 +96,11 @@ guzzle:
             headers:
                 Accept: "*/*"
                 Host: "dyb-courses.squarespace.com"
+        api_typeform:
+            base_url: "https://aialahernando.typeform.com"
+            headers:
+                Accept: "*/*"
+                Host: "aialahernando.typeform.com"
 
 beloop_squarespace:
     authorization:

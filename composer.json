@@ -41,7 +41,8 @@
         "beloop/course-bundle": "~0.4",
         "beloop/language-bundle": "~0.4",
         "beloop/user-bundle": "~0.4",
-        "beloop/squarespace-bundle": "~0.4"
+        "beloop/squarespace-bundle": "~0.4",
+        "beloop/typeform-bundle": "~0.4"
     },
     "require-dev": {
         "sensio/generator-bundle": "^3.0",

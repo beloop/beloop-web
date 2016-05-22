@@ -12,7 +12,7 @@
             <ul class="nav navbar-nav navbar-right am-user-nav">
                 <li class="dropdown"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="dropdown-toggle"><img src="{{ asset('img/avatar.jpg') }}"><span class="user-name">{{ user.fullName }}</span><span class="angle-down s7-angle-down"></span></a>
                     <ul role="menu" class="dropdown-menu">
-                        <li><a href="#"> <span class="icon s7-user"></span>{{ 'menu.my_profile.title'|trans }}</a></li>
+                        <li><a href="{{ path('beloop_user_profile') }}"> <span class="icon s7-user"></span>{{ 'menu.my_profile.title'|trans }}</a></li>
                         <li><a href="{{ path('beloop_logout') }}"> <span class="icon s7-power"></span>{{ 'menu.logout.title'|trans }}</a></li>
                     </ul>
                 </li>

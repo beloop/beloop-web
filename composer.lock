@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "b9499dc0abc5f7a45b33e3bfba6eb59b",
-    "content-hash": "2689ffc8d035df2b529d6c4da2bbbc39",
+    "hash": "8c04112f4eeb7eb12da96636303ec6c0",
+    "content-hash": "0d83adb5d1ddca3818d3d4a9a84a1068",
     "packages": [
         {
             "name": "beloop/analytics",
@@ -597,6 +597,131 @@
                 "squarespace"
             ],
             "time": "2016-05-19 21:53:25"
+        },
+        {
+            "name": "beloop/typeform",
+            "version": "0.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/beloop/Typeform.git",
+                "reference": "c5af8f8b456ed90336bc4bb380fcf464f243efdf"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/beloop/Typeform/zipball/c5af8f8b456ed90336bc4bb380fcf464f243efdf",
+                "reference": "c5af8f8b456ed90336bc4bb380fcf464f243efdf",
+                "shasum": ""
+            },
+            "require": {
+                "beloop/core": "^0.4",
+                "beloop/course": "^0.4",
+                "doctrine/common": "^2.5",
+                "doctrine/orm": "^2.5",
+                "guzzlehttp/guzzle": "~6.0",
+                "php": "^5.5|^7.0",
+                "symfony/security-core": "^2.7|^3.0",
+                "twig/twig": "^1.23"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "4.8.19"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.4-dev"
+                }
+            },
+            "autoload": {
+                "exclude-from-classmap": [
+                    "/Test/"
+                ],
+                "psr-4": {
+                    "Beloop\\Component\\Typeform\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Arkaitz Garro",
+                    "email": "arkaitz.garro@gmail.com"
+                }
+            ],
+            "description": "Beloop Typeform Component",
+            "homepage": "https://github.com/beloop/Typeform",
+            "keywords": [
+                "beloop",
+                "component",
+                "lms",
+                "typeform"
+            ],
+            "time": "2016-05-22 10:41:58"
+        },
+        {
+            "name": "beloop/typeform-bundle",
+            "version": "0.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/beloop/TypeformBundle.git",
+                "reference": "c6f767e9be4ac80b5c4959283bd704343b7a7102"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/beloop/TypeformBundle/zipball/c6f767e9be4ac80b5c4959283bd704343b7a7102",
+                "reference": "c6f767e9be4ac80b5c4959283bd704343b7a7102",
+                "shasum": ""
+            },
+            "require": {
+                "beloop/core-bundle": "^0.4",
+                "beloop/course-bundle": "^0.4",
+                "beloop/typeform": "^0.4",
+                "doctrine/common": "^2.5",
+                "doctrine/orm": "^2.5",
+                "eightpoints/guzzle-bundle": "^4.5",
+                "mmoreram/simple-doctrine-mapping": "^1.0",
+                "mmoreram/symfony-bundle-dependencies": "^1.1.1",
+                "php": "^5.5|^7.0",
+                "symfony/config": "^2.7|^3.0",
+                "symfony/dependency-injection": "^2.7|^3.0",
+                "symfony/http-kernel": "^2.7|^3.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "4.8.19"
+            },
+            "type": "symfony-bundle",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.4-dev"
+                }
+            },
+            "autoload": {
+                "exclude-from-classmap": [
+                    "/Test/"
+                ],
+                "psr-4": {
+                    "Beloop\\Bundle\\TypeformBundle\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Arkaitz Garro",
+                    "email": "arkaitz.garro@gmail.com"
+                }
+            ],
+            "description": "Beloop Typeform Bundle",
+            "homepage": "https://github.com/beloop/TypeformBundle",
+            "keywords": [
+                "beloop",
+                "lms",
+                "typeform"
+            ],
+            "time": "2016-05-22 10:50:01"
         },
         {
             "name": "beloop/user",

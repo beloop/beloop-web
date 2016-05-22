@@ -15,13 +15,17 @@
                 <ol class="dd-list">
                     {% for lesson in course.lessons %}
                         <li class="dd-item">
-                            <span class="dd-handle">{{ lesson.name }}</span>
+                            <span class="dd-handle text-uppercase {% if not lesson.available %}disabled{% endif %}">{{ loop.index0 }}. {{ lesson.name }}</span>
                             <ol class="dd-list">
-                                {% for module in lesson.modules %}
-                                    {% set active = (module.id == page.id) ? 'active' : '' %}
-                                    <li class="dd-item">
-                                        <a href="{{ path('beloop_view_module_' ~ module.type, {'code': course.code, 'id': module.id}) }}" class="dd-handle {{ active }}">{{ module.name }}</a>
-                                    </li>
+                                {% for mod in lesson.modules %}
+                                    {% if not lesson.available %}
+                                        <span class="dd-handle disabled">{{ loop.parent.loop.index }}.{{ loop.index }}. {{ mod.name }}</span>
+                                    {% else %}
+                                        {% set active = (mod.id == module.id) ? 'active' : '' %}
+                                        <li class="dd-item">
+                                            <a href="{{ path('beloop_view_module_' ~ mod.type, {'code': course.code, 'id': mod.id}) }}" class="dd-handle {{ active }}">{{ loop.parent.loop.index }}.{{ loop.index }}. {{ mod.name }}</a>
+                                        </li>
+                                    {% endif %}
                                 {% endfor %}
                             </ol>
                         </li>
