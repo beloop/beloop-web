@@ -600,16 +600,16 @@
         },
         {
             "name": "beloop/user",
-            "version": "0.4.10",
+            "version": "0.4.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/beloop/User.git",
-                "reference": "cc6572c64aab2dd1ebbff3326d519fba245fd5cf"
+                "reference": "b9cb03e10b66acc8d9162d39de6e6a6ced88917f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/beloop/User/zipball/cc6572c64aab2dd1ebbff3326d519fba245fd5cf",
-                "reference": "cc6572c64aab2dd1ebbff3326d519fba245fd5cf",
+                "url": "https://api.github.com/repos/beloop/User/zipball/b9cb03e10b66acc8d9162d39de6e6a6ced88917f",
+                "reference": "b9cb03e10b66acc8d9162d39de6e6a6ced88917f",
                 "shasum": ""
             },
             "require": {
@@ -658,20 +658,20 @@
                 "lms",
                 "user"
             ],
-            "time": "2016-05-21 17:03:10"
+            "time": "2016-05-22 09:40:04"
         },
         {
             "name": "beloop/user-bundle",
-            "version": "0.4.10",
+            "version": "0.4.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/beloop/UserBundle.git",
-                "reference": "da3146784c87674d44cc8fead98d4e713aa6cd93"
+                "reference": "1712f07be424dcefdc32837b1e706c3d5a2d5abc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/beloop/UserBundle/zipball/da3146784c87674d44cc8fead98d4e713aa6cd93",
-                "reference": "da3146784c87674d44cc8fead98d4e713aa6cd93",
+                "url": "https://api.github.com/repos/beloop/UserBundle/zipball/1712f07be424dcefdc32837b1e706c3d5a2d5abc",
+                "reference": "1712f07be424dcefdc32837b1e706c3d5a2d5abc",
                 "shasum": ""
             },
             "require": {
@@ -684,7 +684,8 @@
                 "php": "^5.5|^7.0",
                 "symfony/config": "^2.7|^3.0",
                 "symfony/dependency-injection": "^2.7|^3.0",
-                "symfony/http-kernel": "^2.7|^3.0"
+                "symfony/http-kernel": "^2.7|^3.0",
+                "symfony/security-core": "^2.7|^3.0"
             },
             "require-dev": {
                 "phpunit/phpunit": "4.8.19"
@@ -720,7 +721,7 @@
                 "lms",
                 "user"
             ],
-            "time": "2016-05-21 17:03:10"
+            "time": "2016-05-22 09:40:04"
         },
         {
             "name": "doctrine/annotations",
