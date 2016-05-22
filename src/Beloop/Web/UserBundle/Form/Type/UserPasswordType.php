@@ -21,8 +21,25 @@ use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 
-class PasswordType extends AbstractType
+class UserPasswordType extends AbstractType
 {
+    /**
+     * @var UrlGeneratorInterface
+     *
+     * Router
+     */
+    protected $router;
+
+    /**
+     * Constructor
+     *
+     * @param UrlGeneratorInterface $router Router
+     */
+    public function __construct(UrlGeneratorInterface $router)
+    {
+        $this->router = $router;
+    }
+
     /**
      * Build form function
      *
@@ -33,16 +50,20 @@ class PasswordType extends AbstractType
     {
         $builder
             ->setMethod('POST')
-
+            ->setAction(
+                $this
+                    ->router
+                    ->generate('beloop_user_password_update')
+            )
             ->add('password', RepeatedType::class, [
                 'type' => PasswordType::class,
                 'first_options'  => [
-                    'label' => 'beloop.user.form.fields.password.label',
+                    'label' => 'profile.form.fields.password.label',
                 ],
                 'second_options' => [
-                    'label' => 'beloop.user.form.fields.repeat_password.label',
+                    'label' => 'profile.form.fields.repeat_password.label',
                 ],
-                'required' => false,
+                'required' => true,
             ]);
     }
 
