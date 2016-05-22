@@ -26,7 +26,8 @@ class AppKernel extends Kernel
             new EightPoints\Bundle\GuzzleBundle\GuzzleBundle(),
             new FOS\JsRoutingBundle\FOSJsRoutingBundle(),
             new Mmoreram\ControllerExtraBundle\ControllerExtraBundle(),
-
+            new Vich\UploaderBundle\VichUploaderBundle(),
+            
             /**
              * Beloop core bundles
              */

@@ -6,6 +6,12 @@
   margin-bottom: 30px;
   box-shadow: none;
   border-width: 0;
+
+  .panel-body {
+    img {
+      margin-bottom: 15px;
+    }
+  }
 }
 
 //Panel heading style
@@ -206,4 +212,14 @@
 
 .panel-full-dark{
   .panel-full-color(@dark-color-text);
+}
+
+@media @non-responsive{
+  .panel{
+    .panel-body {
+      img {
+        margin-bottom: 0;
+      }
+    }
+  }
 }

@@ -24,7 +24,10 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
+use Vich\UploaderBundle\Form\Type\VichFileType;
+
 use Beloop\Component\Core\Factory\Traits\FactoryTrait;
+use Vich\UploaderBundle\Form\Type\VichImageType;
 
 /**
  * Type for a course edit
@@ -69,6 +72,9 @@ class CourseType extends AbstractType
             ])
             ->add('description', TextareaType::class, [
                 'required' => true
+            ])
+            ->add('imageFile', VichImageType::class, [
+                'required' => false
             ])
             ->add('Language', EntityType::class, [
                 'required' => true,

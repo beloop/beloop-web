@@ -83,11 +83,13 @@ doctrine:
 
 # Swiftmailer Configuration
 swiftmailer:
-    transport: "%mailer_transport%"
-    host:      "%mailer_host%"
-    username:  "%mailer_user%"
-    password:  "%mailer_password%"
-    spool:     { type: memory }
+    transport:  "%mailer_transport%"
+    host:       "%mailer_host%"
+    port:       "%mailer_port%"
+    encryption: "%mailer_encryption%"
+    username:   "%mailer_user%"
+    password:   "%mailer_password%"
+    spool:      { type: memory }
 
 guzzle:
     clients:
@@ -101,6 +103,19 @@ guzzle:
             headers:
                 Accept: "*/*"
                 Host: "aialahernando.typeform.com"
+
+vich_uploader:
+    db_driver: orm
+
+    metadata:
+        directories:
+            - { path: @BeloopCourseBundle/Resources/config/vich_uploader, namespace_prefix: Beloop\Component\Course\Entity }
+
+    mappings:
+        course_image:
+            uri_prefix:         /images/course
+            upload_destination: %kernel.root_dir%/../web/images/course
+            namer:              vich_uploader.namer_uniqid
 
 beloop_squarespace:
     authorization:
