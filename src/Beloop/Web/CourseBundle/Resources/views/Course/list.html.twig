@@ -21,20 +21,28 @@
                                     </div>
                                     <div class="col-xs-12 col-md-6">
                                         {{ course.description | raw }}
-                                        <a href="{{ path('beloop_view_course', {'code': course.code}) }}" class="btn btn-block btn-alt4">
-                                            <span class="icon-container">
-                                                <span class="icon"><span class="s7-angle-right"></span></span>
-                                            </span>
-                                        </a>
+                                        {% if not course.available %}
+                                            <strong>{{ 'course.course_not_available.text'|trans({'%date%' : course.startDate|localizeddate('medium', 'none')}) }}</strong>
+                                        {% else %}
+                                            <a href="{{ path('beloop_view_course', {'code': course.code}) }}" class="btn btn-block btn-alt4">
+                                                <span class="icon-container">
+                                                    <span class="icon"><span class="s7-angle-right"></span></span>
+                                                </span>
+                                            </a>
+                                        {% endif %}
                                     </div>
                                 </div>
                             {% else %}
                                 {{ course.description | raw }}
-                                <a href="{{ path('beloop_view_course', {'code': course.code}) }}" class="btn btn-block btn-alt4">
-                                    <span class="icon-container">
-                                        <span class="icon"><span class="s7-angle-right"></span></span>
-                                    </span>
-                                </a>
+                                {% if not course.available %}
+                                    <strong>{{ 'course.course_not_available.text'|trans({'%date%' : course.startDate|localizeddate('medium', 'none')}) }}</strong>
+                                {% else %}
+                                    <a href="{{ path('beloop_view_course', {'code': course.code}) }}" class="btn btn-block btn-alt4">
+                                        <span class="icon-container">
+                                            <span class="icon"><span class="s7-angle-right"></span></span>
+                                        </span>
+                                    </a>
+                                {% endif %}
                             {% endif %}
                         </div>
                     </div>
