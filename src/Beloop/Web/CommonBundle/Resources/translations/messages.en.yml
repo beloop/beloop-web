@@ -67,6 +67,10 @@ course:
         title: 'Details'
     enrolled_students:
         title: 'Enrolled students'
+    course_not_available:
+        text: 'This course will be available on %date%'
+    lesson_not_available:
+        text: 'This lesson will be available on %date%'
 
 menu:
     dashboard:

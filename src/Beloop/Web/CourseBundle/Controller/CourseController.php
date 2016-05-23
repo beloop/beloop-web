@@ -92,6 +92,10 @@ class CourseController extends Controller
             throw $this->createNotFoundException('The course does not exist');
         }
 
+        if (!$course->isAvailable()) {
+            throw $this->createNotFoundException('The course does not exist');
+        }
+
         return [
             'section' => 'my-courses',
             'user' => $user,
