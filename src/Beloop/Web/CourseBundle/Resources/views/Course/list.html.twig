@@ -11,7 +11,11 @@
                 <div class="col-xs-12 col-sm-6">
                     <div class="panel panel-default panel-heading-fullwidth panel-course">
                         <div class="panel-heading">
-                            <a href="{{ path('beloop_view_course', {'code': course.code}) }}" class="title">{{ course.name }}</a>
+                            {% if not course.available %}
+                                <span class="title">{{ course.name }}</span>
+                            {% else %}
+                                <a href="{{ path('beloop_view_course', {'code': course.code}) }}" class="title">{{ course.name }}</a>
+                            {% endif %}
                         </div>
                         <div class="panel-body">
                             {% if course.imageName|length > 0 %}
