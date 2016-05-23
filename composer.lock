@@ -237,16 +237,16 @@
         },
         {
             "name": "beloop/course",
-            "version": "0.4.12",
+            "version": "0.4.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/beloop/Course.git",
-                "reference": "a74a6933d50ddd56c4b5a26a646071b10b85c060"
+                "reference": "43a62629929777d2ed3f418ab26ae24a0b81edd5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/beloop/Course/zipball/a74a6933d50ddd56c4b5a26a646071b10b85c060",
-                "reference": "a74a6933d50ddd56c4b5a26a646071b10b85c060",
+                "url": "https://api.github.com/repos/beloop/Course/zipball/43a62629929777d2ed3f418ab26ae24a0b81edd5",
+                "reference": "43a62629929777d2ed3f418ab26ae24a0b81edd5",
                 "shasum": ""
             },
             "require": {
@@ -292,7 +292,7 @@
                 "course",
                 "lms"
             ],
-            "time": "2016-05-22 17:43:20"
+            "time": "2016-05-23 20:27:40"
         },
         {
             "name": "beloop/course-bundle",
@@ -536,16 +536,16 @@
         },
         {
             "name": "beloop/squarespace-bundle",
-            "version": "0.4.12",
+            "version": "0.4.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/beloop/SquarespaceBundle.git",
-                "reference": "90764e377c9f45c3a6936934ba410441d9c68b29"
+                "reference": "9dacc94c417c13a40e798550b657fde78f339c11"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/beloop/SquarespaceBundle/zipball/90764e377c9f45c3a6936934ba410441d9c68b29",
-                "reference": "90764e377c9f45c3a6936934ba410441d9c68b29",
+                "url": "https://api.github.com/repos/beloop/SquarespaceBundle/zipball/9dacc94c417c13a40e798550b657fde78f339c11",
+                "reference": "9dacc94c417c13a40e798550b657fde78f339c11",
                 "shasum": ""
             },
             "require": {
@@ -596,7 +596,7 @@
                 "lms",
                 "squarespace"
             ],
-            "time": "2016-05-22 11:26:14"
+            "time": "2016-05-23 20:27:40"
         },
         {
             "name": "beloop/typeform",
@@ -661,16 +661,16 @@
         },
         {
             "name": "beloop/typeform-bundle",
-            "version": "0.4.2",
+            "version": "0.4.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/beloop/TypeformBundle.git",
-                "reference": "0438fba1726918ec73bf66eca7c6539451ca02b6"
+                "reference": "fb23bbf76fcf4cf3b5047f994d07ea4b8d420f29"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/beloop/TypeformBundle/zipball/0438fba1726918ec73bf66eca7c6539451ca02b6",
-                "reference": "0438fba1726918ec73bf66eca7c6539451ca02b6",
+                "url": "https://api.github.com/repos/beloop/TypeformBundle/zipball/fb23bbf76fcf4cf3b5047f994d07ea4b8d420f29",
+                "reference": "fb23bbf76fcf4cf3b5047f994d07ea4b8d420f29",
                 "shasum": ""
             },
             "require": {
@@ -721,7 +721,7 @@
                 "lms",
                 "typeform"
             ],
-            "time": "2016-05-22 14:28:57"
+            "time": "2016-05-23 20:27:40"
         },
         {
             "name": "beloop/user",

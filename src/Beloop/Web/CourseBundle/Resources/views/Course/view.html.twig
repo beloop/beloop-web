@@ -11,17 +11,17 @@
                 <div class="sections">
                     {% for lesson in course.lessons %}
                         <div class="panel-group accordion accordion-color">
-                            <div class="panel panel-default {% if not lesson.available %}panel-transparent panel-borders{% endif %}">
+                            <div class="panel panel-default {% if not lesson.available and not is_granted('ROLE_TEACHER') %}panel-transparent panel-borders{% endif %}">
                                 <div class="panel-heading">
                                     <h4 class="panel-title">{{ lesson.name }}</h4>
                                 </div>
                                 <div class="panel-body">
-                                    {% if not lesson.available %}
-                                        <span>{{ 'course.lesson_not_available.text'|trans({'%date%' : lesson.startDate|localizeddate('medium', 'none')}) }}</span>
-                                    {% else %}
+                                    {% if lesson.available or is_granted('ROLE_TEACHER') %}
                                         {% for module in lesson.modules %}
                                             <a href="{{ path('beloop_view_module_' ~ module.type, {'code': course.code, 'id': module.id}) }}"><span class="s7-note"></span> {{ module.name }}</a>
                                         {% endfor %}
+                                    {% else %}
+                                        <span>{{ 'course.lesson_not_available.text'|trans({'%date%' : lesson.startDate|localizeddate('medium', 'none')}) }}</span>
                                     {% endif %}
                                 </div>
                             </div>

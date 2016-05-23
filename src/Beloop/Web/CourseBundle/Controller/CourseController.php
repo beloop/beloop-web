@@ -86,14 +86,17 @@ class CourseController extends Controller
     {
         $user = $this->getUser();
 
-        $userEnrolled = $course->getEnrolledUsers()->contains($user);
+        // Extra checks if user is not TEACHER or ADMIN
+        if (false === $this->get('security.authorization_checker')->isGranted('ROLE_TEACHER')) {
+            $userEnrolled = $course->getEnrolledUsers()->contains($user);
 
-        if (!$userEnrolled) {
-            throw $this->createNotFoundException('The course does not exist');
-        }
+            if (!$userEnrolled) {
+                throw $this->createNotFoundException('The course does not exist');
+            }
 
-        if (!$course->isAvailable()) {
-            throw $this->createNotFoundException('The course does not exist');
+            if (!$course->isAvailable()) {
+                throw $this->createNotFoundException('The course does not exist');
+            }
         }
 
         return [
