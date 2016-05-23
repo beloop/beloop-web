@@ -95,3 +95,8 @@ email:
             recover_copy_paste: 'Or copy and paste the following URL into your browser: %url%'
             remember_password: 'Recover password'
             cheers: 'The Delicious Yet Beautiful Team'
+
+error:
+    404:
+        text: 'The page you are looking for might have been removed.'
+        link: 'Would you like to go <a href="%link%">home</a>?'
