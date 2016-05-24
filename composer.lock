@@ -725,16 +725,16 @@
         },
         {
             "name": "beloop/user",
-            "version": "0.4.11",
+            "version": "0.4.12",
             "source": {
                 "type": "git",
                 "url": "https://github.com/beloop/User.git",
-                "reference": "b9cb03e10b66acc8d9162d39de6e6a6ced88917f"
+                "reference": "309799abc57dcc70e44e0d87360912ab69144a5e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/beloop/User/zipball/b9cb03e10b66acc8d9162d39de6e6a6ced88917f",
-                "reference": "b9cb03e10b66acc8d9162d39de6e6a6ced88917f",
+                "url": "https://api.github.com/repos/beloop/User/zipball/309799abc57dcc70e44e0d87360912ab69144a5e",
+                "reference": "309799abc57dcc70e44e0d87360912ab69144a5e",
                 "shasum": ""
             },
             "require": {
@@ -744,6 +744,7 @@
                 "doctrine/orm": "^2.5",
                 "league/csv": "^8.0.0",
                 "php": "^5.5|^7.0",
+                "symfony/http-foundation": "^2.7|^3.0",
                 "symfony/property-access": "^2.7|^3.0",
                 "symfony/security-core": "^2.7|^3.0",
                 "twig/twig": "^1.23"
@@ -783,20 +784,20 @@
                 "lms",
                 "user"
             ],
-            "time": "2016-05-22 09:40:04"
+            "time": "2016-05-24 21:17:33"
         },
         {
             "name": "beloop/user-bundle",
-            "version": "0.4.11",
+            "version": "0.4.12",
             "source": {
                 "type": "git",
                 "url": "https://github.com/beloop/UserBundle.git",
-                "reference": "1712f07be424dcefdc32837b1e706c3d5a2d5abc"
+                "reference": "35cfbd7e305e1da2353f713112c24a31402fbdad"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/beloop/UserBundle/zipball/1712f07be424dcefdc32837b1e706c3d5a2d5abc",
-                "reference": "1712f07be424dcefdc32837b1e706c3d5a2d5abc",
+                "url": "https://api.github.com/repos/beloop/UserBundle/zipball/35cfbd7e305e1da2353f713112c24a31402fbdad",
+                "reference": "35cfbd7e305e1da2353f713112c24a31402fbdad",
                 "shasum": ""
             },
             "require": {
@@ -846,7 +847,7 @@
                 "lms",
                 "user"
             ],
-            "time": "2016-05-22 09:40:04"
+            "time": "2016-05-24 21:17:33"
         },
         {
             "name": "doctrine/annotations",
