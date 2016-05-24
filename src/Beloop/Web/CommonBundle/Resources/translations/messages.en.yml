@@ -59,6 +59,8 @@ profile:
                 label: 'New password'
             repeat_password:
                 label: 'Confirm pasword'
+            avatar:
+                error: 'Avatar file size cannot be greater than 500KB'
 
 course:
     description:

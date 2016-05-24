@@ -17,7 +17,7 @@ framework:
         strict_requirements: ~
     form:            ~
     csrf_protection: ~
-    validation:      { enable_annotations: true }
+    validation:      { enabled: true, enable_annotations: false }
     #serializer:      { enable_annotations: true }
     templating:
         engines: ['twig']
@@ -110,11 +110,17 @@ vich_uploader:
     metadata:
         directories:
             - { path: @BeloopCourseBundle/Resources/config/vich_uploader, namespace_prefix: Beloop\Component\Course\Entity }
+            - { path: @BeloopUserBundle/Resources/config/vich_uploader, namespace_prefix: Beloop\Component\User\Entity }
 
     mappings:
         course_image:
             uri_prefix:         /images/course
             upload_destination: %kernel.root_dir%/../web/images/course
+            namer:              vich_uploader.namer_uniqid
+
+        user_avatar:
+            uri_prefix:         /images/avatar
+            upload_destination: %kernel.root_dir%/../web/images/avatar
             namer:              vich_uploader.namer_uniqid
 
 beloop_squarespace:

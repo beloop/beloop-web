@@ -17,10 +17,12 @@ namespace Beloop\Web\UserBundle\Controller;
 
 use Mmoreram\ControllerExtraBundle\Annotation\Entity as EntityAnnotation;
 use Mmoreram\ControllerExtraBundle\Annotation\Form as AnnotationForm;
+
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Form\FormView;
+use Symfony\Component\HttpFoundation\JsonResponse;
 
 use Beloop\Component\User\Entity\Interfaces\UserInterface;
 
@@ -32,8 +34,11 @@ class UserController extends Controller
      * @param UserInterface $user
      * @param FormView $formView
      * @param string $isValid Is valid
+     *
      * @return array
+     *
      * @internal param Form $form Form
+     *
      * @Template("WebUserBundle:User:profile.html.twig")
      *
      * @Route(
@@ -88,13 +93,16 @@ class UserController extends Controller
     }
 
     /**
-     * User profile page
+     * Edit user password
      *
      * @param UserInterface $user
      * @param FormView $formView
      * @param string $isValid Is valid
+     *
      * @return array
+     *
      * @internal param Form $form Form
+     *
      * @Template("WebUserBundle:User:partials/password.html.twig")
      *
      * @Route(
@@ -138,6 +146,66 @@ class UserController extends Controller
             return $this->redirect(
                 $this->generateUrl('beloop_user_profile')
             );
+        }
+
+        return [
+            'action' => 'edit',
+            'section' => 'my-profile',
+            'user' => $user,
+            'form' => $formView,
+        ];
+    }
+
+    /**
+     * User profile page
+     *
+     * @param UserInterface $user
+     * @param FormView $formView
+     * @param string $isValid Is valid
+     *
+     * @return array
+     *
+     * @internal param Form $form Form
+     *
+     * @Template("WebUserBundle:User:partials/avatar.html.twig")
+     *
+     * @Route(
+     *      path = "/user/profile/edit_avatar",
+     *      name = "beloop_user_avatar_update",
+     *      methods = {"POST"}
+     * )
+     *
+     * @EntityAnnotation(
+     *      class = {
+     *          "factory" = "beloop.wrapper.user",
+     *          "method" = "get",
+     *          "static" = false
+     *      },
+     *      name = "user",
+     * )
+     *
+     * @AnnotationForm(
+     *      class         = "Beloop\Web\UserBundle\Form\Type\AvatarType",
+     *      name          = "formView",
+     *      entity        = "user",
+     *      handleRequest = true,
+     *      validate      = "isValid"
+     * )
+     */
+    public function editAvatarAction(
+        UserInterface $user,
+        FormView $formView,
+        $isValid
+    ) {
+        if ($isValid) {
+            $this
+                ->get('beloop.object_manager.user')
+                ->flush($user);
+
+            $helper = $this->get('vich_uploader.templating.helper.uploader_helper');
+            $path = $helper->asset($user, 'avatarFile');
+
+            return new JsonResponse(['status' => 'OK', 'path' => $path], JsonResponse::HTTP_OK);
         }
 
         return [

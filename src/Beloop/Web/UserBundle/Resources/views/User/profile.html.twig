@@ -7,7 +7,12 @@
             <div class="user-display">
                 <div class="photo"><img src="{{ asset('img/background-black.jpg') }}"></div>
                 <div class="bottom">
-                    <div class="user-avatar"><img src="{{ asset('img/avatar.jpg') }}"></div>
+                    <div class="user-avatar">
+                        {% if action == 'edit' %}
+                            <div class="hidden">{{ render(controller('WebUserBundle:User:editAvatar')) }}</div>
+                            <span class="edit-avatar" data-target="#beloop_user_form_type_avatar_avatarFile_file"><span class="s7-camera"></span></span>
+                        {% endif %}
+                        <img class="avatar" src="{{ vich_uploader_asset(user, 'avatarFile')|default(asset('img/avatar.jpg')) }}"></div>
                     <div class="user-info">
                         <h4>{{ user.fullName }}</h4><span>{{ user.biography|default('') }}</span>
                     </div>
@@ -45,6 +50,39 @@
                 if (inputs.first().val() !== inputs.last().val()) {
                     event.preventDefault();
                 }
+            });
+
+            $('.edit-avatar').on('click', function () {
+                var $target = $(this.dataset.target);
+
+                $target.trigger('click');
+                $target.on('change', function () {
+                    if (window.FileReader && window.File && window.FileList && window.Blob) {
+                        if (this.files[0].size/1024 > 512) {
+                            alert("{{ 'profile.form.fields.avatar.error'|trans }}");
+                            return;
+                        }
+                    }
+
+                    var $form = $('#beloop_user_form_type_avatar');
+                    var data = new FormData($form[0]);
+
+                    $.ajax({
+                        type: $form.attr('method'),
+                        url: $form.attr('action'),
+                        data: data,
+                        processData: false,
+                        contentType: false
+                    }).done(function (data) {
+                        if (data && data.status === 'OK') {
+                            $('.avatar').each(function () {
+                                this.src = data.path;
+                            });
+                        } else {
+                            alert("{{ 'profile.form.fields.avatar.error'|trans }}");
+                        }
+                    });
+                });
             });
         });
     </script>

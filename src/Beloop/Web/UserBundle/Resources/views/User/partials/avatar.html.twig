@@ -1,0 +1,6 @@
+{% form_theme form 'AdminCommonBundle::Forms/fields.html.twig' %}
+
+{{ form_start(form, {
+    action: path('beloop_user_avatar_update')
+}) }}
+{{ form_end(form) }}

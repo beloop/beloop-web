@@ -1,141 +1,151 @@
 /*------------------------------------------------------------------
   [Profile page]
 */
-.user-profile{
+.user-profile {
 
-	.user-display{
-		margin-bottom: 30px;
+  .user-display {
+    margin-bottom: 30px;
 
-		.photo{
-			max-height: 300px;
-			overflow: hidden;
+    .photo {
+      max-height: 300px;
+      overflow: hidden;
 
-			img{
-				width: 100%;
+      img {
+        width: 100%;
 
-				@media @phone{
-					min-height: 130px;
-				}
-			}
-		}
+        @media @phone{
+          min-height: 130px;
+        }
+      }
+    }
 
-		.bottom{
-			background-color: @light-color;
-			position: relative;
-			padding: 25px 30px 25px 205px;
+    .bottom {
+      background-color: @light-color;
+      position: relative;
+      padding: 25px 30px 25px 205px;
 
-			> div{
-				display: inline-block;
-			}
+      > div {
+        display: inline-block;
+      }
 
-			.user-avatar{
-				position: absolute;
-				left: 46px;
-				top: -50px;
+      .user-avatar {
+        position: absolute;
+        left: 46px;
+        top: -50px;
 
-				.status{
-					background-color: @status-online;
-					border: 2px solid @light-color;
-					border-radius: 50%;
-					height: 18px;
-					width: 18px;
-					left: 105px;
-					position: absolute;
-					top: 105px;
+        .edit-avatar {
+          font-size: 80px;
+          position: absolute;
+          background-color: #000;
+          border-radius: 50%;
+          height: 135px;
+          width: 135px;
+          text-align: center;
+          padding-top: 10px;
+          opacity: 0.4;
+          color: #fff;
+          cursor: pointer;
+          border: 3px solid @light-color;
+          display: none;
 
-					@media @phone{
-						height: 13px;
-						width: 13px;
-						left: 53px;
-						top: 51px;
-					}
-				}
+          @media @phone{
+            width: 70px;
+            height: 70px;
+            font-size: 35px;
+          }
+        }
 
-				img{
-					width: 135px;
-					height: 135px;
-					border-radius: 50%;
-					border: 3px solid @light-color;
+        &:hover {
+          .edit-avatar {
+            display: block;
+          }
+        }
 
-					@media @phone{
-						width: 70px;
-						height: 70px;
-					}
-				}
+        img {
+          width: 135px;
+          height: 135px;
+          border-radius: 50%;
+          border: 3px solid @light-color;
 
-				@media @phone{
-					left: 50%;
-					top: -46px;
-					margin-left: -35px;
-				}
-			}
+          @media @phone{
+            width: 70px;
+            height: 70px;
+          }
+        }
 
-			.user-info{
-				line-height: 20px;
+        @media @phone{
+          left: 50%;
+          top: -46px;
+          margin-left: -35px;
+        }
+      }
 
-				h4{
-					margin: 0;
-					font-size: 25px;
-					margin-bottom: 5px;
-				}
+      .user-info {
+        line-height: 20px;
 
-				span{
-					font-size: 14px;
-					font-weight: 300;
-					color: lighten(@text-color, 15%);
-				}
+        h4 {
+          margin: 0;
+          font-size: 25px;
+          margin-bottom: 5px;
+        }
 
-				@media @phone{
-					line-height: 22px;
-				}
-			}
+        span {
+          font-size: 14px;
+          font-weight: 300;
+          color: lighten(@text-color, 15%);
+        }
 
-			@media @phone{
-				padding: 30px 30px 25px 25px;
-			}
-		}
-	}
+        @media @phone{
+          line-height: 22px;
+        }
+      }
 
-	.info-block{
+      @media @phone{
+        padding: 30px 30px 25px 25px;
+      }
+    }
+  }
 
-		.description{
-			padding-bottom: 15px;
-			border-bottom: 1px dashed darken(@light-color, 10%);
-			display: block;
-			color: lighten(@text-color, 15%);;
-		}
+  .info-block {
 
-		table{
-			width: 100%;
+    .description {
+      padding-bottom: 15px;
+      border-bottom: 1px dashed darken(@light-color, 10%);
+      display: block;
+      color: lighten(@text-color, 15%);;
+    }
 
-			tr{
-				line-height: 23px;
-				border-bottom: 1px solid darken(@light-color, 10%);
+    table {
+      width: 100%;
 
-				td{
-					padding: 15px 0;
-				}
+      tr {
+        line-height: 23px;
+        border-bottom: 1px solid darken(@light-color, 10%);
 
-				td.item{
-					width: 45%;
-					color: lighten(@text-color, 15%);
+        td {
+          padding: 15px 0;
+        }
 
-					.icon{
-						float: left;
-						margin-right: 5px;
-						font-size: 20px;
-						color: @primary-color;
-					}
-				}
+        td.item {
+          width: 45%;
+          color: lighten(@text-color, 15%);
 
-				&:last-child{
-					border-bottom: 0;
+          .icon {
+            float: left;
+            margin-right: 5px;
+            font-size: 20px;
+            color: @primary-color;
+          }
+        }
 
-					td{
-						padding-bottom: 0;
-					}
-				}
-			}
-		}		
-	}
+        &:last-child {
+          border-bottom: 0;
+
+          td {
+            padding-bottom: 0;
+          }
+        }
+      }
+    }
+  }
 }
