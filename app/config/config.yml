@@ -109,8 +109,8 @@ vich_uploader:
 
     metadata:
         directories:
-            - { path: @BeloopCourseBundle/Resources/config/vich_uploader, namespace_prefix: Beloop\Component\Course\Entity }
-            - { path: @BeloopUserBundle/Resources/config/vich_uploader, namespace_prefix: Beloop\Component\User\Entity }
+            - { path: "@BeloopCourseBundle/Resources/config/vich_uploader", namespace_prefix: Beloop\Component\Course\Entity }
+            - { path: "@BeloopUserBundle/Resources/config/vich_uploader", namespace_prefix: Beloop\Component\User\Entity }
 
     mappings:
         course_image:
