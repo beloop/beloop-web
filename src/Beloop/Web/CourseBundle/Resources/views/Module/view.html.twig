@@ -1,5 +1,7 @@
 {% extends 'base.html.twig' %}
 
+{% block title %}{{ module.name }}{% endblock %}
+
 {% block body_class %}am-aside{% endblock %}
 
 {% block body %}
@@ -15,10 +17,10 @@
                 <ol class="dd-list">
                     {% for lesson in course.lessons %}
                         <li class="dd-item">
-                            <span class="dd-handle text-uppercase {% if not lesson.available %}disabled{% endif %}">{{ loop.index0 }}. {{ lesson.name }}</span>
+                            <span class="dd-handle text-uppercase {% if not lesson.available and not is_granted('ROLE_TEACHER') %}disabled{% endif %}">{{ loop.index0 }}. {{ lesson.name }}</span>
                             <ol class="dd-list">
                                 {% for mod in lesson.modules %}
-                                    {% if not lesson.available %}
+                                    {% if not lesson.available and not is_granted('ROLE_TEACHER') %}
                                         <span class="dd-handle disabled">{{ loop.parent.loop.index }}.{{ loop.index }}. {{ mod.name }}</span>
                                     {% else %}
                                         {% set active = (mod.id == module.id) ? 'active' : '' %}
