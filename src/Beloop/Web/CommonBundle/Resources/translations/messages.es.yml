@@ -1,0 +1,109 @@
+login:
+    text:
+        welcome: 'Delicious Yet Beautiful'
+        forgot_password: 'He olvidado mi contraseña'
+        register: 'Registrarme'
+    field:
+        email:
+            placeholder: 'email'
+        password:
+            placeholder: 'contraseña'
+        repeat_password:
+            placeholder: 'confirmar contraseña'
+    button:
+        submit:
+            placeholder: 'Entrar'
+
+recovery:
+    forgot:
+        text: '¿Olvidaste tu contraseña? No te preocupes, te enviamos un email para que puedas restablecer de nuevo tu contraseña.'
+    repeat_password:
+        text: 'Escribe tu contraseña dos veces'
+    sent:
+        text: 'Te hemos enviado un email. Haz click en el botón que aparece en el email para restablecer tu contraseña.'
+    back_login:
+        text: 'Volver al login'
+
+password:
+    forgot:
+        text: '¿Olvidaste tu contraseña? No te preocupes, te enviamos un email para que puedas restablecer de nuevo tu contraseña.'
+    button:
+        reset:
+            placeholder: 'Restablecer contraseña'
+
+dashboard:
+    button:
+        upload:
+            label: 'Subir una imagen'
+
+profile:
+    about_me:
+        text: 'Sobre mi'
+    edit_profile:
+        text: 'Editar perfil'
+    edit_password:
+        text: 'Cambiar contraseña'
+    name:
+        text: 'Nombre completo'
+    form:
+        fields:
+            firstname:
+                label: 'Nombre'
+            lastname:
+                label: 'Apellido'
+            biography:
+                label: 'Sobre'
+                help: 'Cuéntanos algo sobre tí'
+            website:
+                label: 'Página web'
+                help: 'Dirección a tu sitio web'
+            instagram:
+                label: 'Instagram'
+                help: 'Usuario de instagram sin la arroba (eg: aialahernando)'
+            password:
+                label: 'Nueva contraseña'
+            repeat_password:
+                label: 'Confirmar contraseña'
+            avatar:
+                error: 'El tamaño de la imagen no puede superar los 500KB'
+
+course:
+    description:
+        title: 'Descripción'
+    details:
+        title: 'Detalles'
+    enrolled_students:
+        title: 'Estudiantes'
+    course_not_available:
+        text: 'El curso estará disponible a partir del %date%'
+    lesson_not_available:
+        text: 'La lección estará disponible a partir del %date%'
+
+menu:
+    dashboard:
+        title: 'Dashboard'
+    my_courses:
+        title: 'Mis Cursos'
+    admin:
+        title: 'Admin'
+    my_profile:
+        title: 'Mi Perfil'
+    logout:
+        title: 'Salir'
+
+email:
+    user:
+        remember_password:
+            subject: 'Recupera tu contraseña'
+            hi: 'Hola %username%,'
+            recover_title: 'Hemos recibido una petición de cambio de contraseña desde tu cuenta.'
+            recover_text: 'Si has realizado una petición para el usuario %email%, haz click en el siguiente botón. Si tu no has realizado esta petición, por favor ignora este email.'
+            recover_password: 'Cambiar contraseña'
+            recover_copy_paste: 'O copia y pega la siguiente URL en tu navegador: %url%'
+            remember_password: 'Recuperar contraseña'
+            cheers: 'El equipo de Delicious Yet Beautiful'
+
+error:
+    404:
+        text: 'La página que buscas puede haver sido eliminada.'
+        link: '¿Quieres ir al <a href="%link%">inicio</a>?'
