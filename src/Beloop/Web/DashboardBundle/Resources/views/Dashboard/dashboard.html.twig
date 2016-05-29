@@ -25,10 +25,35 @@
     <script type="text/javascript" src="{{ asset('vendor/jquery.niftymodals/js/jquery.modalEffects.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('vendor/masonry/masonry.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('vendor/masonry/imagesloaded.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('vendor/scrollTo/jquery.scrollTo.min.js') }}"></script>
     <script type="text/javascript">
         $(function () {
-            $('.md-trigger').modalEffects();
+            var imageOpen = false;
+
             App.pageGallery();
+
+            $('.md-trigger').modalEffects({
+                afterOpen: function (button, modal) {
+                    if (/^image-details-\d+$/.test(modal.attr('id'))) {
+                        if (imageOpen) {
+                            return;
+                        }
+
+                        imageOpen = true;
+
+                        var close = parseFloat(modal.find('.md-close').css('height'));
+                        var title = parseFloat(modal.find('.desc').css('height'));
+                        var feedback = parseFloat(modal.find('.instagram-feedback').css('height'));
+
+                        var comments = parseFloat(modal.css('height')) - close - title - feedback - 50;
+
+                        modal.find('.comments').height(comments);
+                    }
+                },
+                afterClose: function () {
+                    imageOpen = false;
+                }
+            });
 
             var $form = $('#beloop_instagram_form_type_instagram');
             var $imageDetails = $('#image-details');
@@ -64,7 +89,6 @@
                 event.preventDefault();
 
                 var $title = $form.find('#beloop_instagram_form_type_instagram_title');
-                debugger;
                 if (invalidFile || !$title.val().length) {
                     alert('Please, provide an image and the title');
                     return;
@@ -86,6 +110,21 @@
                         alert("{{ 'instagram.form.fields.avatar.error'|trans }}");
                     }
                 });
+            });
+
+            $('.instagram-feedback input').on('keypress', function (event) {
+                if (event.charCode === 13) {
+                    var value = this.value;
+
+                    $.post(this.dataset.target, {
+                        'image': this.dataset.image,
+                        'comment': value
+                    }).done(function (data) {
+                        $('.md-instagram-modal .comments').append(data).scrollTo('100%');
+                    });
+
+                    this.value = '';
+                }
             });
         });
     </script>

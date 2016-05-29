@@ -1,0 +1,10 @@
+<div class="media">
+    <div class="media-left">
+        <a href="#">
+            <img class="media-object" src="{{ vich_uploader_asset(comment.user, 'avatarFile')|default(asset('img/avatar.jpg')) }}" alt="{{ comment.user.fullName }}">
+        </a>
+    </div>
+    <div class="media-body">
+        <a href="#">{{ comment.user.fullName }}</a> {{ comment.text }}
+    </div>
+</div>

@@ -103,6 +103,8 @@ instagram:
             text: 'Título'
         description:
             text: 'Escribe una descripción...'
+        comment:
+            text: 'Añadir un comentario...'
     by:
         label: 'por'
 

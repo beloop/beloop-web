@@ -14,7 +14,8 @@
                             <div class="hidden">{{ render(controller('WebUserBundle:User:editAvatar')) }}</div>
                             <span class="edit-avatar" data-target="#beloop_user_form_type_avatar_avatarFile_file"><span class="s7-camera"></span></span>
                         {% endif %}
-                        <img class="avatar" src="{{ vich_uploader_asset(user, 'avatarFile')|default(asset('img/avatar.jpg')) }}"></div>
+                        <img class="avatar" src="{{ vich_uploader_asset(user, 'avatarFile')|default(asset('img/avatar.jpg')) }}">
+                    </div>
                     <div class="user-info">
                         <h4>{{ user.fullName }}</h4><span>{{ user.biography|default('') }}</span>
                     </div>

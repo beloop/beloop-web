@@ -55,6 +55,8 @@ instagram:
             text: 'Image title'
         description:
             text: 'Write a description here...'
+        comment:
+            text: 'Add a comment...'
     by:
         label: 'by'
 

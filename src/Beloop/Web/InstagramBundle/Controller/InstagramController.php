@@ -88,7 +88,7 @@ class InstagramController extends Controller
      *
      * @param Request $request
      *
-     * @return array
+     * @return json
      *
      * @internal param Form $form Form
      *
@@ -107,6 +107,7 @@ class InstagramController extends Controller
 
             $image->setUser($this->getUser());
             $image->setCreatedAt(new \DateTime());
+            $image->enable();
 
             $em = $this->getDoctrine()->getManager();
             $em->persist($image);
@@ -117,6 +118,51 @@ class InstagramController extends Controller
 
             return new JsonResponse(['status' => 'OK', 'path' => $path], JsonResponse::HTTP_OK);
         }
+    }
+
+    /**
+     * Post a comment on a image
+     *
+     * @param Request $request
+     * @param $imageName
+     *
+     * @return array
+     *
+     * @Route(
+     *      path = "/post_comment/{imageName}",
+     *      name = "beloop_instagram_post_comment",
+     *      methods = {"POST"}
+     * )
+     *
+     * @Template("WebInstagramBundle:Instagram:partials/instagram_comment.html.twig")
+     *
+     * @EntityAnnotation(
+     *      class = {
+     *          "factory" = "beloop.factory.instagram",
+     *          "method" = "create",
+     *          "static" = false
+     *      },
+     *      name = "image",
+     *      mapping = {
+     *          "imageName" = "~imageName~"
+     *      },
+     *      mappingFallback = true,
+     *      persist = true
+     * )
+     */
+    public function postComment(Request $request, $image) {
+        $comment = $this->get('beloop.factory.instagram_comment')->create();
+        $comment->setText($request->get('comment', ''));
+        $comment->setImage($image);
+        $comment->setUser($this->getUser());
+
+        $em = $this->getDoctrine()->getManager();
+        $em->persist($comment);
+        $em->flush();
+
+        return [
+            'comment'  => $comment,
+        ];
     }
 
 }
