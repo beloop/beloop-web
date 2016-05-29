@@ -25,7 +25,7 @@
                                     {% else %}
                                         {% set active = (mod.id == module.id) ? 'active' : '' %}
                                         <li class="dd-item">
-                                            <a href="{{ path('beloop_view_module_' ~ mod.type, {'code': course.code, 'id': mod.id}) }}" class="dd-handle {{ active }}">{{ loop.parent.loop.index }}.{{ loop.index }}. {{ mod.name }}</a>
+                                            <a href="{{ path('beloop_view_module_' ~ mod.type, {'code': course.code, 'id': mod.id}) }}" class="dd-handle {{ active }}">{{ loop.parent.loop.index0 }}.{{ loop.index }}. {{ mod.name }}</a>
                                         </li>
                                     {% endif %}
                                 {% endfor %}
