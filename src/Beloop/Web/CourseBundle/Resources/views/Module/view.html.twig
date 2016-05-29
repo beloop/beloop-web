@@ -21,7 +21,7 @@
                             <ol class="dd-list">
                                 {% for mod in lesson.modules %}
                                     {% if not lesson.available and not is_granted('ROLE_TEACHER') %}
-                                        <span class="dd-handle disabled">{{ loop.parent.loop.index }}.{{ loop.index }}. {{ mod.name }}</span>
+                                        <span class="dd-handle disabled">{{ loop.parent.loop.index0 }}.{{ loop.index }}. {{ mod.name }}</span>
                                     {% else %}
                                         {% set active = (mod.id == module.id) ? 'active' : '' %}
                                         <li class="dd-item">
