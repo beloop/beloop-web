@@ -13,7 +13,25 @@
  * @author Arkaitz Garro <arkaitz.garro@gmail.com>
  */
 
-class WebInstagramBundle
-{
+namespace Beloop\Web\InstagramBundle;
 
+use Symfony\Component\DependencyInjection\Extension\ExtensionInterface;
+
+use Beloop\Web\InstagramBundle\DependencyInjection\WebInstagramExtension;
+use Beloop\Bundle\CoreBundle\Abstracts\AbstractBundle;
+
+/**
+ * Class WebInstagramBundle
+ */
+class WebInstagramBundle extends AbstractBundle
+{
+    /**
+     * Returns the bundle's container extension.
+     *
+     * @return ExtensionInterface The container extension
+     */
+    public function getContainerExtension()
+    {
+        return new WebInstagramExtension();
+    }
 }

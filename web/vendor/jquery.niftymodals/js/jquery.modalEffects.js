@@ -1,1 +1,237 @@
-!function(e){var t=new Object,o={init:function(s){t=e.extend({},this,o),t.searching=!1,t.o=new Object;var n={overlaySelector:".md-overlay",closeSelector:".md-close",classAddAfterOpen:"md-show",modalAttr:"data-modal",perspectiveClass:"md-perspective",perspectiveSetClass:"md-setperspective",afterOpen:function(e,t){},afterClose:function(e,t){}};t.o=e.extend({},n,s),t.n=new Object;var r=e(t.o.overlaySelector);e(this).click(function(){function o(o){e(n).removeClass(t.o.classAddAfterOpen),n.css({perspective:"1300px"}),o&&e(document.documentElement).removeClass(t.o.perspectiveClass)}function s(){o(e(i).hasClass(t.o.perspectiveSetClass))}var n=e("#"+e(this).attr(t.o.modalAttr)),c=e(t.o.closeSelector,n),i=e(this);e(n).addClass(t.o.classAddAfterOpen),e(r).on("click",function(){s(),t.afterClose(i,n),e(r).off("click")}),e(i).hasClass(t.o.perspectiveSetClass)&&setTimeout(function(){e(document.documentElement).addClass(t.o.perspectiveClass)},25),t.afterOpen(i,n),setTimeout(function(){n.css({perspective:"none"}),n.height()%2!=0&&n.css({height:n.height()+1})},500),e(c).on("click",function(e){e.stopPropagation(),s(),t.afterClose(i,n)})})},afterOpen:function(e,o){t.o.afterOpen(e,o)},afterClose:function(e,o){t.o.afterClose(e,o)}};e.fn.modalEffects=function(t){return o[t]?o[t].apply(this,Array.prototype.slice.call(arguments,1)):"object"!=typeof t&&t?void e.error("Method "+t+" does not exist on jQuery.modalEffects"):o.init.apply(this,arguments)}}(jQuery),function(e){e.fn.niftyModal=function(t){var o={overlaySelector:".md-overlay",closeSelector:".md-close",classAddAfterOpen:"md-show",modalAttr:"data-modal",perspectiveClass:"md-perspective",perspectiveSetClass:"md-setperspective",afterOpen:function(e){},afterClose:function(e){}},s={},n={init:function(t){return this.each(function(){s=e.extend({},o,t);var n=e(this);r.showModal(n)})},toggle:function(t){return this.each(function(){s=e.extend({},o,t);var n=e(this);n.hasClass(s.classAddAfterOpen)?r.removeModal(n):r.showModal(n)})},show:function(t){return s=e.extend({},o,t),this.each(function(){r.showModal(e(this))})},hide:function(t){return s=e.extend({},o,t),this.each(function(){r.removeModal(e(this))})}},r={removeModal:function(e){e.removeClass(s.classAddAfterOpen),e.css({perspective:"1300px"}),e.trigger("hide")},showModal:function(t){var o=e(s.overlaySelector),n=e(s.closeSelector,t);t.addClass(s.classAddAfterOpen),o.on("click",function(e){var n=s.afterClose(t,e);(void 0===n||0!=n)&&(r.removeModal(t),o.off("click"))}),s.afterOpen(t),setTimeout(function(){t.css({perspective:"none"}),t.height()%2!=0&&t.css({height:modal.height()+1})},500),n.on("click",function(e){var n=s.afterClose(t,e);(void 0===n||0!=n)&&(r.removeModal(t),o.off("click")),e.stopPropagation()}),t.trigger("show")}};return n[t]?n[t].apply(this,Array.prototype.slice.call(arguments,1)):"object"!=typeof t&&t?void e.error('Method "'+t+'" does not exist in niftyModal plugin!'):n.init.apply(this,arguments)}}(jQuery),$(document).ready(function(){$(".md-trigger").modalEffects()});
+//Button Trigger
+(function( $ ){
+    var $this = new Object();
+    var methods = {
+        init : function( options ) {
+            $this =  $.extend({}, this, methods);
+            $this.searching = false;
+            $this.o = new Object();
+
+            var defaultOptions = {
+                overlaySelector: '.md-overlay',
+                closeSelector: '.md-close',
+                classAddAfterOpen: 'md-show',
+                modalAttr: 'data-modal',
+                perspectiveClass: 'md-perspective',
+                perspectiveSetClass: 'md-setperspective',
+                afterOpen: function(button, modal) {
+                    //do your stuff
+                },
+                afterClose: function(button, modal) {
+                    //do your suff
+                }
+            };
+
+            $this.o = $.extend({}, defaultOptions, options);
+            $this.n = new Object();
+
+
+            var overlay = $($this.o.overlaySelector);
+            $(this).click(function() {
+                var modal = $('#' + $(this).attr($this.o.modalAttr)),
+                    close = $($this.o.closeSelector, modal);
+                var el = $(this);
+                $(modal).addClass($this.o.classAddAfterOpen);
+                /* overlay.removeEventListener( 'click', removeModalHandler );
+                 overlay.addEventListener( 'click', removeModalHandler ); */
+                $(overlay).on('click', function () {
+                    removeModalHandler();
+                    $this.afterClose(el, modal);
+                    $(overlay).off('click');
+                });
+                if( $(el).hasClass($this.o.perspectiveSetClass) ) {
+                    setTimeout( function() {
+                        $(document.documentElement).addClass($this.o.perspectiveClass);
+                    }, 25 );
+                }
+
+                $this.afterOpen(el, modal);
+                setTimeout( function() {
+                    modal.css({'perspective':'none'});
+
+                    //3D Blur Bug Fix
+                    if(modal.height() % 2 != 0){
+                        var height;
+                        if (modal.height() >= window.innerHeight) {
+                            height = '90%';
+                        } else {
+                            height = modal.height() + 1;
+                        }
+
+                        modal.css({'height': height});
+                    }
+
+                }, 500 );
+
+                function removeModal( hasPerspective ) {
+                    $(modal).removeClass($this.o.classAddAfterOpen);
+                    modal.css({'perspective':'1300px'});
+                    if( hasPerspective ) {
+                        $(document.documentElement).removeClass($this.o.perspectiveClass);
+                    }
+                }
+
+                function removeModalHandler() {
+                    removeModal($(el).hasClass($this.o.perspectiveSetClass));
+                }
+
+                $(close).on( 'click', function( ev ) {
+                    ev.stopPropagation();
+                    removeModalHandler();
+                    $this.afterClose(el, modal);
+                });
+
+            });
+
+        },
+        afterOpen: function (button, modal) {
+            $this.o.afterOpen(button, modal);
+        },
+        afterClose: function (button, modal) {
+            $this.o.afterClose(button, modal);
+        }
+    };
+
+    $.fn.modalEffects = function( method ) {
+        if ( methods[method] ) {
+            return methods[method].apply( this, Array.prototype.slice.call( arguments, 1 ));
+        } else if ( typeof method === 'object' || ! method ) {
+            return methods.init.apply( this, arguments );
+        } else {
+            $.error( 'Method ' +  method + ' does not exist on jQuery.modalEffects' );
+        }
+
+    };
+    function is_touch_device(){
+        return !!("ontouchstart" in window) ? 1 : 0;
+    }
+})( jQuery );
+
+//Nifty Modal
+;(function($) {
+
+    $.fn.niftyModal = function(method) {
+
+        var defaults = {
+            overlaySelector: '.md-overlay',
+            closeSelector: '.md-close',
+            classAddAfterOpen: 'md-show',
+            modalAttr: 'data-modal',
+            perspectiveClass: 'md-perspective',
+            perspectiveSetClass: 'md-setperspective',
+            afterOpen: function(modal) {
+                //do your stuff
+            },
+            afterClose: function(modal) {
+                //do your suff
+            }
+        }
+
+        var config = {}
+
+        var methods = {
+
+            init : function(options) {
+                return this.each(function() {
+                    config = $.extend({}, defaults, options);
+                    var modal = $(this);
+
+                    //Show modal
+                    helpers.showModal(modal);
+
+                });
+            },
+
+            toggle: function(options) {
+                return this.each(function() {
+                    config = $.extend({}, defaults, options);
+                    var modal = $(this);
+                    if(modal.hasClass(config.classAddAfterOpen)){
+                        helpers.removeModal(modal);
+                    }else{
+                        helpers.showModal(modal);
+                    }
+                });
+            },
+
+            show: function(options) {
+                config = $.extend({}, defaults, options);
+                return this.each(function() {
+                    helpers.showModal($(this));
+                });
+            },
+
+            hide: function(options) {
+                config = $.extend({}, defaults, options);
+                return this.each(function() {
+                    helpers.removeModal($(this));
+                });
+            }
+        }
+
+        var helpers = {
+
+            removeModal: function(mod) {
+                mod.removeClass(config.classAddAfterOpen);
+                mod.css({'perspective':'1300px'});
+                mod.trigger('hide');
+            },
+
+            showModal: function(mod){
+                var overlay = $(config.overlaySelector);
+                var close = $(config.closeSelector, mod);
+                mod.addClass(config.classAddAfterOpen);
+
+                //Overlay Click Event
+                overlay.on('click', function () {
+                    helpers.removeModal(mod);
+                    config.afterClose(mod);
+                    overlay.off('click');
+                });
+
+                //Fire after open event
+                config.afterOpen(mod);
+                setTimeout( function() {
+                    mod.css({'perspective':'none'});
+
+                    //3D Blur Bug Fix
+                    if(modal.height() % 2 != 0){
+                        var height;
+                        if (modal.height() >= window.innerHeight) {
+                            height = '90%';
+                        } else {
+                            height = modal.height() + 1;
+                        }
+
+                        modal.css({'height': height});
+                    }
+
+                }, 500 );
+
+                //Close Event
+                close.on( 'click', function( ev ) {
+                    ev.stopPropagation();
+                    helpers.removeModal(mod);
+                    config.afterClose(mod);
+                });
+
+                mod.trigger('show');
+            }
+
+        }
+
+        if (methods[method]) {
+            return methods[method].apply(this, Array.prototype.slice.call(arguments, 1));
+        } else if (typeof method === 'object' || !method) {
+            return methods.init.apply(this, arguments);
+        } else {
+            $.error( 'Method "' +  method + '" does not exist in niftyModal plugin!');
+        }
+
+    }
+
+})(jQuery);
+
+$(document).ready(function(){
+    $(".md-trigger").modalEffects();
+});

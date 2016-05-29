@@ -91,6 +91,21 @@ menu:
     logout:
         title: 'Salir'
 
+instagram:
+    button:
+        upload:
+            label: 'Subir una imagen'
+    modal:
+        title:
+            text: 'Subir una imagen'
+    placeholder:
+        title:
+            text: 'Título'
+        description:
+            text: 'Escribe una descripción...'
+    by:
+        label: 'por'
+
 email:
     user:
         remember_password:

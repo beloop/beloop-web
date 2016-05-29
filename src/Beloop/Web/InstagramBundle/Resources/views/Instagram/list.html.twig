@@ -3,15 +3,19 @@
         <div class="item">
             <div class="photo">
                 <div class="img">
-                    <a href="{{ vich_uploader_asset(img, 'imageFile') }}"><img src="{{ vich_uploader_asset(img, 'imageFile')| imagine_filter('instagram_thumb') }}" alt="{{ img.title }}"></a>
+                    <a href="#" class="md-trigger" data-modal="image-details-{{ img.id }}"><img src="{{ vich_uploader_asset(img, 'imageFile')| imagine_filter('instagram_thumb') }}" alt="{{ img.title }}"></a>
                 </div>
                 <div class="description">
-                    <div class="icon"><a href="#"><i class="s7-like"></i></a></div>
+                    <div class="icon"><a href="#" class="md-trigger" data-modal="image-details-{{ img.id }}"><i class="s7-comment"></i></a></div>
                     <div class="desc">
-                        <h4>{{ img.title }}</h4><span>{{ img.createdAt|localizeddate('medium', 'none') }}</span>
+                        <h4>{{ img.title }}</h4>
+                        <span>{{ 'instagram.by.label'|trans }} <a href="#">{{ img.user.fullName }}</a> </span>
+                        <span>{{ img.createdAt|localizeddate('medium', 'none') }}</span>
                     </div>
                 </div>
             </div>
         </div>
+        {% include 'WebInstagramBundle:Instagram:modals/image_details.html.twig' with {'image': img} %}
+        <div class="md-overlay"></div>
     {% endfor %}
 </div>

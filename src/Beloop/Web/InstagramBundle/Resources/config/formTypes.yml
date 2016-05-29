@@ -4,8 +4,10 @@ services:
     # Form Types
     #
     beloop.form_type.instagram:
-        class: Beloop\Web\DashboardBundle\Form\Type\InstagramType
+        class: Beloop\Web\InstagramBundle\Form\Type\InstagramType
         arguments:
             - '@router'
+        calls:
+            - [setFactory, ["@beloop.factory.instagram"]]
         tags:
             - { name: form.type }

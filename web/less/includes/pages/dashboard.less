@@ -1,0 +1,36 @@
+.instagram-form {
+
+  input {
+    @media @phone{
+      margin-top: 24px;
+    }
+  }
+
+  textarea {
+    margin-top: 24px;
+    height: 230px;
+  }
+
+  .image-placeholder {
+    cursor: pointer;
+    position: relative;
+    height: 300px;
+    overflow: hidden;
+    background-color: darken(@light-color, 2.8%);
+
+    .img-responsive {
+      margin-left: auto;
+      margin-right: auto;
+      max-height: 100%;
+    }
+
+    [class^=s7-] {
+      position: absolute;
+      font-size: 50px;
+      top: 50%;
+      left: 50%;
+      margin-top: -25px;
+      margin-left: -25px;
+    }
+  }
+}

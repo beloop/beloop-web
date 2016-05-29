@@ -38,7 +38,10 @@ class DashboardController extends Controller
     {
         $user = $this->getUser();
 
+        $courses = $this->get('beloop.repository.course')->findByUser($user);
+
         return [
+            'courses' => $courses,
             'section' => 'dashboard',
             'user' => $user,
         ];

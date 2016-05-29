@@ -55,6 +55,8 @@ instagram:
             text: 'Image title'
         description:
             text: 'Write a description here...'
+    by:
+        label: 'by'
 
 profile:
     about_me:

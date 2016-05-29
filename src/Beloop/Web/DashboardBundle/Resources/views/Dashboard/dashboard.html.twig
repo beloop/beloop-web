@@ -2,6 +2,91 @@
 
 {% block body %}
     <div class="page-head">
-        <h2>{{ 'menu.dashboard.title'|trans }}</h2>
+        <h2>{{ 'menu.dashboard.title'|trans }} <a href="#" data-modal="upload-image" class="btn btn-primary pull-right md-trigger"><span class="s7-cloud-upload"></span> {{ 'instagram.button.upload.label'|trans }}</a></h2>
     </div>
+
+    <div class="main-content">
+        <div class="instagram-images">
+            {{ render(controller('WebInstagramBundle:Instagram:list')) }}
+            {{ render(controller('WebInstagramBundle:Instagram:new')) }}
+            <div class="md-overlay"></div>
+        </div>
+        <div class="md-overlay"></div>
+    </div>
+{% endblock %}
+
+{% block styles %}
+    <link rel="stylesheet" type="text/css" href="{{ asset('vendor/jquery.niftymodals/css/components.min.css') }}"/>
+    {{ parent() }}
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script type="text/javascript" src="{{ asset('vendor/jquery.niftymodals/js/jquery.modalEffects.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('vendor/masonry/masonry.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('vendor/masonry/imagesloaded.min.js') }}"></script>
+    <script type="text/javascript">
+        $(function () {
+            $('.md-trigger').modalEffects();
+            App.pageGallery();
+
+            var $form = $('#beloop_instagram_form_type_instagram');
+            var $imageDetails = $('#image-details');
+            var invalidFile = true;
+
+            $('.image-placeholder').on('click', function (event) {
+                var $target = $(this.dataset.target);
+
+                $target.trigger('click');
+                $target.on('change', function () {
+                    if (window.FileReader && window.File && window.FileList && window.Blob) {
+                        var reader  = new FileReader();
+                        var file = this.files[0];
+
+                        invalidFile = file.size/1024 > 1024;
+                        if (invalidFile) {
+                            alert("{{ 'instagram.form.fields.image.error'|trans }}");
+                            return;
+                        }
+
+                        reader.addEventListener("load", function () {
+                            $('#instagram-img').attr('src', reader.result);
+                        }, false);
+
+                        reader.readAsDataURL(file);
+                    }
+
+
+                });
+            });
+
+            $form.on('submit', function (event) {
+                event.preventDefault();
+
+                var $title = $form.find('#beloop_instagram_form_type_instagram_title');
+                debugger;
+                if (invalidFile || !$title.val().length) {
+                    alert('Please, provide an image and the title');
+                    return;
+                }
+
+                var data = new FormData($form[0]);
+
+                $.ajax({
+                    type: $form.attr('method'),
+                    url: $form.attr('action'),
+                    data: data,
+                    processData: false,
+                    contentType: false
+                }).done(function (data) {
+                    console.log(data);
+                    if (data && data.status === 'OK') {
+                        window.location.reload();
+                    } else {
+                        alert("{{ 'instagram.form.fields.avatar.error'|trans }}");
+                    }
+                });
+            });
+        });
+    </script>
 {% endblock %}

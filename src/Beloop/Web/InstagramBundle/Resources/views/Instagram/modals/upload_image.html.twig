@@ -9,13 +9,13 @@
         <div class="modal-body form">
             <div class="row instagram-form">
                 <div class="col-xs-12 col-sm-6">
-                    <div class="image-placeholder" data-target="#{{ form.imageFile.file.vars.id}}">
+                    <div class="image-placeholder" data-target="#{{ form.imageFile.vars.id}}">
                         <img id="instagram-img" class="img-responsive" src="" alt="">
                         <span class="s7-camera"></span>
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-6">
-                    {{ render(controller('DashboardBundle:Instagram:uploadImage')) }}
+                    {% include 'WebInstagramBundle:Instagram:partials/instagram_form.html.twig' %}
                 </div>
             </div>
         </div>

@@ -13,19 +13,26 @@
  * @author Arkaitz Garro <arkaitz.garro@gmail.com>
  */
 
-namespace Beloop\Web\DashboardBundle\Controller;
+namespace Beloop\Web\InstagramBundle\Controller;
 
 use Mmoreram\ControllerExtraBundle\Annotation\Entity as EntityAnnotation;
-use Mmoreram\ControllerExtraBundle\Annotation\Form as AnnotationForm;
 
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Symfony\Component\Form\FormView;
 use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Component\HttpFoundation\Request;
 
-use Beloop\Web\DashboardBundle\Entity\Interfaces\InstagramInterface;
+use Beloop\Component\Instagram\Entity\Interfaces\InstagramInterface;
+use Beloop\Web\InstagramBundle\Form\Type\InstagramType;
 
+/**
+ * Class InstagramController
+ *
+ * @Route(
+ *      path = "/instagram",
+ * )
+ */
 class InstagramController extends Controller
 {
     /**
@@ -34,7 +41,7 @@ class InstagramController extends Controller
      * @return array
      *
      * @Route(
-     *      path = "/instagram/list",
+     *      path = "/list",
      *      name = "beloop_instagram_list",
      *      methods = {"GET"}
      * )
@@ -55,59 +62,61 @@ class InstagramController extends Controller
     }
 
     /**
-     * Upload image
-     *
-     * @param InstagramInterface $image
-     * @param FormView $formView
-     * @param string $isValid Is valid
+     * New image modal form
      *
      * @return array
      *
-     * @Template("DashboardBundle:Instagram:partials/instagram_form.html.twig")
+     * @Template("WebInstagramBundle:Instagram:modals/upload_image.html.twig")
      *
      * @Route(
-     *      path = "/instagram/upload_image",
+     *      path = "/new",
+     *      name = "beloop_instagram_new",
+     *      methods = {"GET"}
+     * )
+     */
+    public function newAction() {
+        $form = $this->createForm(InstagramType::class);
+
+        return [
+            'section' => 'dashboard',
+            'form'    => $form->createView()
+        ];
+    }
+
+    /**
+     * Upload image
+     *
+     * @param Request $request
+     *
+     * @return array
+     *
+     * @internal param Form $form Form
+     *
+     * @Route(
+     *      path = "/upload_image",
      *      name = "beloop_instagram_upload_image",
      *      methods = {"POST"}
      * )
-     *
-     * @EntityAnnotation(
-     *      class = {
-     *          "factory" = "beloop.factory.instagram",
-     *          "method" = "create",
-     *          "static" = false
-     *      },
-     *      name = "image",
-     * )
-     *
-     * @AnnotationForm(
-     *      class         = "Beloop\Web\DashboardBundle\Form\Type\InstagramType",
-     *      name          = "formView",
-     *      entity        = "image",
-     *      handleRequest = true,
-     *      validate      = "isValid"
-     * )
      */
-    public function uploadImageAction(
-        InstagramInterface $image,
-        FormView $formView,
-        $isValid
-    ) {
-        if ($isValid) {
-            $this
-                ->get('beloop.object_manager.instagram')
-                ->flush($image);
+    public function uploadImageAction(Request $request) {
+        $form = $this->createForm(InstagramType::class);
+        $form->handleRequest($request);
+
+        if ($form->isValid()) {
+            $image = $form->getData();
+
+            $image->setUser($this->getUser());
+            $image->setCreatedAt(new \DateTime());
+
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($image);
+            $em->flush();
 
             $helper = $this->get('vich_uploader.templating.helper.uploader_helper');
             $path = $helper->asset($image, 'imageFile');
 
             return new JsonResponse(['status' => 'OK', 'path' => $path], JsonResponse::HTTP_OK);
         }
-
-        return [
-            'action' => 'edit',
-            'section' => 'dashboard',
-            'form' => $formView,
-        ];
     }
+
 }

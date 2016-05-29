@@ -9,6 +9,8 @@
     overflow: hidden;
     background-color: @light-color;
     color: @text-color;
+    height: 100%;
+    max-height: 100%;
 
     .modal-header{
       border: 0;
@@ -31,6 +33,22 @@
 
     .modal-body{
       padding: 30px 20px;
+      height: 100%;
+
+      .row {
+        height: 100%;
+
+        .image-wrapper {
+          padding: 0;
+          height: 100%;
+          text-align: center;
+          background-color: #000;
+
+          .img-responsive {
+            display: inline-block;
+          }
+        }
+      }
 
       .i-circle{
         border: 2px solid darken(@light-color, 5.5%);
@@ -313,4 +331,14 @@
 
 .am-modal-open{
   overflow-x: visible;
+}
+
+.md-instagram-modal {
+  border: 0 solid transparent;
+
+  .md-content {
+    .modal-body {
+      padding: 0;
+    }
+  }
 }
