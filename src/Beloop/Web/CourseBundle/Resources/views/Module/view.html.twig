@@ -8,31 +8,7 @@
     <aside class="page-aside">
         <div class="am-scroller nano">
             <div class="nano-content">
-                <div class="panel">
-                    <div class="panel-heading">
-                        <h3>{{ course.name }}</h3>
-                    </div>
-                </div>
-
-                <ol class="dd-list">
-                    {% for lesson in course.lessons %}
-                        <li class="dd-item">
-                            <span class="dd-handle text-uppercase {% if not lesson.available and not is_granted('ROLE_TEACHER') %}disabled{% endif %}">{{ loop.index0 }}. {{ lesson.name }}</span>
-                            <ol class="dd-list">
-                                {% for mod in lesson.modules %}
-                                    {% if not lesson.available and not is_granted('ROLE_TEACHER') %}
-                                        <span class="dd-handle disabled">{{ loop.parent.loop.index0 }}.{{ loop.index }}. {{ mod.name }}</span>
-                                    {% else %}
-                                        {% set active = (mod.id == module.id) ? 'active' : '' %}
-                                        <li class="dd-item">
-                                            <a href="{{ path('beloop_view_module_' ~ mod.type, {'code': course.code, 'id': mod.id}) }}" class="dd-handle {{ active }}">{{ loop.parent.loop.index0 }}.{{ loop.index }}. {{ mod.name }}</a>
-                                        </li>
-                                    {% endif %}
-                                {% endfor %}
-                            </ol>
-                        </li>
-                    {% endfor %}
-                </ol>
+                {{ render(controller('CourseBundle:Module:aside', {'code': course.code, 'actualModule': module.id})) }}
             </div>
         </div>
     </aside>

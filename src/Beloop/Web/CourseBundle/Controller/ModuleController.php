@@ -21,6 +21,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 use Mmoreram\ControllerExtraBundle\Annotation\Entity as EntityAnnotation;
 
+use Beloop\Component\Course\Entity\Interfaces\CourseInterface;
 use Beloop\Component\Course\Entity\Interfaces\ModuleInterface;
 
 /**
@@ -58,5 +59,42 @@ class ModuleController extends Controller
     public function viewPageAction(ModuleInterface $page)
     {
 
+    }
+
+    /**
+     * Render module aside menu
+     *
+     * @param CourseInterface $course
+     * @param $actualModule
+     * 
+     * @return array
+     *
+     * @Route(
+     *      path = "/course/{code}/render-aside/{actualModule}",
+     *      name = "beloop_render_course_aside_menu",
+     *      methods = {"GET"}
+     * )
+     *
+     * @Template("CourseBundle:Module:partials/side_menu.html.twig")
+     *
+     * @EntityAnnotation(
+     *      class = {
+     *          "factory" = "beloop.factory.course",
+     *          "method" = "create",
+     *          "static" = false
+     *      },
+     *      name = "course",
+     *      mapping = {
+     *          "code" = "~code~"
+     *      },
+     *      mappingFallback = true
+     * )
+     */
+    public function asideAction(CourseInterface $course, $actualModule)
+    {
+        return [
+            'course' => $course,
+            'actualModule' => $actualModule
+        ];
     }
 }
