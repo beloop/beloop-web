@@ -1,0 +1,3 @@
+DashboardBundle:
+    resource: "@DashboardBundle/Controller/"
+    type:     annotation

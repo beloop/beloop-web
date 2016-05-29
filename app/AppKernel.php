@@ -25,7 +25,9 @@ class AppKernel extends Kernel
              */
             new EightPoints\Bundle\GuzzleBundle\GuzzleBundle(),
             new FOS\JsRoutingBundle\FOSJsRoutingBundle(),
+            new Liip\ImagineBundle\LiipImagineBundle(),
             new Mmoreram\ControllerExtraBundle\ControllerExtraBundle(),
+            new RaulFraile\Bundle\LadybugBundle\RaulFraileLadybugBundle(),
             new Vich\UploaderBundle\VichUploaderBundle(),
             
             /**
@@ -34,6 +36,7 @@ class AppKernel extends Kernel
             new Beloop\Bundle\AnalyticsBundle\BeloopAnalyticsBundle(),
             new Beloop\Bundle\CoreBundle\BeloopCoreBundle(),
             new Beloop\Bundle\CourseBundle\BeloopCourseBundle(),
+            new Beloop\Bundle\InstagramBundle\BeloopInstagramBundle(),
             new Beloop\Bundle\LanguageBundle\BeloopLanguageBundle(),
             new Beloop\Bundle\UserBundle\BeloopUserBundle(),
             new Beloop\Bundle\SquarespaceBundle\BeloopSquarespaceBundle(),
@@ -51,6 +54,7 @@ class AppKernel extends Kernel
             new Beloop\Web\CommonBundle\CommonBundle(),
             new Beloop\Web\CourseBundle\CourseBundle(),
             new Beloop\Web\DashboardBundle\DashboardBundle(),
+            new Beloop\Web\InstagramBundle\WebInstagramBundle(),
             new Beloop\Web\UserBundle\WebUserBundle(),
         ];
 

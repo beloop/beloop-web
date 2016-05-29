@@ -1,0 +1,11 @@
+services:
+
+    #
+    # Form Types
+    #
+    beloop.form_type.instagram:
+        class: Beloop\Web\DashboardBundle\Form\Type\InstagramType
+        arguments:
+            - '@router'
+        tags:
+            - { name: form.type }

@@ -111,6 +111,7 @@ vich_uploader:
         directories:
             - { path: "@BeloopCourseBundle/Resources/config/vich_uploader", namespace_prefix: Beloop\Component\Course\Entity }
             - { path: "@BeloopUserBundle/Resources/config/vich_uploader", namespace_prefix: Beloop\Component\User\Entity }
+            - { path: "@BeloopInstagramBundle/Resources/config/vich_uploader", namespace_prefix: Beloop\Component\Instagram\Entity }
 
     mappings:
         course_image:
@@ -122,6 +123,23 @@ vich_uploader:
             uri_prefix:         /images/avatar
             upload_destination: %kernel.root_dir%/../web/images/avatar
             namer:              vich_uploader.namer_uniqid
+
+        instagram:
+            uri_prefix:         /images/instagram
+            upload_destination: %kernel.root_dir%/../web/images/instagram
+            namer:              vich_uploader.namer_uniqid
+
+liip_imagine:
+    resolvers:
+       default:
+          web_path: ~
+
+    filter_sets:
+        cache: ~
+        instagram_thumb:
+            quality: 80
+            filters:
+                relative_resize: { widen: 600 }
 
 beloop_squarespace:
     authorization:

@@ -7,6 +7,9 @@ dashboard_routes:
 my_courses_routes:
     resource: "@CourseBundle/Resources/config/routing.yml"
 
+instagram_routes:
+    resource: "@WebInstagramBundle/Resources/config/routing.yml"
+
 squarespace_routes:
     resource: "@BeloopSquarespaceBundle/Resources/config/routing.yml"
 

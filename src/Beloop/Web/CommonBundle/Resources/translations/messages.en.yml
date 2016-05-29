@@ -31,10 +31,30 @@ password:
         reset:
             placeholder: 'Reset password'
 
-dashboard:
+menu:
+    dashboard:
+        title: 'Dashboard'
+    my_courses:
+        title: 'My Courses'
+    admin:
+        title: 'Admin'
+    my_profile:
+        title: 'My Profile'
+    logout:
+        title: 'Logout'
+
+instagram:
     button:
         upload:
             label: 'Upload an image'
+    modal:
+        title:
+            text: 'Upload an image'
+    placeholder:
+        title:
+            text: 'Image title'
+        description:
+            text: 'Write a description here...'
 
 profile:
     about_me:
@@ -78,18 +98,6 @@ course:
         text: 'This course will be available on %date%'
     lesson_not_available:
         text: 'This lesson will be available on %date%'
-
-menu:
-    dashboard:
-        title: 'Dashboard'
-    my_courses:
-        title: 'My Courses'
-    admin:
-        title: 'Admin'
-    my_profile:
-        title: 'My Profile'
-    logout:
-        title: 'Logout'
 
 email:
     user:
