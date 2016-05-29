@@ -353,16 +353,16 @@
         },
         {
             "name": "beloop/instagram",
-            "version": "0.4.0",
+            "version": "0.4.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/beloop/Instagram.git",
-                "reference": "5a5fde275d8e51be9575243823fea0e122fdd3ec"
+                "reference": "dabdf8b180669a17bf3b9eebae2dd87711e33b81"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/beloop/Instagram/zipball/5a5fde275d8e51be9575243823fea0e122fdd3ec",
-                "reference": "5a5fde275d8e51be9575243823fea0e122fdd3ec",
+                "url": "https://api.github.com/repos/beloop/Instagram/zipball/dabdf8b180669a17bf3b9eebae2dd87711e33b81",
+                "reference": "dabdf8b180669a17bf3b9eebae2dd87711e33b81",
                 "shasum": ""
             },
             "require": {
@@ -408,20 +408,20 @@
                 "instagram",
                 "lms"
             ],
-            "time": "2016-05-27 17:27:13"
+            "time": "2016-05-29 18:49:21"
         },
         {
             "name": "beloop/instagram-bundle",
-            "version": "0.4.0",
+            "version": "0.4.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/beloop/InstagramBundle.git",
-                "reference": "451738e0337d15763e53be680eaac3d749c0d9d0"
+                "reference": "be39a491db9c962109b2a7fa250a47934e58bfc7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/beloop/InstagramBundle/zipball/451738e0337d15763e53be680eaac3d749c0d9d0",
-                "reference": "451738e0337d15763e53be680eaac3d749c0d9d0",
+                "url": "https://api.github.com/repos/beloop/InstagramBundle/zipball/be39a491db9c962109b2a7fa250a47934e58bfc7",
+                "reference": "be39a491db9c962109b2a7fa250a47934e58bfc7",
                 "shasum": ""
             },
             "require": {
@@ -466,7 +466,7 @@
                 "instagram",
                 "lms"
             ],
-            "time": "2016-05-27 17:57:19"
+            "time": "2016-05-29 18:49:21"
         },
         {
             "name": "beloop/language",
@@ -842,16 +842,16 @@
         },
         {
             "name": "beloop/user",
-            "version": "0.4.13",
+            "version": "0.4.14",
             "source": {
                 "type": "git",
                 "url": "https://github.com/beloop/User.git",
-                "reference": "ea44b50d03f77c4d24532b40bcebc245f1b96165"
+                "reference": "7c94ba087eaabad15a6929617be7ac8da339a7b0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/beloop/User/zipball/ea44b50d03f77c4d24532b40bcebc245f1b96165",
-                "reference": "ea44b50d03f77c4d24532b40bcebc245f1b96165",
+                "url": "https://api.github.com/repos/beloop/User/zipball/7c94ba087eaabad15a6929617be7ac8da339a7b0",
+                "reference": "7c94ba087eaabad15a6929617be7ac8da339a7b0",
                 "shasum": ""
             },
             "require": {
@@ -901,7 +901,7 @@
                 "lms",
                 "user"
             ],
-            "time": "2016-05-27 17:33:21"
+            "time": "2016-05-28 09:16:15"
         },
         {
             "name": "beloop/user-bundle",
@@ -4471,45 +4471,55 @@
         },
         {
             "name": "vich/uploader-bundle",
-            "version": "1.0.1",
+            "version": "1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dustin10/VichUploaderBundle.git",
-                "reference": "85300145a610b3a087a1f5de5e2d31dce4556eab"
+                "reference": "f803b16f419af72d498753324051f283384871ef"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dustin10/VichUploaderBundle/zipball/85300145a610b3a087a1f5de5e2d31dce4556eab",
-                "reference": "85300145a610b3a087a1f5de5e2d31dce4556eab",
+                "url": "https://api.github.com/repos/dustin10/VichUploaderBundle/zipball/f803b16f419af72d498753324051f283384871ef",
+                "reference": "f803b16f419af72d498753324051f283384871ef",
                 "shasum": ""
             },
             "require": {
                 "jms/metadata": "~1.5",
                 "ocramius/proxy-manager": "~1.0|~2.0",
                 "php": "~5.5|~7.0",
-                "symfony/finder": "~2.0|~3.0",
+                "symfony/dependency-injection": "~2.3|~3.0",
+                "symfony/finder": "~2.2|~3.0",
                 "symfony/framework-bundle": "~2.3|~3.0",
-                "symfony/property-access": "~2.4|~3.0"
+                "symfony/property-access": "~2.5|~3.0"
             },
             "require-dev": {
                 "doctrine/doctrine-bundle": "~1.6",
                 "doctrine/mongodb-odm": "~1.0",
-                "doctrine/orm": "~2.2,>=2.2.3",
+                "doctrine/orm": "^2.2.3",
                 "ext-sqlite3": "*",
                 "knplabs/knp-gaufrette-bundle": "~0.3",
                 "matthiasnoback/symfony-dependency-injection-test": "~0.7",
-                "mikey179/vfsstream": "~1.0",
+                "mikey179/vfsstream": "~1.2",
                 "oneup/flysystem-bundle": "~1.0",
-                "phpunit/phpunit": "~4.0"
+                "phpunit/phpunit": "~4.0",
+                "symfony/browser-kit": "~2.3|~3.0",
+                "symfony/css-selector": "~2.3|~3.0",
+                "symfony/dom-crawler": "~2.3|~3.0",
+                "symfony/form": "~2.3|~3.0",
+                "symfony/proxy-manager-bridge": "~2.3|~3.0",
+                "symfony/twig-bridge": "~2.3.10|~3.0",
+                "symfony/twig-bundle": "~2.3|~3.0",
+                "symfony/validator": "~2.3|~3.0",
+                "symfony/yaml": "^2.0.5|~3.0"
             },
             "suggest": {
-                "doctrine/doctrine-bundle": "*",
+                "doctrine/doctrine-bundle": "~1.6",
                 "doctrine/mongodb-odm-bundle": "*",
-                "doctrine/orm": ">=2.2.3",
+                "doctrine/orm": "^2.2.3",
                 "doctrine/phpcr-odm": "~1.0",
-                "knplabs/knp-gaufrette-bundle": "*",
-                "symfony/yaml": "@stable",
-                "willdurand/propel-eventdispatcher-bundle": ">=1.2"
+                "knplabs/knp-gaufrette-bundle": "~0.3",
+                "symfony/yaml": "^2.0.5",
+                "willdurand/propel-eventdispatcher-bundle": "~1.2"
             },
             "type": "symfony-bundle",
             "extra": {
@@ -4538,7 +4548,7 @@
                 "file uploads",
                 "upload"
             ],
-            "time": "2016-03-18 11:21:31"
+            "time": "2016-05-29 16:30:28"
         },
         {
             "name": "willdurand/jsonp-callback-validator",
