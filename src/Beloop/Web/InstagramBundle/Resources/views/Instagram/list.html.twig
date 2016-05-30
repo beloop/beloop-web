@@ -12,13 +12,13 @@
         <div class="item">
             <div class="photo">
                 <div class="img">
-                    <a href="#" class="md-trigger" data-modal="image-details-{{ img.id }}"><img src="{{ vich_uploader_asset(img, 'imageFile')|imagine_filter('instagram_thumb') }}" alt="{{ img.title }}"></a>
+                    <a href="#{{ vich_uploader_asset(img, 'imageFile') }}" class="md-trigger" data-modal="image-details-{{ img.id }}"><img src="{{ vich_uploader_asset(img, 'imageFile')|imagine_filter('instagram_thumb') }}" alt="{{ img.title }}"></a>
                 </div>
                 <div class="description">
                     <div class="icon"><a href="#" class="md-trigger" data-modal="image-details-{{ img.id }}"><i class="s7-comment"></i></a></div>
                     <div class="desc">
                         <h4>{{ img.title }}</h4>
-                        <span>{{ 'instagram.by.label'|trans }} <a href="#">{{ img.user.fullName }}</a> </span>
+                        <span>{{ 'instagram.by.label'|trans }} <a href="{{ path('beloop_user_view_profile', {'id': img.user.id}) }}">{{ img.user.fullName }}</a> </span>
                         <span>{{ img.createdAt|localizeddate('medium', 'none') }}</span>
                     </div>
                 </div>

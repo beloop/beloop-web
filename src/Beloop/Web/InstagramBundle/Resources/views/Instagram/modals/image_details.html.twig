@@ -1,50 +1,52 @@
-<div id="image-details-{{ image.id }}" class="md-modal full-width md-effect-1 md-instagram-modal">
+<div id="image-details-{{ image.id }}" class="md-modal md-effect-1 md-instagram-modal">
     <div class="md-content">
         <div class="modal-header">
             <button type="button" data-dismiss="modal" aria-hidden="true" class="close md-close"><i class="icon s7-close"></i></button>
         </div>
-        <div class="modal-body">
-            <div class="row">
-                <div class="col-xs-12 col-sm-8 image-wrapper">
-                    <img src="{{ vich_uploader_asset(image, 'imageFile') }}" alt="{{ image.title }}" class="img-responsive">
-                </div>
-                <div class="col-xs-12 col-sm-4 image-details-wrapper hidden-xs">
-                    <div class="image-details">
-                        <div class="desc">
-                            <h4>{{ image.title }}</h4>
-                            <p>{{ 'instagram.by.label'|trans }} <a href="#">{{ image.user.fullName }}</a> </p>
-                            <p>{{ image.createdAt|localizeddate('medium', 'none') }}</p>
-                        </div>
-                        <div class="comments">
-                            {% if image.description %}
-                                <div class="media">
-                                    <div class="media-left">
-                                        <a href="#">
-                                            <img class="media-object" src="{{ vich_uploader_asset(image.user, 'avatarFile')|default(asset('img/avatar.jpg')) }}" alt="{{ image.user.fullName }}">
-                                        </a>
-                                    </div>
-                                    <div class="media-body">
-                                        <a href="#">{{ image.user.fullName }}</a> {{ image.description }}
-                                    </div>
-                                </div>
-                            {% endif %}
-                            {% for comment in image.comments %}
-                                {% include 'WebInstagramBundle:Instagram:partials/instagram_comment.html.twig' %}
-                            {% endfor %}
-                        </div>
+        <article>
+            <header>
+                <div class="media">
+                    <div class="media-left">
+                        <a href="{{ path('beloop_user_view_profile', {'id': image.user.id}) }}">
+                            <img class="media-object" src="{{ vich_uploader_asset(image.user, 'avatarFile')|default(asset('img/avatar.jpg')) }}" alt="{{ image.user.fullName }}">
+                        </a>
+                    </div>
+                    <div class="media-body">
+                        <h4 class="media-heading"><a href="{{ path('beloop_user_view_profile', {'id': image.user.id}) }}">{{ image.user.fullName }}</a></h4> <span>{{ image.title }}</span>
                     </div>
                 </div>
-                <div class="instagram-feedback hidden-xs">
+            </header>
+            <div class="instagram-image">
+                <img src="{{ vich_uploader_asset(image, 'imageFile') }}" alt="{{ image.title }}" class="img-responsive">
+            </div>
+            <div class="comments">
+                {% if image.description %}
                     <div class="media">
                         <div class="media-left">
-                            <img class="avatar" src="{{ vich_uploader_asset(user, 'avatarFile')|default(asset('img/avatar.jpg')) }}">
+                            <a href="{{ path('beloop_user_view_profile', {'id': image.user.id}) }}">
+                                <img class="media-object" src="{{ vich_uploader_asset(image.user, 'avatarFile')|default(asset('img/avatar.jpg')) }}" alt="{{ image.user.fullName }}">
+                            </a>
                         </div>
                         <div class="media-body">
-                            <input type="text" name="feedback" class="form-control" data-target="{{ path('beloop_instagram_post_comment', {'imageName': image.imageName}) }}" data-image="{{ image.imageName }}" placeholder="{{ 'instagram.placeholder.comment.text'|trans }}">
+                            <h5 class="media-heading"><a href="{{ path('beloop_user_view_profile', {'id': image.user.id}) }}">{{ image.user.fullName }}</a></h5>
+                            <span>{{ image.description }}</span>
                         </div>
+                    </div>
+                {% endif %}
+                {% for comment in image.comments %}
+                    {% include 'WebInstagramBundle:Instagram:partials/instagram_comment.html.twig' %}
+                {% endfor %}
+            </div>
+            <div class="instagram-feedback">
+                <div class="media">
+                    <div class="media-left">
+                        <img class="avatar" src="{{ vich_uploader_asset(user, 'avatarFile')|default(asset('img/avatar.jpg'))|imagine_filter('profile_mini_thumb') }}">
+                    </div>
+                    <div class="media-body">
+                        <input type="text" name="feedback" class="form-control" data-target="{{ path('beloop_instagram_post_comment', {'imageName': image.imageName}) }}" data-image="{{ image.imageName }}" placeholder="{{ 'instagram.placeholder.comment.text'|trans }}">
                     </div>
                 </div>
             </div>
-        </div>
+        </article>
     </div>
 </div>

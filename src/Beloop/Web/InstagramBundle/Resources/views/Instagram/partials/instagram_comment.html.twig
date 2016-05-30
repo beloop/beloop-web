@@ -1,10 +1,11 @@
 <div class="media">
     <div class="media-left">
-        <a href="#">
-            <img class="media-object" src="{{ vich_uploader_asset(comment.user, 'avatarFile')|default(asset('img/avatar.jpg')) }}" alt="{{ comment.user.fullName }}">
+        <a href="{{ path('beloop_user_view_profile', {'id': comment.user.id}) }}">
+            <img class="media-object" src="{{ vich_uploader_asset(comment.user, 'avatarFile')|default(asset('img/avatar.jpg'))|imagine_filter('profile_mini_thumb') }}" alt="{{ comment.user.fullName }}">
         </a>
     </div>
     <div class="media-body">
-        <a href="#">{{ comment.user.fullName }}</a> {{ comment.text }}
+        <h5 class="media-heading"><a href="{{ path('beloop_user_view_profile', {'id': comment.user.id}) }}">{{ comment.user.fullName }}</a></h5>
+        <span>{{ comment.text}}</span>
     </div>
 </div>
