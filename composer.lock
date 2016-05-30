@@ -842,16 +842,16 @@
         },
         {
             "name": "beloop/user",
-            "version": "0.4.14",
+            "version": "0.4.15",
             "source": {
                 "type": "git",
                 "url": "https://github.com/beloop/User.git",
-                "reference": "7c94ba087eaabad15a6929617be7ac8da339a7b0"
+                "reference": "ab128882f773ee90198fb7de302442362b191504"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/beloop/User/zipball/7c94ba087eaabad15a6929617be7ac8da339a7b0",
-                "reference": "7c94ba087eaabad15a6929617be7ac8da339a7b0",
+                "url": "https://api.github.com/repos/beloop/User/zipball/ab128882f773ee90198fb7de302442362b191504",
+                "reference": "ab128882f773ee90198fb7de302442362b191504",
                 "shasum": ""
             },
             "require": {
@@ -901,20 +901,20 @@
                 "lms",
                 "user"
             ],
-            "time": "2016-05-28 09:16:15"
+            "time": "2016-05-30 20:06:41"
         },
         {
             "name": "beloop/user-bundle",
-            "version": "0.4.13",
+            "version": "0.4.14",
             "source": {
                 "type": "git",
                 "url": "https://github.com/beloop/UserBundle.git",
-                "reference": "290e391a70dbcfdfb16b5304b397341823a7aad4"
+                "reference": "167c9e12b9ab399ee64cfb10fc5c407fa753a48c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/beloop/UserBundle/zipball/290e391a70dbcfdfb16b5304b397341823a7aad4",
-                "reference": "290e391a70dbcfdfb16b5304b397341823a7aad4",
+                "url": "https://api.github.com/repos/beloop/UserBundle/zipball/167c9e12b9ab399ee64cfb10fc5c407fa753a48c",
+                "reference": "167c9e12b9ab399ee64cfb10fc5c407fa753a48c",
                 "shasum": ""
             },
             "require": {
@@ -964,7 +964,7 @@
                 "lms",
                 "user"
             ],
-            "time": "2016-05-27 17:26:19"
+            "time": "2016-05-30 20:06:41"
         },
         {
             "name": "doctrine/annotations",
@@ -2448,16 +2448,16 @@
         },
         {
             "name": "league/csv",
-            "version": "8.0.0",
+            "version": "8.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/csv.git",
-                "reference": "0a1b535df48507f58ed3c7ab44e72272b11163ac"
+                "reference": "63f2fc3598a4dbbc906c9db9d6f04bc7f72b0645"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/csv/zipball/0a1b535df48507f58ed3c7ab44e72272b11163ac",
-                "reference": "0a1b535df48507f58ed3c7ab44e72272b11163ac",
+                "url": "https://api.github.com/repos/thephpleague/csv/zipball/63f2fc3598a4dbbc906c9db9d6f04bc7f72b0645",
+                "reference": "63f2fc3598a4dbbc906c9db9d6f04bc7f72b0645",
                 "shasum": ""
             },
             "require": {
@@ -2501,7 +2501,7 @@
                 "read",
                 "write"
             ],
-            "time": "2015-12-11 09:28:14"
+            "time": "2016-05-30 09:35:50"
         },
         {
             "name": "liip/imagine-bundle",
@@ -4410,16 +4410,16 @@
         },
         {
             "name": "twig/twig",
-            "version": "v1.24.0",
+            "version": "v1.24.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/twigphp/Twig.git",
-                "reference": "3e5aa30ebfbafd5951fb1b01e338e1800ce7e0e8"
+                "reference": "3566d311a92aae4deec6e48682dc5a4528c4a512"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twigphp/Twig/zipball/3e5aa30ebfbafd5951fb1b01e338e1800ce7e0e8",
-                "reference": "3e5aa30ebfbafd5951fb1b01e338e1800ce7e0e8",
+                "url": "https://api.github.com/repos/twigphp/Twig/zipball/3566d311a92aae4deec6e48682dc5a4528c4a512",
+                "reference": "3566d311a92aae4deec6e48682dc5a4528c4a512",
                 "shasum": ""
             },
             "require": {
@@ -4467,7 +4467,7 @@
             "keywords": [
                 "templating"
             ],
-            "time": "2016-01-25 21:22:18"
+            "time": "2016-05-30 09:11:59"
         },
         {
             "name": "vich/uploader-bundle",
