@@ -353,16 +353,16 @@
         },
         {
             "name": "beloop/instagram",
-            "version": "0.4.2",
+            "version": "0.4.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/beloop/Instagram.git",
-                "reference": "c2fc02fde21ee0ea8ed324c3b79822be12feacc9"
+                "reference": "f6f3a8a4d2a26240c8b5b4df7a1df5fa0161bb69"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/beloop/Instagram/zipball/c2fc02fde21ee0ea8ed324c3b79822be12feacc9",
-                "reference": "c2fc02fde21ee0ea8ed324c3b79822be12feacc9",
+                "url": "https://api.github.com/repos/beloop/Instagram/zipball/f6f3a8a4d2a26240c8b5b4df7a1df5fa0161bb69",
+                "reference": "f6f3a8a4d2a26240c8b5b4df7a1df5fa0161bb69",
                 "shasum": ""
             },
             "require": {
@@ -408,20 +408,20 @@
                 "instagram",
                 "lms"
             ],
-            "time": "2016-05-29 22:00:40"
+            "time": "2016-05-30 08:05:55"
         },
         {
             "name": "beloop/instagram-bundle",
-            "version": "0.4.2",
+            "version": "0.4.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/beloop/InstagramBundle.git",
-                "reference": "be39a491db9c962109b2a7fa250a47934e58bfc7"
+                "reference": "605d6018907075a725fc1a969b5bf606b5529018"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/beloop/InstagramBundle/zipball/be39a491db9c962109b2a7fa250a47934e58bfc7",
-                "reference": "be39a491db9c962109b2a7fa250a47934e58bfc7",
+                "url": "https://api.github.com/repos/beloop/InstagramBundle/zipball/605d6018907075a725fc1a969b5bf606b5529018",
+                "reference": "605d6018907075a725fc1a969b5bf606b5529018",
                 "shasum": ""
             },
             "require": {
@@ -466,7 +466,7 @@
                 "instagram",
                 "lms"
             ],
-            "time": "2016-05-29 18:49:21"
+            "time": "2016-05-30 08:05:55"
         },
         {
             "name": "beloop/language",
@@ -4752,16 +4752,16 @@
         },
         {
             "name": "symfony/phpunit-bridge",
-            "version": "v3.0.6",
+            "version": "v3.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/phpunit-bridge.git",
-                "reference": "3231629ff97abccd60f93ff900accfb5b39c8200"
+                "reference": "f5e7cdc9b5cd3f7d9b0228692cd6ec5736c3b074"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/phpunit-bridge/zipball/3231629ff97abccd60f93ff900accfb5b39c8200",
-                "reference": "3231629ff97abccd60f93ff900accfb5b39c8200",
+                "url": "https://api.github.com/repos/symfony/phpunit-bridge/zipball/f5e7cdc9b5cd3f7d9b0228692cd6ec5736c3b074",
+                "reference": "f5e7cdc9b5cd3f7d9b0228692cd6ec5736c3b074",
                 "shasum": ""
             },
             "require": {
@@ -4773,7 +4773,7 @@
             "type": "symfony-bridge",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "3.0-dev"
+                    "dev-master": "3.1-dev"
                 }
             },
             "autoload": {
@@ -4803,7 +4803,7 @@
             ],
             "description": "Symfony PHPUnit Bridge",
             "homepage": "https://symfony.com",
-            "time": "2016-04-12 18:09:53"
+            "time": "2016-04-12 18:27:47"
         }
     ],
     "aliases": [],
