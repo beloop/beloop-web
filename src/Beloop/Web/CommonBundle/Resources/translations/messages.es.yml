@@ -81,7 +81,7 @@ course:
 
 menu:
     dashboard:
-        title: 'Dashboard'
+        title: 'Muro'
     my_courses:
         title: 'Mis Cursos'
     admin:
@@ -124,3 +124,8 @@ error:
     404:
         text: 'La página que buscas puede haver sido eliminada.'
         link: '¿Quieres ir al <a href="%link%">inicio</a>?'
+
+wall:
+    how_it_works:
+        title: 'Cómo funciona'
+        text: '<p>¡Este muro es como una red social interna! Aquí, puedes subir tus fotos, añadir un título y una descripción. Éstas serán vistas por todos tus compañeros de curso.</p><p>También puedes interactuar añadiendo comentarios a las fotos de otras personas, como lo harías en cualquier otra red social. Es una forma divertida y visual de conectar con otras personas toman los mismos cursos que tú. ¡Sé creativo!</p>'

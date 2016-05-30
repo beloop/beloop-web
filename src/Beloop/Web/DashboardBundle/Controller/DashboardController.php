@@ -27,7 +27,7 @@ class DashboardController extends Controller
      * @return array
      *
      * @Route(
-     *      path = "/dashboard",
+     *      path = "/wall",
      *      name = "beloop_dashboard",
      *      methods = {"GET"}
      * )

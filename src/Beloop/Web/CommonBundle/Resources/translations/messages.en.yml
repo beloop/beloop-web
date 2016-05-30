@@ -33,7 +33,7 @@ password:
 
 menu:
     dashboard:
-        title: 'Dashboard'
+        title: 'Wall'
     my_courses:
         title: 'My Courses'
     admin:
@@ -119,3 +119,8 @@ error:
     404:
         text: 'The page you are looking for might have been removed.'
         link: 'Would you like to go <a href="%link%">home</a>?'
+
+wall:
+    how_it_works:
+        title: 'How it works'
+        text: '<p>This is like an internal social network! Here, you can upload your photos, add a title and a description to them. All photographs will be seen by all your fellow students.</p><p>You can also interact by adding comments to other people''s photos, just as you would in any other social network. It is a fun and visual way to connect with other people taking the same course/s as you. Be creative!</p>'

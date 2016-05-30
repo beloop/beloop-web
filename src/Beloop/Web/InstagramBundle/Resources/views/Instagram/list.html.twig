@@ -1,4 +1,12 @@
 <div class="gallery-container">
+    <div class="item">
+        <div class="panel panel-default panel-heading-fullwidth panel-borders">
+            <div class="panel-heading"><span class="title">{{ 'wall.how_it_works.title'|trans }}</span></div>
+            <div class="panel-body">
+                {{ 'wall.how_it_works.text'|trans|raw }}
+            </div>
+        </div>
+    </div>
     {% for img in images %}
         <div class="item">
             <div class="photo">
