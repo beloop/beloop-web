@@ -1,3 +1,9 @@
+common:
+    button:
+        cancel: 'Cancel'
+        save: 'Save'
+        upload: 'Upload'
+
 login:
     text:
         welcome: 'Delicious Yet Beautiful'
