@@ -27,17 +27,17 @@
 <table cellpadding="0" cellspacing="0" border="0" id="backgroundTable" width="100%">
     <tr>
         <td valign="top" style="" align="center">
-            <img src="https://gallery.mailchimp.com/111caec16b0ea9ce3ece7f7e9/images/1c36de53-77a2-4699-a415-7a8dc85a9775.png" alt="Delicious Yet Beautiful">
+            <img src="{{ absolute_url(asset('img/logo-black.png')) }}" alt="Delicious Yet Beautiful">
         </td>
     </tr>
     <tr>
         <td><span>&nbsp;</span></td>
     </tr>
-    <tr style="min-width:100%;border-top-width:1px;border-top-style:solid;border-top-color:#cccccc;border-collapse:collapse">
+    <tr style="border-top-width:1px;border-top-style:solid;border-top-color:#cccccc;border-collapse:collapse">
         <td><span></span></td>
     </tr>
     <tr>
-        <td>
+        <td style="padding: 0 20px">
             {% block content %}{% endblock %}
         </td>
     </tr>
