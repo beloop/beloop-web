@@ -30,31 +30,10 @@
         $(function () {
             var imageOpen = false;
 
+            // Masonry
             App.pageGallery();
 
-            $('.md-trigger').modalEffects({
-                afterOpen: function (button, modal) {
-                    if (/^image-details-\d+$/.test(modal.attr('id'))) {
-                        if (imageOpen) {
-                            return;
-                        }
-
-                        imageOpen = true;
-
-                        var close = parseFloat(modal.find('.md-close').css('height'));
-                        var title = parseFloat(modal.find('.desc').css('height'));
-                        var feedback = parseFloat(modal.find('.instagram-feedback').css('height'));
-
-                        var comments = parseFloat(modal.css('height')) - close - title - feedback - 50;
-
-                        modal.find('.comments').height(comments);
-                    }
-                },
-                afterClose: function () {
-                    imageOpen = false;
-                }
-            });
-
+            // Upload image
             var $form = $('#beloop_instagram_form_type_instagram');
             var $imageDetails = $('#image-details');
             var invalidFile = true;

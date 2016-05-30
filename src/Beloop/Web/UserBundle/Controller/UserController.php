@@ -32,6 +32,56 @@ class UserController extends Controller
      * User profile page
      *
      * @param UserInterface $user
+     *
+     * @Template("WebUserBundle:User:profile.html.twig")
+     *
+     * @return array
+     *
+     * @Route(
+     *      path = "/user/{id}/profile",
+     *      name = "beloop_user_view_profile",
+     *      methods = {"GET"}
+     * )
+     *
+     * @EntityAnnotation(
+     *      class = {
+     *          "factory" = "beloop.factory.user",
+     *          "method" = "create",
+     *          "static" = false
+     *      },
+     *      name = "user",
+     *      mapping = {
+     *          "id" = "~id~"
+     *      },
+     *      mappingFallback = true
+     * )
+     */
+    public function viewAction(UserInterface $user)
+    {
+        $canView = false;
+        $viewer = $this->getUser();
+
+        foreach ($viewer->getCourses() as $course) {
+            if ($course->getEnrolledUsers()->contains($user)) {
+                $canView = true;
+            }
+        }
+
+        if (!$canView && $this->get('security.authorization_checker')->isGranted('ROLE_ADMIN')) {
+            throw $this->createNotFoundException('The user does not exist');
+        }
+
+        return [
+            'action'  => 'view',
+            'user'    => $user,
+            'section' => ''
+        ];
+    }
+
+    /**
+     * User profile page
+     *
+     * @param UserInterface $user
      * @param FormView $formView
      * @param string $isValid Is valid
      *

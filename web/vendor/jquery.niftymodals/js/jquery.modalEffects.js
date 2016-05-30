@@ -51,14 +51,7 @@
 
                     //3D Blur Bug Fix
                     if(modal.height() % 2 != 0){
-                        var height;
-                        if (modal.height() >= window.innerHeight) {
-                            height = '90%';
-                        } else {
-                            height = modal.height() + 1;
-                        }
-
-                        modal.css({'height': height});
+                        modal.css({'height': modal.height()});
                     }
 
                 }, 500 );
@@ -196,14 +189,7 @@
 
                     //3D Blur Bug Fix
                     if(modal.height() % 2 != 0){
-                        var height;
-                        if (modal.height() >= window.innerHeight) {
-                            height = '90%';
-                        } else {
-                            height = modal.height() + 1;
-                        }
-
-                        modal.css({'height': height});
+                        modal.css({'height': modal.height()});
                     }
 
                 }, 500 );
