@@ -205,7 +205,10 @@ class UserController extends Controller
             $helper = $this->get('vich_uploader.templating.helper.uploader_helper');
             $path = $helper->asset($user, 'avatarFile');
 
-            return new JsonResponse(['status' => 'OK', 'path' => $path], JsonResponse::HTTP_OK);
+            $cacheManager = $this->get('liip_imagine.cache.manager');
+            $srcPath = $cacheManager->getBrowserPath($path, 'profile_thumb');
+
+            return new JsonResponse(['status' => 'OK', 'path' => $srcPath], JsonResponse::HTTP_OK);
         }
 
         return [
