@@ -100,7 +100,7 @@ menu:
 instagram:
     button:
         upload:
-            label: 'Subir una imagen'
+            label: 'Subir una imagen (max 1MB)'
     modal:
         title:
             text: 'Subir una imagen'
@@ -113,6 +113,12 @@ instagram:
             text: 'Añadir un comentario...'
     by:
         label: 'por'
+    form:
+        fields:
+            filetype:
+                error: 'Solo puedes subir imágenes'
+            size:
+                  error: 'El tamaño máximo de imagen es 1MB'
 
 email:
     user:

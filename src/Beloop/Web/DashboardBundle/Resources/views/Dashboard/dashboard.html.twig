@@ -63,14 +63,19 @@
                 var $target = $(this.dataset.target);
 
                 $target.trigger('click');
-                $target.on('change', function () {
+                $target.off('change').on('change', function () {
                     if (window.FileReader && window.File && window.FileList && window.Blob) {
                         var reader  = new FileReader();
                         var file = this.files[0];
 
+                        if (!/^image/.test(file.type)) {
+                            alert("{{ 'instagram.form.fields.filetype.error'|trans }}");
+                            return;
+                        }
+
                         invalidFile = file.size/1024 > 1024;
                         if (invalidFile) {
-                            alert("{{ 'instagram.form.fields.image.error'|trans }}");
+                            alert("{{ 'instagram.form.fields.size.error'|trans }}");
                             return;
                         }
 

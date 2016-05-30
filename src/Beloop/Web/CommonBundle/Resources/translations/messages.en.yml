@@ -52,7 +52,7 @@ menu:
 instagram:
     button:
         upload:
-            label: 'Upload an image'
+            label: 'Upload an image (max 1MB)'
     modal:
         title:
             text: 'Upload an image'
@@ -63,6 +63,12 @@ instagram:
             text: 'Write a description here...'
         comment:
             text: 'Add a comment...'
+    form:
+        fields:
+            filetype:
+                error: 'Only image files are allowed'
+            size:
+                  error: 'Maximum size for images is 1MB'
     by:
         label: 'by'
 
