@@ -20,11 +20,11 @@
                                 <div class="media">
                                     <div class="media-left">
                                         <a href="#">
-                                            <img class="media-object" src="{{ vich_uploader_asset(user, 'avatarFile')|default(asset('img/avatar.jpg')) }}" alt="{{ user.fullName }}">
+                                            <img class="media-object" src="{{ vich_uploader_asset(image.user, 'avatarFile')|default(asset('img/avatar.jpg')) }}" alt="{{ image.user.fullName }}">
                                         </a>
                                     </div>
                                     <div class="media-body">
-                                        <a href="#">{{ user.fullName }}</a> {{ image.description }}
+                                        <a href="#">{{ image.user.fullName }}</a> {{ image.description }}
                                     </div>
                                 </div>
                             {% endif %}
