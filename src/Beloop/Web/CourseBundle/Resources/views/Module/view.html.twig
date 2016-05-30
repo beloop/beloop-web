@@ -5,7 +5,7 @@
 {% block body_class %}am-aside{% endblock %}
 
 {% block body %}
-    <aside class="page-aside">
+    <aside class="page-aside hidden-xs">
         <div class="am-scroller nano">
             <div class="nano-content">
                 {{ render(controller('CourseBundle:Module:aside', {'code': course.code, 'actualModule': module.id})) }}
