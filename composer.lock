@@ -412,16 +412,16 @@
         },
         {
             "name": "beloop/instagram-bundle",
-            "version": "0.4.3",
+            "version": "0.4.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/beloop/InstagramBundle.git",
-                "reference": "605d6018907075a725fc1a969b5bf606b5529018"
+                "reference": "7bdf347c27d3da06d617ac34503f5b5e21061137"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/beloop/InstagramBundle/zipball/605d6018907075a725fc1a969b5bf606b5529018",
-                "reference": "605d6018907075a725fc1a969b5bf606b5529018",
+                "url": "https://api.github.com/repos/beloop/InstagramBundle/zipball/7bdf347c27d3da06d617ac34503f5b5e21061137",
+                "reference": "7bdf347c27d3da06d617ac34503f5b5e21061137",
                 "shasum": ""
             },
             "require": {
@@ -466,7 +466,7 @@
                 "instagram",
                 "lms"
             ],
-            "time": "2016-05-30 08:05:55"
+            "time": "2016-05-31 08:55:21"
         },
         {
             "name": "beloop/language",
