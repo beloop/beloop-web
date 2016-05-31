@@ -18,7 +18,7 @@
 <body>
 <div class="am-wrapper am-fixed-sidebar am-white-header {% block body_class %}{% endblock %}">
     {% block navbar %}
-    {% include 'CommonBundle:Header:navbar.html.twig' with {nav_title: block('nav_title')} %}
+        {% include 'CommonBundle:Header:navbar.html.twig' with {back_to: block('back_to')} %}
     {% endblock %}
     <div class="am-left-sidebar">
         <div class="content">

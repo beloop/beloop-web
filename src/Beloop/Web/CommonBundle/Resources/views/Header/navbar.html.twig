@@ -17,11 +17,13 @@
                     </ul>
                 </li>
             </ul>
+            {% if back_to is defined %}
             <ul class="nav navbar-nav am-nav-right">
                 <li>
-                    <a href="#">Back to somewhere</a>
+                    {{ back_to|raw }}
                 </li>
             </ul>
+            {% endif %}
         </div>
     </div>
 </nav>

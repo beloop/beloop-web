@@ -4,6 +4,10 @@
 
 {% block body_class %}am-aside{% endblock %}
 
+{% block back_to %}
+    <a href="{{ path('beloop_view_course', {'code': module.course.code}) }}"><span class="s7-angle-left"></span> {{ module.course.name }}</a>
+{% endblock %}
+
 {% block body %}
     <aside class="page-aside hidden-xs">
         <div class="am-scroller nano">

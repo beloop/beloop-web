@@ -2,6 +2,10 @@
 
 {% block title %}{{ course.name }}{% endblock %}
 
+{% block back_to %}
+    <a href="{{ path('beloop_my_courses') }}"><span class="s7-angle-left"></span> {{ 'menu.my_courses.title'|trans }}</a>
+{% endblock %}
+
 {% block body %}
     <div class="page-head">
         <h2>{{ course.name }}</h2>
