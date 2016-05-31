@@ -24,7 +24,7 @@
                                 <div class="panel-body">
                                     {% if lesson.available or is_granted('ROLE_TEACHER') %}
                                         {% for module in lesson.modules %}
-                                            <a href="{{ path('beloop_view_module_' ~ module.type, {'code': course.code, 'id': module.id}) }}"><span class="s7-note"></span> {{ module.name }}</a>
+                                            <a href="{{ path('beloop_view_module_' ~ module.type, {'code': course.code, 'id': module.id}) }}" class="module"><span class="s7-{{ module.icon }}"></span> {{ module.name }}</a>
                                         {% endfor %}
                                     {% else %}
                                         <span>{{ 'course.lesson_not_available.text'|trans({'%date%' : lesson.startDate|localizeddate('medium', 'none')}) }}</span>

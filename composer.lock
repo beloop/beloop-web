@@ -296,16 +296,16 @@
         },
         {
             "name": "beloop/course-bundle",
-            "version": "0.4.9",
+            "version": "0.4.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/beloop/CourseBundle.git",
-                "reference": "0236c472a7879e05f345f0eaddf8cb3cfeec5c1a"
+                "reference": "1d0b4b2bff6067f732c4d74799723ce651dd54ae"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/beloop/CourseBundle/zipball/0236c472a7879e05f345f0eaddf8cb3cfeec5c1a",
-                "reference": "0236c472a7879e05f345f0eaddf8cb3cfeec5c1a",
+                "url": "https://api.github.com/repos/beloop/CourseBundle/zipball/1d0b4b2bff6067f732c4d74799723ce651dd54ae",
+                "reference": "1d0b4b2bff6067f732c4d74799723ce651dd54ae",
                 "shasum": ""
             },
             "require": {
@@ -349,7 +349,7 @@
                 "course",
                 "lms"
             ],
-            "time": "2016-05-22 17:43:20"
+            "time": "2016-05-31 16:53:49"
         },
         {
             "name": "beloop/instagram",
@@ -778,16 +778,16 @@
         },
         {
             "name": "beloop/typeform-bundle",
-            "version": "0.4.5",
+            "version": "0.4.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/beloop/TypeformBundle.git",
-                "reference": "d3bcd2a0c79ebfc142bd47b9f34d360202aef1e0"
+                "reference": "2caf06f71fd37e1efdb5d5014f8f5840b93356e4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/beloop/TypeformBundle/zipball/d3bcd2a0c79ebfc142bd47b9f34d360202aef1e0",
-                "reference": "d3bcd2a0c79ebfc142bd47b9f34d360202aef1e0",
+                "url": "https://api.github.com/repos/beloop/TypeformBundle/zipball/2caf06f71fd37e1efdb5d5014f8f5840b93356e4",
+                "reference": "2caf06f71fd37e1efdb5d5014f8f5840b93356e4",
                 "shasum": ""
             },
             "require": {
@@ -838,7 +838,7 @@
                 "lms",
                 "typeform"
             ],
-            "time": "2016-05-27 17:25:31"
+            "time": "2016-05-31 16:53:49"
         },
         {
             "name": "beloop/user",
