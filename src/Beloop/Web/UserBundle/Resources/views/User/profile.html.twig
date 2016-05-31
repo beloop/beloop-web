@@ -25,28 +25,26 @@
                     </div>
                 </div>
             </div>
-            <div class="row gallery-container">
-                <div class="col-sm-12 col-md-4">
-                    <div class="item">
-                        {% include 'WebUserBundle:User:partials/about.html.twig' with { 'action': action, 'user': user } %}
-                    </div>
-                    {% if action == 'edit' %}
-                        {% include 'WebUserBundle:User:modals/profile.html.twig' with { 'user': user, 'form': form} %}
-                        {% include 'WebUserBundle:User:modals/password.html.twig' with { 'user': user, 'form': form} %}
-                        <div class="md-overlay"></div>
-                    {% endif %}
+            <div class="gallery-container">
+                <div class="item about-me">
+                    {% include 'WebUserBundle:User:partials/about.html.twig' with { 'action': action, 'user': user } %}
                 </div>
+                {% if action == 'edit' %}
+                    {% include 'WebUserBundle:User:modals/profile.html.twig' with { 'user': user, 'form': form} %}
+                    {% include 'WebUserBundle:User:modals/password.html.twig' with { 'user': user, 'form': form} %}
+                    <div class="md-overlay"></div>
+                {% endif %}
                 {% for img in user.images %}
                     <div class="item">
                         <div class="photo">
                             <div class="img">
-                                <a href="#" class="md-trigger" data-modal="image-details-{{ img.id }}"><img src="{{ vich_uploader_asset(img, 'imageFile')|imagine_filter('instagram_thumb') }}" alt="{{ img.title }}"></a>
+                                <a href="#{{ vich_uploader_asset(img, 'imageFile') }}" class="md-trigger" data-modal="image-details-{{ img.id }}"><img src="{{ vich_uploader_asset(img, 'imageFile')|imagine_filter('instagram_thumb') }}" alt="{{ img.title }}"></a>
                             </div>
                             <div class="description">
                                 <div class="icon"><a href="#" class="md-trigger" data-modal="image-details-{{ img.id }}"><i class="s7-comment"></i></a></div>
                                 <div class="desc">
                                     <h4>{{ img.title }}</h4>
-                                    <span>{{ 'instagram.by.label'|trans }} <a href="#">{{ img.user.fullName }}</a> </span>
+                                    <span>{{ 'instagram.by.label'|trans }} <a href="{{ path('beloop_user_view_profile', {'id': img.user.id}) }}">{{ img.user.fullName }}</a> </span>
                                     <span>{{ img.createdAt|localizeddate('medium', 'none') }}</span>
                                 </div>
                             </div>
