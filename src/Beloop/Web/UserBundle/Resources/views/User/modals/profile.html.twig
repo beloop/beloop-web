@@ -8,8 +8,8 @@
             {% include 'WebUserBundle:User:partials/edit_form.html.twig' with { 'user': user, 'form': form } %}
         </div>
         <div class="modal-footer">
-            <button type="button" data-dismiss="modal" class="btn btn-default md-close">{{ 'cancel'|trans }}</button>
-            <button type="submit" data-dismiss="modal" class="btn btn-primary" form="{{ form.vars.name }}">{{ 'save'|trans }}</button>
+            <button type="button" data-dismiss="modal" class="btn btn-default md-close">{{ 'common.button.cancel'|trans }}</button>
+            <button type="submit" data-dismiss="modal" class="btn btn-primary" form="{{ form.vars.name }}">{{ 'common.button.save'|trans }}</button>
         </div>
     </div>
 </div>
