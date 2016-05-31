@@ -61,19 +61,24 @@ class UserController extends Controller
         $canView = false;
         $viewer = $this->getUser();
 
-        foreach ($viewer->getCourses() as $course) {
-            if ($course->getEnrolledUsers()->contains($user)) {
-                $canView = true;
+        if ($this->get('security.authorization_checker')->isGranted('ROLE_ADMIN')) {
+            $canView = true;
+        } else {
+            foreach ($viewer->getCourses() as $course) {
+                if ($course->getEnrolledUsers()->contains($user)) {
+                    $canView = true;
+                }
             }
         }
 
-        if (!$canView && $this->get('security.authorization_checker')->isGranted('ROLE_ADMIN')) {
+        if (!$canView) {
             throw $this->createNotFoundException('The user does not exist');
         }
 
         return [
             'action'  => 'view',
-            'user'    => $user,
+            'profile'    => $user,
+            'viewer'    => $viewer,
             'section' => ''
         ];
     }

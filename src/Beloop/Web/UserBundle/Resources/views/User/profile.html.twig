@@ -1,9 +1,13 @@
+{% set user = (viewer is defined) ? viewer : user %}
 {% extends 'base.html.twig' %}
 
-{% block title %}{{ user.fullName }}{% endblock %}
+{% block title %}
+    {% set user = (profile is defined) ? profile : user %}
+    {{ user.fullName }}
+{% endblock %}
 
 {% block body %}
-
+    {% set user = (profile is defined) ? profile : user %}
     <div class="main-content">
         <div class="user-profile">
             <div class="user-display">
@@ -21,15 +25,36 @@
                     </div>
                 </div>
             </div>
-            <div class="row">
+            <div class="row gallery-container">
                 <div class="col-sm-12 col-md-4">
-                    {% include 'WebUserBundle:User:partials/about.html.twig' with { 'action': action, 'user': user } %}
+                    <div class="item">
+                        {% include 'WebUserBundle:User:partials/about.html.twig' with { 'action': action, 'user': user } %}
+                    </div>
                     {% if action == 'edit' %}
                         {% include 'WebUserBundle:User:modals/profile.html.twig' with { 'user': user, 'form': form} %}
                         {% include 'WebUserBundle:User:modals/password.html.twig' with { 'user': user, 'form': form} %}
                         <div class="md-overlay"></div>
                     {% endif %}
                 </div>
+                {% for img in user.images %}
+                    <div class="item">
+                        <div class="photo">
+                            <div class="img">
+                                <a href="#" class="md-trigger" data-modal="image-details-{{ img.id }}"><img src="{{ vich_uploader_asset(img, 'imageFile')|imagine_filter('instagram_thumb') }}" alt="{{ img.title }}"></a>
+                            </div>
+                            <div class="description">
+                                <div class="icon"><a href="#" class="md-trigger" data-modal="image-details-{{ img.id }}"><i class="s7-comment"></i></a></div>
+                                <div class="desc">
+                                    <h4>{{ img.title }}</h4>
+                                    <span>{{ 'instagram.by.label'|trans }} <a href="#">{{ img.user.fullName }}</a> </span>
+                                    <span>{{ img.createdAt|localizeddate('medium', 'none') }}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% include 'WebInstagramBundle:Instagram:modals/image_details.html.twig' with {'image': img} %}
+                {% endfor %}
+                <div class="md-overlay"></div>
             </div>
         </div>
     </div>
@@ -43,9 +68,13 @@
 {% block javascripts %}
     {{ parent() }}
     <script type="text/javascript" src="{{ asset('vendor/jquery.niftymodals/js/jquery.modalEffects.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('vendor/masonry/masonry.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('vendor/masonry/imagesloaded.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('vendor/scrollTo/jquery.scrollTo.min.js') }}"></script>
     <script type="text/javascript">
         $(function () {
-            $('.md-trigger').modalEffects();
+            // Masonry
+            App.pageGallery();
 
             $('#beloop_user_form_type_password').submit(function (event) {
                 var inputs = $(this).find('input[type="password"]');
@@ -86,6 +115,21 @@
                         }
                     });
                 });
+            });
+
+            $('.instagram-feedback input').on('keypress', function (event) {
+                if (event.charCode === 13) {
+                    var value = this.value;
+
+                    $.post(this.dataset.target, {
+                        'image': this.dataset.image,
+                        'comment': value
+                    }).done(function (data) {
+                        $('.md-instagram-modal .comments').append(data).scrollTo('100%');
+                    });
+
+                    this.value = '';
+                }
             });
         });
     </script>
