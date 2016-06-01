@@ -50,7 +50,7 @@
                             </div>
                         </div>
                     </div>
-                    {% include 'WebInstagramBundle:Instagram:modals/image_details.html.twig' with {'image': img} %}
+                    {% include 'WebInstagramBundle:Instagram:modals/image_details.html.twig' with {'image': img, 'user': viewer} %}
                 {% endfor %}
                 <div class="md-overlay"></div>
             </div>
