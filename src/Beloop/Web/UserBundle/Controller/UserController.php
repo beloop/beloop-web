@@ -140,10 +140,11 @@ class UserController extends Controller
         }
 
         return [
-            'action' => 'edit',
+            'action'  => 'edit',
             'section' => 'my-profile',
-            'user' => $user,
-            'form' => $formView,
+            'user'    => $user,
+            'viewer'  => $user,
+            'form'    => $formView,
         ];
     }
 
