@@ -24,7 +24,7 @@
                     <div class="media">
                         <div class="media-left">
                             <a href="{{ path('beloop_user_view_profile', {'id': image.user.id}) }}">
-                                <img class="media-object" src="{{ vich_uploader_asset(image.user, 'avatarFile')|default(asset('img/avatar.jpg')) }}" alt="{{ image.user.fullName }}">
+                                <img class="media-object" src="{{ vich_uploader_asset(image.user, 'avatarFile')|default(asset('img/avatar.jpg'))|imagine_filter('profile_mini_thumb') }}" alt="{{ image.user.fullName }}">
                             </a>
                         </div>
                         <div class="media-body">
