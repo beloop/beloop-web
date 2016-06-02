@@ -1,0 +1,14 @@
+<ul class="nav navbar-nav am-nav-right visible-xs">
+    {% for lesson in course.lessons %}
+        {% if lesson.available or is_granted('ROLE_TEACHER') %}
+            <li class="dropdown">
+                <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="dropdown-toggle">{{ loop.index0 }}. {{ lesson.name }} <span class="angle-down s7-angle-down"></span></a>
+                <ul role="menu" class="dropdown-menu">
+                    {% for mod in lesson.modules %}
+                        <li><a href="{{ path('beloop_view_module_' ~ mod.type, {'code': course.code, 'id': mod.id}) }}" class="dd-handle">{{ loop.parent.loop.index0 }}.{{ loop.index }}. {{ mod.name }}</a></li>
+                    {% endfor %}
+                </ul>
+            </li>
+        {% endif %}
+    {% endfor %}
+</ul>

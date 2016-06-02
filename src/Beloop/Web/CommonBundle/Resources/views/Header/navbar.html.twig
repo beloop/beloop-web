@@ -18,13 +18,9 @@
                 </li>
             </ul>
 
-            {#{% if module_navigation is defined %}#}
-                {#<ul class="nav navbar-nav am-nav-right navbar-module">#}
-                    {#<li>#}
-                        {#<a href="#">Module navigation!</a>#}
-                    {#</li>#}
-                {#</ul>#}
-            {#{% endif %}#}
+            {% if module_navigation is defined %}
+                {{ module_navigation|raw }}
+            {% endif %}
 
             {% if back_to is defined %}
             <ul class="nav navbar-nav am-nav-right navbar-back">

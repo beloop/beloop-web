@@ -97,4 +97,41 @@ class ModuleController extends Controller
             'actualModule' => $actualModule
         ];
     }
+
+    /**
+     * Render module nav menu
+     *
+     * @param CourseInterface $course
+     * @param $actualModule
+     *
+     * @return array
+     *
+     * @Route(
+     *      path = "/course/{code}/render-nav/{actualModule}",
+     *      name = "beloop_render_course_nav_menu",
+     *      methods = {"GET"}
+     * )
+     *
+     * @Template("CourseBundle:Module:partials/nav_menu.html.twig")
+     *
+     * @EntityAnnotation(
+     *      class = {
+     *          "factory" = "beloop.factory.course",
+     *          "method" = "create",
+     *          "static" = false
+     *      },
+     *      name = "course",
+     *      mapping = {
+     *          "code" = "~code~"
+     *      },
+     *      mappingFallback = true
+     * )
+     */
+    public function navAction(CourseInterface $course, $actualModule)
+    {
+        return [
+            'course' => $course,
+            'actualModule' => $actualModule
+        ];
+    }
 }

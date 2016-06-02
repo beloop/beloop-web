@@ -5,7 +5,7 @@
 {% block body_class %}am-aside{% endblock %}
 
 {% block module_navigation %}
-    <a href="{{ path('beloop_view_course', {'code': module.course.code}) }}"><span class="s7-angle-left"></span> {{ module.course.name }}</a>
+    {{ render(controller('CourseBundle:Module:nav', {'code': course.code, 'actualModule': module.id})) }}
 {% endblock %}
 
 {% block back_to %}
