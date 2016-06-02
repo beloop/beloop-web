@@ -15,6 +15,8 @@
 
 namespace Beloop\Web\InstagramBundle\Form\Type;
 
+use Doctrine\ORM\EntityRepository;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Bundle\FrameworkBundle\Routing\Router;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
@@ -23,9 +25,8 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-use Vich\UploaderBundle\Form\Type\VichImageType;
-
 use Beloop\Component\Core\Factory\Traits\FactoryTrait;
+use Beloop\Component\User\Wrapper\UserWrapper;
 
 /**
  * Class InstagramType
@@ -40,11 +41,13 @@ class InstagramType extends AbstractType
     protected $router;
 
     /**
-     * @param Router $router
+     * @param Router      $router
+     * @param UserWrapper $userWrapper
      */
-    public function __construct(Router $router)
+    public function __construct(Router $router, UserWrapper $userWrapper)
     {
         $this->router = $router;
+        $this->userWrapper = $userWrapper;
     }
 
     /**
@@ -74,6 +77,18 @@ class InstagramType extends AbstractType
             ->setAction($this->router->generate('beloop_instagram_upload_image'))
             ->add('imageFile', FileType::class, [
                 'required' => true
+            ])
+            ->add('course', EntityType::class, [
+                'required' => true,
+                'class' => 'Beloop\Component\Course\Entity\Course',
+                'query_builder' => function (EntityRepository $er) {
+                    return $er->createQueryBuilder('c')
+                        ->innerJoin('c.enrolledUsers', 'u')
+                        ->where('u.id = :userId')->setParameter('userId', $this->userWrapper->get()->getId())
+                        ->orderBy('c.startDate', 'DESC');
+                },
+                'choice_label' => 'name',
+                'label' => false
             ])
             ->add('title', TextType::class, [
                 'required' => true,

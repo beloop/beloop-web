@@ -1,5 +1,8 @@
 {{ form_start(form) }}
+    {% set choiceClass = form.course.vars.choices|length > 1 ? 'form-control' : 'hidden'  %}
+
     {{ form_row(form.imageFile, { 'attr': { 'class': 'hidden' }}) }}
+    {{ form_widget(form.course, { 'attr': { 'class': choiceClass }}) }}
     {{ form_widget(form.title) }}
     {{ form_widget(form.description) }}
 {{ form_end(form) }}
