@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "705ea66b82833c3ef2a7052bb4e4d777",
-    "content-hash": "47ac54da75b033f90b529a5793ae2ab1",
+    "hash": "3feab2f4e9fc4f73b2c5d9967bb109f5",
+    "content-hash": "22e19545db98db092a4be72f86b41341",
     "packages": [
         {
             "name": "beloop/analytics",
@@ -590,16 +590,16 @@
         },
         {
             "name": "beloop/squarespace",
-            "version": "0.4.6",
+            "version": "0.4.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/beloop/Squarespace.git",
-                "reference": "6dba961728772262b2d5d16bc478fa801015ca61"
+                "reference": "932fe62dad277352c11983846a1f7e6fc63c6885"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/beloop/Squarespace/zipball/6dba961728772262b2d5d16bc478fa801015ca61",
-                "reference": "6dba961728772262b2d5d16bc478fa801015ca61",
+                "url": "https://api.github.com/repos/beloop/Squarespace/zipball/932fe62dad277352c11983846a1f7e6fc63c6885",
+                "reference": "932fe62dad277352c11983846a1f7e6fc63c6885",
                 "shasum": ""
             },
             "require": {
@@ -649,20 +649,20 @@
                 "lms",
                 "squarespace"
             ],
-            "time": "2016-05-17 19:50:12"
+            "time": "2016-06-04 21:23:48"
         },
         {
             "name": "beloop/squarespace-bundle",
-            "version": "0.4.15",
+            "version": "0.4.16",
             "source": {
                 "type": "git",
                 "url": "https://github.com/beloop/SquarespaceBundle.git",
-                "reference": "8dbc71004ce99eb5d8c18b0cd9e6f575bf15ba0b"
+                "reference": "d6d165008d10704d1ac2c8c25545d13793e97ac1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/beloop/SquarespaceBundle/zipball/8dbc71004ce99eb5d8c18b0cd9e6f575bf15ba0b",
-                "reference": "8dbc71004ce99eb5d8c18b0cd9e6f575bf15ba0b",
+                "url": "https://api.github.com/repos/beloop/SquarespaceBundle/zipball/d6d165008d10704d1ac2c8c25545d13793e97ac1",
+                "reference": "d6d165008d10704d1ac2c8c25545d13793e97ac1",
                 "shasum": ""
             },
             "require": {
@@ -713,7 +713,7 @@
                 "lms",
                 "squarespace"
             ],
-            "time": "2016-05-27 17:25:31"
+            "time": "2016-06-04 21:23:48"
         },
         {
             "name": "beloop/typeform",
@@ -1913,16 +1913,16 @@
         },
         {
             "name": "eightpoints/guzzle-wsse-middleware",
-            "version": "v4.1.1",
+            "version": "v4.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/8p/guzzle-wsse-middleware.git",
-                "reference": "9db68bc438abca6a09e5a274c72eed97b7efce3f"
+                "reference": "3998dae6fed29f2d3384024764046b63a764ddda"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/8p/guzzle-wsse-middleware/zipball/9db68bc438abca6a09e5a274c72eed97b7efce3f",
-                "reference": "9db68bc438abca6a09e5a274c72eed97b7efce3f",
+                "url": "https://api.github.com/repos/8p/guzzle-wsse-middleware/zipball/3998dae6fed29f2d3384024764046b63a764ddda",
+                "reference": "3998dae6fed29f2d3384024764046b63a764ddda",
                 "shasum": ""
             },
             "require": {
@@ -1964,7 +1964,7 @@
                 "web service",
                 "wsse"
             ],
-            "time": "2016-05-21 10:01:09"
+            "time": "2016-06-03 14:03:33"
         },
         {
             "name": "friendsofsymfony/jsrouting-bundle",
