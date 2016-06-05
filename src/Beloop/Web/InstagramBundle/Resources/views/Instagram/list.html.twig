@@ -24,6 +24,10 @@
                 </div>
             </div>
         </div>
+    {% endfor %}
+</div>
+<div class="gallery-details">
+    {% for img in images %}
         {% include 'WebInstagramBundle:Instagram:modals/image_details.html.twig' with {'image': img} %}
     {% endfor %}
     <div class="md-overlay"></div>
