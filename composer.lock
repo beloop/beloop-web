@@ -590,16 +590,16 @@
         },
         {
             "name": "beloop/squarespace",
-            "version": "0.4.7",
+            "version": "0.4.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/beloop/Squarespace.git",
-                "reference": "932fe62dad277352c11983846a1f7e6fc63c6885"
+                "reference": "68e41dc216219969289d5d44181c8c452538bede"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/beloop/Squarespace/zipball/932fe62dad277352c11983846a1f7e6fc63c6885",
-                "reference": "932fe62dad277352c11983846a1f7e6fc63c6885",
+                "url": "https://api.github.com/repos/beloop/Squarespace/zipball/68e41dc216219969289d5d44181c8c452538bede",
+                "reference": "68e41dc216219969289d5d44181c8c452538bede",
                 "shasum": ""
             },
             "require": {
@@ -649,20 +649,20 @@
                 "lms",
                 "squarespace"
             ],
-            "time": "2016-06-04 21:23:48"
+            "time": "2016-06-06 17:35:33"
         },
         {
             "name": "beloop/squarespace-bundle",
-            "version": "0.4.16",
+            "version": "0.4.17",
             "source": {
                 "type": "git",
                 "url": "https://github.com/beloop/SquarespaceBundle.git",
-                "reference": "d6d165008d10704d1ac2c8c25545d13793e97ac1"
+                "reference": "6940acf3436307d4ff0d7bb707b828e53634e285"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/beloop/SquarespaceBundle/zipball/d6d165008d10704d1ac2c8c25545d13793e97ac1",
-                "reference": "d6d165008d10704d1ac2c8c25545d13793e97ac1",
+                "url": "https://api.github.com/repos/beloop/SquarespaceBundle/zipball/6940acf3436307d4ff0d7bb707b828e53634e285",
+                "reference": "6940acf3436307d4ff0d7bb707b828e53634e285",
                 "shasum": ""
             },
             "require": {
@@ -713,7 +713,7 @@
                 "lms",
                 "squarespace"
             ],
-            "time": "2016-06-04 21:23:48"
+            "time": "2016-06-06 17:35:33"
         },
         {
             "name": "beloop/typeform",
@@ -4225,16 +4225,16 @@
         },
         {
             "name": "symfony/symfony",
-            "version": "v2.8.6",
+            "version": "v2.8.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/symfony.git",
-                "reference": "8408816780215fae055599d100b5385d9a247151"
+                "reference": "663b2d6202c3149515b39cfe50a174a130acb8e2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/symfony/zipball/8408816780215fae055599d100b5385d9a247151",
-                "reference": "8408816780215fae055599d100b5385d9a247151",
+                "url": "https://api.github.com/repos/symfony/symfony/zipball/663b2d6202c3149515b39cfe50a174a130acb8e2",
+                "reference": "663b2d6202c3149515b39cfe50a174a130acb8e2",
                 "shasum": ""
             },
             "require": {
@@ -4355,7 +4355,7 @@
             "keywords": [
                 "framework"
             ],
-            "time": "2016-05-09 21:45:54"
+            "time": "2016-06-06 16:05:37"
         },
         {
             "name": "twig/extensions",
