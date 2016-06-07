@@ -384,7 +384,8 @@
     }
 
     header {
-      padding: 20px;
+      padding: 15px;
+      border-bottom: 1px solid #f0f0f0;
     }
 
     .md-content {
@@ -393,13 +394,23 @@
       max-height: none;
       overflow: initial;
 
+      .modal-header {
+        .close {
+          color: #fff;
+          position: absolute;
+          right: 0;
+          top: 0;
+          font-size: 3em;
+        }
+      }
+
       .instagram-image {
-        border-bottom: 1px solid #efefef;
-        border-top: 1px solid #efefef;
+        border: 2px solid #fff;
 
         img {
           margin-right: auto;
           margin-left: auto;
+          width: 100%;
         }
       }
 
@@ -428,36 +439,42 @@
   .md-instagram-modal {
     width: 700px;
     max-width: 700px;
+    max-height: 90%;
+
+    .md-content {
+      height: 100%;
+    }
 
     article {
       padding-right: 300px;
       width: 100%;
+      height: 100%;
     }
 
     header {
       border-bottom: 1px solid #f0f0f0;
       padding-bottom: 15px;
+    }
+
+    .image-content {
       position: absolute;
-      top: 15px;
       right: 20px;
+      top: 20px;
       width: 260px;
+      bottom: 75px;
+      overflow-y: scroll;
+      -webkit-overflow-scrolling: touch;
     }
 
     .comments{
-      position: absolute;
-      top: 85px;
-      right: 20px;
-      bottom: 80px;
-      width: 260px;
-      overflow-y: scroll;
-      -webkit-overflow-scrolling: touch;
-
+      padding-top: 15px;
       &::-webkit-scrollbar {
         display: none;
       }
     }
 
     .instagram-image {
+      float: left;
       img {
         margin-right: auto;
         margin-left: auto;
