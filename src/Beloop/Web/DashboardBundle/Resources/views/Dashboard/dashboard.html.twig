@@ -95,6 +95,8 @@
             });
 
             $('.instagram-feedback input').on('keypress', function (event) {
+                var $modal = $(this).closest('.md-instagram-modal');
+
                 if (event.charCode === 13) {
                     var value = this.value;
 
@@ -102,7 +104,7 @@
                         'image': this.dataset.image,
                         'comment': value
                     }).done(function (data) {
-                        $('.md-instagram-modal .comments').append(data).scrollTo('100%');
+                        $modal.find('.comments').append(data).scrollTo('100%');
                     });
 
                     this.value = '';
