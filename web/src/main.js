@@ -92,7 +92,8 @@ var App = (function () {
         // initialize
         $container.masonry({
             columnWidth: 0,
-            itemSelector: '.item'
+            itemSelector: '.item',
+            stamp: '.stamp'
         });
 
         //Resizes gallery items on sidebar collapse
