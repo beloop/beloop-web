@@ -23,14 +23,9 @@
 {% block javascripts %}
     {{ parent() }}
     <script type="text/javascript" src="{{ asset('vendor/jquery.niftymodals/js/jquery.modalEffects.min.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('vendor/masonry/masonry.min.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('vendor/masonry/imagesloaded.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('vendor/scrollTo/jquery.scrollTo.min.js') }}"></script>
     <script type="text/javascript">
         $(function () {
-            // Masonry
-            App.pageGallery();
-
             // Upload image
             var $form = $('#beloop_instagram_form_type_instagram');
             var $imageDetails = $('#image-details');
