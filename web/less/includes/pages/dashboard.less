@@ -18,15 +18,14 @@
 
   textarea {
     margin-top: 24px;
-    height: 230px;
   }
 
   .image-placeholder {
     cursor: pointer;
     position: relative;
-    height: 300px;
     overflow: hidden;
     background-color: darken(@light-color, 2.8%);
+    height: 100px;
 
     .img-responsive {
       margin-left: auto;
@@ -50,5 +49,29 @@
 
   [class*="s7-"] {
     font-size: 2em;
+  }
+}
+
+@media (min-width: @screen-sm) {
+  .instagram-form {
+    .image-placeholder {
+      height: 265px;
+    }
+
+    textarea {
+      height: 130px;
+    }
+  }
+}
+
+@media (min-width: @screen-md) {
+  .instagram-form {
+    .image-placeholder {
+      height: 300px;
+    }
+
+    textarea {
+      height: 160px;
+    }
   }
 }
