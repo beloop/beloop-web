@@ -26,7 +26,7 @@
                 </div>
             </div>
             <div class="gallery-container">
-                <div class="item about-me">
+                <div class="stamp about-me">
                     {% include 'WebUserBundle:User:partials/about.html.twig' with { 'action': action, 'user': user } %}
                 </div>
                 {% if action == 'edit' %}
@@ -66,9 +66,14 @@
 {% block javascripts %}
     {{ parent() }}
     <script type="text/javascript" src="{{ asset('vendor/jquery.niftymodals/js/jquery.modalEffects.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('vendor/masonry/masonry.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('vendor/masonry/imagesloaded.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('vendor/scrollTo/jquery.scrollTo.min.js') }}"></script>
     <script type="text/javascript">
         $(function () {
+            // Masonry
+            App.pageGallery();
+
             $('#beloop_user_form_type_password').submit(function (event) {
                 var inputs = $(this).find('input[type="password"]');
 
@@ -111,7 +116,7 @@
             });
 
             $('.instagram-feedback input').on('keypress', function (event) {
-                if (event.charCode === 13) {
+                if (event.charCode === 13 || event.keyCode === 13) {
                     var value = this.value;
 
                     $.post(this.dataset.target, {

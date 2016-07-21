@@ -85,6 +85,27 @@ var App = (function () {
         }
     };
 
+    var pageGallery = function pageGallery() {
+        //Initialize Mansory
+        var $container = $('.gallery-container');
+
+        // initialize
+        $container.masonry({
+            columnWidth: 0,
+            itemSelector: '.item',
+            stamp: '.stamp'
+        });
+
+        //Resizes gallery items on sidebar collapse
+        $("#sidebar-collapse").click(function(){
+            $container.masonry();
+        });
+
+        $container.imagesLoaded( function() {
+            $container.masonry();
+        });
+    };
+
     return {
         //General data
         conf: config,
@@ -109,8 +130,8 @@ var App = (function () {
             });
         },
 
-        hideSpinner: hideSpinner
-        //pageGallery: pageGallery
+        hideSpinner: hideSpinner,
+        pageGallery: pageGallery
     };
 
 })();
