@@ -25,12 +25,14 @@
 
 # Amaretti template
 /web/amaretti/
+/web/img/404-img.png
+/web/img/404-img-2x.png
 
 # Assets and user uploads
 /web/bundles/
 /web/uploads/
 /web/fonts/
-/web/css/
+/web/less/
 /web/images/
 /web/media/
 
