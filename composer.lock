@@ -590,16 +590,16 @@
         },
         {
             "name": "beloop/squarespace",
-            "version": "0.4.8",
+            "version": "0.4.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/beloop/Squarespace.git",
-                "reference": "68e41dc216219969289d5d44181c8c452538bede"
+                "reference": "0e8591ded07389e605150c1475a0b0572eeb8fc7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/beloop/Squarespace/zipball/68e41dc216219969289d5d44181c8c452538bede",
-                "reference": "68e41dc216219969289d5d44181c8c452538bede",
+                "url": "https://api.github.com/repos/beloop/Squarespace/zipball/0e8591ded07389e605150c1475a0b0572eeb8fc7",
+                "reference": "0e8591ded07389e605150c1475a0b0572eeb8fc7",
                 "shasum": ""
             },
             "require": {
@@ -649,7 +649,7 @@
                 "lms",
                 "squarespace"
             ],
-            "time": "2016-06-06 17:35:33"
+            "time": "2016-08-28 14:50:31"
         },
         {
             "name": "beloop/squarespace-bundle",
