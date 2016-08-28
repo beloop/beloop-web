@@ -183,6 +183,49 @@ class CourseController extends AbstractAdminController
     }
 
     /**
+     * Duplicate an existing course
+     *
+     * @param CourseInterface $course
+     *
+     * @return array
+     *
+     * @Route(
+     *      path = "/duplicate/{id}",
+     *      name = "admin_course_duplicate",
+     *      requirements = {
+     *          "id" = "\d+",
+     *      },
+     *      methods = {"GET"}
+     * )
+     *
+     * @Template
+     *
+     * @EntityAnnotation(
+     *      class = {
+     *          "factory" = "beloop.factory.course",
+     *          "method" = "create",
+     *          "static" = false
+     *      },
+     *      name = "course",
+     *      mapping = {
+     *          "id" = "~id~"
+     *      },
+     *      mappingFallback = true,
+     *      persist = true
+     * )
+     */
+    public function duplicateAction(
+        CourseInterface $course
+    ) {
+        $newCourse = clone $course;
+        $this->flush($newCourse);
+
+        $this->addFlash('success', 'admin.course.duplicated');
+
+        return $this->redirectToRoute('admin_course_edit', ['id' => $newCourse->getId()]);
+    }
+
+    /**
      * Enroll users on course
      *
      * @param CourseInterface $course

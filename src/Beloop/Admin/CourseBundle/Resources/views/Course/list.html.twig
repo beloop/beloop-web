@@ -45,7 +45,7 @@
                                                     <div class="btn-group btn-space">
                                                         <a href="{{ url('beloop_view_course', { code: course.code }) }}" class="btn btn-default btn-xs" title="{{ 'admin.common.field.actions.preview'|trans }}" target="_blank"><i class="icon s7-look"></i></a>
                                                         <a href="{{ url('admin_course_edit', { id: course.id }) }}" class="btn btn-default btn-xs" title="{{ 'admin.common.field.actions.edit'|trans }}"><i class="icon s7-pen"></i></a>
-                                                        <a href="#" class="btn btn-default btn-xs" title="{{ 'admin.common.field.actions.duplicate'|trans }}"><i class="icon s7-copy-file"></i></a>
+                                                        <a href="{{ url('admin_course_duplicate', { id: course.id }) }}" class="btn btn-default btn-xs" title="{{ 'admin.common.field.actions.duplicate'|trans }}"><i class="icon s7-copy-file"></i></a>
                                                     </div>
                                                 </div>
                                             </td>
