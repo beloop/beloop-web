@@ -842,16 +842,16 @@
         },
         {
             "name": "beloop/user",
-            "version": "0.4.15",
+            "version": "0.4.16",
             "source": {
                 "type": "git",
                 "url": "https://github.com/beloop/User.git",
-                "reference": "ab128882f773ee90198fb7de302442362b191504"
+                "reference": "293f9b56cc58211ff6705ad578f4378efcc71418"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/beloop/User/zipball/ab128882f773ee90198fb7de302442362b191504",
-                "reference": "ab128882f773ee90198fb7de302442362b191504",
+                "url": "https://api.github.com/repos/beloop/User/zipball/293f9b56cc58211ff6705ad578f4378efcc71418",
+                "reference": "293f9b56cc58211ff6705ad578f4378efcc71418",
                 "shasum": ""
             },
             "require": {
@@ -901,7 +901,7 @@
                 "lms",
                 "user"
             ],
-            "time": "2016-05-30 20:06:41"
+            "time": "2016-08-31 18:39:23"
         },
         {
             "name": "beloop/user-bundle",
