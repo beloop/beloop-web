@@ -40,12 +40,14 @@
                 <h4 class="text-uppercase">{{ 'course.description.title'|trans }}</h4>
                 {{ course.description|raw }}
 
+                {% if course.enrolledUsers|length > 25 %}
                 <h4 class="text-uppercase">{{ 'course.details.title'|trans }}</h4>
                 <div class="clearfix">
                     <span class="s7-users"></span>
                     <span>{{ 'course.enrolled_students.title'|trans }}</span>
                     <span class="pull-right"> {{ course.enrolledUsers|length }}</span>
                 </div>
+                {% endif %}
             </div>
         </div>
     </div>
