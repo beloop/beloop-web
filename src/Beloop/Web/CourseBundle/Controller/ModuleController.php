@@ -93,7 +93,8 @@ class ModuleController extends Controller
     public function asideAction(CourseInterface $course, $actualModule)
     {
         return [
-            'course' => $course,
+            'user'         => $this->getUser(),
+            'course'       => $course,
             'actualModule' => $actualModule
         ];
     }
@@ -130,7 +131,8 @@ class ModuleController extends Controller
     public function navAction(CourseInterface $course, $actualModule)
     {
         return [
-            'course' => $course,
+            'user'         => $this->getUser(),
+            'course'       => $course,
             'actualModule' => $actualModule
         ];
     }

@@ -15,15 +15,7 @@
 
 namespace Beloop\Admin\CommonBundle\Controller\Abstracts;
 
-use Closure;
-use Doctrine\Common\Persistence\ObjectManager;
-use Exception;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Symfony\Component\HttpFoundation\RedirectResponse;
-use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\Response;
-
-use Beloop\Component\Core\Entity\Interfaces\EnabledInterface;
 
 /**
  * Class AbstractAdminController

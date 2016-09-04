@@ -89,6 +89,7 @@ class CourseController extends AbstractAdminController
         );
 
         return [
+            'user'             => $this->getUser(),
             'courses'          => $courses,
             'paginator'        => $paginator,
             'page'             => $page,
@@ -177,6 +178,7 @@ class CourseController extends AbstractAdminController
         }
 
         return [
+            'user'    => $this->getUser(),
             'course'  => $course,
             'form'    => $formView,
         ];
@@ -266,8 +268,9 @@ class CourseController extends AbstractAdminController
         $this->get('beloop.user_enrollment')->enrolFromCSV($course, $csv);
 
         return [
+            'user'   => $this->getUser(),
             'course' => $course,
-            'users' => $course->getEnrolledUsers()
+            'users'  => $course->getEnrolledUsers()
         ];
     }
 }
