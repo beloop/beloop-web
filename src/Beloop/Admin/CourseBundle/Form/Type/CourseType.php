@@ -87,6 +87,9 @@ class CourseType extends AbstractType
             ])
             ->add('enabled', CheckboxType::class, [
                 'required' => false,
+            ])
+            ->add('demo', CheckboxType::class, [
+                'required' => false,
             ]);
     }
 
