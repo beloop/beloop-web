@@ -38,6 +38,10 @@ class DashboardController extends Controller
     {
         $user = $this->getUser();
 
+        if(false === $this->get('security.authorization_checker')->isGranted('ROLE_USER')) {
+            return $this->redirectToRoute('beloop_public_courses');
+        }
+
         return [
             'section' => 'dashboard',
             'user' => $user,
