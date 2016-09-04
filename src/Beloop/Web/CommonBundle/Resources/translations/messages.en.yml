@@ -163,6 +163,6 @@ wall:
 preview:
     courses:
         title: 'Courses preview'
-        text: '<p>This section shows a preview of every course offered by Delicious yet Beautiful. Each demo has one full lesson open for your preview. Feel free to poke around the courses! For the full versions, you can registrate at deliciousyetbeautiful.com.</p><p>Enjoy!</p>'
+        text: '<p>This section shows a preview of every course offered by Delicious yet Beautiful. Each demo has one full lesson open for your preview. Feel free to poke around the courses! For the full versions, you can registrate at <a href="http://www.deliciousyetbeautiful.com/" target="_blank">deliciousyetbeautiful.com</a>.</p><p>Enjoy!</p>'
     lesson_not_available:
         text: 'Available only in full course'

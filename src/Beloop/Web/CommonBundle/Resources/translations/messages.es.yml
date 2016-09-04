@@ -168,6 +168,6 @@ wall:
 preview:
     courses:
         title: 'Preview de cursos'
-        text: '<p>Esta sección muestra un preview de cada uno de los cursos ofrecidos por Delicious yet Beautiful. Cada demo ofrece una lección completa para tu previsualización. ¡No dudes en curiosear cada curso! Para registrarte en las versiones completas, visita  deliciousyetbeautiful.com.</p><p>Enjoy!</p>'
+        text: '<p>Esta sección muestra un preview de cada uno de los cursos ofrecidos por Delicious yet Beautiful. Cada demo ofrece una lección completa para tu previsualización. ¡No dudes en curiosear cada curso! Para registrarte en las versiones completas, visita <a href="http://www.deliciousyetbeautiful.com/" target="_blank">deliciousyetbeautiful.com</a>.</p><p>Enjoy!</p>'
     lesson_not_available:
         text: 'Solo disponible en curso completo'
