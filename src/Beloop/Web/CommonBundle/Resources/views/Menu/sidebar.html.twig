@@ -1,6 +1,7 @@
 <ul class="sidebar-elements">
     <li {% if section == 'dashboard' %}class="active"{% endif %}><a href="{{ path('beloop_dashboard') }}"><i class="icon s7-photo"></i><span>{{ 'menu.dashboard.title'|trans }}</span></a></li>
     <li {% if section == 'my-courses' %}class="active"{% endif %}><a href="{{ path('beloop_my_courses') }}"><i class="icon s7-ribbon"></i><span>{{ 'menu.my_courses.title'|trans }}</span></a></li>
+    <li {% if section == 'public-courses' %}class="active"{% endif %}><a href="{{ path('beloop_public_courses') }}"><i class="icon s7-look"></i><span>{{ 'menu.public_courses.title'|trans }}</span></a></li>
     {% if is_granted('ROLE_ADMIN') %}
     <li {% if section == 'admin' %}class="active"{% endif %}><a href="{{ path('admin_course_list') }}"><i class="icon s7-config"></i><span>{{ 'menu.admin.title'|trans }}</span></a></li>
     {% endif %}

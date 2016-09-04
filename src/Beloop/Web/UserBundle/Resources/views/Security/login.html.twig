@@ -39,11 +39,11 @@
             </div>
         </div>
         <div class="form-group login-submit">
-            <button data-dismiss="modal" type="submit" class="btn btn-primary btn-lg">{{ 'login.button.submit.placeholder'|trans }}</button>
+            <button data-dismiss="modal" type="submit" class="btn btn-primary btn-lg">{{ 'login.button.submit.text'|trans }}</button>
         </div>
         <div class="form-group footer row">
             <div class="col-xs-6"><a href="{{ path('beloop_password_remember') }}">{{ 'login.text.forgot_password'|trans }}</a></div>
-            {#<div class="col-xs-6 text-right"><a href="#">{{ 'login.text.register'|trans }}</a></div>#}
+            <div class="col-xs-6 text-right"><a href="{{ path('beloop_register') }}">{{ 'login.text.register'|trans }}</a></div>
         </div>
     </div>
     {{ form_end(form) }}

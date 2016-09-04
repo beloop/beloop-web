@@ -18,7 +18,28 @@ login:
             placeholder: 'confirmar contraseña'
     button:
         submit:
-            placeholder: 'Entrar'
+            text: 'Entrar'
+
+register:
+    intro:
+        text: 'Aquí puedes registrarte para acceder a un <i>preview</i> (demo) de cada curso ofrecido por Delicious yet Beautiful.'
+    field:
+        firstname:
+            placeholder: 'Nombre'
+        lastname:
+            placeholder: 'Apellido'
+        email:
+            placeholder: 'Email'
+        password:
+            placeholder: 'Contraseña'
+        confirm_password:
+            placeholder: 'Confirmar'
+    button:
+        submit:
+            text: 'Registrarme'
+    tos:
+        text: 'Al darte de alta, aceptas los <a href="%link%" target="_blank">Términosy Condiciones</a>.'
+        link: 'http://www.deliciousyetbeautiful.com/terms-conditions/'
 
 recovery:
     forgot:
@@ -90,6 +111,8 @@ menu:
         title: 'Muro'
     my_courses:
         title: 'Mis Cursos'
+    public_courses:
+        title: 'Preview'
     admin:
         title: 'Admin'
     my_profile:
@@ -141,3 +164,10 @@ wall:
     how_it_works:
         title: 'Cómo funciona'
         text: '<p>¡Este muro es como una red social interna! Aquí, puedes subir tus fotos, añadir un título y una descripción. Éstas serán vistas por todos tus compañeros de curso.</p><p>También puedes interactuar añadiendo comentarios a las fotos de otras personas, como lo harías en cualquier otra red social. Es una forma divertida y visual de conectar con otras personas toman los mismos cursos que tú. ¡Sé creativo!</p>'
+
+preview:
+    courses:
+        title: 'Preview de cursos'
+        text: '<p>Esta sección muestra un preview de cada uno de los cursos ofrecidos por Delicious yet Beautiful. Cada demo ofrece una lección completa para tu previsualización. ¡No dudes en curiosear cada curso! Para registrarte en las versiones completas, visita  deliciousyetbeautiful.com.</p><p>Enjoy!</p>'
+    lesson_not_available:
+        text: 'Solo disponible en curso completo'

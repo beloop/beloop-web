@@ -3,7 +3,11 @@
 {% block title %}{{ course.name }}{% endblock %}
 
 {% block back_to %}
-    <a href="{{ path('beloop_my_courses') }}"><span class="s7-angle-left"></span> {{ 'menu.my_courses.title'|trans }}</a>
+    {% if course.isDemo %}
+        <a href="{{ path('beloop_public_courses') }}"><span class="s7-angle-left"></span> {{ 'menu.public_courses.title'|trans }}</a>
+    {% else %}
+        <a href="{{ path('beloop_my_courses') }}"><span class="s7-angle-left"></span> {{ 'menu.my_courses.title'|trans }}</a>
+    {% endif %}
 {% endblock %}
 
 {% block body %}
@@ -26,6 +30,8 @@
                                         {% for module in lesson.modules %}
                                             <a href="{{ path('beloop_view_module_' ~ module.type, {'code': course.code, 'id': module.id}) }}" class="module"><span class="s7-{{ module.icon }}"></span> {{ module.name }}</a>
                                         {% endfor %}
+                                    {% elseif course.isDemo %}
+                                        <span>{{ 'preview.lesson_not_available.text'|trans }}</span>
                                     {% else %}
                                         <span>{{ 'course.lesson_not_available.text'|trans({'%date%' : lesson.startDate|localizeddate('medium', 'none')}) }}</span>
                                     {% endif %}
@@ -40,7 +46,7 @@
                 <h4 class="text-uppercase">{{ 'course.description.title'|trans }}</h4>
                 {{ course.description|raw }}
 
-                {% if course.enrolledUsers|length > 25 %}
+                {% if course.enrolledUsers|length > 25 and not course.isDemo %}
                 <h4 class="text-uppercase">{{ 'course.details.title'|trans }}</h4>
                 <div class="clearfix">
                     <span class="s7-users"></span>

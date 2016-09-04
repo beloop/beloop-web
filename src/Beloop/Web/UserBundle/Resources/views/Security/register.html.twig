@@ -1,0 +1,86 @@
+{% extends 'CommonBundle:Page:page-wrapper.html.twig' %}
+
+{% block title %}Register{% endblock %}
+{% block class %}login-container{% endblock %}
+
+{% block content %}
+    {{ form_start(form, {
+        attr: {
+            class: 'form-horizontal',
+            autocomplete: 'nope'
+        }
+    }) }}
+    <input type="hidden" name="_target_path" value="/wall" />
+    <p class="text-center">{{ 'register.intro.text'|trans|raw }}</p>
+    {#{% if error %}#}
+        {#<div role="alert" class="alert alert-danger"><span class="icon s7-close-circle"></span> {{ error.messageKey|trans(error.messageData, 'security') }}</div>#}
+    {#{% endif %}#}
+    <div class="login-form">
+        <div class="form-group">
+            <div class="input-group"><span class="input-group-addon"><i class="icon s7-user"></i></span>
+                {{ form_widget(form.firstname, {
+                    attr: {
+                        class: 'form-control',
+                        placeholder: 'register.field.firstname.placeholder'|trans
+                    }
+                }) }}
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="input-group"><span class="input-group-addon"><i class="icon s7-user"></i></span>
+                {{ form_widget(form.lastname, {
+                    attr: {
+                        class: 'form-control',
+                        placeholder: 'register.field.lastname.placeholder'|trans
+                    }
+                }) }}
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="input-group"><span class="input-group-addon"><i class="icon s7-global"></i></span>
+                {{ form_widget(form.language, {
+                    attr: {
+                        class: 'form-control'
+                    }
+                }) }}
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="input-group"><span class="input-group-addon"><i class="icon s7-mail"></i></span>
+                {{ form_widget(form.email, {
+                    attr: {
+                        class: 'form-control',
+                        placeholder: 'register.field.email.placeholder'|trans
+                    }
+                }) }}
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-xs-12 col-sm-6">
+                <div class="input-group"><span class="input-group-addon"><i class="icon s7-lock"></i></span>
+                    {{ form_widget(form.password.first, {
+                        attr: {
+                            class: 'form-control',
+                            placeholder: 'register.field.password.placeholder'|trans
+                        }
+                    }) }}
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-6">
+                <div class="input-group"><span class="input-group-addon"><i class="icon s7-lock"></i></span>
+                    {{ form_widget(form.password.second, {
+                        attr: {
+                            class: 'form-control',
+                            placeholder: 'register.field.confirm_password.placeholder'|trans
+                        }
+                    }) }}
+                </div>
+            </div>
+        </div>
+        <div class="form-group login-submit">
+            <button data-dismiss="modal" type="submit" class="btn btn-primary btn-lg">{{ 'register.button.submit.text'|trans }}</button>
+        </div>
+    </div>
+    {{ form_end(form) }}
+    <p class="conditions">{{ 'register.tos.text'|trans({'%link%': 'register.tos.link'|trans})|raw }}</p>
+{% endblock %}

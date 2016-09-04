@@ -55,6 +55,35 @@ class CourseController extends Controller
     }
 
     /**
+     * List of public courses
+     *
+     * @return array
+     *
+     * @Route(
+     *      path = "/preview-courses",
+     *      name = "beloop_public_courses",
+     *      methods = {"GET"}
+     * )
+     *
+     * @Template
+     */
+    public function previewAction()
+    {
+        $user = $this->getUser();
+        
+        $courses = $this->get('beloop.repository.course')->findBy([
+            'demo' => true,
+            'language' => $user->getLanguage()
+        ]);
+
+        return [
+            'section' => 'public-courses',
+            'user' => $user,
+            'courses' => $courses,
+        ];
+    }
+
+    /**
      * View course information
      *
      * @param CourseInterface $course
@@ -87,7 +116,10 @@ class CourseController extends Controller
         $user = $this->getUser();
 
         // Extra checks if user is not TEACHER or ADMIN
-        if (false === $this->get('security.authorization_checker')->isGranted('ROLE_TEACHER')) {
+        if (
+            false === $this->get('security.authorization_checker')->isGranted('ROLE_TEACHER') &&
+            false === $course->isDemo()
+        ) {
             $userEnrolled = $course->getEnrolledUsers()->contains($user);
 
             if (!$userEnrolled) {
@@ -100,7 +132,7 @@ class CourseController extends Controller
         }
 
         return [
-            'section' => 'my-courses',
+            'section' => $course->isDemo() ? 'public-courses' : 'my-courses',
             'user' => $user,
             'course' => $course
         ];

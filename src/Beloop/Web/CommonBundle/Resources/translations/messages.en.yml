@@ -18,7 +18,28 @@ login:
             placeholder: 'confirm pasword'
     button:
         submit:
-            placeholder: 'Enter'
+            text: 'Enter'
+
+register:
+    intro:
+        text: 'Here you can sign up for a preview of every course offered by Delicious yet Beautiful.'
+    field:
+        firstname:
+            placeholder: 'First name'
+        lastname:
+            placeholder: 'Last name'
+        email:
+            placeholder: 'Email'
+        password:
+            placeholder: 'Password'
+        confirm_password:
+            placeholder: 'Confirm'
+    button:
+        submit:
+            text: 'Sign up'
+    tos:
+        text: 'By creating an account, you agree with the <a href="%link%" target="_blank">Terms and Conditions</a>.'
+        link: 'http://www.deliciousyetbeautiful.com/terms-conditions/'
 
 recovery:
     forgot:
@@ -42,6 +63,8 @@ menu:
         title: 'Wall'
     my_courses:
         title: 'My Courses'
+    public_courses:
+        title: 'Preview'
     admin:
         title: 'Admin'
     my_profile:
@@ -136,3 +159,10 @@ wall:
     how_it_works:
         title: 'How it works'
         text: '<p>This is like an internal social network! Here, you can upload your photos, add a title and a description to them. All photographs will be seen by all your fellow students.</p><p>You can also interact by adding comments to other people''s photos, just as you would in any other social network. It is a fun and visual way to connect with other people taking the same course/s as you. Be creative!</p>'
+
+preview:
+    courses:
+        title: 'Courses preview'
+        text: '<p>This section shows a preview of every course offered by Delicious yet Beautiful. Each demo has one full lesson open for your preview. Feel free to poke around the courses! For the full versions, you can registrate at deliciousyetbeautiful.com.</p><p>Enjoy!</p>'
+    lesson_not_available:
+        text: 'Only available in full course'

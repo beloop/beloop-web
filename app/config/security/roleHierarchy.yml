@@ -1,5 +1,6 @@
 security:
 
     role_hierarchy:
+        ROLE_USER:        ROLE_DEMO
         ROLE_TEACHER:     ROLE_USER
         ROLE_ADMIN:       ROLE_TEACHER

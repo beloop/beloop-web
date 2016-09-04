@@ -15,9 +15,13 @@ security:
             path: ^/password/.*
             roles: IS_AUTHENTICATED_ANONYMOUSLY
 
+        register_area:
+            path: ^/register/.*
+            roles: IS_AUTHENTICATED_ANONYMOUSLY
+
         public_area:
             path: ^/.+
-            roles: ROLE_USER
+            roles: ROLE_DEMO
 
         login_area:
             path: ^/
