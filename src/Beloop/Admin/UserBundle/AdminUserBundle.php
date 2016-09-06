@@ -13,17 +13,17 @@
  * @author Arkaitz Garro <arkaitz.garro@gmail.com>
  */
 
-namespace Beloop\Admin\CourseBundle;
+namespace Beloop\Admin\UserBundle;
 
 use Symfony\Component\DependencyInjection\Extension\ExtensionInterface;
 
-use Beloop\Admin\CourseBundle\DependencyInjection\CourseExtension;
+use Beloop\Admin\UserBundle\DependencyInjection\UserExtension;
 use Beloop\Bundle\CoreBundle\Abstracts\AbstractBundle;
 
 /**
- * Class AdminCourseBundle
+ * Class AdminUserBundle
  */
-class AdminCourseBundle extends AbstractBundle
+class AdminUserBundle extends AbstractBundle
 {
     /**
      * Returns the bundle's container extension.
@@ -32,6 +32,6 @@ class AdminCourseBundle extends AbstractBundle
      */
     public function getContainerExtension()
     {
-        return new CourseExtension();
+        return new UserExtension();
     }
 }

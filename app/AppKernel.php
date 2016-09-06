@@ -29,7 +29,7 @@ class AppKernel extends Kernel
             new Mmoreram\ControllerExtraBundle\ControllerExtraBundle(),
             new RaulFraile\Bundle\LadybugBundle\RaulFraileLadybugBundle(),
             new Vich\UploaderBundle\VichUploaderBundle(),
-            
+
             /**
              * Beloop core bundles
              */
@@ -47,6 +47,7 @@ class AppKernel extends Kernel
              */
             new Beloop\Admin\CommonBundle\AdminCommonBundle(),
             new Beloop\Admin\CourseBundle\AdminCourseBundle(),
+            new Beloop\Admin\UserBundle\AdminUserBundle(),
 
             /**
              * Beloop web bundles

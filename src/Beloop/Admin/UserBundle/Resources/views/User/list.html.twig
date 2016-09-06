@@ -1,0 +1,71 @@
+{% extends 'AdminCommonBundle::base.html.twig' %}
+
+{% block title %}Admin users{% endblock %}
+
+{% block body %}
+  <div class="page-head">
+      <h2>{{ 'admin.user.title'|trans }} <a href="{{ url('admin_user_new') }}" class="btn btn-space btn-primary btn-md pull-right"><i class="icon icon-left s7-plus"></i> {{ 'admin.common.field.actions.new'|trans }}</a></h2>
+  </div>
+  <div class="main-content">
+      <div class="row">
+          <div class="col-sm-12">
+              <div class="widget widget-fullwidth widget-small">
+                  <div class="dataTables_wrapper form-inline dt-bootstrap no-footer">
+                      <div class="row am-datatable-body">
+                          <div class="col-sm-12">
+                              <table class="table table-striped table-fw-widget table-hover">
+                                  {% include 'AdminCommonBundle:Common:Tables/head.html.twig' with {
+                                      class: 'admin_user',
+                                      rows: [
+                                          { name: 'admin.user.field.email.title'|trans, width: 30 },
+                                          { name: 'admin.user.field.full_name.title'|trans, width: 30 },
+                                          { name: 'admin.common.field.created_at.title'|trans, width: 20 },
+                                          { name: 'admin.user.field.role.title'|trans, width: 5 },
+                                          { name: 'admin.common.field.enabled.title'|trans, width: 5 },
+                                          { name: 'admin.common.field.actions.title'|trans, width: 10 },
+                                      ],
+                                  } %}
+                                  <tbody class="no-border-x">
+                                  {% for user in users %}
+                                      <tr>
+                                          <td><a href="{{ url('admin_user_edit', { id: user.id }) }}"><strong>{{ user.email }}</strong></a></td>
+                                          <td>{{ user.fullName }}</td>
+                                          <td>{{ user.createdAt|date("j F Y H:m:s") }}</td>
+                                          <td>{{ user.roles|join('') }}</td>
+                                          <td class="text-center">
+                                              {% include 'AdminCommonBundle:Common:Tables/enabled.html.twig' with {
+                                                  enabled: user.enabled,
+                                              } %}
+                                          </td>
+                                          <td>
+                                              <div class="btn-toolbar">
+                                                  <div class="btn-group btn-space">
+                                                      <a href="{{ url('admin_user_edit', { id: user.id }) }}" class="btn btn-default btn-xs" title="{{ 'admin.common.field.actions.edit'|trans }}"><i class="icon s7-pen"></i></a>
+                                                  </div>
+                                              </div>
+                                          </td>
+                                      </tr>
+                                  {% endfor %}
+                                  </tbody>
+                              </table>
+                          </div>
+                      </div>
+                      <div class="row am-datatable-footer">
+                          {% include 'AdminCommonBundle:Common:Tables/pagination.html.twig' with {
+                              url: 'admin_user_list',
+                              limit: limit,
+                              page : page,
+                              totalElements: totalElements,
+                              total_pages: totalPages,
+                              order_by_field: orderByField,
+                              order_by_direction: orderByDirection,
+                              middle_group_length: 1,
+                              side_group_space_length: 1,
+                          } %}
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+{% endblock %}

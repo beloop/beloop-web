@@ -1,6 +1,8 @@
 admin:
     common:
         field:
+            created_at:
+                title: 'Created at'
             actions:
                 title: 'Actions'
                 duplicate: 'Duplicate'
@@ -33,11 +35,14 @@ admin:
         saved: 'Course saved correctly'
 
     user:
+        title: 'Users'
         field:
             full_name:
                 title: 'Full Name'
             email:
                 title: 'Email'
+            role:
+                title: 'Role'
 
     lesson:
         field:
