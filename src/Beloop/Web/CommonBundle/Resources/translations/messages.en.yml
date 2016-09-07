@@ -137,6 +137,10 @@ course:
         text: 'This course will be available on %date%'
     lesson_not_available:
         text: 'This lesson will be available on %date%'
+    start_date:
+        title: 'Start date'
+    end_date:
+        title: 'End date'
 
 email:
     user:

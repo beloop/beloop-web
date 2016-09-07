@@ -105,6 +105,10 @@ course:
         text: 'El curso estará disponible a partir del %date%'
     lesson_not_available:
         text: 'La lección estará disponible a partir del %date%'
+    start_date:
+        title: 'Fecha de inicio'
+    end_date:
+        title: 'Fecha de fin'
 
 menu:
     dashboard:
