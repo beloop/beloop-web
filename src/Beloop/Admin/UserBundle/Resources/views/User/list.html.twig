@@ -17,10 +17,11 @@
                                   {% include 'AdminCommonBundle:Common:Tables/head.html.twig' with {
                                       class: 'admin_user',
                                       rows: [
-                                          { name: 'admin.user.field.email.title'|trans, width: 30 },
+                                          { name: 'admin.user.field.email.title'|trans, width: 25 },
                                           { name: 'admin.user.field.full_name.title'|trans, width: 30 },
                                           { name: 'admin.common.field.created_at.title'|trans, width: 20 },
                                           { name: 'admin.user.field.role.title'|trans, width: 5 },
+                                          { name: 'admin.user.field.language.title'|trans, width: 5 },
                                           { name: 'admin.common.field.enabled.title'|trans, width: 5 },
                                           { name: 'admin.common.field.actions.title'|trans, width: 10 },
                                       ],
@@ -32,6 +33,7 @@
                                           <td>{{ user.fullName }}</td>
                                           <td>{{ user.createdAt|date("j F Y H:m:s") }}</td>
                                           <td>{{ user.roles|join('') }}</td>
+                                          <td>{{ user.language }}</td>
                                           <td class="text-center">
                                               {% include 'AdminCommonBundle:Common:Tables/enabled.html.twig' with {
                                                   enabled: user.enabled,

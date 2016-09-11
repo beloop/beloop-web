@@ -43,6 +43,8 @@ admin:
                 title: 'Email'
             role:
                 title: 'Role'
+            language:
+                title: 'Language'
 
     lesson:
         field:
