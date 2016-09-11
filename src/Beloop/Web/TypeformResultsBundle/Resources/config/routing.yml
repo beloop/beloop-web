@@ -1,0 +1,3 @@
+TypeformResultsBundle:
+    resource: "@TypeformResultsBundle/Controller/"
+    type:     annotation

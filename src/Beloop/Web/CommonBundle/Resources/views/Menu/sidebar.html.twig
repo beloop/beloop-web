@@ -2,6 +2,7 @@
     {% if is_granted('ROLE_USER') %}
     <li {% if section == 'dashboard' %}class="active"{% endif %}><a href="{{ path('beloop_dashboard') }}"><i class="icon s7-photo"></i><span>{{ 'menu.dashboard.title'|trans }}</span></a></li>
     <li {% if section == 'my-courses' %}class="active"{% endif %}><a href="{{ path('beloop_my_courses') }}"><i class="icon s7-ribbon"></i><span>{{ 'menu.my_courses.title'|trans }}</span></a></li>
+    <li {% if section == 'my-results' %}class="active"{% endif %}><a href="{{ path('beloop_my_results') }}"><i class="icon s7-medal"></i><span>{{ 'menu.my_results.title'|trans }}</span></a></li>
     {% endif %}
     <li {% if section == 'public-courses' %}class="active"{% endif %}><a href="{{ path('beloop_public_courses') }}"><i class="icon s7-look"></i><span>{{ 'menu.public_courses.title'|trans }}</span></a></li>
     {% if is_granted('ROLE_ADMIN') %}

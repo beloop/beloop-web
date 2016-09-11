@@ -56,6 +56,7 @@ class AppKernel extends Kernel
             new Beloop\Web\CourseBundle\CourseBundle(),
             new Beloop\Web\DashboardBundle\DashboardBundle(),
             new Beloop\Web\InstagramBundle\WebInstagramBundle(),
+            new Beloop\Web\TypeformResultsBundle\TypeformResultsBundle(),
             new Beloop\Web\UserBundle\WebUserBundle(),
         ];
 

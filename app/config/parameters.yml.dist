@@ -27,3 +27,4 @@ parameters:
 
     beloop_admin_prefix: 'admin'
     squarespace_password: '1234'
+    typeform_api_key: '1234'

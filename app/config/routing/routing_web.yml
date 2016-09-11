@@ -13,5 +13,8 @@ instagram_routes:
 squarespace_routes:
     resource: "@BeloopSquarespaceBundle/Resources/config/routing.yml"
 
+typeform_results_routes:
+    resource: "@TypeformResultsBundle/Resources/config/routing.yml"
+
 typeform_routes:
     resource: "@BeloopTypeformBundle/Resources/config/routing.yml"

@@ -99,7 +99,7 @@ guzzle:
                 Accept: "*/*"
                 Host: "dyb-courses.squarespace.com"
         api_typeform:
-            base_url: "https://aialahernando.typeform.com"
+            base_url: "https://aialahernando.typeform.com/v1/form/"
             headers:
                 Accept: "*/*"
                 Host: "aialahernando.typeform.com"
