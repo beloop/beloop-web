@@ -717,16 +717,16 @@
         },
         {
             "name": "beloop/typeform",
-            "version": "0.4.0",
+            "version": "0.4.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/beloop/Typeform.git",
-                "reference": "c5af8f8b456ed90336bc4bb380fcf464f243efdf"
+                "reference": "107f96d5d3792389b25325d6fa9d946c183d9f6e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/beloop/Typeform/zipball/c5af8f8b456ed90336bc4bb380fcf464f243efdf",
-                "reference": "c5af8f8b456ed90336bc4bb380fcf464f243efdf",
+                "url": "https://api.github.com/repos/beloop/Typeform/zipball/107f96d5d3792389b25325d6fa9d946c183d9f6e",
+                "reference": "107f96d5d3792389b25325d6fa9d946c183d9f6e",
                 "shasum": ""
             },
             "require": {
@@ -774,20 +774,20 @@
                 "lms",
                 "typeform"
             ],
-            "time": "2016-05-22 10:41:58"
+            "time": "2016-09-11 16:31:04"
         },
         {
             "name": "beloop/typeform-bundle",
-            "version": "0.4.7",
+            "version": "0.4.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/beloop/TypeformBundle.git",
-                "reference": "ed24b7a1b932d9010f8f52a0010ce3e62cc1bc3a"
+                "reference": "b6f67e3622dd026654ac0812f0e22b97ffe548ad"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/beloop/TypeformBundle/zipball/ed24b7a1b932d9010f8f52a0010ce3e62cc1bc3a",
-                "reference": "ed24b7a1b932d9010f8f52a0010ce3e62cc1bc3a",
+                "url": "https://api.github.com/repos/beloop/TypeformBundle/zipball/b6f67e3622dd026654ac0812f0e22b97ffe548ad",
+                "reference": "b6f67e3622dd026654ac0812f0e22b97ffe548ad",
                 "shasum": ""
             },
             "require": {
@@ -838,7 +838,7 @@
                 "lms",
                 "typeform"
             ],
-            "time": "2016-09-04 13:12:57"
+            "time": "2016-09-11 16:31:04"
         },
         {
             "name": "beloop/user",
