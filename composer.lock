@@ -905,16 +905,16 @@
         },
         {
             "name": "beloop/user-bundle",
-            "version": "0.4.15",
+            "version": "0.4.16",
             "source": {
                 "type": "git",
                 "url": "https://github.com/beloop/UserBundle.git",
-                "reference": "7b7d810d57b73d8532a115f263be445801925a6d"
+                "reference": "be4aa86e5e90afd3977fc100984eb1aab647aa6f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/beloop/UserBundle/zipball/7b7d810d57b73d8532a115f263be445801925a6d",
-                "reference": "7b7d810d57b73d8532a115f263be445801925a6d",
+                "url": "https://api.github.com/repos/beloop/UserBundle/zipball/be4aa86e5e90afd3977fc100984eb1aab647aa6f",
+                "reference": "be4aa86e5e90afd3977fc100984eb1aab647aa6f",
                 "shasum": ""
             },
             "require": {
@@ -964,7 +964,7 @@
                 "lms",
                 "user"
             ],
-            "time": "2016-09-04 13:12:57"
+            "time": "2016-09-11 16:56:24"
         },
         {
             "name": "doctrine/annotations",
