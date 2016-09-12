@@ -40,6 +40,8 @@ register:
     tos:
         text: 'By creating an account, you agree with the <a href="%link%" target="_blank">Terms and Conditions</a>.'
         link: 'http://www.deliciousyetbeautiful.com/terms-conditions/'
+    error:
+        user_exists: 'This user already exists. Do you want to <a href="%link%">remember your password</a>?'
 
 recovery:
     forgot:

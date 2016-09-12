@@ -40,6 +40,8 @@ register:
     tos:
         text: 'Al darte de alta, aceptas los <a href="%link%" target="_blank">Términosy Condiciones</a>.'
         link: 'http://www.deliciousyetbeautiful.com/terms-conditions/'
+    error:
+        user_exists: 'Este usuario ya existe. ¿Quieres <a href="%link%">recordar tu contraseña</a>?'
 
 recovery:
     forgot:

@@ -110,6 +110,8 @@ class SecurityController extends Controller
         $isValid
     )
     {
+        $error = false;
+
         /**
          * If user is already logged, go to redirect url
          */
@@ -124,24 +126,23 @@ class SecurityController extends Controller
                     'email' => $user->getEmail(),
                 ]);
 
-            if ($userExists instanceof AbstractUser) {
-                // User already exists 
+            if ($userExists instanceof UserInterface) {
+                $error = 'register.error.user_exists';
+            } else {
+                $user->addRole('ROLE_DEMO');
+                $this->get('beloop.director.user')->save($user);
+
+                // TODO: dispatch an onCustomerRegisteredEvent for notification emails, etc
+                $token = new UsernamePasswordToken($user, null, "web_area", $user->getRoles());
+                $this->get("security.context")->setToken($token);
+
+                return $this->redirectToRoute('beloop_public_courses');
             }
-
-            $user->addRole('ROLE_DEMO');
-            $this->get('beloop.director.user')->save($user);
-
-            // TODO: dispatch an onCustomerRegisteredEvent for notification emails, etc
-            $token = new UsernamePasswordToken($user, null, "web_area", $user->getRoles());
-            $this->get("security.context")->setToken($token);
-
-            return $this->redirectToRoute('beloop_public_courses');
         }
 
         return [
             'form' => $registerFormView,
-            'error' => !$isValid,
-//            'lastUsername' => $lastUsername,
+            'error' => $error,
         ];
     }
 }
