@@ -4,7 +4,7 @@
             <table class="table table-striped table-fw-widget table-hover">
                 <thead>
                 <tr role="row">
-                    <th ng-repeat="column in ctrl.columns" role="columnheader" class="w-{{column.width}}" width="{{column.width}}%">{{column.name}}</th>
+                    <th ng-repeat="column in ctrl.columns" role="columnheader" class="w-{{column.width}}" width="{{column.width}}%">{{column.name | translate}}</th>
                 </tr>
                 </thead>
                 <tbody class="no-border-x">
