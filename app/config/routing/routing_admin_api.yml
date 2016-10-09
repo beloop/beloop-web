@@ -1,0 +1,5 @@
+#
+# Admin API routes
+#
+admin_course:
+    resource: "@AdminCourseBundle/Resources/config/routing_api.yml"

@@ -1,0 +1,3 @@
+AdminAPICourseBundle:
+    resource: "@AdminCourseBundle/Controller/API/"
+    type:     annotation

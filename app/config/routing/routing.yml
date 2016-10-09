@@ -22,6 +22,15 @@ admin_routes:
         i18n: false
 
 #
+# Admin API routes
+#
+admin_api_routes:
+    resource: "routing_admin_api.yml"
+    prefix: /%beloop_admin_prefix%/api
+    options:
+        i18n: false
+
+#
 # Web routes
 #
 web_routes:
