@@ -2,11 +2,11 @@ const path = require('path');
 
 module.exports = {
     entry: {
-        index: './web/admin/index.js',
+        admin: './web/admin/admin.js',
+        vendor: './web/admin/vendor.js'
     },
     output: {
-        filename: '[name].js',
-        path: __dirname + '/.tmp/serve'
+        filename: '[name].js'
     },
     watch: false,
     module: {

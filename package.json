@@ -2,7 +2,13 @@
   "name": "beloop-web",
   "version": "1.0.0",
   "description": "Beloop LMS",
-  "dependencies": {},
+  "dependencies": {
+    "angular": "^1.5.8",
+    "angular-route": "^1.5.8",
+    "angular-sanitize": "^1.5.8",
+    "angular-translate": "^2.12.1",
+    "angular-ui-router": "^0.3.1"
+  },
   "devDependencies": {
     "babel-core": "^6.17.0",
     "babel-loader": "^6.2.5",

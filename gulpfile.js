@@ -27,12 +27,15 @@ const packScripts = function(watch, callback) {
     };
 
     return gulp.src([
-        './web/admin/index.js'
+        './web/admin/admin.js',
+        './web/admin/vendor.js'
     ])
     .pipe(webpack(webpackOptions, null, webpackChangeHandler))
     .pipe($.ngAnnotate())
     .pipe($.uglify())
-    .pipe($.rename('admin.min.js'))
+    .pipe($.rename({
+        suffix: ".min"
+    }))
     .pipe(gulp.dest('./web/js'));
 };
 
