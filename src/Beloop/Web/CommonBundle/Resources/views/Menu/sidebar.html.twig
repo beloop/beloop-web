@@ -6,7 +6,7 @@
     {% endif %}
     <li {% if section == 'public-courses' %}class="active"{% endif %}><a href="{{ path('beloop_public_courses') }}"><i class="icon s7-look"></i><span>{{ 'menu.public_courses.title'|trans }}</span></a></li>
     {% if is_granted('ROLE_ADMIN') %}
-    <li {% if section == 'admin' %}class="active"{% endif %}><a href="{{ path('admin_course_list') }}"><i class="icon s7-config"></i><span>{{ 'menu.admin.title'|trans }}</span></a></li>
+    <li {% if section == 'admin' %}class="active"{% endif %}><a href="{{ path('admin_index') }}"><i class="icon s7-config"></i><span>{{ 'menu.admin.title'|trans }}</span></a></li>
     {% endif %}
     <li class="my-profile {% if section == 'my-profile' %}active{% endif %}"><a href="{{ path('beloop_user_profile') }}"><i class="icon s7-user"></i><span>{{ 'menu.my_profile.title'|trans }}</span></a></li>
     <li class="sign-out"><a href="{{ path('beloop_logout') }}"><i class="icon s7-power"></i><span>{{ 'menu.logout.title'|trans }}</span></a></li>

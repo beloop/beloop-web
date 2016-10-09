@@ -1,0 +1,1 @@
+angular.module('beloop.admin.directives', []);
