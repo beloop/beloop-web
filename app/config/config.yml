@@ -148,6 +148,10 @@ liip_imagine:
             quality: 100
             filters:
                 thumbnail: { size: [43, 43], mode: outbound }
+        course_thumb:
+            quality: 80
+            filters:
+                relative_resize: { widen: 700 }
 
 beloop_squarespace:
     authorization:
