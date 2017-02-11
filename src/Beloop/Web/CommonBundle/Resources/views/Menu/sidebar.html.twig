@@ -1,13 +1,37 @@
 <ul class="sidebar-elements">
-    {% if is_granted('ROLE_USER') %}
-    <li {% if section == 'dashboard' %}class="active"{% endif %}><a href="{{ path('beloop_dashboard') }}"><i class="icon s7-photo"></i><span>{{ 'menu.dashboard.title'|trans }}</span></a></li>
-    <li {% if section == 'my-courses' %}class="active"{% endif %}><a href="{{ path('beloop_my_courses') }}"><i class="icon s7-ribbon"></i><span>{{ 'menu.my_courses.title'|trans }}</span></a></li>
-    <li {% if section == 'my-results' %}class="active"{% endif %}><a href="{{ path('beloop_my_results') }}"><i class="icon s7-medal"></i><span>{{ 'menu.my_results.title'|trans }}</span></a></li>
-    {% endif %}
-    <li {% if section == 'public-courses' %}class="active"{% endif %}><a href="{{ path('beloop_public_courses') }}"><i class="icon s7-look"></i><span>{{ 'menu.public_courses.title'|trans }}</span></a></li>
+    <li {% if section == 'dashboard' %}class="active"{% endif %}>
+        {% if is_granted('ROLE_USER') %}
+        <a href="{{ path('beloop_dashboard') }}" class="menu-item"><i class="icon s7-photo"></i><span>{{ 'menu.dashboard.title'|trans }}</span></a>
+        {% else %}
+        <span class="menu-item disabled"><i class="icon s7-photo"></i><span>{{ 'menu.dashboard.title'|trans }}</span></span>
+        {% endif %}
+    </li>
+    <li {% if section == 'my-courses' %}class="active"{% endif %}>
+        {% if is_granted('ROLE_USER') %}
+        <a href="{{ path('beloop_my_courses') }}" class="menu-item"><i class="icon s7-ribbon"></i><span>{{ 'menu.my_courses.title'|trans }}</span></a>
+        {% else %}
+        <span class="menu-item disabled"><i class="icon s7-ribbon"></i><span>{{ 'menu.my_courses.title'|trans }}</span></span>
+        {% endif %}
+    </li>
+    <li {% if section == 'my-results' %}class="active"{% endif %}>
+        {% if is_granted('ROLE_USER') %}
+        <a href="{{ path('beloop_my_results') }}" class="menu-item"><i class="icon s7-medal"></i><span>{{ 'menu.my_results.title'|trans }}</span></a>
+        {% else %}
+        <span class="menu-item disabled"><i class="icon s7-medal"></i><span>{{ 'menu.my_results.title'|trans }}</span></span>
+        {% endif %}
+    </li>
+    <li {% if section == 'public-courses' %}class="active"{% endif %}>
+        <a href="{{ path('beloop_public_courses') }}" class="menu-item"><i class="icon s7-look"></i><span>{{ 'menu.public_courses.title'|trans }}</span></a>
+    </li>
     {% if is_granted('ROLE_ADMIN') %}
-    <li {% if section == 'admin' %}class="active"{% endif %}><a href="{{ path('admin_course_list') }}"><i class="icon s7-config"></i><span>{{ 'menu.admin.title'|trans }}</span></a></li>
+    <li {% if section == 'admin' %}class="active"{% endif %}>
+        <a href="{{ path('admin_course_list') }}" class="menu-item"><i class="icon s7-config"></i><span>{{ 'menu.admin.title'|trans }}</span></a>
+    </li>
     {% endif %}
-    <li class="my-profile {% if section == 'my-profile' %}active{% endif %}"><a href="{{ path('beloop_user_profile') }}"><i class="icon s7-user"></i><span>{{ 'menu.my_profile.title'|trans }}</span></a></li>
-    <li class="sign-out"><a href="{{ path('beloop_logout') }}"><i class="icon s7-power"></i><span>{{ 'menu.logout.title'|trans }}</span></a></li>
+    <li class="my-profile {% if section == 'my-profile' %}active{% endif %}">
+        <a href="{{ path('beloop_user_profile') }}" class="menu-item"><i class="icon s7-user"></i><span>{{ 'menu.my_profile.title'|trans }}</span></a>
+    </li>
+    <li class="sign-out">
+        <a href="{{ path('beloop_logout') }}" class="menu-item"><i class="icon s7-power"></i><span>{{ 'menu.logout.title'|trans }}</span></a>
+    </li>
 </ul>
