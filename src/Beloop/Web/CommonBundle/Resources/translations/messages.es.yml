@@ -111,6 +111,8 @@ course:
         title: 'Fecha de inicio'
     end_date:
         title: 'Fecha de fin'
+    teachers:
+        title: 'Profesores'
 
 menu:
     dashboard:

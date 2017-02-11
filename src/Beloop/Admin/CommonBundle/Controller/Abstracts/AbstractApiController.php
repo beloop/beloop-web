@@ -24,10 +24,9 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 class AbstractApiController extends Controller
 {
     /**
-     * Save an entity. To ensure the method is simple, the entity will be
-     * persisted always
+     * Returns an object in JSON format
      *
-     * @param mixed $response Entity or Collection
+     * @param mixed $data Object to represent in JSON format
      *
      * @return JsonResponse
      */

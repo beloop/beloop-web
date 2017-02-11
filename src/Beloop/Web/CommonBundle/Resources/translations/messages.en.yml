@@ -145,6 +145,8 @@ course:
         title: 'Start date'
     end_date:
         title: 'End date'
+    teachers:
+        title: 'Teachers'
 
 email:
     user:

@@ -3,12 +3,12 @@
 {% block body %}
     {{ parent() }}
     <div id="beloop-admin">
-        <ui-view></ui-view>
     </div>
 {% endblock %}
 
 {% block javascripts %}
     {{ parent() }}
-    <script src="{{ asset('js/vendor.min.js') }}"></script>
-    <script src="{{ asset('js/admin.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('admin/dist/static/js/manifest.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('admin/dist/static/js/vendor.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('admin/dist/static/js/app.min.js') }}"></script>
 {% endblock %}

@@ -11,14 +11,14 @@
     <div class="main-content">
         <div class="user-profile">
             <div class="user-display">
-                <div class="photo"><img src="{{ asset('img/background-black.jpg') }}"></div>
+                <div class="photo"><img src="{{ asset('assets/img/background-black.jpg') }}"></div>
                 <div class="bottom">
                     <div class="user-avatar">
                         {% if action == 'edit' %}
                             <div class="hidden">{{ render(controller('WebUserBundle:User:editAvatar')) }}</div>
                             <span class="edit-avatar" data-target="#beloop_user_form_type_avatar_avatarFile_file"><span class="s7-camera"></span></span>
                         {% endif %}
-                        <img class="avatar" src="{{ vich_uploader_asset(user, 'avatarFile')|default(asset('img/avatar.jpg'))|imagine_filter('profile_thumb') }}">
+                        <img class="avatar" src="{{ vich_uploader_asset(user, 'avatarFile')|default(asset('assets/img/avatar.jpg'))|imagine_filter('profile_thumb') }}">
                     </div>
                     <div class="user-info">
                         <h4>{{ user.fullName }}</h4><span>{{ user.biography|default('') }}</span>
@@ -59,16 +59,16 @@
 {% endblock %}
 
 {% block styles %}
-    <link rel="stylesheet" type="text/css" href="{{ asset('vendor/jquery.niftymodals/css/components.min.css') }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/vendor/jquery.niftymodals/css/components.min.css') }}"/>
     {{ parent() }}
 {% endblock %}
 
 {% block javascripts %}
     {{ parent() }}
-    <script type="text/javascript" src="{{ asset('vendor/jquery.niftymodals/js/jquery.modalEffects.min.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('vendor/masonry/masonry.min.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('vendor/masonry/imagesloaded.min.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('vendor/scrollTo/jquery.scrollTo.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('assets/vendor/jquery.niftymodals/js/jquery.modalEffects.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('assets/vendor/masonry/masonry.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('assets/vendor/masonry/imagesloaded.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('assets/vendor/scrollTo/jquery.scrollTo.min.js') }}"></script>
     <script type="text/javascript">
         $(function () {
             // Masonry

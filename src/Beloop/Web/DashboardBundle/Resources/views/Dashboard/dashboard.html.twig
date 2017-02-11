@@ -16,16 +16,16 @@
 {% endblock %}
 
 {% block styles %}
-    <link rel="stylesheet" type="text/css" href="{{ asset('vendor/jquery.niftymodals/css/components.min.css') }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/vendor/jquery.niftymodals/css/components.min.css') }}"/>
     {{ parent() }}
 {% endblock %}
 
 {% block javascripts %}
     {{ parent() }}
-    <script type="text/javascript" src="{{ asset('vendor/jquery.niftymodals/js/jquery.modalEffects.min.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('vendor/masonry/masonry.min.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('vendor/masonry/imagesloaded.min.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('vendor/scrollTo/jquery.scrollTo.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('assets/vendor/jquery.niftymodals/js/jquery.modalEffects.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('assets/vendor/masonry/masonry.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('assets/vendor/masonry/imagesloaded.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('assets/vendor/scrollTo/jquery.scrollTo.min.js') }}"></script>
     <script type="text/javascript">
         $(function () {
             // Masonry

@@ -10,8 +10,8 @@
     <div class="page-head">
         <h2>Edit course <i>{{ course.name }}</i></h2>
         <ol class="breadcrumb">
-            <li><a href="{{ url('admin_course_list') }}">Admin</a></li>
-            <li><a href="{{ url('admin_course_list') }}">Courses</a></li>
+            <!-- <li><a href="{{ url('admin_course_list') }}">Admin</a></li>
+            <li><a href="{{ url('admin_course_list') }}">Courses</a></li> -->
             <li class="active">{{ course.name|default('admin.course.field.actions.new.title')|trans }}</li>
         </ol>
     </div>
@@ -64,9 +64,9 @@
 
 {% block javascripts %}
     {{ parent() }}
-    <script src="{{ asset('bundles/fosjsrouting/js/router.js') }}"></script>
+    <script src="{{ asset('assets/bundles/fosjsrouting/js/router.js') }}"></script>
     <script src="{{ path('fos_js_routing_js', {"callback": "fos.Router.setData"}) }}"></script>
-    <script type="text/javascript" src="{{ asset('vendor/sortable/sortable.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('assets/vendor/sortable/sortable.min.js') }}"></script>
     <script type="text/javascript">
         // Drag & Drop lessons to update positions
         var el = document.getElementById('lessons');
