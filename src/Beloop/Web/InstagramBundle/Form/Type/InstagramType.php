@@ -48,6 +48,8 @@ class InstagramType extends AbstractType
     {
         $this->router = $router;
         $this->userWrapper = $userWrapper;
+
+        $this->userIsTeacher = $userWrapper->get()->hasRole('ROLE_TEACHER');
     }
 
     /**
@@ -87,7 +89,7 @@ class InstagramType extends AbstractType
                         ->where('u.id = :userId')->setParameter('userId', $this->userWrapper->get()->getId())
                         ->orderBy('c.startDate', 'DESC');
                 },
-                'choice_label' => 'name',
+                'choice_label' => $this->userIsTeacher ? 'extended_name' : 'name',
                 'label' => false
             ])
             ->add('title', TextType::class, [
