@@ -48,23 +48,24 @@
 
                 {% if not course.isDemo %}
                 <h4 class="text-uppercase">{{ 'course.details.title'|trans }}</h4>
-                    {% if course.enrolledUsers|length > 25 %}
-                    <p class="clearfix">
-                        <span class="s7-users"></span>
-                        <span>{{ 'course.enrolled_students.title'|trans }}</span>
-                        <span class="pull-right"> {{ course.enrolledUsers|length }}</span>
-                    </p>
-                    {% endif %}
-                    <p class="clearfix">
-                        <span class="s7-date"></span>
-                        <span>{{ 'course.start_date.title'|trans }}</span>
-                        <span class="pull-right"> {{ course.startDate|localizeddate('full', 'none', user.language.iso) }}</span>
-                    </p>
-                    <p class="clearfix">
-                        <span class="s7-date"></span>
-                        <span>{{ 'course.end_date.title'|trans }}</span>
-                        <span class="pull-right"> {{ course.endDate|localizeddate('full', 'none', user.language.iso) }}</span>
-                    </p>
+                <p class="clearfix">
+                    <span class="s7-date"></span>
+                    <span>{{ 'course.start_date.title'|trans }}</span>
+                    <span class="pull-right"> {{ course.startDate|localizeddate('full', 'none', user.language.iso) }}</span>
+                </p>
+                <p class="clearfix">
+                    <span class="s7-date"></span>
+                    <span>{{ 'course.end_date.title'|trans }}</span>
+                    <span class="pull-right"> {{ course.endDate|localizeddate('full', 'none', user.language.iso) }}</span>
+                </p>
+                <h4 class="text-uppercase">{{ 'course.teachers.title'|trans }}</h4>
+                <p class="clearfix">
+                    {% for user in course.getTeachers %}
+                    <span class="s7-study"></span>
+                    <a href="{{ path('beloop_user_view_profile', {'id': user.id}) }}">{{ user.fullName }}</a>
+                    {% endfor %}
+                </p>
+
                 {% endif %}
             </div>
         </div>
