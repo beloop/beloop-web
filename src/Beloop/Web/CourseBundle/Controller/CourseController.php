@@ -47,7 +47,7 @@ class CourseController extends Controller
     public function listAction()
     {
         $user = $this->getUser();
-        
+
         $courses = $this->get('beloop.repository.course')->findByUser($user);
 
         return [
@@ -73,7 +73,7 @@ class CourseController extends Controller
     public function previewAction()
     {
         $user = $this->getUser();
-        
+
         $courses = $this->get('beloop.repository.course')->findBy([
             'demo' => true,
             'language' => $user->getLanguage()
@@ -90,9 +90,9 @@ class CourseController extends Controller
      * View course information
      *
      * @param CourseInterface $course
-     * 
+     *
      * @return array
-     * 
+     *
      * @Route(
      *      path = "/course/{code}",
      *      name = "beloop_view_course",
@@ -118,24 +118,70 @@ class CourseController extends Controller
     {
         $user = $this->getUser();
 
+        if ($course->isDemo()) {
+          return $this->redirectToRoute('beloop_preview_course', [
+              'code' => $course->getCode(),
+          ]);
+        }
+
         // Extra checks if user is not TEACHER or ADMIN
         if (
-            false === $this->get('security.authorization_checker')->isGranted('ROLE_TEACHER') &&
-            false === $course->isDemo()
+            false === $this->get('security.authorization_checker')->isGranted('ROLE_TEACHER')
         ) {
             $userEnrolled = $course->getEnrolledUsers()->contains($user);
 
             if (!$userEnrolled) {
                 throw $this->createNotFoundException('The course does not exist');
             }
-
-            if (!$course->isAvailable()) {
-                throw $this->createNotFoundException('The course does not exist');
-            }
         }
 
         return [
-            'section' => $course->isDemo() ? 'public-courses' : 'my-courses',
+            'section' => 'my-courses',
+            'user' => $user,
+            'course' => $course
+        ];
+    }
+
+    /**
+     * View demo course information
+     *
+     * @param CourseInterface $course
+     *
+     * @return array
+     *
+     * @Route(
+     *      path = "/preview-course/{code}",
+     *      name = "beloop_preview_course",
+     *      methods = {"GET"}
+     * )
+     *
+     * @Template("CourseBundle:Course:view_demo.html.twig")
+     *
+     * @EntityAnnotation(
+     *      class = {
+     *          "factory" = "beloop.factory.course",
+     *          "method" = "create",
+     *          "static" = false
+     *      },
+     *      name = "course",
+     *      mapping = {
+     *          "code" = "~code~"
+     *      },
+     *      mappingFallback = true
+     * )
+     */
+    public function viewDemoAction(CourseInterface $course)
+    {
+        $user = $this->getUser();
+
+        if (!$course->isDemo()) {
+          return $this->redirectToRoute('beloop_view_course', [
+              'code' => $course->getCode(),
+          ]);
+        }
+
+        return [
+            'section' => 'public-courses',
             'user' => $user,
             'course' => $course
         ];

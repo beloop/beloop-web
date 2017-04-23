@@ -13,43 +13,28 @@
                 <div class="col-xs-12 col-sm-6">
                     <div class="panel panel-default panel-heading-fullwidth panel-course">
                         <div class="panel-heading">
-                            {% if course.available or is_granted('ROLE_TEACHER') %}
+                            {% if course.isAvailableForUser(user) or is_granted('ROLE_TEACHER') %}
                                 <a href="{{ path('beloop_view_course', {'code': course.code}) }}" class="title">{{ course.name }}</a>
                             {% else %}
                                 <span class="title">{{ course.name }}</span>
                             {% endif %}
                         </div>
                         <div class="panel-body">
-                            {% if course.imageName|length > 0 %}
-                                <div class="row">
-                                    <div class="col-xs-12 col-md-6">
-                                        <img src="{{ vich_uploader_asset(course, 'imageFile')|imagine_filter('course_thumb') }}" alt="{{ course.name }}" class="img-responsive" />
-                                    </div>
-                                    <div class="col-xs-12 col-md-6">
-                                        {{ course.description | raw }}
-                                        {% if course.available or is_granted('ROLE_TEACHER') %}
-                                            <a href="{{ path('beloop_view_course', {'code': course.code}) }}" class="btn btn-block btn-alt4">
-                                                <span class="icon-container">
-                                                    <span class="icon"><span class="s7-angle-right"></span></span>
-                                                </span>
-                                            </a>
-                                        {% else %}
-                                            <strong>{{ 'course.course_not_available.text'|trans({'%date%' : course.startDate|localizeddate('medium', 'none')}) }}</strong>
-                                        {% endif %}
-                                    </div>
+                            <div class="row">
+                                <div class="col-xs-12 col-md-6">
+                                    <img src="{{ vich_uploader_asset(course, 'imageFile')|imagine_filter('course_thumb') }}" alt="{{ course.name }}" class="img-responsive" />
                                 </div>
-                            {% else %}
-                                {{ course.description | raw }}
-                                {% if course.available or is_granted('ROLE_TEACHER') %}
-                                    <a href="{{ path('beloop_view_course', {'code': course.code}) }}" class="btn btn-block btn-alt4">
-                                        <span class="icon-container">
-                                            <span class="icon"><span class="s7-angle-right"></span></span>
-                                        </span>
-                                    </a>
-                                {% else %}
-                                    <strong>{{ 'course.course_not_available.text'|trans({'%date%' : course.startDate|localizeddate('medium', 'none')}) }}</strong>
-                                {% endif %}
-                            {% endif %}
+                                <div class="col-xs-12 col-md-6">
+                                    {{ course.description | raw }}
+                                    {% if course.isAvailableForUser(user) or is_granted('ROLE_TEACHER') %}
+                                        <a href="{{ path('beloop_view_course', {'code': course.code}) }}" class="btn btn-block btn-alt4">
+                                            <span class="icon-container">
+                                                <span class="icon"><span class="s7-angle-right"></span></span>
+                                            </span>
+                                        </a>
+                                    {% endif %}
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

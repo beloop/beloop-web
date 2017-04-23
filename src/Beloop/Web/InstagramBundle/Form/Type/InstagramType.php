@@ -15,6 +15,8 @@
 
 namespace Beloop\Web\InstagramBundle\Form\Type;
 
+use DateTime;
+
 use Doctrine\ORM\EntityRepository;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Bundle\FrameworkBundle\Routing\Router;
@@ -85,9 +87,13 @@ class InstagramType extends AbstractType
                 'class' => 'Beloop\Component\Course\Entity\Course',
                 'query_builder' => function (EntityRepository $er) {
                     return $er->createQueryBuilder('c')
-                        ->innerJoin('c.enrolledUsers', 'u')
+                        ->innerJoin('c.enrollments', 'e')
+                        ->innerJoin('e.user', 'u')
                         ->where('u.id = :userId')->setParameter('userId', $this->userWrapper->get()->getId())
-                        ->orderBy('c.startDate', 'DESC');
+                        ->andWhere('e.enrollmentDate <= :today')
+                        ->andWhere('e.endDate >= :today')
+                        ->setParameter('today', new DateTime())
+                        ->orderBy('e.enrollmentDate', 'DESC');
                 },
                 'choice_label' => $this->userIsTeacher ? 'extended_name' : 'name',
                 'label' => false

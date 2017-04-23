@@ -54,8 +54,8 @@ class CourseController extends AbstractAdminController
      *      defaults = {
      *          "page" = "1",
      *          "limit" = "50",
-     *          "orderByField" = "startDate",
-     *          "orderByDirection" = "DESC",
+     *          "orderByField" = "code",
+     *          "orderByDirection" = "ASC",
      *      }
      * )
      *

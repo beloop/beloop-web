@@ -18,6 +18,7 @@ namespace Beloop\Admin\CourseBundle\Form\Type;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\HiddenType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
@@ -80,8 +81,28 @@ class LessonType extends AbstractType
             ->add('description', TextareaType::class, [
                 'required' => true
             ])
-            ->add('startDate', DateType::class, [
-                'required' => true,
+            ->add('offsetInDays', ChoiceType::class, [
+                'choices' => [
+                  0 => 0,
+                  3 => 3,
+                  7 => 7,
+                  10 => 10,
+                  14 => 14,
+                  17 => 17,
+                  21 => 21,
+                  24 => 24,
+                  28 => 28,
+                  31 => 31,
+                  35 => 35,
+                  38 => 38,
+                  42 => 42,
+                  45 => 45,
+                  49 => 49,
+                ],
+                'required' => true
+            ])
+            ->add('demo', CheckboxType::class, [
+                'required' => false,
             ])
             ->add('enabled', CheckboxType::class, [
                 'required' => false,

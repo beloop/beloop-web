@@ -19,9 +19,7 @@
                                         class: 'admin_course',
                                         rows: [
                                             { name: 'admin.course.field.code.title'|trans, width: 15 },
-                                            { name: 'admin.course.field.name.title'|trans, width: 25 },
-                                            { name: 'admin.course.field.start_date.title'|trans, width: 20 },
-                                            { name: 'admin.course.field.end_date.title'|trans, width: 20 },
+                                            { name: 'admin.course.field.name.title'|trans, width: 65 },
                                             { name: 'admin.course.field.num_users.title'|trans, width: 5 },
                                             { name: 'admin.common.field.enabled.title'|trans, width: 5 },
                                             { name: 'admin.common.field.actions.title'|trans, width: 10 },
@@ -32,8 +30,6 @@
                                         <tr>
                                             <td>{{ course.code }}</td>
                                             <td><a href="{{ url('admin_course_edit', { id: course.id }) }}"><strong>{{ course.name }}</strong></a></td>
-                                            <td>{{ course.startDate|date("l, jS F Y") }}</td>
-                                            <td>{{ course.endDate|date("l, jS F Y") }}</td>
                                             <td class="text-center">{{ course.enrolledUsers|length }}</td>
                                             <td class="text-center">
                                                 {% include 'AdminCommonBundle:Common:Tables/enabled.html.twig' with {

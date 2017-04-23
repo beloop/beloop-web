@@ -32,7 +32,7 @@
                                           <td><a href="{{ url('admin_user_edit', { id: user.id }) }}"><strong>{{ user.email }}</strong></a></td>
                                           <td>{{ user.fullName }}</td>
                                           <td>{{ user.createdAt|date("j F Y H:m:s") }}</td>
-                                          <td>{{ user.roles|join('') }}</td>
+                                          <td>{{ user.roles|join('<br>') }}</td>
                                           <td>{{ user.language }}</td>
                                           <td class="text-center">
                                               {% include 'AdminCommonBundle:Common:Tables/enabled.html.twig' with {

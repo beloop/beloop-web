@@ -45,9 +45,15 @@ admin:
                 title: 'Role'
             language:
                 title: 'Language'
+            start_date:
+                title: 'Enrollment Date'
+            end_date:
+                title: 'End Date'
 
     lesson:
         field:
             start_date:
                 title: 'Start Date'
+            offset_in_days:
+                title: 'Offset in days'
         saved: 'Lesson saved correctly'

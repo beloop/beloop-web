@@ -6,7 +6,7 @@
         <div class="panel-body">
             <div class="lesson-view">
                 {{ lesson.description|raw }}
-                <p>{{ 'admin.lesson.field.start_date.title'|trans }}: <strong>{{ lesson.startDate|date("l, jS F Y") }}</strong></p>
+                <span>{{ 'admin.lesson.field.offset_in_days.title'|trans }}: {{ lesson.offsetInDays }}</span>
             </div>
             <div class="hidden lesson-edit">
                 {{ render(controller('AdminCourseBundle:Lesson:edit', {'id': lesson.id})) }}

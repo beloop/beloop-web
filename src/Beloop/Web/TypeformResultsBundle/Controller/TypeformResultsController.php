@@ -26,6 +26,7 @@ use Symfony\Component\HttpFoundation\Request;
 
 use Beloop\Component\Course\Entity\Interfaces\CourseInterface;
 use Beloop\Component\Typeform\Entity\TypeformQuiz;
+use Beloop\Component\User\Entity\Interfaces\UserInterface;
 
 /**
  * Class TypeformResultsController
@@ -58,7 +59,7 @@ class TypeformResultsController extends Controller
         $scores = [];
 
         foreach ($courses as $course) {
-            $quizzes[$course->getCode()] = $this->extractQuizesFromCourse($course);
+            $quizzes[$course->getCode()] = $this->extractQuizesFromCourse($course, $user);
             // TODO: perform an asynchronous request on frontend side
             $scores[$course->getCode()] = $this->getScoresForQuizes($quizzes[$course->getCode()], $user->getEmail());
         }
@@ -74,14 +75,15 @@ class TypeformResultsController extends Controller
 
     /**
      * @param CourseInterface $course
+     * @param UserInterface $User
      * @return array Extract quiz codes from course
      */
-    private function extractQuizesFromCourse(CourseInterface $course) {
+    private function extractQuizesFromCourse(CourseInterface $course, UserInterface $user) {
         $quizes = [];
 
         foreach ($course->getLessons() as $lesson) {
             foreach ($lesson->getModules() as $module) {
-                if ($module->isAvailable() & $module->getType() === TypeformQuiz::TYPE) {
+                if ($module->isAvailableForUser($user) & $module->getType() === TypeformQuiz::TYPE) {
                     $quizes[$module->getId()]['name'] = $module->getLesson()->getName();
                     $quizes[$module->getId()]['uid'] = $module->getFormUID();
                 }
@@ -90,7 +92,7 @@ class TypeformResultsController extends Controller
 
         return $quizes;
     }
-    
+
     private function getScoresForQuizes($quizes, $email) {
         $scoreService = $this->get('beloop.typeform.score_retriever_service');
         $scores = [];

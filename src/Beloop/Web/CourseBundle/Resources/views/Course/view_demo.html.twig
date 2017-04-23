@@ -3,7 +3,7 @@
 {% block title %}{{ course.name }}{% endblock %}
 
 {% block back_to %}
-    <a href="{{ path('beloop_my_courses') }}"><span class="s7-angle-left"></span> {{ 'menu.my_courses.title'|trans }}</a>
+    <a href="{{ path('beloop_public_courses') }}"><span class="s7-angle-left"></span> {{ 'menu.public_courses.title'|trans }}</a>
 {% endblock %}
 
 {% block body %}
@@ -17,17 +17,17 @@
                 <div class="sections">
                     {% for lesson in course.lessons %}
                         <div class="panel-group accordion accordion-color">
-                            <div class="panel panel-default {% if not lesson.isAvailableForUser(user) and not is_granted('ROLE_TEACHER') %}panel-transparent panel-borders{% endif %}">
+                            <div class="panel panel-default {% if not lesson.isDemo() %}panel-transparent panel-borders{% endif %}">
                                 <div class="panel-heading">
                                     <h4 class="panel-title">{{ lesson.name }}</h4>
                                 </div>
                                 <div class="panel-body">
-                                    {% if lesson.isAvailableForUser(user) or is_granted('ROLE_TEACHER') %}
+                                    {% if lesson.isDemo() %}
                                         {% for module in lesson.modules %}
                                             <a href="{{ path('beloop_view_module_' ~ module.type, {'code': course.code, 'id': module.id}) }}" class="module"><span class="s7-{{ module.icon }}"></span> {{ module.name }}</a>
                                         {% endfor %}
                                     {% else %}
-                                        <span>{{ 'course.lesson_not_available.text'|trans({'%date%' : lesson.startDate(user)|localizeddate('full', 'none')}) }}</span>
+                                        <span>{{ 'preview.lesson_not_available.text'|trans }}</span>
                                     {% endif %}
                                 </div>
                             </div>
@@ -39,18 +39,6 @@
             <div class="hidden-xs hidden-sm col-md-4">
                 <h4 class="text-uppercase">{{ 'course.description.title'|trans }}</h4>
                 {{ course.description|raw }}
-
-                <h4 class="text-uppercase">{{ 'course.details.title'|trans }}</h4>
-                <p class="clearfix">
-                    <span class="s7-date"></span>
-                    <span>{{ 'course.start_date.title'|trans }}</span>
-                    <span class="pull-right"> {{ course.startDate(user)|localizeddate('full', 'none', user.language.iso) }}</span>
-                </p>
-                <p class="clearfix">
-                    <span class="s7-date"></span>
-                    <span>{{ 'course.end_date.title'|trans }}</span>
-                    <span class="pull-right"> {{ course.endDate(user)|localizeddate('full', 'none', user.language.iso) }}</span>
-                </p>
                 <h4 class="text-uppercase">{{ 'course.teachers.title'|trans }}</h4>
                 <p class="clearfix">
                     {% for user in course.getTeachers %}

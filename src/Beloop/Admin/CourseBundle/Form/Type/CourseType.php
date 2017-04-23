@@ -79,12 +79,6 @@ class CourseType extends AbstractType
                 'class' => 'Beloop\Component\Language\Entity\Language',
                 'choice_label' => 'name',
             ])
-            ->add('startDate', DateType::class, [
-                'required' => true,
-            ])
-            ->add('endDate', DateType::class, [
-                'required' => true,
-            ])
             ->add('enabled', CheckboxType::class, [
                 'required' => false,
             ])

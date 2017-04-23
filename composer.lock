@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "22e19545db98db092a4be72f86b41341",
+    "content-hash": "038c8223bcff33dba8096e600ffe3e4f",
     "packages": [
         {
             "name": "beloop/analytics",
-            "version": "0.4.2",
+            "version": "0.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/beloop/Analytics.git",
-                "reference": "396f2436ac4efbe99cc011fb1be7f32238980a67"
+                "reference": "bf034d7667e22c7b4f41f6ea8f6b6dd280621377"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/beloop/Analytics/zipball/396f2436ac4efbe99cc011fb1be7f32238980a67",
-                "reference": "396f2436ac4efbe99cc011fb1be7f32238980a67",
+                "url": "https://api.github.com/repos/beloop/Analytics/zipball/bf034d7667e22c7b4f41f6ea8f6b6dd280621377",
+                "reference": "bf034d7667e22c7b4f41f6ea8f6b6dd280621377",
                 "shasum": ""
             },
             "require": {
@@ -29,7 +29,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "0.4-dev"
+                    "dev-master": "0.5-dev"
                 }
             },
             "autoload": {
@@ -55,24 +55,24 @@
                 "component",
                 "lms"
             ],
-            "time": "2016-05-15T17:45:47+00:00"
+            "time": "2017-04-23T13:20:06+00:00"
         },
         {
             "name": "beloop/analytics-bundle",
-            "version": "0.4.2",
+            "version": "0.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/beloop/AnalyticsBundle.git",
-                "reference": "280ed89d86c1e857bffd248d3d6b397d133353ca"
+                "reference": "76e9c77bc25584e52e49440e0250908ae398ee78"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/beloop/AnalyticsBundle/zipball/280ed89d86c1e857bffd248d3d6b397d133353ca",
-                "reference": "280ed89d86c1e857bffd248d3d6b397d133353ca",
+                "url": "https://api.github.com/repos/beloop/AnalyticsBundle/zipball/76e9c77bc25584e52e49440e0250908ae398ee78",
+                "reference": "76e9c77bc25584e52e49440e0250908ae398ee78",
                 "shasum": ""
             },
             "require": {
-                "beloop/analytics": "^0.4",
+                "beloop/analytics": "^0.5",
                 "doctrine/common": "^2.5",
                 "doctrine/doctrine-bundle": "^1.5.0",
                 "doctrine/orm": "^2.5",
@@ -90,7 +90,7 @@
             "type": "symfony-bundle",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "0.4-dev"
+                    "dev-master": "0.5-dev"
                 }
             },
             "autoload": {
@@ -118,20 +118,20 @@
                 "beloop",
                 "lms"
             ],
-            "time": "2016-05-15T17:45:47+00:00"
+            "time": "2017-04-23T13:20:06+00:00"
         },
         {
             "name": "beloop/core",
-            "version": "0.4.6",
+            "version": "0.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/beloop/Core.git",
-                "reference": "0b31517a7b4cbbf788f57dd4703043ba8bf6a13b"
+                "reference": "8eef04c023ce6c84305d8b7c054a6c89cb4ef918"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/beloop/Core/zipball/0b31517a7b4cbbf788f57dd4703043ba8bf6a13b",
-                "reference": "0b31517a7b4cbbf788f57dd4703043ba8bf6a13b",
+                "url": "https://api.github.com/repos/beloop/Core/zipball/8eef04c023ce6c84305d8b7c054a6c89cb4ef918",
+                "reference": "8eef04c023ce6c84305d8b7c054a6c89cb4ef918",
                 "shasum": ""
             },
             "require": {
@@ -143,7 +143,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "0.4-dev"
+                    "dev-master": "0.5-dev"
                 }
             },
             "autoload": {
@@ -169,24 +169,24 @@
                 "core",
                 "lms"
             ],
-            "time": "2016-05-27T17:27:13+00:00"
+            "time": "2017-04-23T13:20:06+00:00"
         },
         {
             "name": "beloop/core-bundle",
-            "version": "0.4.5",
+            "version": "0.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/beloop/CoreBundle.git",
-                "reference": "c9513744c2ba85a3f27bc423c9fb7ccc0559927b"
+                "reference": "28b5d333d2328e7609878957fc932eecd4fb015e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/beloop/CoreBundle/zipball/c9513744c2ba85a3f27bc423c9fb7ccc0559927b",
-                "reference": "c9513744c2ba85a3f27bc423c9fb7ccc0559927b",
+                "url": "https://api.github.com/repos/beloop/CoreBundle/zipball/28b5d333d2328e7609878957fc932eecd4fb015e",
+                "reference": "28b5d333d2328e7609878957fc932eecd4fb015e",
                 "shasum": ""
             },
             "require": {
-                "beloop/core": "^0.4",
+                "beloop/core": "^0.5",
                 "doctrine/common": "^2.5",
                 "doctrine/doctrine-bundle": "^1.5.0",
                 "doctrine/orm": "^2.5",
@@ -204,7 +204,7 @@
             "type": "symfony-bundle",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "0.4-dev"
+                    "dev-master": "0.5-dev"
                 }
             },
             "autoload": {
@@ -232,25 +232,26 @@
                 "core",
                 "lms"
             ],
-            "time": "2016-05-19T21:53:25+00:00"
+            "time": "2017-04-23T13:20:06+00:00"
         },
         {
             "name": "beloop/course",
-            "version": "0.4.18",
+            "version": "0.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/beloop/Course.git",
-                "reference": "5668e2868dd7e3786dce857bf6e55e47d0b88333"
+                "reference": "dcaab9304b5fbbbbe3e3c3ddb3945fee23208b5e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/beloop/Course/zipball/5668e2868dd7e3786dce857bf6e55e47d0b88333",
-                "reference": "5668e2868dd7e3786dce857bf6e55e47d0b88333",
+                "url": "https://api.github.com/repos/beloop/Course/zipball/dcaab9304b5fbbbbe3e3c3ddb3945fee23208b5e",
+                "reference": "dcaab9304b5fbbbbe3e3c3ddb3945fee23208b5e",
                 "shasum": ""
             },
             "require": {
-                "beloop/core": "^0.4",
-                "beloop/language": "^0.4",
+                "beloop/core": "^0.5",
+                "beloop/language": "^0.5",
+                "beloop/user": "^0.5",
                 "doctrine/common": "^2.5",
                 "doctrine/orm": "^2.5",
                 "php": "^5.5|^7.0",
@@ -262,7 +263,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "0.4-dev"
+                    "dev-master": "0.5-dev"
                 }
             },
             "autoload": {
@@ -291,25 +292,25 @@
                 "course",
                 "lms"
             ],
-            "time": "2017-02-11T15:00:49+00:00"
+            "time": "2017-04-23T13:26:02+00:00"
         },
         {
             "name": "beloop/course-bundle",
-            "version": "0.4.13",
+            "version": "0.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/beloop/CourseBundle.git",
-                "reference": "71a61d2abf87bdc1e100a783d39eb92eeb5425c3"
+                "reference": "a04e411e5dae8f3ec475b23610774063a834c9b0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/beloop/CourseBundle/zipball/71a61d2abf87bdc1e100a783d39eb92eeb5425c3",
-                "reference": "71a61d2abf87bdc1e100a783d39eb92eeb5425c3",
+                "url": "https://api.github.com/repos/beloop/CourseBundle/zipball/a04e411e5dae8f3ec475b23610774063a834c9b0",
+                "reference": "a04e411e5dae8f3ec475b23610774063a834c9b0",
                 "shasum": ""
             },
             "require": {
-                "beloop/core": "^0.4",
-                "beloop/course": "^0.4",
+                "beloop/core": "^0.5",
+                "beloop/course": "^0.5",
                 "doctrine/common": "^2.5",
                 "doctrine/orm": "^2.5",
                 "php": "^5.5|^7.0"
@@ -320,7 +321,7 @@
             "type": "symfony-bundle",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "0.4-dev"
+                    "dev-master": "0.5-dev"
                 }
             },
             "autoload": {
@@ -348,25 +349,25 @@
                 "course",
                 "lms"
             ],
-            "time": "2017-01-15T12:04:20+00:00"
+            "time": "2017-04-23T13:20:06+00:00"
         },
         {
             "name": "beloop/instagram",
-            "version": "0.4.5",
+            "version": "0.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/beloop/Instagram.git",
-                "reference": "2b136822fae06881bce2148f44496b623925ec11"
+                "reference": "7cf443c04a0724fdadee578c061730aef5f3eb05"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/beloop/Instagram/zipball/2b136822fae06881bce2148f44496b623925ec11",
-                "reference": "2b136822fae06881bce2148f44496b623925ec11",
+                "url": "https://api.github.com/repos/beloop/Instagram/zipball/7cf443c04a0724fdadee578c061730aef5f3eb05",
+                "reference": "7cf443c04a0724fdadee578c061730aef5f3eb05",
                 "shasum": ""
             },
             "require": {
-                "beloop/core": "^0.4",
-                "beloop/user": "^0.4",
+                "beloop/core": "^0.5",
+                "beloop/user": "^0.5",
                 "doctrine/common": "^2.5",
                 "doctrine/orm": "^2.5",
                 "php": "^5.5|^7.0",
@@ -378,7 +379,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "0.4-dev"
+                    "dev-master": "0.5-dev"
                 }
             },
             "autoload": {
@@ -407,26 +408,26 @@
                 "instagram",
                 "lms"
             ],
-            "time": "2017-02-11T13:37:52+00:00"
+            "time": "2017-04-23T13:20:06+00:00"
         },
         {
             "name": "beloop/instagram-bundle",
-            "version": "0.4.5",
+            "version": "0.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/beloop/InstagramBundle.git",
-                "reference": "b7c59758514c77cbd5d4b3e4813c717c3cb209a1"
+                "reference": "3c583b7b2b907529da1648b2537bb28c947c42e3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/beloop/InstagramBundle/zipball/b7c59758514c77cbd5d4b3e4813c717c3cb209a1",
-                "reference": "b7c59758514c77cbd5d4b3e4813c717c3cb209a1",
+                "url": "https://api.github.com/repos/beloop/InstagramBundle/zipball/3c583b7b2b907529da1648b2537bb28c947c42e3",
+                "reference": "3c583b7b2b907529da1648b2537bb28c947c42e3",
                 "shasum": ""
             },
             "require": {
-                "beloop/core": "^0.4",
-                "beloop/instagram": "^0.4",
-                "beloop/user": "^0.4",
+                "beloop/core": "^0.5",
+                "beloop/instagram": "^0.5",
+                "beloop/user": "^0.5",
                 "doctrine/common": "^2.5",
                 "doctrine/orm": "^2.5",
                 "php": "^5.5|^7.0"
@@ -437,7 +438,7 @@
             "type": "symfony-bundle",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "0.4-dev"
+                    "dev-master": "0.5-dev"
                 }
             },
             "autoload": {
@@ -465,24 +466,24 @@
                 "instagram",
                 "lms"
             ],
-            "time": "2016-06-02T17:09:31+00:00"
+            "time": "2017-04-23T13:20:06+00:00"
         },
         {
             "name": "beloop/language",
-            "version": "0.4.3",
+            "version": "0.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/beloop/Language.git",
-                "reference": "5e7d614bf19b7f70bb4d56aa00c581d734437a30"
+                "reference": "5775a559186f4b02b532ad17e3c02710e38923ba"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/beloop/Language/zipball/5e7d614bf19b7f70bb4d56aa00c581d734437a30",
-                "reference": "5e7d614bf19b7f70bb4d56aa00c581d734437a30",
+                "url": "https://api.github.com/repos/beloop/Language/zipball/5775a559186f4b02b532ad17e3c02710e38923ba",
+                "reference": "5775a559186f4b02b532ad17e3c02710e38923ba",
                 "shasum": ""
             },
             "require": {
-                "beloop/core": "^0.4",
+                "beloop/core": "^0.5",
                 "doctrine/common": "^2.5",
                 "doctrine/orm": "^2.5",
                 "php": "^5.5|^7.0",
@@ -494,7 +495,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "0.4-dev"
+                    "dev-master": "0.5-dev"
                 }
             },
             "autoload": {
@@ -512,7 +513,7 @@
             "authors": [
                 {
                     "name": "Arkaitz Garro",
-                    "email": "arkaitz.garro@gamil.com"
+                    "email": "arkaitz.garro@gmail.com"
                 }
             ],
             "description": "Beloop Language Component",
@@ -523,25 +524,25 @@
                 "language",
                 "lms"
             ],
-            "time": "2016-05-08T08:44:38+00:00"
+            "time": "2017-04-23T13:20:06+00:00"
         },
         {
             "name": "beloop/language-bundle",
-            "version": "0.4.3",
+            "version": "0.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/beloop/LanguageBundle.git",
-                "reference": "1a333075fd5f6525c86790a9d40af520ac99063f"
+                "reference": "0f133ec1ecdc11004e6c1d8b2da77c7e3a66c9bc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/beloop/LanguageBundle/zipball/1a333075fd5f6525c86790a9d40af520ac99063f",
-                "reference": "1a333075fd5f6525c86790a9d40af520ac99063f",
+                "url": "https://api.github.com/repos/beloop/LanguageBundle/zipball/0f133ec1ecdc11004e6c1d8b2da77c7e3a66c9bc",
+                "reference": "0f133ec1ecdc11004e6c1d8b2da77c7e3a66c9bc",
                 "shasum": ""
             },
             "require": {
-                "beloop/core-bundle": "^0.4",
-                "beloop/language": "^0.4",
+                "beloop/core-bundle": "^0.5",
+                "beloop/language": "^0.5",
                 "doctrine/common": "^2.5",
                 "doctrine/orm": "^2.5",
                 "mmoreram/simple-doctrine-mapping": "^1.0",
@@ -557,7 +558,7 @@
             "type": "symfony-bundle",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "0.4-dev"
+                    "dev-master": "0.5-dev"
                 }
             },
             "autoload": {
@@ -575,7 +576,7 @@
             "authors": [
                 {
                     "name": "Arkaitz Garro",
-                    "email": "arkaitz.garro@gamil.com"
+                    "email": "arkaitz.garro@gmail.com"
                 }
             ],
             "description": "Beloop Language Bundle",
@@ -585,25 +586,26 @@
                 "language",
                 "lms"
             ],
-            "time": "2016-05-08T08:44:38+00:00"
+            "time": "2017-04-23T13:20:06+00:00"
         },
         {
             "name": "beloop/squarespace",
-            "version": "0.4.9",
+            "version": "0.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/beloop/Squarespace.git",
-                "reference": "0e8591ded07389e605150c1475a0b0572eeb8fc7"
+                "reference": "5526f94642784e59ce315bfa890c1d819fefb902"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/beloop/Squarespace/zipball/0e8591ded07389e605150c1475a0b0572eeb8fc7",
-                "reference": "0e8591ded07389e605150c1475a0b0572eeb8fc7",
+                "url": "https://api.github.com/repos/beloop/Squarespace/zipball/5526f94642784e59ce315bfa890c1d819fefb902",
+                "reference": "5526f94642784e59ce315bfa890c1d819fefb902",
                 "shasum": ""
             },
             "require": {
-                "beloop/core": "^0.4",
-                "beloop/course": "^0.4",
+                "beloop/core": "^0.5",
+                "beloop/course": "^0.5",
+                "beloop/user": "^0.5",
                 "doctrine/common": "^2.5",
                 "doctrine/orm": "^2.5",
                 "guzzlehttp/guzzle": "~6.0",
@@ -619,7 +621,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "0.4-dev"
+                    "dev-master": "0.5-dev"
                 }
             },
             "autoload": {
@@ -648,26 +650,26 @@
                 "lms",
                 "squarespace"
             ],
-            "time": "2016-08-28T14:50:31+00:00"
+            "time": "2017-04-23T13:36:40+00:00"
         },
         {
             "name": "beloop/squarespace-bundle",
-            "version": "0.4.18",
+            "version": "0.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/beloop/SquarespaceBundle.git",
-                "reference": "eefd75d768e8552e2328e85b05acd993c2a2056c"
+                "reference": "5ac9431516c68035622a123baa3e13b2d783221e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/beloop/SquarespaceBundle/zipball/eefd75d768e8552e2328e85b05acd993c2a2056c",
-                "reference": "eefd75d768e8552e2328e85b05acd993c2a2056c",
+                "url": "https://api.github.com/repos/beloop/SquarespaceBundle/zipball/5ac9431516c68035622a123baa3e13b2d783221e",
+                "reference": "5ac9431516c68035622a123baa3e13b2d783221e",
                 "shasum": ""
             },
             "require": {
-                "beloop/core-bundle": "^0.4",
-                "beloop/course-bundle": "^0.4",
-                "beloop/squarespace": "^0.4",
+                "beloop/core-bundle": "^0.5",
+                "beloop/course-bundle": "^0.5",
+                "beloop/squarespace": "^0.5",
                 "doctrine/common": "^2.5",
                 "doctrine/orm": "^2.5",
                 "eightpoints/guzzle-bundle": "^4.5",
@@ -684,7 +686,7 @@
             "type": "symfony-bundle",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "0.4-dev"
+                    "dev-master": "0.5-dev"
                 }
             },
             "autoload": {
@@ -712,25 +714,26 @@
                 "lms",
                 "squarespace"
             ],
-            "time": "2016-09-04T13:12:57+00:00"
+            "time": "2017-04-23T13:20:06+00:00"
         },
         {
             "name": "beloop/typeform",
-            "version": "0.4.1",
+            "version": "0.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/beloop/Typeform.git",
-                "reference": "107f96d5d3792389b25325d6fa9d946c183d9f6e"
+                "reference": "3ca06d78723fe152794ad11beeccd6cdc87ba0ad"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/beloop/Typeform/zipball/107f96d5d3792389b25325d6fa9d946c183d9f6e",
-                "reference": "107f96d5d3792389b25325d6fa9d946c183d9f6e",
+                "url": "https://api.github.com/repos/beloop/Typeform/zipball/3ca06d78723fe152794ad11beeccd6cdc87ba0ad",
+                "reference": "3ca06d78723fe152794ad11beeccd6cdc87ba0ad",
                 "shasum": ""
             },
             "require": {
-                "beloop/core": "^0.4",
-                "beloop/course": "^0.4",
+                "beloop/core": "^0.5",
+                "beloop/course": "^0.5",
+                "beloop/user": "^0.5",
                 "doctrine/common": "^2.5",
                 "doctrine/orm": "^2.5",
                 "guzzlehttp/guzzle": "~6.0",
@@ -744,7 +747,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "0.4-dev"
+                    "dev-master": "0.5-dev"
                 }
             },
             "autoload": {
@@ -773,26 +776,26 @@
                 "lms",
                 "typeform"
             ],
-            "time": "2016-09-11T16:31:04+00:00"
+            "time": "2017-04-23T13:40:40+00:00"
         },
         {
             "name": "beloop/typeform-bundle",
-            "version": "0.4.8",
+            "version": "0.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/beloop/TypeformBundle.git",
-                "reference": "b6f67e3622dd026654ac0812f0e22b97ffe548ad"
+                "reference": "72084a915dbb1011b3a40f7092b7e8be13c06a2d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/beloop/TypeformBundle/zipball/b6f67e3622dd026654ac0812f0e22b97ffe548ad",
-                "reference": "b6f67e3622dd026654ac0812f0e22b97ffe548ad",
+                "url": "https://api.github.com/repos/beloop/TypeformBundle/zipball/72084a915dbb1011b3a40f7092b7e8be13c06a2d",
+                "reference": "72084a915dbb1011b3a40f7092b7e8be13c06a2d",
                 "shasum": ""
             },
             "require": {
-                "beloop/core-bundle": "^0.4",
-                "beloop/course-bundle": "^0.4",
-                "beloop/typeform": "^0.4",
+                "beloop/core-bundle": "^0.5",
+                "beloop/course-bundle": "^0.5",
+                "beloop/typeform": "^0.5",
                 "doctrine/common": "^2.5",
                 "doctrine/orm": "^2.5",
                 "eightpoints/guzzle-bundle": "^4.5",
@@ -809,7 +812,7 @@
             "type": "symfony-bundle",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "0.4-dev"
+                    "dev-master": "0.5-dev"
                 }
             },
             "autoload": {
@@ -837,25 +840,25 @@
                 "lms",
                 "typeform"
             ],
-            "time": "2016-09-11T16:31:04+00:00"
+            "time": "2017-04-23T13:20:06+00:00"
         },
         {
             "name": "beloop/user",
-            "version": "0.4.19",
+            "version": "0.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/beloop/User.git",
-                "reference": "2446601bd71f26e8d9357d46d7387ba523716dee"
+                "reference": "f4f80fb9f946c06ab6e6a4dcb24688faeb607018"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/beloop/User/zipball/2446601bd71f26e8d9357d46d7387ba523716dee",
-                "reference": "2446601bd71f26e8d9357d46d7387ba523716dee",
+                "url": "https://api.github.com/repos/beloop/User/zipball/f4f80fb9f946c06ab6e6a4dcb24688faeb607018",
+                "reference": "f4f80fb9f946c06ab6e6a4dcb24688faeb607018",
                 "shasum": ""
             },
             "require": {
-                "beloop/core": "^0.4",
-                "beloop/language": "^0.4",
+                "beloop/core": "^0.5",
+                "beloop/language": "^0.5",
                 "doctrine/common": "^2.5",
                 "doctrine/orm": "^2.5",
                 "league/csv": "^8.0.0",
@@ -871,7 +874,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "0.4-dev"
+                    "dev-master": "0.5-dev"
                 }
             },
             "autoload": {
@@ -900,25 +903,25 @@
                 "lms",
                 "user"
             ],
-            "time": "2017-02-11T12:32:06+00:00"
+            "time": "2017-04-23T13:20:06+00:00"
         },
         {
             "name": "beloop/user-bundle",
-            "version": "0.4.16",
+            "version": "0.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/beloop/UserBundle.git",
-                "reference": "be4aa86e5e90afd3977fc100984eb1aab647aa6f"
+                "reference": "f2d7688e142e79fb8951c6e71745aac543a78eac"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/beloop/UserBundle/zipball/be4aa86e5e90afd3977fc100984eb1aab647aa6f",
-                "reference": "be4aa86e5e90afd3977fc100984eb1aab647aa6f",
+                "url": "https://api.github.com/repos/beloop/UserBundle/zipball/f2d7688e142e79fb8951c6e71745aac543a78eac",
+                "reference": "f2d7688e142e79fb8951c6e71745aac543a78eac",
                 "shasum": ""
             },
             "require": {
-                "beloop/core-bundle": "^0.4",
-                "beloop/user": "^0.4",
+                "beloop/core-bundle": "^0.5",
+                "beloop/user": "^0.5",
                 "doctrine/common": "^2.5",
                 "doctrine/orm": "^2.5",
                 "mmoreram/simple-doctrine-mapping": "^1.0",
@@ -935,7 +938,7 @@
             "type": "symfony-bundle",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "0.4-dev"
+                    "dev-master": "0.5-dev"
                 }
             },
             "autoload": {
@@ -963,7 +966,66 @@
                 "lms",
                 "user"
             ],
-            "time": "2016-09-11T16:56:24+00:00"
+            "time": "2017-04-23T13:20:06+00:00"
+        },
+        {
+            "name": "composer/ca-bundle",
+            "version": "1.0.7",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/composer/ca-bundle.git",
+                "reference": "b17e6153cb7f33c7e44eb59578dc12eee5dc8e12"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/composer/ca-bundle/zipball/b17e6153cb7f33c7e44eb59578dc12eee5dc8e12",
+                "reference": "b17e6153cb7f33c7e44eb59578dc12eee5dc8e12",
+                "shasum": ""
+            },
+            "require": {
+                "ext-openssl": "*",
+                "ext-pcre": "*",
+                "php": "^5.3.2 || ^7.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^4.5",
+                "psr/log": "^1.0",
+                "symfony/process": "^2.5 || ^3.0"
+            },
+            "suggest": {
+                "symfony/process": "This is necessary to reliably check whether openssl_x509_parse is vulnerable on older php versions, but can be ignored on PHP 5.5.6+"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Composer\\CaBundle\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jordi Boggiano",
+                    "email": "j.boggiano@seld.be",
+                    "homepage": "http://seld.be"
+                }
+            ],
+            "description": "Lets you find a path to the system CA bundle, and includes a fallback to the Mozilla CA bundle.",
+            "keywords": [
+                "cabundle",
+                "cacert",
+                "certificate",
+                "ssl",
+                "tls"
+            ],
+            "time": "2017-03-06T11:59:08+00:00"
         },
         {
             "name": "doctrine/annotations",
@@ -2883,121 +2945,6 @@
             "time": "2017-03-13T07:08:03+00:00"
         },
         {
-            "name": "ocramius/package-versions",
-            "version": "1.1.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/Ocramius/PackageVersions.git",
-                "reference": "51e867c70f0799790b3e82276875414ce13daaca"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/Ocramius/PackageVersions/zipball/51e867c70f0799790b3e82276875414ce13daaca",
-                "reference": "51e867c70f0799790b3e82276875414ce13daaca",
-                "shasum": ""
-            },
-            "require": {
-                "composer-plugin-api": "^1.0",
-                "php": "~7.0"
-            },
-            "require-dev": {
-                "composer/composer": "^1.3",
-                "ext-zip": "*",
-                "phpunit/phpunit": "^5.4.7"
-            },
-            "type": "composer-plugin",
-            "extra": {
-                "class": "PackageVersions\\Installer",
-                "branch-alias": {
-                    "dev-master": "2.0.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "PackageVersions\\": "src/PackageVersions"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Marco Pivetta",
-                    "email": "ocramius@gmail.com"
-                }
-            ],
-            "description": "Composer plugin that provides efficient querying for installed package versions (no runtime IO)",
-            "time": "2016-12-30T09:49:15+00:00"
-        },
-        {
-            "name": "ocramius/proxy-manager",
-            "version": "2.1.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/Ocramius/ProxyManager.git",
-                "reference": "d9e5a00ca2d87b7e0f1bff36b897e02afd7d5435"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/Ocramius/ProxyManager/zipball/d9e5a00ca2d87b7e0f1bff36b897e02afd7d5435",
-                "reference": "d9e5a00ca2d87b7e0f1bff36b897e02afd7d5435",
-                "shasum": ""
-            },
-            "require": {
-                "ocramius/package-versions": "^1.1.1",
-                "php": "^7.1.0",
-                "zendframework/zend-code": "^3.1.0"
-            },
-            "require-dev": {
-                "couscous/couscous": "^1.5.2",
-                "ext-phar": "*",
-                "humbug/humbug": "dev-master@DEV",
-                "phpbench/phpbench": "^0.12.2",
-                "phpunit/phpunit": "^5.6.4",
-                "phpunit/phpunit-mock-objects": "^3.4.1",
-                "squizlabs/php_codesniffer": "^2.7.0"
-            },
-            "suggest": {
-                "ocramius/generated-hydrator": "To have very fast object to array to object conversion for ghost objects",
-                "zendframework/zend-json": "To have the JsonRpc adapter (Remote Object feature)",
-                "zendframework/zend-soap": "To have the Soap adapter (Remote Object feature)",
-                "zendframework/zend-xmlrpc": "To have the XmlRpc adapter (Remote Object feature)"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "3.0.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-0": {
-                    "ProxyManager\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Marco Pivetta",
-                    "email": "ocramius@gmail.com",
-                    "homepage": "http://ocramius.github.io/"
-                }
-            ],
-            "description": "A library providing utilities to generate, instantiate and generally operate with Object Proxies",
-            "homepage": "https://github.com/Ocramius/ProxyManager",
-            "keywords": [
-                "aop",
-                "lazy loading",
-                "proxy",
-                "proxy pattern",
-                "service proxies"
-            ],
-            "time": "2016-11-30T15:45:00+00:00"
-        },
-        {
             "name": "paragonie/random_compat",
             "version": "v2.0.10",
             "source": {
@@ -3604,19 +3551,20 @@
         },
         {
             "name": "sensiolabs/security-checker",
-            "version": "v4.0.2",
+            "version": "v4.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sensiolabs/security-checker.git",
-                "reference": "56bded66985e22f6eac2cf86735fd21c625bff2f"
+                "reference": "9e69eddf3bc49d1ee5c7908564da3141796d4bbc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sensiolabs/security-checker/zipball/56bded66985e22f6eac2cf86735fd21c625bff2f",
-                "reference": "56bded66985e22f6eac2cf86735fd21c625bff2f",
+                "url": "https://api.github.com/repos/sensiolabs/security-checker/zipball/9e69eddf3bc49d1ee5c7908564da3141796d4bbc",
+                "reference": "9e69eddf3bc49d1ee5c7908564da3141796d4bbc",
                 "shasum": ""
             },
             "require": {
+                "composer/ca-bundle": "^1.0",
                 "symfony/console": "~2.7|~3.0"
             },
             "bin": [
@@ -3644,20 +3592,20 @@
                 }
             ],
             "description": "A security checker for your composer.lock",
-            "time": "2017-03-09T17:33:20+00:00"
+            "time": "2017-03-31T14:50:32+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",
-            "version": "v5.4.6",
+            "version": "v5.4.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/swiftmailer/swiftmailer.git",
-                "reference": "81fdccfaf8bdc5d5d7a1ef6bb3a61bbb1a6c4a3e"
+                "reference": "56db4ed32a6d5c9824c3ecc1d2e538f663f47eb4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/swiftmailer/swiftmailer/zipball/81fdccfaf8bdc5d5d7a1ef6bb3a61bbb1a6c4a3e",
-                "reference": "81fdccfaf8bdc5d5d7a1ef6bb3a61bbb1a6c4a3e",
+                "url": "https://api.github.com/repos/swiftmailer/swiftmailer/zipball/56db4ed32a6d5c9824c3ecc1d2e538f663f47eb4",
+                "reference": "56db4ed32a6d5c9824c3ecc1d2e538f663f47eb4",
                 "shasum": ""
             },
             "require": {
@@ -3698,7 +3646,7 @@
                 "mail",
                 "mailer"
             ],
-            "time": "2017-02-13T07:52:53+00:00"
+            "time": "2017-04-20T17:32:18+00:00"
         },
         {
             "name": "symfony/monolog-bundle",
@@ -4333,16 +4281,16 @@
         },
         {
             "name": "symfony/symfony",
-            "version": "v2.8.18",
+            "version": "v2.8.19",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/symfony.git",
-                "reference": "8c28bf706b3bf4250d18535ee46a8a5d7a5825e1"
+                "reference": "da35163ddb6e876bfb6054f84e02947a6e0274e3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/symfony/zipball/8c28bf706b3bf4250d18535ee46a8a5d7a5825e1",
-                "reference": "8c28bf706b3bf4250d18535ee46a8a5d7a5825e1",
+                "url": "https://api.github.com/repos/symfony/symfony/zipball/da35163ddb6e876bfb6054f84e02947a6e0274e3",
+                "reference": "da35163ddb6e876bfb6054f84e02947a6e0274e3",
                 "shasum": ""
             },
             "require": {
@@ -4466,7 +4414,7 @@
             "keywords": [
                 "framework"
             ],
-            "time": "2017-03-06T03:54:50+00:00"
+            "time": "2017-04-05T04:05:19+00:00"
         },
         {
             "name": "twig/extensions",
@@ -4522,16 +4470,16 @@
         },
         {
             "name": "twig/twig",
-            "version": "v1.33.0",
+            "version": "v1.33.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/twigphp/Twig.git",
-                "reference": "05cf49921b13f6f01d3cfdf9018cfa7a8086fd5a"
+                "reference": "dd6ca96227917e1e85b41c7c3cc6507b411e0927"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twigphp/Twig/zipball/05cf49921b13f6f01d3cfdf9018cfa7a8086fd5a",
-                "reference": "05cf49921b13f6f01d3cfdf9018cfa7a8086fd5a",
+                "url": "https://api.github.com/repos/twigphp/Twig/zipball/dd6ca96227917e1e85b41c7c3cc6507b411e0927",
+                "reference": "dd6ca96227917e1e85b41c7c3cc6507b411e0927",
                 "shasum": ""
             },
             "require": {
@@ -4580,25 +4528,24 @@
             "keywords": [
                 "templating"
             ],
-            "time": "2017-03-22T15:40:09+00:00"
+            "time": "2017-04-20T17:39:48+00:00"
         },
         {
             "name": "vich/uploader-bundle",
-            "version": "1.5.2",
+            "version": "1.5.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dustin10/VichUploaderBundle.git",
-                "reference": "5e5fc54a0a6826b1c0f1fe3545a8b9e0f2552ae4"
+                "reference": "b6afe1d4615480575bc70013a83c67f4b9423ed8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dustin10/VichUploaderBundle/zipball/5e5fc54a0a6826b1c0f1fe3545a8b9e0f2552ae4",
-                "reference": "5e5fc54a0a6826b1c0f1fe3545a8b9e0f2552ae4",
+                "url": "https://api.github.com/repos/dustin10/VichUploaderBundle/zipball/b6afe1d4615480575bc70013a83c67f4b9423ed8",
+                "reference": "b6afe1d4615480575bc70013a83c67f4b9423ed8",
                 "shasum": ""
             },
             "require": {
                 "jms/metadata": "^1.6",
-                "ocramius/proxy-manager": "^2.0",
                 "php": "^7.0",
                 "symfony/asset": "^2.8|^3.1",
                 "symfony/dependency-injection": "^2.8|^3.1",
@@ -4613,7 +4560,7 @@
                 "doctrine/mongodb-odm": "^1.1",
                 "doctrine/orm": "^2.5",
                 "ext-sqlite3": "*",
-                "knplabs/knp-gaufrette-bundle": "^0.3",
+                "knplabs/knp-gaufrette-bundle": "^0.4",
                 "matthiasnoback/symfony-dependency-injection-test": "^2.0",
                 "mikey179/vfsstream": "^1.6",
                 "oneup/flysystem-bundle": "^1.7",
@@ -4633,7 +4580,7 @@
                 "doctrine/mongodb-odm-bundle": "*",
                 "doctrine/orm": "^2.5",
                 "doctrine/phpcr-odm": "^1.0",
-                "knplabs/knp-gaufrette-bundle": "^0.3",
+                "knplabs/knp-gaufrette-bundle": "^0.4",
                 "symfony/yaml": "^2.8|^3.1",
                 "willdurand/propel-eventdispatcher-bundle": "^1.2"
             },
@@ -4664,7 +4611,7 @@
                 "file uploads",
                 "upload"
             ],
-            "time": "2017-03-03T15:01:00+00:00"
+            "time": "2017-04-07T07:19:32+00:00"
         },
         {
             "name": "willdurand/jsonp-callback-validator",
@@ -4705,113 +4652,6 @@
             ],
             "description": "JSONP callback validator.",
             "time": "2014-01-20T22:35:06+00:00"
-        },
-        {
-            "name": "zendframework/zend-code",
-            "version": "3.1.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/zendframework/zend-code.git",
-                "reference": "2899c17f83a7207f2d7f53ec2f421204d3beea27"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/zendframework/zend-code/zipball/2899c17f83a7207f2d7f53ec2f421204d3beea27",
-                "reference": "2899c17f83a7207f2d7f53ec2f421204d3beea27",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^5.6 || 7.0.0 - 7.0.4 || ^7.0.6",
-                "zendframework/zend-eventmanager": "^2.6 || ^3.0"
-            },
-            "require-dev": {
-                "doctrine/annotations": "~1.0",
-                "ext-phar": "*",
-                "phpunit/phpunit": "^4.8.21",
-                "squizlabs/php_codesniffer": "^2.5",
-                "zendframework/zend-stdlib": "^2.7 || ^3.0"
-            },
-            "suggest": {
-                "doctrine/annotations": "Doctrine\\Common\\Annotations >=1.0 for annotation features",
-                "zendframework/zend-stdlib": "Zend\\Stdlib component"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "3.1-dev",
-                    "dev-develop": "3.2-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Zend\\Code\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "description": "provides facilities to generate arbitrary code using an object oriented interface",
-            "homepage": "https://github.com/zendframework/zend-code",
-            "keywords": [
-                "code",
-                "zf2"
-            ],
-            "time": "2016-10-24T13:23:32+00:00"
-        },
-        {
-            "name": "zendframework/zend-eventmanager",
-            "version": "3.1.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/zendframework/zend-eventmanager.git",
-                "reference": "c3bce7b7d47c54040b9ae51bc55491c72513b75d"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/zendframework/zend-eventmanager/zipball/c3bce7b7d47c54040b9ae51bc55491c72513b75d",
-                "reference": "c3bce7b7d47c54040b9ae51bc55491c72513b75d",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^5.6 || ^7.0"
-            },
-            "require-dev": {
-                "athletic/athletic": "^0.1",
-                "container-interop/container-interop": "^1.1.0",
-                "phpunit/phpunit": "^5.6",
-                "zendframework/zend-coding-standard": "~1.0.0",
-                "zendframework/zend-stdlib": "^2.7.3 || ^3.0"
-            },
-            "suggest": {
-                "container-interop/container-interop": "^1.1.0, to use the lazy listeners feature",
-                "zendframework/zend-stdlib": "^2.7.3 || ^3.0, to use the FilterChain feature"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "3.1-dev",
-                    "dev-develop": "3.2-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Zend\\EventManager\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "description": "Trigger and listen to events within a PHP application",
-            "homepage": "https://github.com/zendframework/zend-eventmanager",
-            "keywords": [
-                "event",
-                "eventmanager",
-                "events",
-                "zf2"
-            ],
-            "time": "2016-12-19T21:47:12+00:00"
         }
     ],
     "packages-dev": [
@@ -4871,7 +4711,7 @@
         },
         {
             "name": "symfony/phpunit-bridge",
-            "version": "v3.2.6",
+            "version": "v3.2.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/phpunit-bridge.git",
