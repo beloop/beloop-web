@@ -236,16 +236,16 @@
         },
         {
             "name": "beloop/course",
-            "version": "0.5.1",
+            "version": "0.5.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/beloop/Course.git",
-                "reference": "04ce8eeb8e69075f3a0081d61649ca57f4bb5a73"
+                "reference": "f7363ad6505af50a7d75d41b39868ee17b294ce7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/beloop/Course/zipball/04ce8eeb8e69075f3a0081d61649ca57f4bb5a73",
-                "reference": "04ce8eeb8e69075f3a0081d61649ca57f4bb5a73",
+                "url": "https://api.github.com/repos/beloop/Course/zipball/f7363ad6505af50a7d75d41b39868ee17b294ce7",
+                "reference": "f7363ad6505af50a7d75d41b39868ee17b294ce7",
                 "shasum": ""
             },
             "require": {
@@ -292,20 +292,20 @@
                 "course",
                 "lms"
             ],
-            "time": "2017-04-27T11:01:07+00:00"
+            "time": "2017-04-27T15:25:33+00:00"
         },
         {
             "name": "beloop/course-bundle",
-            "version": "0.5.1",
+            "version": "0.5.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/beloop/CourseBundle.git",
-                "reference": "f356e983f73c94114faa284d3ebd54cc15e2dfa7"
+                "reference": "0cc601314540d96bb6be8254d18950d79e02bd39"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/beloop/CourseBundle/zipball/f356e983f73c94114faa284d3ebd54cc15e2dfa7",
-                "reference": "f356e983f73c94114faa284d3ebd54cc15e2dfa7",
+                "url": "https://api.github.com/repos/beloop/CourseBundle/zipball/0cc601314540d96bb6be8254d18950d79e02bd39",
+                "reference": "0cc601314540d96bb6be8254d18950d79e02bd39",
                 "shasum": ""
             },
             "require": {
@@ -349,7 +349,7 @@
                 "course",
                 "lms"
             ],
-            "time": "2017-04-27T10:47:20+00:00"
+            "time": "2017-04-27T15:25:33+00:00"
         },
         {
             "name": "beloop/instagram",
@@ -844,16 +844,16 @@
         },
         {
             "name": "beloop/user",
-            "version": "0.5",
+            "version": "0.5.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/beloop/User.git",
-                "reference": "f4f80fb9f946c06ab6e6a4dcb24688faeb607018"
+                "reference": "09e49fd70eda92e317b3c6ada57a6e42308e99f9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/beloop/User/zipball/f4f80fb9f946c06ab6e6a4dcb24688faeb607018",
-                "reference": "f4f80fb9f946c06ab6e6a4dcb24688faeb607018",
+                "url": "https://api.github.com/repos/beloop/User/zipball/09e49fd70eda92e317b3c6ada57a6e42308e99f9",
+                "reference": "09e49fd70eda92e317b3c6ada57a6e42308e99f9",
                 "shasum": ""
             },
             "require": {
@@ -903,20 +903,20 @@
                 "lms",
                 "user"
             ],
-            "time": "2017-04-23T13:20:06+00:00"
+            "time": "2017-04-27T15:25:33+00:00"
         },
         {
             "name": "beloop/user-bundle",
-            "version": "0.5",
+            "version": "0.5.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/beloop/UserBundle.git",
-                "reference": "f2d7688e142e79fb8951c6e71745aac543a78eac"
+                "reference": "e7c05ce52bb2aa0708478a7fb1a68da46e110d7a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/beloop/UserBundle/zipball/f2d7688e142e79fb8951c6e71745aac543a78eac",
-                "reference": "f2d7688e142e79fb8951c6e71745aac543a78eac",
+                "url": "https://api.github.com/repos/beloop/UserBundle/zipball/e7c05ce52bb2aa0708478a7fb1a68da46e110d7a",
+                "reference": "e7c05ce52bb2aa0708478a7fb1a68da46e110d7a",
                 "shasum": ""
             },
             "require": {
@@ -966,7 +966,7 @@
                 "lms",
                 "user"
             ],
-            "time": "2017-04-23T13:20:06+00:00"
+            "time": "2017-04-27T15:25:33+00:00"
         },
         {
             "name": "composer/ca-bundle",

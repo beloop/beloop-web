@@ -163,9 +163,19 @@ email:
             recover_title: 'Hemos recibido una petición de cambio de contraseña desde tu cuenta.'
             recover_text: 'Si has realizado una petición para el usuario %email%, haz click en el siguiente botón. Si tu no has realizado esta petición, por favor ignora este email.'
             recover_password: 'Cambiar contraseña'
-            recover_copy_paste: 'O copia y pega la siguiente URL en tu navegador: %url%'
+            recover_copy_paste: 'O copia y pega la siguiente URL en tu navegador:<br>%url%'
             remember_password: 'Recuperar contraseña'
             cheers: 'El equipo de Delicious Yet Beautiful'
+        enrolment:
+            subject: 'Credenciales de acceso: %course_name%'
+            title: 'El acceso a tu curso, %course_name%, ¡está listo!'
+            credentials: 'Estos son tus credenciales de acceso:'
+            username: 'Usuario: %email%'
+            password: 'Contraseña: %password%'
+            url: 'Esta es la dirección para hacer login: <a href="https://learn.deliciousyetbeautiful.com/">learn.deliciousyetbeautiful.com</a>'
+            warning: 'Importante: si ya eres alumno, o estás registrado en nuestras demos, puedes acceder a la plataforma con tu usuario/contraseña actual.'
+            change_password: 'Te aconsejamos que cambies tu contraseña la primera vez que hagas login. También puedes rellenar los datos de tu perfil de usuario.'
+            questions: 'Si tienes cualquier problema, escribe a <a href="mailto:info@deliciousyetbeautiful.com">info@deliciousyetbeautiful.com</a>'
 
 error:
     404:

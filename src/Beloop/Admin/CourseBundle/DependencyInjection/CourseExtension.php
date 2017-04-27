@@ -52,6 +52,7 @@ class CourseExtension extends AbstractExtension
     public function getConfigFiles(array $config)
     {
         return [
+            'eventListeners',
             'formTypes'
         ];
     }

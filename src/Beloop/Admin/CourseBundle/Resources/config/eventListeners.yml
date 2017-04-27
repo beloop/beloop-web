@@ -1,0 +1,12 @@
+services:
+
+    #
+    # Event Listeners
+    #
+    beloop.event_listener.send_enrolment_email:
+        class: Beloop\Admin\CourseBundle\EventListener\SendEnrolmentEmailEventListener
+        parent: beloop.abstract_email_sender_event_listener
+        calls:
+            - [setTranslator, ['@translator']]
+        tags:
+            - { name: kernel.event_listener, event: user.enrolment, method: sendEnrolmentEmail }
