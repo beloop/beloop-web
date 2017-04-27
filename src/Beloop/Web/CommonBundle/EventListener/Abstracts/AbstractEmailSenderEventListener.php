@@ -52,7 +52,7 @@ abstract class AbstractEmailSenderEventListener
      *
      * @param string $template      Email template
      * @param array  $context       Context
-     * @param string $senderEmail   Sender email
+     * @param array  $senderEmail   Sender email
      * @param string $receiverEmail Receiver email
      */
     protected function sendEmail($template, array $context, $senderEmail, $receiverEmail)

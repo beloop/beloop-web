@@ -61,7 +61,7 @@ class SendEnrolmentEmailEventListener extends AbstractEmailSenderEventListener
                 'user' => $user,
                 'course' => $course,
             ],
-            'no-reply@deliciousyetbeautiful.com',
+            ['info@deliciousyetbeautiful.com' => 'Delicious yet Beautiful'],
             $user->getEmail()
         );
     }
