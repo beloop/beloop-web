@@ -236,16 +236,16 @@
         },
         {
             "name": "beloop/course",
-            "version": "0.5",
+            "version": "0.5.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/beloop/Course.git",
-                "reference": "dcaab9304b5fbbbbe3e3c3ddb3945fee23208b5e"
+                "reference": "04ce8eeb8e69075f3a0081d61649ca57f4bb5a73"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/beloop/Course/zipball/dcaab9304b5fbbbbe3e3c3ddb3945fee23208b5e",
-                "reference": "dcaab9304b5fbbbbe3e3c3ddb3945fee23208b5e",
+                "url": "https://api.github.com/repos/beloop/Course/zipball/04ce8eeb8e69075f3a0081d61649ca57f4bb5a73",
+                "reference": "04ce8eeb8e69075f3a0081d61649ca57f4bb5a73",
                 "shasum": ""
             },
             "require": {
@@ -292,20 +292,20 @@
                 "course",
                 "lms"
             ],
-            "time": "2017-04-23T13:26:02+00:00"
+            "time": "2017-04-27T11:01:07+00:00"
         },
         {
             "name": "beloop/course-bundle",
-            "version": "0.5",
+            "version": "0.5.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/beloop/CourseBundle.git",
-                "reference": "a04e411e5dae8f3ec475b23610774063a834c9b0"
+                "reference": "f356e983f73c94114faa284d3ebd54cc15e2dfa7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/beloop/CourseBundle/zipball/a04e411e5dae8f3ec475b23610774063a834c9b0",
-                "reference": "a04e411e5dae8f3ec475b23610774063a834c9b0",
+                "url": "https://api.github.com/repos/beloop/CourseBundle/zipball/f356e983f73c94114faa284d3ebd54cc15e2dfa7",
+                "reference": "f356e983f73c94114faa284d3ebd54cc15e2dfa7",
                 "shasum": ""
             },
             "require": {
@@ -349,7 +349,7 @@
                 "course",
                 "lms"
             ],
-            "time": "2017-04-23T13:20:06+00:00"
+            "time": "2017-04-27T10:47:20+00:00"
         },
         {
             "name": "beloop/instagram",
@@ -3429,16 +3429,16 @@
         },
         {
             "name": "sensio/distribution-bundle",
-            "version": "v5.0.18",
+            "version": "v5.0.19",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sensiolabs/SensioDistributionBundle.git",
-                "reference": "17846680901003d26d823c2e3ac9228702837916"
+                "reference": "654c4fa3d11448c8005400a244987896243a990a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sensiolabs/SensioDistributionBundle/zipball/17846680901003d26d823c2e3ac9228702837916",
-                "reference": "17846680901003d26d823c2e3ac9228702837916",
+                "url": "https://api.github.com/repos/sensiolabs/SensioDistributionBundle/zipball/654c4fa3d11448c8005400a244987896243a990a",
+                "reference": "654c4fa3d11448c8005400a244987896243a990a",
                 "shasum": ""
             },
             "require": {
@@ -3477,7 +3477,7 @@
                 "configuration",
                 "distribution"
             ],
-            "time": "2017-01-10T14:58:45+00:00"
+            "time": "2017-04-23T22:28:23+00:00"
         },
         {
             "name": "sensio/framework-extra-bundle",
