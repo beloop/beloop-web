@@ -3,6 +3,8 @@ common:
         cancel: 'Cancelar'
         save: 'Guardar'
         upload: 'Subir'
+    12_months_enrolment:
+        text: 'Ahora tienes 12 meses para acceder a tus cursos desde tu fecha de inscripción. ¡Un pequeño regalo que esperamos que disfrutes!'
 
 login:
     text:

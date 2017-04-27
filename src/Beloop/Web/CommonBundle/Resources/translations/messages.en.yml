@@ -3,6 +3,8 @@ common:
         cancel: 'Cancel'
         save: 'Save'
         upload: 'Upload'
+    12_months_enrolment:
+        text: 'You now have 12 months to access to your courses from your enrolment day. A little treat we hope you enjoy!'
 
 login:
     text:
