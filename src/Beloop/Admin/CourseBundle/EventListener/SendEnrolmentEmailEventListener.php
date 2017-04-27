@@ -57,7 +57,7 @@ class SendEnrolmentEmailEventListener extends AbstractEmailSenderEventListener
         $this->sendEmail(
             'AdminCourseBundle:Email:enrolment.html.twig',
             [
-                'subject' => $this->translator->trans('email.user.enrolment.subject', [ '%course_name' => $course->getName() ]),
+                'subject' => $this->translator->trans('email.user.enrolment.subject', [ '%course_name%' => $course->getName() ]),
                 'user' => $user,
                 'course' => $course,
             ],
