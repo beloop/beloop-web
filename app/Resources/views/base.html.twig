@@ -16,11 +16,6 @@
     {% endblock %}
 </head>
 <body>
-<div class="announcement-bar-dropzone">
-  <div class="announcement-bar">
-    <p>{{ 'common.12_months_enrolment.text'|trans }}</p>
-  </div>
-</div>
 <div class="am-wrapper am-fixed-sidebar am-white-header {% block body_class %}{% endblock %}">
     {% block navbar %}
         {% include 'CommonBundle:Header:navbar.html.twig' with {back_to: block('back_to'), module_navigation: block('module_navigation')} %}
