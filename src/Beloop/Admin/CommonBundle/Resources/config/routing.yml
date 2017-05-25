@@ -1,0 +1,3 @@
+AdminCommonBundle:
+    resource: "@AdminCommonBundle/Controller/"
+    type:     annotation

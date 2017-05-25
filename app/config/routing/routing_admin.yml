@@ -1,8 +1,6 @@
 #
 # Admin routes
 #
-admin_course:
-    resource: "@AdminCourseBundle/Resources/config/routing.yml"
 
-admin_user:
-    resource: "@AdminUserBundle/Resources/config/routing.yml"
+admin_common:
+    resource: "@AdminCommonBundle/Resources/config/routing.yml"
