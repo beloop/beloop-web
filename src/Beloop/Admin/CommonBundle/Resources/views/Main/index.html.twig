@@ -1,0 +1,13 @@
+{% extends 'AdminCommonBundle::base.html.twig' %}
+
+{% block body %}
+    {{ parent() }}
+    <div id="beloop-admin">
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="{{ asset('js/vendor.min.js') }}"></script>
+    <script src="{{ asset('js/admin.min.js') }}"></script>
+{% endblock %}
