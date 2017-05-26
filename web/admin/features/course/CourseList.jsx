@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 
 import AdminList from 'Components/admin-table/AdminTable';
 import PageHead from 'Components/page-head/PageHead';
-import ApiService from 'Services/http/api.service';
+import CourseService from 'Services/course/course.service';
 
-export default class Course extends Component {
+export default class CourseList extends Component {
   constructor() {
     super();
 
@@ -20,9 +20,23 @@ export default class Course extends Component {
         name: 'admin.common.field.actions.preview',
         icon: 's7-look',
         callback(course) {
-          console.log('preview', course);
-        }
-      }
+          window.open(`/course/${course.code}`, '_blank');
+        },
+      },
+      {
+        name: 'admin.common.field.actions.edit',
+        icon: 's7-pen',
+        callback(course) {
+          window.location.hash = `#/courses/${course.code}/edit`;
+        },
+      },
+      {
+        name: 'admin.common.field.actions.duplicate',
+        icon: 's7-copy-file',
+        callback(course) {
+          console.log('duplicate', course);
+        },
+      },
     ];
 
     this.state = {
@@ -35,18 +49,25 @@ export default class Course extends Component {
   }
 
   loadCourses() {
-    ApiService.get('courses').then((response) => this.setState({ courses: response.body }));
+    CourseService.getAll().then(courses => this.setState({ courses }));
   }
 
   render() {
     return (
       <div>
-        <PageHead title="admin.course.title" action={{ to: '/courses/new', label: 'admin.course.field.actions.new.title', icon: 's7-plus' }} />
+        <PageHead
+          title="admin.course.title"
+          action={{ to: '/courses/new', label: 'admin.course.field.actions.new.title', icon: 's7-plus' }}
+        />
         <div className="main-content">
           <div className="row">
             <div className="col-sm-12">
               <div className="widget widget-fullwidth widget-small">
-                <AdminList columns={this.columns} data={this.state.courses} actions={this.actions} />
+                <AdminList
+                  columns={this.columns}
+                  data={this.state.courses}
+                  actions={this.actions}
+                />
               </div>
             </div>
           </div>

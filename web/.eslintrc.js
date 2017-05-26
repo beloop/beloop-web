@@ -9,6 +9,7 @@ module.exports = {
     "react/prop-types": 0
   },
   "globals": {
-    "document": true
+    "document": true,
+    "window": true
   }
 };

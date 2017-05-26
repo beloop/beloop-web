@@ -6,6 +6,11 @@ import AdminActionsColumn from './AdminActionsColumn';
 import AdminColumn from './AdminColumn';
 
 export default class AdminTable extends Component {
+  static renderFooter() {
+    // TODO: create pagination component
+    return (<div className="dataTables_info">Showing X to Y of Z entries</div>);
+  }
+
   renderColumns() {
     const columns = this.props.columns.map((column) => {
       const tdClasses = classnames(`w-${column.width}`);
@@ -29,18 +34,22 @@ export default class AdminTable extends Component {
   }
 
   renderRows() {
-    return this.props.data.map((entity, index) => {
+    return this.props.data.map((entity) => {
       const columns = this.props.columns.map((column) => {
-        return (<AdminColumn key={column.name} column={column} entity={entity} />);
+        return <AdminColumn key={column.name} column={column} entity={entity} />;
       });
 
       if (this.props.actions) {
         columns.push((
-          <AdminActionsColumn key="admin.common.field.actions.title" actions={this.props.actions} entity={entity} />
+          <AdminActionsColumn
+            key="admin.common.field.actions.title"
+            actions={this.props.actions}
+            entity={entity}
+          />
         ));
       }
 
-      return (<tr key={`row-${index}`}>{columns}</tr>);
+      return (<tr key={entity.toString()}>{columns}</tr>);
     });
   }
 
@@ -59,6 +68,11 @@ export default class AdminTable extends Component {
                 {this.renderRows()}
               </tbody>
             </table>
+          </div>
+        </div>
+        <div className="row am-datatable-footer">
+          <div className="col-sm-5">
+            {AdminTable.renderFooter()}
           </div>
         </div>
       </div>

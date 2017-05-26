@@ -35,6 +35,7 @@ module.exports = {
     alias: {
       Components: path.resolve(__dirname, 'admin/components'),
       Config: path.resolve(__dirname, 'admin/config'),
+      Features: path.resolve(__dirname, 'admin/features'),
       Services: path.resolve(__dirname, 'admin/services'),
     },
     extensions: [

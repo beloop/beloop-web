@@ -1,42 +1,15 @@
-import React, { Component } from 'react';
-import { IntlProvider } from 'react-intl';
-import { Route } from 'react-router-dom';
+import React from 'react';
+import { Redirect, Route } from 'react-router-dom';
 
-import Course from './features/course/Course';
-import ApiService from 'Services/http/api.service';
+import CourseList from './features/course/CourseList';
+import CourseEdit from './features/course/CourseEdit';
 
-export default class App extends Component {
-  constructor() {
-    super();
-
-    this.state = {
-      translations: null,
-    };
-  }
-
-  componentWillMount() {
-    this.loadTranslations();
-  }
-
-  loadTranslations() {
-    ApiService.get('translations', {}, { locale: 'en' }).then((response) => {
-      this.setState({
-        translations: response.body,
-      });
-    });
-  }
-
-  render() {
-    let children;
-
-    if (this.state.translations) {
-      children = (
-        <IntlProvider locale="en" messages={this.state.translations}>
-          <Route exact path="/courses" component={Course} />
-        </IntlProvider>
-      );
-    }
-
-    return (<div>{children}</div>);
-  }
+export default function App() {
+  return (
+    <div>
+      <Route exact path="/" render={() => <Redirect to="/courses" />} />
+      <Route exact path="/courses" component={CourseList} />
+      <Route path="/courses/:code/edit" component={CourseEdit} />
+    </div>
+  );
 }

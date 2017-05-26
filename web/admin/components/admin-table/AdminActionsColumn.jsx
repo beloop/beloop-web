@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
-import { FormattedMessage } from 'react-intl';
 import classnames from 'classnames';
-import { map } from 'lodash';
 
 export default class AdminActionsColumn extends Component {
-  executeCallback(callback, entity) {
+  static executeCallback(callback, entity) {
     if (typeof callback === 'function') {
       callback(entity);
     }
@@ -14,13 +12,13 @@ export default class AdminActionsColumn extends Component {
     const buttons = this.props.actions.map((action) => {
       const iconClasses = classnames('icon', action.icon);
       return (
-        <a
+        <button
           key={action.name}
           className="btn btn-default btn-xs"
-          onClick={() => this.executeCallback(action.callback, this.props.entity)}
+          onClick={() => AdminActionsColumn.executeCallback(action.callback, this.props.entity)}
         >
-          <i className={iconClasses}/>
-        </a>
+          <i className={iconClasses} />
+        </button>
       );
     });
 

@@ -4,5 +4,8 @@ export default {
   },
   courses: {
     url: '/admin/api/course/list'
+  },
+  course: {
+    url: '/admin/api/course/{code}'
   }
 };
