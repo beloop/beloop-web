@@ -62,4 +62,24 @@ class CourseApiController extends AbstractApiController
 
         return $this->jsonResponse($response);
     }
+
+    /**
+     * Course
+     *
+     * @return mixed
+     *
+     * @Route(
+     *      path = "/{code}",
+     *      name = "admin_api_course_get",
+     *      methods = {"GET"}
+     * )
+     */
+    public function getCourseAction(
+        $code
+    ) {
+        $courseDirector = $this->get('beloop.director.course');
+        $course = $courseDirector->findOneBy([ 'code' => $code ]);
+
+        return $this->jsonResponse($course->serialize());
+    }
 }

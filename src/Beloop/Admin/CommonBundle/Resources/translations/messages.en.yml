@@ -1,5 +1,6 @@
 admin:
     common:
+        title: 'Admin'
         field:
             created_at:
                 title: 'Created at'
@@ -12,12 +13,17 @@ admin:
             enabled:
                 title: 'Enabled'
         pagination:
-            text: 'Showing %first% to %last% of %total% entries'
+            text: 'Showing {first} to {last} of {total} entries'
             previous: 'Previous'
             next: 'Next'
 
     course:
         title: 'Courses'
+        edit_title: 'Edit course <i>{name}</i>'
+        lessons:
+            title: 'Lessons & Modules'
+        users:
+            title: 'Enrolled Users'
         field:
             code:
                 title: 'Code'
