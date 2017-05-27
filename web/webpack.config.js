@@ -36,6 +36,7 @@ module.exports = {
       Components: path.resolve(__dirname, 'admin/components'),
       Config: path.resolve(__dirname, 'admin/config'),
       Features: path.resolve(__dirname, 'admin/features'),
+      Forms: path.resolve(__dirname, 'admin/forms'),
       Services: path.resolve(__dirname, 'admin/services'),
     },
     extensions: [

@@ -4,11 +4,13 @@ import { Tabs, TabList, TabPanel, Tab } from 'react-tabs';
 
 import PageHead from 'Components/page-head/PageHead';
 import CourseService from 'Services/course/course.service';
+import CourseForm from 'Forms/course/CourseForm';
 
 export default class CourseEdit extends Component {
   constructor({ match }) {
     super();
 
+    this.courseLoaded = false;
     this.code = match.params.code;
     this.state = {
       course: {},
@@ -31,6 +33,8 @@ export default class CourseEdit extends Component {
 
   loadCourse(code) {
     CourseService.getOneByCode(code).then((course) => {
+      this.courseLoaded = true;
+
       const breadcrumb = this.state.breadcrumb;
       breadcrumb.push({
         name: course.name,
@@ -41,6 +45,14 @@ export default class CourseEdit extends Component {
         breadcrumb,
       });
     });
+  }
+
+  renderCourseForm() {
+    if (!this.courseLoaded) {
+      return null;
+    }
+
+    return (<CourseForm className="form-horizontal" value={this.state.course} />);
   }
 
   render() {
@@ -62,7 +74,7 @@ export default class CourseEdit extends Component {
                 </TabList>
                 <TabPanel>
                   <div className="tab-content">
-                    <h2>Any content 1</h2>
+                    {this.renderCourseForm()}
                   </div>
                 </TabPanel>
                 <TabPanel>
