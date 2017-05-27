@@ -4,13 +4,12 @@
   "description": "Beloop LMS",
   "dependencies": {
     "classnames": "2.2.5",
+    "formsy-react": "0.19.2",
     "lodash": "4.17.4",
     "react": "15.5.4",
     "react-dom": "15.5.4",
-    "react-forms": "2.0.0-beta35",
     "react-intl": "2.3.0",
     "react-router-dom": "4.1.1",
-    "react-stylesheet": "2.0.2",
     "react-tabs": "1.0.0",
     "superagent": "3.5.2"
   },

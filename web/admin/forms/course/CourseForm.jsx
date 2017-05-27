@@ -1,29 +1,27 @@
 import React, { Component } from 'react';
-import { createValue } from 'react-forms';
 
-import { CustomField, CustomFieldSet } from 'Forms/base/BaseForm';
+import BaseForm, { Input, TextArea } from 'Forms/base/BaseForm';
 
-export default class CourseForm extends Component {
+export default class CourseForm extends BaseForm {
   constructor(props) {
     super(props);
-
-    const formValue = createValue({
-      value: props.value,
-      onChange: this.onChange.bind(this),
-    });
-    this.state = { formValue };
   }
 
-  onChange(formValue) {
-    this.setState({ formValue });
+  submit(model) {
+    console.log(model);
   }
 
   render() {
     return (
-      <CustomFieldSet formValue={this.state.formValue}>
-        <CustomField select="code" label="Code" />
-        <CustomField select="name" label="Name" />
-      </CustomFieldSet>
+      <Formsy.Form role="form" autoComplete="off" className="form-horizontal" onValid={this.enableButton} onInvalid={this.disableButton} onValidSubmit={this.submit}>
+        <Input name="code" label="Code" value={this.state.value.code} required />
+        <Input name="name" label="Name" value={this.state.value.name} required />
+        <TextArea name="description" label="Description" value={this.state.value.description} />
+        <div className="spacer text-right">
+            <button type="submit" className="btn btn-space btn-primary" disabled={!this.state.canSubmit}>Submit</button>
+            <a href="https://learn.deliciousyetbeautiful.com/admin/course/list" className="btn btn-space btn-default">Cancel</a>
+        </div>
+      </Formsy.Form>
     );
   }
 }

@@ -1,33 +1,37 @@
-import React from 'react';
-import { Input, Field as BaseField, Fieldset } from 'react-forms';
-import { style } from 'react-stylesheet';
+import React, { Component } from 'react';
 
-export function Label({ label }) {
-  return <label className="col-sm-2 control-label">{label}</label>;
+export * from './BaseFields';
+
+export default class BaseForm extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      value: props.value,
+      canSubmit: false
+    };
+
+    this.enableButton = this.enableButton.bind(this);
+    this.disableButton = this.disableButton.bind(this);
+  }
+
+  enableButton() {
+    this.setState({
+      canSubmit: true
+    });
+  }
+
+  disableButton() {
+    this.setState({
+      canSubmit: false
+    });
+  }
+
+  submit(model) {
+    throw new Error('Implement submit method on child forms!');
+  }
+
+  render() {
+    throw new Error('Implement render method on child forms!');
+  }
 }
-
-export function Root({ children }) {
-  return <div className="form-group">{children}</div>;
-}
-
-export function InputWrapper({ children }) {
-  return <div className="col-sm-10">{children}</div>;
-}
-
-export function CustomInput(props) {
-  return <Input {...props} className="form-control" />;
-}
-
-export function CustomField(props) {
-  return <Field {...props} Input={CustomInput} />;
-}
-
-export function CustomFieldSet(props) {
-  return <Fieldset {...props} className="form-horizontal" />;
-}
-
-export const Field = style(BaseField, {
-  InputWrapper,
-  Label,
-  Root,
-});
