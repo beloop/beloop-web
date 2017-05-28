@@ -56,7 +56,9 @@ export default class CourseEdit extends Component {
   }
 
   onSubmit(course) {
-    console.log('onSave', course);
+    CourseService.save(course).then((response) => {
+      console.log(response);
+    });
   }
 
   onCancel() {

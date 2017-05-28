@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import BaseForm, { Checkbox, Input, Select, TextArea } from 'Forms/base/BaseForm';
+import BaseForm, { Checkbox, Hidden, Input, Select, TextArea } from 'Forms/base/BaseForm';
 
 export default class CourseForm extends BaseForm {
   constructor(props) {
@@ -21,6 +21,7 @@ export default class CourseForm extends BaseForm {
   render() {
     return (
       <Formsy.Form role="form" autoComplete="off" className="form-horizontal" onValid={this.enableButton} onInvalid={this.disableButton} onValidSubmit={this.submit}>
+        <Hidden name="id" value={this.state.value.id} />
         <Input name="code" label="Code" value={this.state.value.code} required />
         <Input name="name" label="Name" value={this.state.value.name} required />
         <TextArea name="description" label="Description" value={this.state.value.description} />
@@ -30,7 +31,7 @@ export default class CourseForm extends BaseForm {
         <Checkbox name="demo" label="Demo" value={this.state.value.demo} required />
         <div className="spacer text-right">
             <button type="submit" className="btn btn-space btn-primary" disabled={!this.state.canSubmit}>Submit</button>
-            <button className="btn btn-space btn-default" onClick={this.cancel}>Cancel</button>
+            <button type="button" className="btn btn-space btn-default" onClick={this.cancel}>Cancel</button>
         </div>
       </Formsy.Form>
     );

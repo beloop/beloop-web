@@ -1,6 +1,16 @@
 import React from 'react';
 import Formsy from 'formsy-react';
 
+export const Hidden = React.createClass({
+  mixins: [Formsy.Mixin],
+
+  render() {
+    return (
+      <input type="hidden" className="form-control" value={this.getValue()} />
+    );
+  },
+});
+
 export const Input = React.createClass({
   mixins: [Formsy.Mixin],
 
@@ -9,11 +19,12 @@ export const Input = React.createClass({
   },
 
   render() {
+    const type = this.props.type || 'text';
     return (
       <div className="form-group">
         <label className="col-sm-2 control-label">{this.props.label}</label>
         <div className="col-sm-10">
-          <input type="text" className="form-control" onChange={this.changeValue} value={this.getValue()} />
+          <input type={type} className="form-control" onChange={this.changeValue} value={this.getValue()} />
         </div>
       </div>
     );

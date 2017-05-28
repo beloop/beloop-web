@@ -31,7 +31,7 @@ export default class BaseForm extends Component {
 
   submit(model) {
     if (this.props.onSubmit) {
-      this.props.onSubmit();
+      this.props.onSubmit(model);
       return;
     }
 

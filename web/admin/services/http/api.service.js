@@ -56,4 +56,15 @@ export default class ApiService {
     const url = ApiService.constructUrl(endpoint, restParams);
     return request.get(url).query(queryParams);
   }
+
+  /**
+   * @param href
+   * @param restParams - object to expand {var}'s in href with
+   * @param payload - POST data
+   * @returns {Promise}
+   */
+  static put(href, restParams = {}, payload = {}) {
+    const url = ApiService.constructUrl(href, restParams);
+    return request.put(url).send(payload);
+  }
 }

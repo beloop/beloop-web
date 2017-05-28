@@ -34,22 +34,22 @@ export default class AdminTable extends Component {
   }
 
   renderRows() {
-    return this.props.data.map((entity) => {
-      const columns = this.props.columns.map((column) => {
-        return <AdminColumn key={column.name} column={column} entity={entity} />;
+    return this.props.data.map((entity, rowIndex) => {
+      const columns = this.props.columns.map((column, columnIndex) => {
+        return <AdminColumn key={`${rowIndex}.${columnIndex}`} column={column} entity={entity} />;
       });
 
       if (this.props.actions) {
         columns.push((
           <AdminActionsColumn
-            key="admin.common.field.actions.title"
+            key={`admin.common.field.actions.title.${rowIndex}`}
             actions={this.props.actions}
             entity={entity}
           />
         ));
       }
 
-      return (<tr key={entity.toString()}>{columns}</tr>);
+      return (<tr key={rowIndex}>{columns}</tr>);
     });
   }
 
