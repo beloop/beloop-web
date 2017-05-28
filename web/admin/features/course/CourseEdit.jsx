@@ -52,7 +52,15 @@ export default class CourseEdit extends Component {
       return null;
     }
 
-    return (<CourseForm className="form-horizontal" value={this.state.course} />);
+    return (<CourseForm className="form-horizontal" value={this.state.course} onSubmit={this.onSubmit} onCancel={this.onCancel} />);
+  }
+
+  onSubmit(course) {
+    console.log('onSave', course);
+  }
+
+  onCancel() {
+    window.location.hash = `#/courses`;
   }
 
   render() {
