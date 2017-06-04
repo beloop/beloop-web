@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
+import React from 'react';
 import classnames from 'classnames';
 
-export default class AdminColumn extends Component {
-  static renderBoolean(value) {
+export default function AdminColumn({ column, entity }) {
+  const renderBoolean = (value) => {
     const icon = value ? 's7-check' : 's7-cross';
     const iconClasses = classnames('icon', icon);
 
@@ -11,34 +11,28 @@ export default class AdminColumn extends Component {
         <span className={iconClasses} />
       </td>
     );
-  }
+  };
 
-  static renderNumber(value) {
+  const renderNumber = (value) => {
     return (
       <td className="text-center">
         {value}
       </td>
     );
-  }
+  };
 
-  static renderText(value) {
+  const renderText = (value) => {
     return (
       <td>
         {value}
       </td>
     );
-  }
+  };
 
-  static renderColumn(column, entity) {
-    const value = entity[column.field];
-    switch (typeof value) {
-      case 'boolean': return AdminColumn.renderBoolean(value);
-      case 'number': return AdminColumn.renderNumber(value);
-      default: return AdminColumn.renderText(value);
-    }
-  }
-
-  render() {
-    return AdminColumn.renderColumn(this.props.column, this.props.entity);
+  const value = entity[column.field];
+  switch (typeof value) {
+    case 'boolean': return renderBoolean(value);
+    case 'number': return renderNumber(value);
+    default: return renderText(value);
   }
 }
