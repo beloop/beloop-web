@@ -33,10 +33,13 @@ module.exports = {
   },
   resolve: {
     alias: {
+      Actions: path.resolve(__dirname, 'admin/store/actions'),
       Components: path.resolve(__dirname, 'admin/components'),
       Config: path.resolve(__dirname, 'admin/config'),
+      Containers: path.resolve(__dirname, 'admin/containers'),
       Features: path.resolve(__dirname, 'admin/features'),
       Forms: path.resolve(__dirname, 'admin/forms'),
+      Reducers: path.resolve(__dirname, 'admin/store/reducers'),
       Services: path.resolve(__dirname, 'admin/services'),
     },
     extensions: [

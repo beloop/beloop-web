@@ -13,21 +13,17 @@ export default function AdminColumn({ column, entity }) {
     );
   };
 
-  const renderNumber = (value) => {
-    return (
-      <td className="text-center">
-        {value}
-      </td>
-    );
-  };
+  const renderNumber = value => (
+    <td className="text-center">
+      {value}
+    </td>
+  );
 
-  const renderText = (value) => {
-    return (
-      <td>
-        {value}
-      </td>
-    );
-  };
+  const renderText = value => (
+    <td>
+      {value}
+    </td>
+  );
 
   const value = entity[column.field];
   switch (typeof value) {

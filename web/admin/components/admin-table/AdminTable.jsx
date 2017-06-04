@@ -6,10 +6,10 @@ import AdminActionsColumn from './AdminActionsColumn';
 import AdminColumn from './AdminColumn';
 
 export default function AdminTable({ data, columns, actions }) {
-  const renderFooter = () => {
-    // TODO: create pagination component
-    return (<div className="dataTables_info">Showing X to Y of Z entries</div>);
-  };
+  // TODO: create pagination component
+  const renderFooter = () => (
+    <div className="dataTables_info">Showing X to Y of Z entries</div>
+  );
 
   const renderColumns = () => {
     const tableColumns = columns.map((column) => {
@@ -33,25 +33,23 @@ export default function AdminTable({ data, columns, actions }) {
     return tableColumns;
   };
 
-  const renderRows = () => {
-    return data.map((entity, rowIndex) => {
-      const tableColumns = columns.map((column, columnIndex) => {
-        return <AdminColumn key={`${rowIndex}.${columnIndex}`} column={column} entity={entity} />;
-      });
+  const renderRows = () => data.map((entity, rowIndex) => {
+    const tableColumns = columns.map((column) => (
+      <AdminColumn key={`${column.field}.${entity.id}`} column={column} entity={entity} />
+    ));
 
-      if (actions) {
-        tableColumns.push((
-          <AdminActionsColumn
-            key={`admin.common.field.actions.title.${rowIndex}`}
-            actions={actions}
-            entity={entity}
-          />
-        ));
-      }
+    if (actions) {
+      tableColumns.push((
+        <AdminActionsColumn
+          key={`admin.common.field.actions.title.${entity.id}`}
+          actions={actions}
+          entity={entity}
+        />
+      ));
+    }
 
-      return (<tr key={rowIndex}>{tableColumns}</tr>);
-    });
-  }
+    return (<tr key={entity.id}>{tableColumns}</tr>);
+  });
 
   return (
     <div className="dataTables_wrapper form-inline dt-bootstrap no-footer">

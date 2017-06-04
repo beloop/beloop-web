@@ -2,7 +2,7 @@ import React from 'react';
 import { Redirect, Route } from 'react-router-dom';
 
 import CourseList from './features/course/CourseList';
-import CourseEdit from './features/course/CourseEdit';
+import CourseEdit from './containers/course/CourseEdit';
 
 export default function App() {
   return (

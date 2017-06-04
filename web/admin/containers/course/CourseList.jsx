@@ -5,8 +5,8 @@ import PageHead from 'Components/page-head/PageHead';
 import CourseService from 'Services/course/course.service';
 
 export default class CourseList extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
 
     this.columns = [
       { field: 'code', name: 'admin.course.field.code.title', width: 15 },
@@ -38,18 +38,10 @@ export default class CourseList extends Component {
         },
       },
     ];
-
-    this.state = {
-      courses: [],
-    };
   }
 
   componentWillMount() {
-    this.loadCourses();
-  }
-
-  loadCourses() {
-    CourseService.getAll().then(courses => this.setState({ courses }));
+    this.props.fetchCourses();
   }
 
   render() {
@@ -65,7 +57,7 @@ export default class CourseList extends Component {
               <div className="widget widget-fullwidth widget-small">
                 <AdminList
                   columns={this.columns}
-                  data={this.state.courses}
+                  data={this.props.data}
                   actions={this.actions}
                 />
               </div>

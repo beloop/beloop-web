@@ -3,7 +3,7 @@ export default {
     url: '/admin/translations/{locale}.json'
   },
   courses: {
-    url: '/admin/api/course/list'
+    url: '/admin/api/courses/'
   },
   course: {
     url: '/admin/api/course/{code}'

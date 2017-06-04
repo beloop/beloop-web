@@ -2,7 +2,7 @@ import React from 'react';
 import classnames from 'classnames';
 
 export default function AdminActionsColumn({ entity, actions }) {
-  const executeCallback = (callback, entity) => {
+  const executeCallback = (callback) => {
     if (typeof callback === 'function') {
       callback(entity);
     }
@@ -14,7 +14,7 @@ export default function AdminActionsColumn({ entity, actions }) {
       <button
         key={action.name}
         className="btn btn-default btn-xs"
-        onClick={() => executeCallback(action.callback, entity)}
+        onClick={() => executeCallback(action.callback)}
       >
         <i className={iconClasses} />
       </button>
