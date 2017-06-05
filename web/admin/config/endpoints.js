@@ -6,6 +6,6 @@ export default {
     url: '/admin/api/courses/'
   },
   course: {
-    url: '/admin/api/course/{code}'
+    url: '/admin/api/courses/{code}'
   }
 };

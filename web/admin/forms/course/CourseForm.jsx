@@ -1,4 +1,5 @@
 import React from 'react';
+import Formsy from 'formsy-react';
 
 import BaseForm, { Checkbox, Hidden, Input, Select, TextArea } from 'Forms/base/BaseForm';
 
@@ -30,8 +31,8 @@ export default class CourseForm extends BaseForm {
         <Checkbox name="enabled" label="Enabled" value={this.state.value.enabled} required />
         <Checkbox name="demo" label="Demo" value={this.state.value.demo} required />
         <div className="spacer text-right">
-            <button type="submit" className="btn btn-space btn-primary" disabled={!this.state.canSubmit}>Submit</button>
-            <button type="button" className="btn btn-space btn-default" onClick={this.cancel}>Cancel</button>
+          <button type="submit" className="btn btn-space btn-primary" disabled={!this.state.canSubmit}>Submit</button>
+          <button type="button" className="btn btn-space btn-default" onClick={this.cancel}>Cancel</button>
         </div>
       </Formsy.Form>
     );

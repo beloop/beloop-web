@@ -1,38 +1,51 @@
+const initialState = {
+  list: [],
+  selected: null,
+  error: null,
+  fetching: false,
+  loaded: false
+};
+
 export default (
-  state = {
-    fetching: false,
-    list: [],
-    index: 0,
-      error: null,
-  },
+  state = initialState,
   action,
 ) => {
-    switch (action.type) {
-      case 'FETCH_COURSES_PENDING': {
-        return {
-          ...state,
-          fetching: true
-        };
-        break;
-      }
-      case 'FETCH_COURSES_REJECTED': {
-        return {
-          ...state,
-          fetching: false,
-          error: action.payload
-        };
-        break;
-      }
-      case 'FETCH_COURSES_FULFILLED': {
-        return {
-          ...state,
-          fetching: false,
-          list: action.response
-        };
-        break;
-      }
+  const pending = () => ({ ...state, fetching: true, loaded: false });
+  const done = (data) => ({ ...state, ...data, fetching: false, loaded: true });
+  const error = () => done({ ...state, error: action.payload, fetching: false, loaded: false });
+
+  switch (action.type) {
+    // Course list actions
+    case 'FETCH_COURSES_PENDING': {
+      return pending();
+      break;
     }
-    return state;
-  };
+    case 'FETCH_COURSES_REJECTED': {
+      return error();
+      break;
+    }
+    case 'FETCH_COURSES_FULFILLED': {
+      return done({ list: action.response });
+      break;
+    }
+    // Course edit actions
+    case 'FETCH_COURSE_PENDING': {
+      return pending();
+      break;
+    }
+    case 'FETCH_COURSE_REJECTED': {
+      return error();
+      break;
+    }
+    case 'FETCH_COURSE_FULFILLED': {
+      return done({ selected: action.response });
+      break;
+    }
+  }
+
+  return state;
+};
 
  export const getCourses = (state) => state.list;
+ export const getCourse = (state) => state.selected;
+ export const getLoaded = (state) => state.loaded;

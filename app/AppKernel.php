@@ -25,8 +25,6 @@ class AppKernel extends Kernel
              */
             new EightPoints\Bundle\GuzzleBundle\GuzzleBundle(),
             new FOS\JsRoutingBundle\FOSJsRoutingBundle(),
-            new FOS\RestBundle\FOSRestBundle(),
-            new JMS\SerializerBundle\JMSSerializerBundle(),
             new Liip\ImagineBundle\LiipImagineBundle(),
             new Mmoreram\ControllerExtraBundle\ControllerExtraBundle(),
             new RaulFraile\Bundle\LadybugBundle\RaulFraileLadybugBundle(),

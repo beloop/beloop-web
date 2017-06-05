@@ -33,7 +33,7 @@ export default function AdminTable({ data, columns, actions }) {
     return tableColumns;
   };
 
-  const renderRows = () => data.map((entity, rowIndex) => {
+  const renderRows = () => data.map((entity) => {
     const tableColumns = columns.map((column) => (
       <AdminColumn key={`${column.field}.${entity.id}`} column={column} entity={entity} />
     ));

@@ -1,4 +1,7 @@
 module.exports = {
+  "settings": {
+    "import/resolver": "webpack"
+  },
   "extends": "airbnb",
   "plugins": [
     "react",
@@ -6,6 +9,8 @@ module.exports = {
     "import"
   ],
   "rules": {
+    "arrow-parens": [ "error", "always" ],
+    "max-len": [ "warn", 140 ],
     "react/prop-types": 0
   },
   "globals": {

@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 
 import AdminList from 'Components/admin-table/AdminTable';
 import PageHead from 'Components/page-head/PageHead';
-import CourseService from 'Services/course/course.service';
 
 export default class CourseList extends Component {
   constructor(props) {

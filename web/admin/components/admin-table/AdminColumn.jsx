@@ -13,13 +13,13 @@ export default function AdminColumn({ column, entity }) {
     );
   };
 
-  const renderNumber = value => (
+  const renderNumber = (value) => (
     <td className="text-center">
       {value}
     </td>
   );
 
-  const renderText = value => (
+  const renderText = (value) => (
     <td>
       {value}
     </td>

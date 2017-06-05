@@ -8,7 +8,9 @@ export default class CourseService {
   }
 
   static getOneByCode(code) {
-    return ApiService.get('course/{code}', {}, { code }).then((response) => response.body);
+    return ApiService.get('course', {}, { code })
+      .then((response) => response.body)
+      .then((response) => response.course);
   }
 
   static save(course) {

@@ -26,7 +26,7 @@ export default function PageHeadBreadCrumb({ links = [] }) {
 
   return (
     <ol className="breadcrumb">
-      {links.map(link => createLink(link))}
+      {links.map((link) => createLink(link))}
     </ol>
   );
 }

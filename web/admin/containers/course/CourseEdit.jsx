@@ -3,17 +3,15 @@ import { FormattedMessage } from 'react-intl';
 import { Tabs, TabList, TabPanel, Tab } from 'react-tabs';
 
 import PageHead from 'Components/page-head/PageHead';
-import CourseService from 'Services/course/course.service';
 import CourseForm from 'Forms/course/CourseForm';
 
 export default class CourseEdit extends Component {
-  constructor({ match }) {
-    super();
+  constructor(props) {
+    super(props);
 
-    this.courseLoaded = false;
-    this.code = match.params.code;
+    // this.courseLoaded = false;
+    this.code = this.props.match.params.code;
     this.state = {
-      course: {},
       breadcrumb: [
         {
           name: 'admin.common.title',
@@ -28,51 +26,58 @@ export default class CourseEdit extends Component {
   }
 
   componentWillMount() {
-    this.loadCourse(this.code);
+    this.props.fetchCourse(this.code);
   }
 
-  loadCourse(code) {
-    CourseService.getOneByCode(code).then((course) => {
-      this.courseLoaded = true;
-
-      const breadcrumb = this.state.breadcrumb;
-      breadcrumb.push({
-        name: course.name,
-      });
-
-      return this.setState({
-        course,
-        breadcrumb,
-      });
-    });
-  }
+  // loadCourse(code) {
+  //   CourseService.getOneByCode(code).then((course) => {
+  //     this.courseLoaded = true;
+  //
+  //     const breadcrumb = this.state.breadcrumb;
+  //     breadcrumb.push({
+  //       name: course.name,
+  //     });
+  //
+  //     return this.setState({
+  //       course,
+  //       breadcrumb,
+  //     });
+  //   });
+  // }
 
   renderCourseForm() {
-    if (!this.courseLoaded) {
+    if (!this.props.loaded) {
       return null;
     }
 
-    return (<CourseForm className="form-horizontal" value={this.state.course} onSubmit={this.onSubmit} onCancel={this.onCancel} />);
+    return (
+      <CourseForm
+        className="form-horizontal"
+        value={this.props.data}
+        onSubmit={this.onSubmit}
+        onCancel={this.onCancel}
+      />
+    );
   }
 
-  onSubmit(course) {
-    CourseService.save(course).then((response) => {
-      console.log(response);
-    });
-  }
+  renderPageHead() {
+    if (!this.props.loaded) {
+      return null;
+    }
 
-  onCancel() {
-    window.location.hash = `#/courses`;
+    return (
+      <PageHead
+        title="admin.course.edit_title"
+        values={{ name: this.props.data.name }}
+        breadcrumb={this.state.breadcrumb}
+      />
+    );
   }
 
   render() {
     return (
       <div>
-        <PageHead
-          title="admin.course.edit_title"
-          values={{ name: this.state.course.name }}
-          breadcrumb={this.state.breadcrumb}
-        />
+        {this.renderPageHead()}
         <div className="main-content">
           <div className="row">
             <div className="col-sm-12">

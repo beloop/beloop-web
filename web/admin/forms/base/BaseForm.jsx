@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import { Component } from 'react';
 
 export * from './BaseFields';
 
@@ -8,7 +8,7 @@ export default class BaseForm extends Component {
 
     this.state = {
       value: props.value,
-      canSubmit: false
+      canSubmit: false,
     };
 
     this.enableButton = this.enableButton.bind(this);
@@ -19,13 +19,13 @@ export default class BaseForm extends Component {
 
   enableButton() {
     this.setState({
-      canSubmit: true
+      canSubmit: true,
     });
   }
 
   disableButton() {
     this.setState({
-      canSubmit: false
+      canSubmit: false,
     });
   }
 
@@ -48,6 +48,7 @@ export default class BaseForm extends Component {
   }
 
   render() {
+    /* eslint react/require-render-return:0 */
     throw new Error('Implement render method on child forms!');
   }
 }
