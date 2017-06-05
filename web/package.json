@@ -46,7 +46,8 @@
     "build:watch": "webpack --watch",
     "lint": "eslint admin/**/*.jsx",
     "lint:fix": "eslint admin/**/*.jsx --fix",
-    "test": "jest admin/",
+    "test": "jest admin",
+    "test:coverage": "npm test -- --coverage",
     "test:watch": "npm test -- --watch"
   },
   "repository": {

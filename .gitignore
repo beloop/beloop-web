@@ -54,3 +54,6 @@
 
 # Node.js
 node_modules
+
+# Jest
+web/coverage
