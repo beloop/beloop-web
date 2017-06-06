@@ -9,41 +9,38 @@ export default class CourseEdit extends Component {
   constructor(props) {
     super(props);
 
-    // this.courseLoaded = false;
     this.code = this.props.match.params.code;
-    this.state = {
-      breadcrumb: [
-        {
-          name: 'admin.common.title',
-          to: '/',
-        },
-        {
-          name: 'admin.course.title',
-          to: '/courses',
-        },
-      ],
-    };
+    this.breadcrumb = [
+      {
+        name: 'admin.common.title',
+        to: '/',
+      },
+      {
+        name: 'admin.course.title',
+        to: '/courses',
+      },
+    ];
+
+    this.onSubmit = this.onSubmit.bind(this);
   }
 
   componentWillMount() {
     this.props.fetchCourse(this.code);
   }
 
-  // loadCourse(code) {
-  //   CourseService.getOneByCode(code).then((course) => {
-  //     this.courseLoaded = true;
-  //
-  //     const breadcrumb = this.state.breadcrumb;
-  //     breadcrumb.push({
-  //       name: course.name,
-  //     });
-  //
-  //     return this.setState({
-  //       course,
-  //       breadcrumb,
-  //     });
-  //   });
-  // }
+  renderPageHead() {
+    if (!this.props.loaded) {
+      return null;
+    }
+
+    return (
+      <PageHead
+        title="admin.course.edit_title"
+        values={{ name: this.props.data.name }}
+        breadcrumb={this.breadcrumb}
+      />
+    );
+  }
 
   renderCourseForm() {
     if (!this.props.loaded) {
@@ -60,18 +57,12 @@ export default class CourseEdit extends Component {
     );
   }
 
-  renderPageHead() {
-    if (!this.props.loaded) {
-      return null;
-    }
+  onCancel() {
+    window.location.hash = `#/courses`;
+  }
 
-    return (
-      <PageHead
-        title="admin.course.edit_title"
-        values={{ name: this.props.data.name }}
-        breadcrumb={this.state.breadcrumb}
-      />
-    );
+  onSubmit(course) {
+    this.props.saveCourse(course);
   }
 
   render() {

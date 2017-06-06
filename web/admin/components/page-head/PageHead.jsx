@@ -5,7 +5,7 @@ import classnames from 'classnames';
 
 import PageHeadBreadCrumb from './PageHeadBreadCrumb';
 
-export default function PageHead({ title, action, values, breadcrumb = [] }) {
+export default function PageHead({ title, action, values = {}, breadcrumb = [] }) {
   let actionLink;
 
   if (action) {
@@ -26,7 +26,7 @@ export default function PageHead({ title, action, values, breadcrumb = [] }) {
         <FormattedHTMLMessage id={title} values={values} />
         {actionLink}
       </h2>
-      <PageHeadBreadCrumb links={breadcrumb} />
+      <PageHeadBreadCrumb links={breadcrumb} actual={values.name} />
     </div>
   );
 }

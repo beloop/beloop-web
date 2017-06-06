@@ -3,7 +3,7 @@ import { FormattedMessage } from 'react-intl';
 import { Link } from 'react-router-dom';
 import { isEmpty } from 'lodash';
 
-export default function PageHeadBreadCrumb({ links = [] }) {
+export default function PageHeadBreadCrumb({ links = [], actual = '' }) {
   if (isEmpty(links)) {
     return null;
   }
@@ -27,6 +27,7 @@ export default function PageHeadBreadCrumb({ links = [] }) {
   return (
     <ol className="breadcrumb">
       {links.map((link) => createLink(link))}
+      <li>{actual}</li>
     </ol>
   );
 }
