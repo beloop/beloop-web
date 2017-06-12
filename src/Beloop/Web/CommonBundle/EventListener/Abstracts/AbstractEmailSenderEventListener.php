@@ -67,7 +67,6 @@ abstract class AbstractEmailSenderEventListener
             ->setSubject($context['subject'])
             ->setFrom($senderEmail)
             ->setTo($receiverEmail)
-            ->setBcc('info@deliciousyetbeautiful.com')
             ->setBody($body, 'text/html');
 
         $this
