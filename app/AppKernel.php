@@ -27,7 +27,6 @@ class AppKernel extends Kernel
             new FOS\JsRoutingBundle\FOSJsRoutingBundle(),
             new Liip\ImagineBundle\LiipImagineBundle(),
             new Mmoreram\ControllerExtraBundle\ControllerExtraBundle(),
-            new RaulFraile\Bundle\LadybugBundle\RaulFraileLadybugBundle(),
             new Vich\UploaderBundle\VichUploaderBundle(),
 
             /**
