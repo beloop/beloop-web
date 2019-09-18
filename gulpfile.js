@@ -1,12 +1,11 @@
-var del = require('del');
-var gulp = require('gulp');
-var cleanCSS = require('gulp-clean-css');
-var less = require('gulp-less');
-var rename = require("gulp-rename");
-var runSequence = require('run-sequence');
-var uglify = require('gulp-uglify');
+const del = require('del');
+const gulp = require('gulp');
+const cleanCSS = require('gulp-clean-css');
+const less = require('gulp-less');
+const rename = require("gulp-rename");
+const uglify = require('gulp-uglify');
 
-gulp.task('clean', function () {
+gulp.task('clean', function clean() {
     return del([
         'web/css/**/*',
         'web/fonts/**/*',
@@ -14,14 +13,14 @@ gulp.task('clean', function () {
     ]);
 });
 
-gulp.task('copy-assets', function () {
+gulp.task('copy-assets', function copyAssets() {
     return gulp.src([
             './web/less/fonts/**/*.*'
         ])
         .pipe(gulp.dest('./web/fonts'));
 });
 
-gulp.task('javascript', function () {
+gulp.task('javascript', function javascript() {
     return gulp.src([
             './web/src/*.*'
         ])
@@ -30,7 +29,7 @@ gulp.task('javascript', function () {
         .pipe(gulp.dest('./web/js'));
 });
 
-gulp.task('less', function () {
+gulp.task('build-css', function less() {
     gulp.src('./web/less/login.less')
         .pipe(less())
         .pipe(cleanCSS())
@@ -44,9 +43,4 @@ gulp.task('less', function () {
         .pipe(gulp.dest('./web/css'));
 });
 
-gulp.task('build', ['clean'], function (callback) {
-    runSequence(
-        ['copy-assets', 'less', 'javascript'],
-        callback
-    );
-});
+gulp.task('build', gulp.series('clean', gulp.series('copy-assets', 'build-css', 'javascript')));
