@@ -52,5 +52,6 @@ php bin/console doctrine:fixtures:load --em=analytics
 Start the server, and use `admin@gmail.com:1234` as login credentials:
 
 ```bash
+php bin/console assetic:watch
 php bin/console server:run
 ```
