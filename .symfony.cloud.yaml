@@ -24,6 +24,9 @@ mounts:
     "var/cache": { source: local, source_path: "var/cache" }
     "var/logs": { source: local, source_path: "var/logs" }
 
+relationships:
+    database: "beloopdb:admin"
+
 hooks:
     build: |
         set -x -e

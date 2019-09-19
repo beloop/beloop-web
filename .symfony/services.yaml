@@ -1,0 +1,13 @@
+beloopdb:
+    type: mysql:10.2
+    disk: 2048
+    configuration:
+        schemas:
+            - default
+            - analytics
+        endpoints:
+            admin:
+                default_schema: default
+                privileges:
+                    default: admin
+                    legacy: admin
