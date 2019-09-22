@@ -34,7 +34,7 @@ hooks:
         curl -s https://get.symfony.com/cloud/configurator | (>&2 bash)
         (>&2 symfony-build)
 
-        mkdir -p tmp/web/images && mv web/images/* tmp/web/images
+        # mkdir -p tmp/web/images && mv web/images/* tmp/web/images
 
         # Build production assets
         (>&2 SYMFONY_ENV=prod bin/console assetic:dump --env=prod --no-debug)
