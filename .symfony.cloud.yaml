@@ -22,6 +22,8 @@ disk: 2048
 mounts:
     "/var": { source: local, source_path: var }
     "/web/images": { source: local, source_path: web_images }
+    "/web/media": { source: local, source_path: web_media }
+    "/web/uploads": { source: local, source_path: web_uploads }
 
 relationships:
     database: "beloopdb:admin"
@@ -34,7 +36,10 @@ hooks:
         curl -s https://get.symfony.com/cloud/configurator | (>&2 bash)
         (>&2 symfony-build)
 
-        # mkdir -p tmp/web/images && mv web/images/* tmp/web/images
+        # Keep updloaded images and files
+        mkdir -p tmp/web/images && mv web/images/* tmp/web/images
+        mkdir -p tmp/web/media && mv web/media/* tmp/web/media
+        mkdir -p tmp/web/uploads && mv web/uploads/* tmp/web/uploads
 
         # Build production assets
         (>&2 SYMFONY_ENV=prod bin/console assetic:dump --env=prod --no-debug)
@@ -47,3 +52,7 @@ hooks:
         # Restore user uploaded images
         (>&2 mkdir -p web/images)
         (>&2 cp -R tmp/web/images/* web/images/)
+        (>&2 mkdir -p web/media)
+        (>&2 cp -R tmp/web/media/* web/media/)
+        (>&2 mkdir -p web/uploads)
+        (>&2 cp -R tmp/web/uploads/* web/uploads/)
