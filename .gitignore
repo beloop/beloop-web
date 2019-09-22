@@ -30,11 +30,14 @@
 
 # Assets and user uploads
 /web/bundles/
-/web/uploads/
+/web/uploads/*
 /web/fonts/
 /web/less/
-/web/images/
-/web/media/
+/web/images/*
+/web/media/*
+!/web/images/.gitkeep
+!/web/media/.gitkeep
+!/web/uploads/.gitkeep
 
 # Assets managed by Bower
 /web/assets/vendor/
