@@ -37,9 +37,9 @@ hooks:
         (>&2 symfony-build)
 
         # Keep updloaded images and files
-        mkdir -p tmp/web/images && mv web/images/* tmp/web/images
-        mkdir -p tmp/web/media && mv web/media/* tmp/web/media
-        mkdir -p tmp/web/uploads && mv web/uploads/* tmp/web/uploads
+        (>&2 mkdir -p tmp/web/images && mv web/images/* tmp/web/images)
+        (>&2 mkdir -p tmp/web/media && mv web/media/* tmp/web/media)
+        (>&2 mkdir -p tmp/web/uploads && mv web/uploads/* tmp/web/uploads)
 
         # Build production assets
         (>&2 SYMFONY_ENV=prod bin/console assetic:dump --env=prod --no-debug)

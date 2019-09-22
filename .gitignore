@@ -35,9 +35,9 @@
 /web/less/
 /web/images/*
 /web/media/*
-!/web/images/.gitkeep
-!/web/media/.gitkeep
-!/web/uploads/.gitkeep
+!/web/images/gitkeep
+!/web/media/gitkeep
+!/web/uploads/gitkeep
 
 # Assets managed by Bower
 /web/assets/vendor/
