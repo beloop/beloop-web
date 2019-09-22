@@ -20,10 +20,10 @@ web:
 disk: 2048
 
 mounts:
+    "/app/config": { source: local, source_path: app_config }
+    "/bin": { source: local, source_path: bin }
     "/var": { source: local, source_path: var }
-    "/web/images": { source: local, source_path: web_images }
-    "/web/media": { source: local, source_path: web_media }
-    "/web/uploads": { source: local, source_path: web_uploads }
+    "/web": { source: local, source_path: web }
 
 relationships:
     database: "beloopdb:admin"
@@ -32,27 +32,22 @@ relationships:
 hooks:
     build: |
         set -x -e
-
         curl -s https://get.symfony.com/cloud/configurator | (>&2 bash)
         (>&2 symfony-build)
-
-        # Keep updloaded images and files
-        (>&2 mkdir -p tmp/web/images && mv web/images/* tmp/web/images)
-        (>&2 mkdir -p tmp/web/media && mv web/media/* tmp/web/media)
-        (>&2 mkdir -p tmp/web/uploads && mv web/uploads/* tmp/web/uploads)
-
+        mkdir -p tmp/app/config && mv app/config/* tmp/app/config/
         # Build production assets
         (>&2 SYMFONY_ENV=prod bin/console assetic:dump --env=prod --no-debug)
-
+        mkdir -p tmp/bin && mv bin/* tmp/bin/
+        mkdir -p tmp/web && mv web/* tmp/web/
     deploy: |
-        set -x -e
-
-        (>&2 symfony-deploy)
-
-        # Restore user uploaded images
-        (>&2 mkdir -p web/images)
-        (>&2 cp -R tmp/web/images/* web/images/)
-        (>&2 mkdir -p web/media)
-        (>&2 cp -R tmp/web/media/* web/media/)
-        (>&2 mkdir -p web/uploads)
-        (>&2 cp -R tmp/web/uploads/* web/uploads/)
+        set -xeuo pipefail
+        (>&2 mkdir -p app/config)
+        (>&2 cp -R tmp/app/config/* app/config/)
+        (>&2 mkdir -p bin)
+        (>&2 cp -R tmp/bin/* bin/)
+        (>&2 mkdir -p web)
+        (>&2 cp -R tmp/web/* web/)
+        # Recreate the cache with correct environment variables
+        (>&2 rm -rf var/cache/*)
+        (>&2 SYMFONY_ENV=prod SYMFONY_DEBUG=0 composer run post-install-cmd)
+        (>&2 SYMFONY_ENV=prod SYMFONY_DEBUG=0 php app/console cache:clear)
