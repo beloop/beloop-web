@@ -572,16 +572,16 @@
         },
         {
             "name": "beloop/language-bundle",
-            "version": "1.0.1",
+            "version": "1.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/beloop/LanguageBundle.git",
-                "reference": "6c7102667d8e6782b635301551ed415f329d746c"
+                "reference": "bd77c6224fcdfcb61a8881b5400715032ebb9aaa"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/beloop/LanguageBundle/zipball/6c7102667d8e6782b635301551ed415f329d746c",
-                "reference": "6c7102667d8e6782b635301551ed415f329d746c",
+                "url": "https://api.github.com/repos/beloop/LanguageBundle/zipball/bd77c6224fcdfcb61a8881b5400715032ebb9aaa",
+                "reference": "bd77c6224fcdfcb61a8881b5400715032ebb9aaa",
                 "shasum": ""
             },
             "require": {
@@ -630,7 +630,7 @@
                 "language",
                 "lms"
             ],
-            "time": "2019-10-04T14:54:34+00:00"
+            "time": "2019-10-07T17:12:10+00:00"
         },
         {
             "name": "beloop/squarespace",
@@ -698,16 +698,16 @@
         },
         {
             "name": "beloop/squarespace-bundle",
-            "version": "1.0.2",
+            "version": "1.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/beloop/SquarespaceBundle.git",
-                "reference": "8bd276aa29c9544f0e18664dc27ced670fcdd432"
+                "reference": "11bd4f4fc68d3243dfd319b0604808231d0b15e4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/beloop/SquarespaceBundle/zipball/8bd276aa29c9544f0e18664dc27ced670fcdd432",
-                "reference": "8bd276aa29c9544f0e18664dc27ced670fcdd432",
+                "url": "https://api.github.com/repos/beloop/SquarespaceBundle/zipball/11bd4f4fc68d3243dfd319b0604808231d0b15e4",
+                "reference": "11bd4f4fc68d3243dfd319b0604808231d0b15e4",
                 "shasum": ""
             },
             "require": {
@@ -758,7 +758,7 @@
                 "lms",
                 "squarespace"
             ],
-            "time": "2019-10-04T19:52:08+00:00"
+            "time": "2019-10-07T17:13:09+00:00"
         },
         {
             "name": "beloop/typeform",
@@ -824,16 +824,16 @@
         },
         {
             "name": "beloop/typeform-bundle",
-            "version": "1.0.2",
+            "version": "1.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/beloop/TypeformBundle.git",
-                "reference": "7decdf55298bf40a077165f78163f1e2da1308dd"
+                "reference": "9036c9f4dc44d1ea4f1ef41abf919b612a259bca"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/beloop/TypeformBundle/zipball/7decdf55298bf40a077165f78163f1e2da1308dd",
-                "reference": "7decdf55298bf40a077165f78163f1e2da1308dd",
+                "url": "https://api.github.com/repos/beloop/TypeformBundle/zipball/9036c9f4dc44d1ea4f1ef41abf919b612a259bca",
+                "reference": "9036c9f4dc44d1ea4f1ef41abf919b612a259bca",
                 "shasum": ""
             },
             "require": {
@@ -884,7 +884,7 @@
                 "lms",
                 "typeform"
             ],
-            "time": "2019-10-04T19:52:08+00:00"
+            "time": "2019-10-07T17:13:09+00:00"
         },
         {
             "name": "beloop/user",
@@ -951,16 +951,16 @@
         },
         {
             "name": "beloop/user-bundle",
-            "version": "1.0.1",
+            "version": "1.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/beloop/UserBundle.git",
-                "reference": "26b3eb069588691df0d7b7902298cb290d9ecaa6"
+                "reference": "d44dd33c99cbe2a941135b536598c04aeee6272d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/beloop/UserBundle/zipball/26b3eb069588691df0d7b7902298cb290d9ecaa6",
-                "reference": "26b3eb069588691df0d7b7902298cb290d9ecaa6",
+                "url": "https://api.github.com/repos/beloop/UserBundle/zipball/d44dd33c99cbe2a941135b536598c04aeee6272d",
+                "reference": "d44dd33c99cbe2a941135b536598c04aeee6272d",
                 "shasum": ""
             },
             "require": {
@@ -1010,7 +1010,7 @@
                 "lms",
                 "user"
             ],
-            "time": "2019-10-04T14:54:34+00:00"
+            "time": "2019-10-07T17:12:10+00:00"
         },
         {
             "name": "composer/ca-bundle",
