@@ -27,7 +27,7 @@ use Mmoreram\ControllerExtraBundle\Annotation\CreatePaginator;
 use Mmoreram\ControllerExtraBundle\ValueObject\PaginatorAttributes;
 
 use Beloop\Admin\CommonBundle\Controller\Abstracts\AbstractAdminController;
-use Beloop\Component\Course\Entity\Interfaces\CourseInterface;
+use Beloop\Component\User\Entity\Interfaces\UserInterface;
 
 /**
  * Class Controller for User
@@ -158,7 +158,7 @@ class UserController extends AbstractAdminController
      * )
      *
      * @CreateForm(
-     *      class = "Beloop\Admin\CourseBundle\Form\Type\CourseType",
+     *      class = "Beloop\Admin\UserBundle\Form\Type\UserType",
      *      name  = "formView",
      *      entity = "user",
      *      handleRequest = true,
@@ -167,7 +167,7 @@ class UserController extends AbstractAdminController
      */
     public function editAction(
         FormView $formView,
-        CourseInterface $user,
+        UserInterface $user,
         $isValid
     ) {
         if ($isValid) {

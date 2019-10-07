@@ -1,18 +1,10 @@
 services:
 
-    #
     # Form Types
-    #
-    # beloop_admin.form_type.course:
-    #     class: Beloop\Admin\CourseBundle\Form\Type\CourseType
-    #     calls:
-    #         - [setFactory, ["@beloop.factory.course"]]
-    #     tags:
-    #         - { name: form.type }
-    #
-    # beloop_admin.form_type.lesson:
-    #     class: Beloop\Admin\CourseBundle\Form\Type\LessonType
-    #     calls:
-    #         - [setFactory, ["@beloop.factory.lesson"]]
-    #     tags:
-    #         - { name: form.type }
+
+    beloop_admin.form_type.user:
+        class: Beloop\Admin\UserBundle\Form\Type\UserType
+        calls:
+            - [setFactory, ["@beloop.factory.user"]]
+        tags:
+            - { name: form.type }

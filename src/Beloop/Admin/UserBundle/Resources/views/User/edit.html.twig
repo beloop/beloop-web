@@ -1,0 +1,48 @@
+{% extends 'AdminCommonBundle::base.html.twig' %}
+
+{% block title %}Edit user {{ user.email }}{% endblock %}
+
+{% form_theme form 'AdminCommonBundle::Forms/fields.html.twig' %}
+
+{% block body %}
+    {{ parent() }}
+
+    <div class="page-head">
+        <h2>Edit user <i>{{ user.email }}</i></h2>
+        <ol class="breadcrumb">
+            <li><a href="{{ url('admin_course_list') }}">Admin</a></li>
+            <li><a href="{{ url('admin_user_list') }}">Users</a></li>
+            <li class="active">{{ user.email|default('admin.user.field.actions.new.title')|trans }}</li>
+        </ol>
+    </div>
+
+    <div class="main-content">
+        <div class="row">
+            <div class="col-sm-12">
+                {% include 'AdminCommonBundle:Common:flashMessages.html.twig' %}
+
+                {% set formAction =
+                    user.id
+                    ? url('admin_user_update', { id: user.id })
+                    : url('admin_user_save')
+                %}
+                <div class="tab-container">
+                    <ul class="nav nav-tabs">
+                        <li class="active"><a href="#user" data-toggle="tab" aria-expanded="true">User</a></li>
+                    </ul>
+                    <div class="tab-content">
+                        <div id="user" class="tab-pane cont active">
+                            {{ form_start(form, { action: formAction }) }}
+                                {{ form_rest(form) }}
+                                <div class="spacer text-right">
+                                    <button type="submit" class="btn btn-space btn-primary">Submit</button>
+                                    <a href="{{ url('admin_user_list') }}" class="btn btn-space btn-default">Cancel</a>
+                                </div>
+                            {{ form_end(form) }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
