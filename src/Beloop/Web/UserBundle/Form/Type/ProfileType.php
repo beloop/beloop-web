@@ -78,16 +78,4 @@ class ProfileType extends AbstractType
     {
         return 'beloop_user_form_type_user';
     }
-
-    /**
-     * Return unique name for this form
-     *
-     * @deprecated Deprecated since Symfony 2.8, to be removed from Symfony 3.
-     *
-     * @return string
-     */
-    public function getName()
-    {
-        return $this->getBlockPrefix();
-    }
 }

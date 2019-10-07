@@ -15,8 +15,8 @@
 
 namespace Beloop\Web\UserBundle\Controller;
 
-use Mmoreram\ControllerExtraBundle\Annotation\Entity as EntityAnnotation;
-use Mmoreram\ControllerExtraBundle\Annotation\Form as AnnotationForm;
+use Mmoreram\ControllerExtraBundle\Annotation\LoadEntity;
+use Mmoreram\ControllerExtraBundle\Annotation\CreateForm;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -41,7 +41,7 @@ class SecurityController extends Controller
      * )
      * @Template
      *
-     * @AnnotationForm(
+     * @CreateForm(
      *      class = "Beloop\Web\UserBundle\Form\Type\LoginType",
      *      name  = "loginFormView"
      * )
@@ -77,7 +77,7 @@ class SecurityController extends Controller
      * @param FormView $registerFormView Register form view
      * @param $isValid
      * @return array
-     * 
+     *
      * @Route(
      *      path = "/register/new-user",
      *      name = "beloop_register",
@@ -86,9 +86,10 @@ class SecurityController extends Controller
      *
      * @Template
      *
-     * @EntityAnnotation(
-     *     class = {
-     *          "factory" = "beloop.factory.user",
+     * @LoadEntity(
+     *     namespace = "beloop.entity.user.class",
+     *     factory = {
+     *          "class" = "beloop.factory.user",
      *          "method" = "create",
      *          "static" = false
      *      },
@@ -96,7 +97,7 @@ class SecurityController extends Controller
      *      persist = false
      * )
      *
-     * @AnnotationForm(
+     * @CreateForm(
      *      class = "Beloop\Web\UserBundle\Form\Type\RegisterType",
      *      entity = "user",
      *      handleRequest = true,

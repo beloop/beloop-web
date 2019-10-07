@@ -20,7 +20,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
-use Mmoreram\ControllerExtraBundle\Annotation\Entity as EntityAnnotation;
+use Mmoreram\ControllerExtraBundle\Annotation\LoadEntity;
 
 use Beloop\Component\Course\Entity\Interfaces\CourseInterface;
 
@@ -101,9 +101,10 @@ class CourseController extends Controller
      *
      * @Template
      *
-     * @EntityAnnotation(
-     *      class = {
-     *          "factory" = "beloop.factory.course",
+     * @LoadEntity(
+     *      namespace = "beloop.entity.course.class",
+     *      factory = {
+     *          "class" = "beloop.factory.course",
      *          "method" = "create",
      *          "static" = false
      *      },
@@ -157,9 +158,10 @@ class CourseController extends Controller
      *
      * @Template("CourseBundle:Course:view_demo.html.twig")
      *
-     * @EntityAnnotation(
-     *      class = {
-     *          "factory" = "beloop.factory.course",
+     * @LoadEntity(
+     *      namespace = "beloop.entity.course.class",
+     *      factory = {
+     *          "class" = "beloop.factory.course",
      *          "method" = "create",
      *          "static" = false
      *      },

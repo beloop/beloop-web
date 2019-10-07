@@ -21,9 +21,9 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Form\FormView;
 
 use Doctrine\ORM\Tools\Pagination\Paginator;
-use Mmoreram\ControllerExtraBundle\Annotation\Entity as EntityAnnotation;
-use Mmoreram\ControllerExtraBundle\Annotation\Form as FormAnnotation;
-use Mmoreram\ControllerExtraBundle\Annotation\Paginator as PaginatorAnnotation;
+use Mmoreram\ControllerExtraBundle\Annotation\LoadEntity;
+use Mmoreram\ControllerExtraBundle\Annotation\CreateForm;
+use Mmoreram\ControllerExtraBundle\Annotation\CreatePaginator;
 use Mmoreram\ControllerExtraBundle\ValueObject\PaginatorAttributes;
 
 use Beloop\Admin\CommonBundle\Controller\Abstracts\AbstractAdminController;
@@ -61,9 +61,9 @@ class UserController extends AbstractAdminController
      *
      * @Template
      *
-     * @PaginatorAnnotation(
+     * @CreatePaginator(
      *      attributes = "paginatorAttributes",
-     *      class = "beloop.entity.user.class",
+     *      entityNamespace = "beloop.entity.user.class",
      *      page = "~page~",
      *      limit = "~limit~",
      *      orderBy = {
@@ -142,9 +142,10 @@ class UserController extends AbstractAdminController
      *
      * @Template
      *
-     * @EntityAnnotation(
-     *      class = {
-     *          "factory" = "beloop.factory.user",
+     * @LoadEntity(
+     *      namespace = "beloop.entity.user.class",
+     *      factory = {
+     *          "class" = "beloop.factory.user",
      *          "method" = "create",
      *          "static" = false
      *      },
@@ -156,7 +157,7 @@ class UserController extends AbstractAdminController
      *      persist = true
      * )
      *
-     * @FormAnnotation(
+     * @CreateForm(
      *      class = "Beloop\Admin\CourseBundle\Form\Type\CourseType",
      *      name  = "formView",
      *      entity = "user",

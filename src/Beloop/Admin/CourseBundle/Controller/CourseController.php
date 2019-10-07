@@ -21,9 +21,9 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Form\FormView;
 
 use Doctrine\ORM\Tools\Pagination\Paginator;
-use Mmoreram\ControllerExtraBundle\Annotation\Entity as EntityAnnotation;
-use Mmoreram\ControllerExtraBundle\Annotation\Form as FormAnnotation;
-use Mmoreram\ControllerExtraBundle\Annotation\Paginator as PaginatorAnnotation;
+use Mmoreram\ControllerExtraBundle\Annotation\LoadEntity;
+use Mmoreram\ControllerExtraBundle\Annotation\CreateForm;
+use Mmoreram\ControllerExtraBundle\Annotation\CreatePaginator;
 use Mmoreram\ControllerExtraBundle\ValueObject\PaginatorAttributes;
 
 use Beloop\Admin\CommonBundle\Controller\Abstracts\AbstractAdminController;
@@ -61,9 +61,9 @@ class CourseController extends AbstractAdminController
      *
      * @Template
      *
-     * @PaginatorAnnotation(
+     * @CreatePaginator(
      *      attributes = "paginatorAttributes",
-     *      class = "beloop.entity.course.class",
+     *      entityNamespace = "beloop.entity.course.class",
      *      page = "~page~",
      *      limit = "~limit~",
      *      orderBy = {
@@ -142,9 +142,10 @@ class CourseController extends AbstractAdminController
      *
      * @Template
      *
-     * @EntityAnnotation(
-     *      class = {
-     *          "factory" = "beloop.factory.course",
+     * @LoadEntity(
+     *      namespace = "beloop.entity.course.class",
+     *      factory = {
+     *          "class" = "beloop.factory.course",
      *          "method" = "create",
      *          "static" = false
      *      },
@@ -156,7 +157,7 @@ class CourseController extends AbstractAdminController
      *      persist = true
      * )
      *
-     * @FormAnnotation(
+     * @CreateForm(
      *      class = "Beloop\Admin\CourseBundle\Form\Type\CourseType",
      *      name  = "formView",
      *      entity = "course",
@@ -202,9 +203,10 @@ class CourseController extends AbstractAdminController
      *
      * @Template
      *
-     * @EntityAnnotation(
-     *      class = {
-     *          "factory" = "beloop.factory.course",
+     * @LoadEntity(
+     *      namespace = "beloop.entity.course.class",
+     *      factory = {
+     *          "class" = "beloop.factory.course",
      *          "method" = "create",
      *          "static" = false
      *      },
@@ -245,9 +247,10 @@ class CourseController extends AbstractAdminController
      *
      * @Template("AdminCourseBundle:Users:list.html.twig")
      *
-     * @EntityAnnotation(
-     *      class = {
-     *          "factory" = "beloop.factory.course",
+     * @LoadEntity(
+     *      namespace = "beloop.entity.course.class",
+     *      factory = {
+     *          "class" = "beloop.factory.course",
      *          "method" = "create",
      *          "static" = false
      *      },

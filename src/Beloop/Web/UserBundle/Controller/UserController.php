@@ -15,8 +15,8 @@
 
 namespace Beloop\Web\UserBundle\Controller;
 
-use Mmoreram\ControllerExtraBundle\Annotation\Entity as EntityAnnotation;
-use Mmoreram\ControllerExtraBundle\Annotation\Form as AnnotationForm;
+use Mmoreram\ControllerExtraBundle\Annotation\LoadEntity;
+use Mmoreram\ControllerExtraBundle\Annotation\CreateForm;
 
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
@@ -43,9 +43,10 @@ class UserController extends Controller
      *      methods = {"GET"}
      * )
      *
-     * @EntityAnnotation(
-     *      class = {
-     *          "factory" = "beloop.factory.user",
+     * @LoadEntity(
+     *      namespace = "beloop.entity.user.class",
+     *      factory = {
+     *          "class" = "beloop.factory.user",
      *          "method" = "create",
      *          "static" = false
      *      },
@@ -102,16 +103,17 @@ class UserController extends Controller
      *      methods = {"GET", "POST"}
      * )
      *
-     * @EntityAnnotation(
-     *      class = {
-     *          "factory" = "beloop.wrapper.user",
+     * @LoadEntity(
+     *      namespace = "beloop.entity.user.class",
+     *      factory = {
+     *          "class" = "beloop.wrapper.user",
      *          "method" = "get",
      *          "static" = false
      *      },
      *      name = "user",
      * )
      *
-     * @AnnotationForm(
+     * @CreateForm(
      *      class         = "Beloop\Web\UserBundle\Form\Type\ProfileType",
      *      name          = "formView",
      *      entity        = "user",
@@ -167,16 +169,17 @@ class UserController extends Controller
      *      methods = {"GET", "POST"}
      * )
      *
-     * @EntityAnnotation(
-     *      class = {
-     *          "factory" = "beloop.wrapper.user",
+     * @LoadEntity(
+     *      namespace = "beloop.entity.user.class",
+     *      factory = {
+     *          "class" = "beloop.wrapper.user",
      *          "method" = "get",
      *          "static" = false
      *      },
      *      name = "user",
      * )
      *
-     * @AnnotationForm(
+     * @CreateForm(
      *      class         = "Beloop\Web\UserBundle\Form\Type\UserPasswordType",
      *      name          = "formView",
      *      entity        = "user",
@@ -231,16 +234,17 @@ class UserController extends Controller
      *      methods = {"POST"}
      * )
      *
-     * @EntityAnnotation(
-     *      class = {
-     *          "factory" = "beloop.wrapper.user",
+     * @LoadEntity(
+     *      namespace = "beloop.entity.user.class",
+     *      factory = {
+     *          "class" = "beloop.wrapper.user",
      *          "method" = "get",
      *          "static" = false
      *      },
      *      name = "user",
      * )
      *
-     * @AnnotationForm(
+     * @CreateForm(
      *      class         = "Beloop\Web\UserBundle\Form\Type\AvatarType",
      *      name          = "formView",
      *      entity        = "user",

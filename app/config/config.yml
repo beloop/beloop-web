@@ -1,17 +1,18 @@
 imports:
-    - { resource: parameters.yml }
     - { resource: security/security.yml }
     - { resource: services.yml }
 
-# Put parameters here that don't need to change on each machine where the app is deployed
-# http://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
+# Default parameter values
 parameters:
     locale: en
+    beloop_admin_prefix:  '%env(BELOOP_ADMIN_PREFIX)%'
+    squarespace_password: '%env(SQUARESPACE_PASSWORD)%'
+    typeform_api_key:     '%env(TYPEFORM_API_KEY)%'
 
 framework:
     #esi:             ~
     translator:      { fallbacks: ["%locale%"] }
-    secret:          "%secret%"
+    secret:          "%env(APP_SECRET)%"
     router:
         resource: "%kernel.root_dir%/config/routing.yml"
         strict_requirements: ~
@@ -51,11 +52,7 @@ doctrine:
             default:
                 driver:   pdo_mysql
                 server_version: '10.2'
-                host:     "%database_host%"
-                port:     "%database_port%"
-                dbname:   "%database_name%"
-                user:     "%database_user%"
-                password: "%database_password%"
+                url:     "%env(DATABASE_URL)%"
                 charset: utf8
                 default_table_options:
                     charset: utf8
@@ -63,11 +60,7 @@ doctrine:
             analytics:
                 driver:   pdo_mysql
                 server_version: '10.2'
-                host:     "%analytics_host%"
-                port:     "%analytics_port%"
-                dbname:   "%analytics_name%"
-                user:     "%analytics_user%"
-                password: "%analytics_password%"
+                url:     "%env(ANALYTICS_URL)%"
                 charset: utf8
                 default_table_options:
                     charset: utf8
@@ -91,13 +84,8 @@ doctrine:
 
 # Swiftmailer Configuration
 swiftmailer:
-    transport:  "%mailer_transport%"
-    host:       "%mailer_host%"
-    port:       "%mailer_port%"
-    encryption: "%mailer_encryption%"
-    username:   "%mailer_user%"
-    password:   "%mailer_password%"
-    spool:      { type: memory }
+    url:   "%env(MAILER_URL)%"
+    spool: { type: memory }
 
 guzzle:
     clients:

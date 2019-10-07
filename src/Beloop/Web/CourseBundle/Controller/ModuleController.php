@@ -19,7 +19,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
-use Mmoreram\ControllerExtraBundle\Annotation\Entity as EntityAnnotation;
+use Mmoreram\ControllerExtraBundle\Annotation\LoadEntity;
 
 use Beloop\Component\Course\Entity\Interfaces\CourseInterface;
 use Beloop\Component\Course\Entity\Interfaces\ModuleInterface;
@@ -43,9 +43,10 @@ class ModuleController extends Controller
      *
      * @Template
      *
-     * @EntityAnnotation(
-     *      class = {
-     *          "factory" = "beloop.factory.page",
+     * @LoadEntity(
+     *      namespace = "beloop.entity.page.class",
+     *      factory = {
+     *          "class" = "beloop.factory.page",
      *          "method" = "create",
      *          "static" = false
      *      },
@@ -66,7 +67,7 @@ class ModuleController extends Controller
      *
      * @param CourseInterface $course
      * @param $actualModule
-     * 
+     *
      * @return array
      *
      * @Route(
@@ -77,9 +78,10 @@ class ModuleController extends Controller
      *
      * @Template("CourseBundle:Module:partials/side_menu.html.twig")
      *
-     * @EntityAnnotation(
-     *      class = {
-     *          "factory" = "beloop.factory.course",
+     * @LoadEntity(
+     *      namespace = "beloop.entity.course.class",
+     *      factory = {
+     *          "class" = "beloop.factory.course",
      *          "method" = "create",
      *          "static" = false
      *      },
@@ -115,9 +117,10 @@ class ModuleController extends Controller
      *
      * @Template("CourseBundle:Module:partials/nav_menu.html.twig")
      *
-     * @EntityAnnotation(
-     *      class = {
-     *          "factory" = "beloop.factory.course",
+     * @LoadEntity(
+     *      namespace = "beloop.entity.course.class",
+     *      factory = {
+     *          "class" = "beloop.factory.course",
      *          "method" = "create",
      *          "static" = false
      *      },

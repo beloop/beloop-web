@@ -18,10 +18,7 @@ if (isset($_SERVER['HTTP_CLIENT_IP'])
     exit('You are not allowed to access this file. Check '.basename(__FILE__).' for more information.');
 }
 
-/**
- * @var Composer\Autoload\ClassLoader $loader
- */
-$loader = require __DIR__.'/../app/autoload.php';
+require dirname(__DIR__).'/app/config/bootstrap.php';
 Debug::enable();
 
 $kernel = new AppKernel('dev', true);

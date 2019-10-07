@@ -15,7 +15,7 @@
 
 namespace Beloop\Web\InstagramBundle\Controller;
 
-use Mmoreram\ControllerExtraBundle\Annotation\Entity as EntityAnnotation;
+use Mmoreram\ControllerExtraBundle\Annotation\LoadEntity;
 
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
@@ -136,9 +136,10 @@ class InstagramController extends Controller
      *
      * @Template("WebInstagramBundle:Instagram:partials/instagram_comment.html.twig")
      *
-     * @EntityAnnotation(
-     *      class = {
-     *          "factory" = "beloop.factory.instagram",
+     * @LoadEntity(
+     *      namespace = "beloop.entity.instagram.class",
+     *      factory = {
+     *          "class" = "beloop.factory.instagram",
      *          "method" = "create",
      *          "static" = false
      *      },

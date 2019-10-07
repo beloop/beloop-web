@@ -20,7 +20,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Form\Form;
 
-use Mmoreram\ControllerExtraBundle\Annotation\Form as AnnotationForm;
+use Mmoreram\ControllerExtraBundle\Annotation\CreateForm;
 
 use Beloop\Component\User\Entity\Abstracts\AbstractUser;
 
@@ -49,7 +49,7 @@ class PasswordController extends Controller
      *      methods = {"GET", "POST"}
      * )
      *
-     * @AnnotationForm(
+     * @CreateForm(
      *      class         = "Beloop\Web\UserBundle\Form\Type\RememberPasswordType",
      *      handleRequest = true,
      *      name          = "passwordRememberForm",
@@ -101,7 +101,7 @@ class PasswordController extends Controller
      *
      * @Template
      *
-     * @AnnotationForm(
+     * @CreateForm(
      *      class         = "Beloop\Web\UserBundle\Form\Type\RecoverPasswordType",
      *      handleRequest = true,
      *      name          = "passwordRecoverForm",

@@ -21,8 +21,8 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 
-use Mmoreram\ControllerExtraBundle\Annotation\Entity as EntityAnnotation;
-use Mmoreram\ControllerExtraBundle\Annotation\Form as FormAnnotation;
+use Mmoreram\ControllerExtraBundle\Annotation\LoadEntity;
+use Mmoreram\ControllerExtraBundle\Annotation\CreateForm;
 
 use Beloop\Admin\CommonBundle\Controller\Abstracts\AbstractAdminController;
 use Beloop\Component\Course\Entity\Interfaces\LessonInterface;
@@ -56,16 +56,17 @@ class LessonController extends AbstractAdminController
      *
      * @Template
      *
-     * @EntityAnnotation(
-     *      class = {
-     *          "factory" = "beloop.factory.lesson",
+     * @LoadEntity(
+     *      namespace = "beloop.entity.lesson.class",
+     *      factory = {
+     *          "class" = "beloop.factory.lesson",
      *          "method" = "create",
      *          "static" = false
      *      },
      *      name = "lesson",
      * )
      *
-     * @FormAnnotation(
+     * @CreateForm(
      *      class = "Beloop\Admin\CourseBundle\Form\Type\LessonType",
      *      name  = "form",
      *      entity = "lesson",
@@ -126,9 +127,10 @@ class LessonController extends AbstractAdminController
      *
      * @Template
      *
-     * @EntityAnnotation(
-     *      class = {
-     *          "factory" = "beloop.factory.lesson",
+     * @LoadEntity(
+     *      namespace = "beloop.entity.lesson.class",
+     *      factory = {
+     *          "class" = "beloop.factory.lesson",
      *          "method" = "create",
      *          "static" = false
      *      },
@@ -140,7 +142,7 @@ class LessonController extends AbstractAdminController
      *      persist = true
      * )
      *
-     * @FormAnnotation(
+     * @CreateForm(
      *      class = "Beloop\Admin\CourseBundle\Form\Type\LessonType",
      *      name  = "formView",
      *      entity = "lesson",
@@ -188,9 +190,10 @@ class LessonController extends AbstractAdminController
      *      }
      * )
      *
-     * @EntityAnnotation(
-     *      class = {
-     *          "factory" = "beloop.factory.lesson",
+     * @LoadEntity(
+     *      namespace = "beloop.entity.lesson.class",
+     *      factory = {
+     *          "load" = "beloop.factory.lesson",
      *          "method" = "create",
      *          "static" = false
      *      },
