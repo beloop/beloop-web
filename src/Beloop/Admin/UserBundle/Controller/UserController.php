@@ -27,7 +27,7 @@ use Mmoreram\ControllerExtraBundle\Annotation\CreatePaginator;
 use Mmoreram\ControllerExtraBundle\ValueObject\PaginatorAttributes;
 
 use Beloop\Admin\CommonBundle\Controller\Abstracts\AbstractAdminController;
-use Beloop\Component\User\Entity\Interfaces\CourseInterface;
+use Beloop\Component\Course\Entity\Interfaces\CourseInterface;
 
 /**
  * Class Controller for User
