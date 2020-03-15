@@ -52,14 +52,11 @@
   margin-bottom: 20px
 }
 
-.login-container .panel-default .panel-heading span {
+.login-container .panel-default .panel-heading h2 {
   font-family: 'BodoniFLF-Roman';
   display: block;
   color: #858383;
-  line-height: 20px;
-  font-size: 15px;
   font-weight: 400;
-  font-family: sans-serif;
   margin-top: 10px;
   padding-bottom: 10px;
   text-transform: uppercase;
@@ -111,6 +108,10 @@
 }
 
 .login-container .panel-default .panel-body .form-group.login-submit .btn {
+  font-family: 'BodoniFLF-Roman';
+  background-color: #858383;
+  border-color: #858383;
+  color: #000000;
   width: 100%
 }
 
