@@ -36,7 +36,8 @@ hooks:
         curl -s https://get.symfony.com/cloud/configurator | (>&2 bash)
         (>&2 symfony-build)
 
-        # Keep updloaded images and files
+        # Keep uploaded images and files
+        (>&2 mkdir -p tmp/web/fonts && mv web/fonts/* tmp/web/fonts)
         (>&2 mkdir -p tmp/web/images && mv web/images/* tmp/web/images)
         (>&2 mkdir -p tmp/web/media && mv web/media/* tmp/web/media)
         (>&2 mkdir -p tmp/web/uploads && mv web/uploads/* tmp/web/uploads)
@@ -50,6 +51,8 @@ hooks:
         (>&2 symfony-deploy)
 
         # Restore user uploaded images
+        (>&2 mkdir -p web/fonts)
+        (>&2 cp -R tmp/web/fonts/* web/fonts/)
         (>&2 mkdir -p web/images)
         (>&2 cp -R tmp/web/images/* web/images/)
         (>&2 mkdir -p web/media)
