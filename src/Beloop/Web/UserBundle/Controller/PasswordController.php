@@ -154,7 +154,7 @@ class PasswordController extends Controller
          * If user is already logged, go to redirect url
          */
         if ($this->isGranted('ROLE_DEMO')) {
-            return $this->redirectToRoute('beloop_dashboard');
+            return $this->redirectToRoute('beloop_my_courses');
         }
 
         return [];
