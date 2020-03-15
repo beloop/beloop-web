@@ -1,6 +1,6 @@
 {
-    "name": "aialahernando/beloop.admin",
-    "license": "proprietary",
+    "name": "beloop/beloop-web",
+    "license": "MIT",
     "type": "project",
     "autoload": {
         "psr-4": {
@@ -17,7 +17,7 @@
         }
     },
     "require": {
-        "php": "7.2.*",
+        "php": "7.3.*",
         "symfony/symfony": "3.2.*",
 
         "doctrine/annotations": "^1.2",
