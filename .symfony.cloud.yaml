@@ -1,6 +1,6 @@
 name: beloop-web
 
-type: php:7.2
+type: php:7.3
 
 runtime:
     extensions:
