@@ -135,7 +135,7 @@ class SecurityController extends Controller
 
                 // TODO: dispatch an onCustomerRegisteredEvent for notification emails, etc
                 $token = new UsernamePasswordToken($user, null, "web_area", $user->getRoles());
-                $this->get("security.context")->setToken($token);
+                $this->get("security.token_storage")->setToken($token);
 
                 return $this->redirectToRoute('beloop_public_courses');
             }
