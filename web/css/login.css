@@ -1,3 +1,13 @@
+@font-face {
+    font-family: 'BodoniFLF-Roman';
+    src:url('../fonts/bodoni-roman/BodoniFLF-Roman.ttf.woff') format('woff'),
+        url('../fonts/bodoni-roman/BodoniFLF-Roman.ttf.svg#BodoniFLF-Roman') format('svg'),
+        url('../fonts/bodoni-roman/BodoniFLF-Roman.ttf.eot'),
+        url('../fonts/bodoni-roman/BodoniFLF-Roman.ttf.eot?#iefix') format('embedded-opentype'); 
+    font-weight: normal;
+    font-style: normal;
+}
+
 .splash-screen {
   background-color: #383737
 }
@@ -43,6 +53,7 @@
 }
 
 .login-container .panel-default .panel-heading span {
+  font-family: 'BodoniFLF-Roman';
   display: block;
   color: #858383;
   line-height: 20px;
@@ -50,7 +61,8 @@
   font-weight: 400;
   font-family: sans-serif;
   margin-top: 10px;
-  padding-bottom: 10px
+  padding-bottom: 10px;
+  text-transform: uppercase;
 }
 
 .login-container .panel-default .panel-body .form-group {
