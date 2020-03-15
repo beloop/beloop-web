@@ -1,23 +1,9 @@
 <ul class="sidebar-elements">
-    <li {% if section == 'dashboard' %}class="active"{% endif %}>
-        {% if is_granted('ROLE_USER') %}
-        <a href="{{ path('beloop_dashboard') }}" class="menu-item"><i class="icon s7-photo"></i><span>{{ 'menu.dashboard.title'|trans }}</span></a>
-        {% else %}
-        <span class="menu-item disabled"><i class="icon s7-photo"></i><span>{{ 'menu.dashboard.title'|trans }}</span></span>
-        {% endif %}
-    </li>
     <li {% if section == 'my-courses' %}class="active"{% endif %}>
         {% if is_granted('ROLE_USER') %}
         <a href="{{ path('beloop_my_courses') }}" class="menu-item"><i class="icon s7-ribbon"></i><span>{{ 'menu.my_courses.title'|trans }}</span></a>
         {% else %}
         <span class="menu-item disabled"><i class="icon s7-ribbon"></i><span>{{ 'menu.my_courses.title'|trans }}</span></span>
-        {% endif %}
-    </li>
-    <li {% if section == 'my-results' %}class="active"{% endif %}>
-        {% if is_granted('ROLE_USER') %}
-        <a href="{{ path('beloop_my_results') }}" class="menu-item"><i class="icon s7-medal"></i><span>{{ 'menu.my_results.title'|trans }}</span></a>
-        {% else %}
-        <span class="menu-item disabled"><i class="icon s7-medal"></i><span>{{ 'menu.my_results.title'|trans }}</span></span>
         {% endif %}
     </li>
     <li {% if section == 'public-courses' %}class="active"{% endif %}>
