@@ -24,7 +24,9 @@
                                 <div class="panel-body">
                                     {% if lesson.isAvailableForUser(user) or is_granted('ROLE_TEACHER') %}
                                         {% for module in lesson.modules %}
-                                            <a href="{{ path('beloop_view_module_' ~ module.type, {'code': course.code, 'id': module.id}) }}" class="module"><span class="s7-{{ module.icon }}"></span> {{ module.name }}</a>
+                                            {% if module.isEnabled() %}
+                                                <a href="{{ path('beloop_view_module_' ~ module.type, {'code': course.code, 'id': module.id}) }}" class="module"><span class="s7-{{ module.icon }}"></span> {{ module.name }}</a>
+                                            {% endif %}
                                         {% endfor %}
                                     {% else %}
                                         <span>{{ 'course.lesson_not_available.text'|trans({'%date%' : lesson.startDate(user)|localizeddate('full', 'none')}) }}</span>

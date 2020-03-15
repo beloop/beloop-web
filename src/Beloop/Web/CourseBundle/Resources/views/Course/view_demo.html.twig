@@ -24,7 +24,9 @@
                                 <div class="panel-body">
                                     {% if lesson.isDemo() %}
                                         {% for module in lesson.modules %}
-                                            <a href="{{ path('beloop_view_module_' ~ module.type, {'code': course.code, 'id': module.id}) }}" class="module"><span class="s7-{{ module.icon }}"></span> {{ module.name }}</a>
+                                            {% if module.isEnabled() %}
+                                                <a href="{{ path('beloop_view_module_' ~ module.type, {'code': course.code, 'id': module.id}) }}" class="module"><span class="s7-{{ module.icon }}"></span> {{ module.name }}</a>
+                                            {% endif %}
                                         {% endfor %}
                                     {% else %}
                                         <span>{{ 'preview.lesson_not_available.text'|trans }}</span>
