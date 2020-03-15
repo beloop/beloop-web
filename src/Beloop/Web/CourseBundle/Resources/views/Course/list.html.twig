@@ -14,7 +14,9 @@
                     <div class="panel panel-default panel-heading-fullwidth panel-course">
                         <div class="panel-heading">
                             {% if course.isAvailableForUser(user) or is_granted('ROLE_TEACHER') %}
+                                {% if course.isEnabled() %}
                                 <a href="{{ path('beloop_view_course', {'code': course.code}) }}" class="title">{{ course.name }}</a>
+                                {% endif %}
                             {% else %}
                                 <span class="title">{{ course.name }}</span>
                             {% endif %}
