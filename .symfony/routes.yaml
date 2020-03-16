@@ -1,2 +1,7 @@
-"https://{default}/": { type: upstream, upstream: "beloop-web:http" }
-"http://{default}/": { type: redirect, to: "https://{default}/" }
+"http://{all}/":
+  type: redirect
+  to: "https://{all}/"
+
+"https://{all}/":
+  type: upstream
+  upstream: "beloop-web:http"
