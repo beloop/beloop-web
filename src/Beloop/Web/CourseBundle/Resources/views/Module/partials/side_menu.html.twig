@@ -11,15 +11,17 @@
               <span class="dd-handle text-uppercase {% if not lesson.isDemo() %}disabled{% endif %}">{{ loop.index0 }}. {{ lesson.name }}</span>
               <ol class="dd-list">
                   {% for mod in lesson.modules %}
-                      {% if not lesson.isDemo() %}
-                          <li class="dd-item">
-                              <span class="dd-handle disabled">{{ loop.parent.loop.index0 }}.{{ loop.index }}. {{ mod.name }}</span>
-                          </li>
-                      {% else %}
-                          {% set active = (mod.id == actualModule) ? 'active' : '' %}
-                          <li class="dd-item">
-                              <a href="{{ path('beloop_view_module_' ~ mod.type, {'code': course.code, 'id': mod.id}) }}" class="dd-handle {{ active }}">{{ loop.parent.loop.index0 }}.{{ loop.index }}. {{ mod.name }}</a>
-                          </li>
+                      {% if mod.isEnabled() %}
+                        {% if not lesson.isDemo() %}
+                            <li class="dd-item">
+                                <span class="dd-handle disabled">{{ loop.parent.loop.index0 }}.{{ loop.index }}. {{ mod.name }}</span>
+                            </li>
+                        {% else %}
+                            {% set active = (mod.id == actualModule) ? 'active' : '' %}
+                            <li class="dd-item">
+                                <a href="{{ path('beloop_view_module_' ~ mod.type, {'code': course.code, 'id': mod.id}) }}" class="dd-handle {{ active }}">{{ loop.parent.loop.index0 }}.{{ loop.index }}. {{ mod.name }}</a>
+                            </li>
+                        {% endif %}
                       {% endif %}
                   {% endfor %}
               </ol>
@@ -27,15 +29,17 @@
               <span class="dd-handle text-uppercase {% if not lesson.isAvailableForUser(user) and not is_granted('ROLE_TEACHER') %}disabled{% endif %}">{{ loop.index0 }}. {{ lesson.name }}</span>
               <ol class="dd-list">
                   {% for mod in lesson.modules %}
-                      {% if not lesson.isAvailableForUser(user) and not is_granted('ROLE_TEACHER') %}
-                          <li class="dd-item">
-                              <span class="dd-handle disabled">{{ loop.parent.loop.index0 }}.{{ loop.index }}. {{ mod.name }}</span>
-                          </li>
-                      {% else %}
-                          {% set active = (mod.id == actualModule) ? 'active' : '' %}
-                          <li class="dd-item">
-                              <a href="{{ path('beloop_view_module_' ~ mod.type, {'code': course.code, 'id': mod.id}) }}" class="dd-handle {{ active }}">{{ loop.parent.loop.index0 }}.{{ loop.index }}. {{ mod.name }}</a>
-                          </li>
+                      {% if mod.isEnabled() %}
+                        {% if not lesson.isAvailableForUser(user) and not is_granted('ROLE_TEACHER') %}
+                            <li class="dd-item">
+                                <span class="dd-handle disabled">{{ loop.parent.loop.index0 }}.{{ loop.index }}. {{ mod.name }}</span>
+                            </li>
+                        {% else %}
+                            {% set active = (mod.id == actualModule) ? 'active' : '' %}
+                            <li class="dd-item">
+                                <a href="{{ path('beloop_view_module_' ~ mod.type, {'code': course.code, 'id': mod.id}) }}" class="dd-handle {{ active }}">{{ loop.parent.loop.index0 }}.{{ loop.index }}. {{ mod.name }}</a>
+                            </li>
+                        {% endif %}
                       {% endif %}
                   {% endfor %}
               </ol>
