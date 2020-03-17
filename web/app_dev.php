@@ -22,7 +22,6 @@ require dirname(__DIR__).'/app/config/bootstrap.php';
 Debug::enable();
 
 $kernel = new AppKernel('dev', true);
-$kernel->loadClassCache();
 $request = Request::createFromGlobals();
 $response = $kernel->handle($request);
 $response->send();
