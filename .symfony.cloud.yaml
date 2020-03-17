@@ -46,6 +46,9 @@ hooks:
         # Build production assets
         (>&2 SYMFONY_ENV=prod bin/console assetic:dump --env=prod --no-debug)
 
+        # Optimize Composer Autoloader
+        (>&2 composer dump-autoload --no-dev --classmap-authoritative)
+
     deploy: |
         set -x -e
 
@@ -60,3 +63,12 @@ hooks:
         (>&2 cp -R tmp/web/media/* web/media/)
         (>&2 mkdir -p web/uploads)
         (>&2 cp -R tmp/web/uploads/* web/uploads/)
+
+timezone: Europe/Paris
+
+crons:
+    clean_prod_cache:
+        # every 15 minutes
+        spec: 15 * * * *
+        cmd: |
+            rm -rf var/cache/prod/
