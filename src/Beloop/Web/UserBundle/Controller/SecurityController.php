@@ -117,7 +117,11 @@ class SecurityController extends Controller
          * If user is already logged, go to redirect url
          */
         if ($this->get('security.authorization_checker')->isGranted('IS_AUTHENTICATED_FULLY')) {
-            return $this->redirectToRoute('beloop_public_courses');
+            if ($this->get('security.authorization_checker')->isGranted('ROLE_DEMO')) {
+                return $this->redirectToRoute('beloop_public_courses');
+            }
+
+            return $this->redirectToRoute('beloop_my_courses');
         }
 
         if ($isValid) {
