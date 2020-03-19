@@ -10,7 +10,7 @@
             autocomplete: 'nope'
         }
     }) }}
-    <input type="hidden" name="_target_path" value="/my-courses" />
+    <input type="hidden" name="_target_path" value="/user/profile" />
     {% if error %}
         <div role="alert" class="alert alert-danger"><span class="icon s7-close-circle"></span> {{ error.messageKey|trans(error.messageData, 'security') }}</div>
     {% endif %}
